@@ -1,0 +1,78 @@
+# routes.yml : main routes for SESE application 
+login_route:
+    path:     /
+    defaults: { _controller : 'Login',_action : 'check' }
+
+about_route:
+    path:     /apropos
+    defaults: { _controller : 'About',_action : 'run' }
+
+admin_route:
+    path:     /administrateur
+    defaults: { _controller : 'Admin', _action : 'welcome' }
+    
+admin_referential_route:
+    path:     /administrateur/referentiel
+    defaults: { _controller : 'Admin', _action : 'generalReferentialDefinition' }
+    
+admin_function_route:
+    path:     /administrateur/fonction
+    defaults: { _controller : 'Admin', _action : 'functionDefinition' }
+    
+admin_activity_route:
+    path:     /administrateur/activite
+    defaults: { _controller : 'Admin', _action : 'activityDefinition' }
+    
+admin_skill_route:
+    path:     /administrateur/competence
+    defaults: { _controller : 'Admin', _action : 'skillDefinition' }
+    
+admin_promotion_route:
+    path:     /administrateur/promotion
+    defaults: { _controller : 'Admin', _action : 'promotionDefinition' }
+    
+admin_teacher_route:
+    path:     /administrateur/enseignant
+    defaults: { _controller : 'Admin', _action : 'teacherDefinition' }
+    
+admin_trainee_route:
+    path:     /administrateur/stagiaire
+    defaults: { _controller : 'Admin', _action : 'traineeDefinition' }
+    
+admin_work_date_route:
+    path:     /administrateur/stage
+    defaults: { _controller : 'Admin', _action : 'workDateDefinition' }
+    
+admin_password_route:
+    path:     /administrateur/acces
+    defaults: { _controller : 'Admin', _action : 'adminPasswordDefinition' }
+
+teacher_route:
+    path:     /enseignant
+    defaults: { _controller : 'Teacher', _action : 'welcome' }
+    
+teacher_work_definition_route:
+    path:     /enseignant/stage
+    defaults: { _controller : 'Teacher', _action : 'workDefinition' }
+    
+teacher_work_visit_definition_route:
+    path:     /enseignant/visite
+    defaults: { _controller : 'Teacher', _action : 'workVisitDefinition' }
+    
+teacher_work_comment_definition_route:
+    path:     /enseignant/commentaire
+    defaults: { _controller : 'Teacher', _action : 'workTeacherCommentDefinition' }
+    
+teacher_contact_definition_route:
+    path:     /enseignant/contact_interne
+    defaults: { _controller : 'Teacher', _action : 'teacherContact' }
+    
+tutor_route:
+    path:     /tuteur
+    defaults: { _controller : 'Tutor', _action : 'welcome' }
+    
+tutor_route_trainee_list:
+    path:     /tuteur/liste_stagiaire
+    defaults: { _controller : 'Tutor', _action : 'traineeList' }
+    
+    

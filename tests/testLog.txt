@@ -1,0 +1,339 @@
+01-03-2015 18:04:45 - INFO  --> 
+======== TESTS Log Start controller\SkillsReferenceDefinitionControllerTest ========
+--------------------------------- 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base open 
+01-03-2015 18:04:45 - DEBUG --> model\AccessDataBase data base closed 
+01-03-2015 18:04:45 - DEBUG --> controller\SkillsReferenceDefinitionController-- RAW POST -- Array
+(
+    [_skillsReferencesList#0] => c200
+    [_skillsDescriptionsList#0] => Savoir écrire
+    [_bindedActivitiesLists#0#0#0] => Mon activit&eacute; test test test -- ligne (2)
+    [_bindedActivitiesLists#0#0#1] => Mon activit&eacute; test test test -- ligne (1)
+    [ButtonSubmitFreeActivity] => 0#Mon activit&eacute; test test test -- ligne (1)
+)
+ 
+01-03-2015 18:04:45 - DEBUG --> controller\SkillsReferenceDefinitionController-- BUTTON Trigged--> : ButtonSubmitFreeActivity 
+01-03-2015 18:04:45 - DEBUG --> controller\SkillsReferenceDefinitionController-- Members model BEFORE FREE Activity: --Array
+(
+    [_skillsReferencesList] => Array
+        (
+            [0] => c200
+        )
+
+    [_activitiesList] => Array
+        (
+            [0] => Mon activit&eacute; test test test -- ligne (0)
+            [1] => Mon activit&eacute; test test test -- ligne (1)
+            [2] => Mon activit&eacute; test test test -- ligne (2)
+            [3] => Mon activit&eacute; test test test -- ligne (3)
+            [4] => Mon activit&eacute; test test test -- ligne (4)
+        )
+
+    [_bindedActivitiesLists] => Array
+        (
+            [0] => Array
+                (
+                    [0] => Mon activit&eacute; test test test -- ligne (1)
+                    [1] => Mon activit&eacute; test test test -- ligne (2)
+                )
+
+        )
+
+    [_skillsDescriptionsList] => Array
+        (
+            [0] => Savoir écrire
+        )
+
+    [_activitiesModel] => model\ActivitiesReferenceDefinitionModel Object
+        (
+            [_activitiesReferencesList:model\ActivitiesReferenceDefinitionModel:private] => Array
+                (
+                    [0] => A0-0 test
+                    [1] => A1-1 test
+                    [2] => A2-2 test
+                    [3] => A3-3 test
+                    [4] => A4-4 test
+                )
+
+            [_functionsList:model\ActivitiesReferenceDefinitionModel:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => Fonction 0
+                            [1] => Fonction 1
+                            [2] => Fonction 2
+                            [3] => Fonction 3
+                            [4] => Fonction 4
+                        )
+
+                    [1] => Array
+                        (
+                            [0] => Fonction 1
+                            [1] => Fonction 0
+                            [2] => Fonction 2
+                            [3] => Fonction 3
+                            [4] => Fonction 4
+                        )
+
+                    [2] => Array
+                        (
+                            [0] => Fonction 2
+                            [1] => Fonction 0
+                            [2] => Fonction 1
+                            [3] => Fonction 3
+                            [4] => Fonction 4
+                        )
+
+                    [3] => Array
+                        (
+                            [0] => Fonction 3
+                            [1] => Fonction 0
+                            [2] => Fonction 1
+                            [3] => Fonction 2
+                            [4] => Fonction 4
+                        )
+
+                    [4] => Array
+                        (
+                            [0] => Fonction 4
+                            [1] => Fonction 0
+                            [2] => Fonction 1
+                            [3] => Fonction 2
+                            [4] => Fonction 3
+                        )
+
+                )
+
+            [_activitiesDescriptionsList:model\ActivitiesReferenceDefinitionModel:private] => Array
+                (
+                    [0] => Mon activit&eacute; test test test -- ligne (0)
+                    [1] => Mon activit&eacute; test test test -- ligne (1)
+                    [2] => Mon activit&eacute; test test test -- ligne (2)
+                    [3] => Mon activit&eacute; test test test -- ligne (3)
+                    [4] => Mon activit&eacute; test test test -- ligne (4)
+                )
+
+            [_dataBaseHandler:protected] => model\persistant\PdoCrud Object
+                (
+                    [pdo_dbSrv:model\persistant\PdoCrud:private] => localhost
+                    [pdo_dbUser:model\persistant\PdoCrud:private] => root
+                    [pdo_dbPass:model\persistant\PdoCrud:private] => laurent
+                    [pdo_dbName:model\persistant\PdoCrud:private] => lolobase
+                    [dbpdo:model\persistant\PdoCrud:private] => PDO Object
+                        (
+                        )
+
+                    [isPdoReady:model\persistant\PdoCrud:private] => 1
+                )
+
+        )
+
+    [_dataBaseHandler] => model\persistant\PdoCrud Object
+        (
+            [pdo_dbSrv:model\persistant\PdoCrud:private] => localhost
+            [pdo_dbUser:model\persistant\PdoCrud:private] => root
+            [pdo_dbPass:model\persistant\PdoCrud:private] => laurent
+            [pdo_dbName:model\persistant\PdoCrud:private] => lolobase
+            [dbpdo:model\persistant\PdoCrud:private] => PDO Object
+                (
+                )
+
+            [isPdoReady:model\persistant\PdoCrud:private] => 1
+        )
+
+)
+ 
+01-03-2015 18:04:46 - DEBUG --> view\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [VERSION] => 010614
+            [CURRENT_STEP_NUMBER] => 7
+            [STEP_NUMBER] => 11
+            [BACK_BUTTON] => true
+            [FORWARD_BUTTON] => true
+            [PREVIOUS_URI] => /sese/index.php/previous
+            [NEXT_URI] => /sese/index.php/next
+        )
+
+    [body] => Array
+        (
+            [form_skillsReferencesList] => _skillsReferencesList
+            [form_activitiesList] => _activitiesList
+            [form_bindedActivitiesLists] => _bindedActivitiesLists
+            [form_skillsDescriptionsList] => _skillsDescriptionsList
+            [form_ph_skillsReferencesList] => 
+            [form_ph_activitiesList] => 
+            [form_ph_bindedActivitiesLists] => 
+            [form_ph_skillsDescriptionsList] => 
+            [form_val_skillsReferencesList] => Array
+                (
+                    [0] => c200
+                    [1] => 
+                )
+
+            [form_val_activitiesList] => Array
+                (
+                    [0] => Mon activit&eacute; test test test -- ligne (0)
+                    [1] => Mon activit&eacute; test test test -- ligne (1)
+                    [2] => Mon activit&eacute; test test test -- ligne (2)
+                    [3] => Mon activit&eacute; test test test -- ligne (3)
+                    [4] => Mon activit&eacute; test test test -- ligne (4)
+                )
+
+            [form_val_bindedActivitiesLists] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => Mon activit&eacute; test test test -- ligne (2)
+                        )
+
+                    [1] => Array
+                        (
+                            [0] => Mon activit&eacute; test test test -- ligne (0)
+                        )
+
+                )
+
+            [form_val_skillsDescriptionsList] => Array
+                (
+                    [0] => Savoir écrire
+                    [1] => 
+                )
+
+            [INDEX] => /sese/index.php
+            [BUTTON_ADD_SKILL] => ButtonSubmitAddSkill
+            [BUTTON_DEL_SKILL] => ButtonSubmitDelSkill
+            [BUTTON_BIND_ACTIVITY] => ButtonSubmitBindActivity
+            [BUTTON_FREE_ACTIVITY] => ButtonSubmitFreeActivity
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /sese/index.php
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+01-03-2015 18:04:46 - DEBUG --> view\ViewHandler Model params for builder : view\SkillsReferenceDefinitionBuilder => Array
+(
+    [header] => Array
+        (
+            [VERSION] => 010614
+            [CURRENT_STEP_NUMBER] => 7
+            [STEP_NUMBER] => 11
+            [BACK_BUTTON] => true
+            [FORWARD_BUTTON] => true
+            [PREVIOUS_URI] => /sese/index.php/previous
+            [NEXT_URI] => /sese/index.php/next
+        )
+
+    [body] => Array
+        (
+            [form_skillsReferencesList] => _skillsReferencesList
+            [form_activitiesList] => _activitiesList
+            [form_bindedActivitiesLists] => _bindedActivitiesLists
+            [form_skillsDescriptionsList] => _skillsDescriptionsList
+            [form_ph_skillsReferencesList] => 
+            [form_ph_activitiesList] => 
+            [form_ph_bindedActivitiesLists] => 
+            [form_ph_skillsDescriptionsList] => 
+            [$this->_arrayParamslist[0]] => Array
+                (
+                    [0] => c200
+                    [1] => 
+                )
+
+            [$this->_arrayParamslist[1]] => Array
+                (
+                    [0] => Mon activit&eacute; test test test -- ligne (0)
+                    [1] => Mon activit&eacute; test test test -- ligne (1)
+                    [2] => Mon activit&eacute; test test test -- ligne (2)
+                    [3] => Mon activit&eacute; test test test -- ligne (3)
+                    [4] => Mon activit&eacute; test test test -- ligne (4)
+                )
+
+            [$this->_arrayParamslist[2]] => Array
+                (
+                    [0] => Array
+                        (
+                            [0] => Mon activit&eacute; test test test -- ligne (2)
+                        )
+
+                    [1] => Array
+                        (
+                            [0] => Mon activit&eacute; test test test -- ligne (0)
+                        )
+
+                )
+
+            [$this->_arrayParamslist[3]] => Array
+                (
+                    [0] => Savoir écrire
+                    [1] => 
+                )
+
+            [INDEX] => /sese/index.php
+            [BUTTON_ADD_SKILL] => ButtonSubmitAddSkill
+            [BUTTON_DEL_SKILL] => ButtonSubmitDelSkill
+            [BUTTON_BIND_ACTIVITY] => ButtonSubmitBindActivity
+            [BUTTON_FREE_ACTIVITY] => ButtonSubmitFreeActivity
+            [form_val_skillsReferencesList] => $this->_arrayParamslist[0]
+            [form_val_activitiesList] => $this->_arrayParamslist[1]
+            [form_val_bindedActivitiesLists] => $this->_arrayParamslist[2]
+            [form_val_skillsDescriptionsList] => $this->_arrayParamslist[3]
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /sese/index.php
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 

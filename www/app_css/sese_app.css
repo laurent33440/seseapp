@@ -1,0 +1,25 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28 mars 2015, 16:20:28
+    Author     : laurent
+*/
+
+/* Move down content because we have a fixed navbar that is 100px tall with logo */
+body {
+  padding-top: 100px;
+  padding-bottom: 10px;
+}
+
+.section-colored-menu {
+  background-color: #eeeeee;
+ /* change this to change the background color of a colored section */
+}
+
+.section-colored {
+  background-color: #e1e1e1;
+ /* change this to change the background color of a colored section */
+}

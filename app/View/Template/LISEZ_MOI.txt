@@ -1,0 +1,9 @@
+
+
+1)ATTENTION : ne pas mettre d'espaces entre les balises et les paramètres sinon le formulaire remplace les espaces par des soulignés (voir $_POST)
+- affecte aussi le générateur PHP : balises avec 'echo' - pas d'espace
+
+2) Dans les formulaires pour les input : 
+    - le 'nom' associé doit être de la forme : "form_<nom_du_membre_du_model>"
+    - la 'valeur'  doit-être de la forme : "form_val_<nom_du_membre_du_model>"
+    - le 'place holder' doit_être de la forme : "form_ph_<nom_du_membre_du_model>"

@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="lolobase">
+	<table_data name="Activite">
+	<row>
+		<field name="id_activite">1533</field>
+		<field name="act_ref_activite">A0-0 test</field>
+		<field name="act_intitule_activite" xsi:nil="true" />
+		<field name="act_descriptif_activite">Mon activit&amp;eacute; test test test -- ligne (0)</field>
+		<field name="act_est_realisee">0</field>
+		<field name="id_referentiel_de_formation" xsi:nil="true" />
+		<field name="id_fonction">14477</field>
+	</row>
+	<row>
+		<field name="id_activite">1534</field>
+		<field name="act_ref_activite">A1-1 test</field>
+		<field name="act_intitule_activite" xsi:nil="true" />
+		<field name="act_descriptif_activite">Mon activit&amp;eacute; test test test -- ligne (1)</field>
+		<field name="act_est_realisee">0</field>
+		<field name="id_referentiel_de_formation" xsi:nil="true" />
+		<field name="id_fonction">14478</field>
+	</row>
+	<row>
+		<field name="id_activite">1535</field>
+		<field name="act_ref_activite">A2-2 test</field>
+		<field name="act_intitule_activite" xsi:nil="true" />
+		<field name="act_descriptif_activite">Mon activit&amp;eacute; test test test -- ligne (2)</field>
+		<field name="act_est_realisee">0</field>
+		<field name="id_referentiel_de_formation" xsi:nil="true" />
+		<field name="id_fonction">14479</field>
+	</row>
+	<row>
+		<field name="id_activite">1536</field>
+		<field name="act_ref_activite">A3-3 test</field>
+		<field name="act_intitule_activite" xsi:nil="true" />
+		<field name="act_descriptif_activite">Mon activit&amp;eacute; test test test -- ligne (3)</field>
+		<field name="act_est_realisee">0</field>
+		<field name="id_referentiel_de_formation" xsi:nil="true" />
+		<field name="id_fonction">14480</field>
+	</row>
+	<row>
+		<field name="id_activite">1537</field>
+		<field name="act_ref_activite">A4-4 test</field>
+		<field name="act_intitule_activite" xsi:nil="true" />
+		<field name="act_descriptif_activite">Mon activit&amp;eacute; test test test -- ligne (4)</field>
+		<field name="act_est_realisee">0</field>
+		<field name="id_referentiel_de_formation" xsi:nil="true" />
+		<field name="id_fonction">14481</field>
+	</row>
+	</table_data>
+	<table_data name="Activite_et_visite">
+	</table_data>
+	<table_data name="Annee">
+	</table_data>
+	<table_data name="Autoriser">
+	</table_data>
+	<table_data name="Collaborateurs">
+	</table_data>
+	<table_data name="Competence">
+	<row>
+		<field name="id_competence">274</field>
+		<field name="comp_ref_competence">c1</field>
+		<field name="comp_intitule_competence" xsi:nil="true" />
+		<field name="comp_descriptif_competence">ma competence</field>
+		<field name="comp_est_evaluable">1</field>
+		<field name="comp_est_evaluee">0</field>
+		<field name="comp_niveau_competence">10</field>
+		<field name="comp_niveau_autonomie">10</field>
+	</row>
+	</table_data>
+	<table_data name="Competences_evaluees">
+	</table_data>
+	<table_data name="Constituer">
+	<row>
+		<field name="id_activite">1534</field>
+		<field name="id_competence">274</field>
+	</row>
+	<row>
+		<field name="id_activite">1535</field>
+		<field name="id_competence">274</field>
+	</row>
+	<row>
+		<field name="id_activite">1536</field>
+		<field name="id_competence">274</field>
+	</row>
+	</table_data>
+	<table_data name="Description_document">
+	</table_data>
+	<table_data name="Documents_reference">
+	</table_data>
+	<table_data name="Employer">
+	</table_data>
+	<table_data name="Enseignant">
+	</table_data>
+	<table_data name="Entreprise">
+	</table_data>
+	<table_data name="Etablissement">
+	<row>
+		<field name="id_etablissement">1</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">2</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">3</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">4</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">5</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">6</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">7</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">8</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">9</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">10</field>
+		<field name="eta_nom_etablissement">formation1</field>
+		<field name="eta_siret_etablissement">12345</field>
+		<field name="eta_adresse1_etablissement">1 rue</field>
+		<field name="eta_adresse2_etablissement">2 rue</field>
+		<field name="eta_ville_etablissement">brdx</field>
+		<field name="eta_cp_etablissement">33000</field>
+		<field name="eta_url_etablissement">a.edu</field>
+		<field name="eta_mel_etablissement">etab@a.fr</field>
+		<field name="eta_telephone_etablissement">5050505</field>
+	</row>
+	<row>
+		<field name="id_etablissement">11</field>
+		<field name="eta_nom_etablissement">forma1</field>
+		<field name="eta_siret_etablissement">123445</field>
+		<field name="eta_adresse1_etablissement">rue a</field>
+		<field name="eta_adresse2_etablissement">rue b</field>
+		<field name="eta_ville_etablissement">pessac</field>
+		<field name="eta_cp_etablissement">33600</field>
+		<field name="eta_url_etablissement">xx.edu</field>
+		<field name="eta_mel_etablissement">forma@edu.edu</field>
+		<field name="eta_telephone_etablissement">10203</field>
+	</row>
+	</table_data>
+	<table_data name="Fonction">
+	<row>
+		<field name="id_fonction">14477</field>
+		<field name="f_description">Fonction 0</field>
+	</row>
+	<row>
+		<field name="id_fonction">14478</field>
+		<field name="f_description">Fonction 1</field>
+	</row>
+	<row>
+		<field name="id_fonction">14479</field>
+		<field name="f_description">Fonction 2</field>
+	</row>
+	<row>
+		<field name="id_fonction">14480</field>
+		<field name="f_description">Fonction 3</field>
+	</row>
+	<row>
+		<field name="id_fonction">14481</field>
+		<field name="f_description">Fonction 4</field>
+	</row>
+	</table_data>
+	<table_data name="Groupe">
+	<row>
+		<field name="id_groupe">1</field>
+		<field name="grp_nom_groupe">administrateur</field>
+	</row>
+	</table_data>
+	<table_data name="Intervenir">
+	</table_data>
+	<table_data name="Page">
+	</table_data>
+	<table_data name="Parametres">
+	</table_data>
+	<table_data name="Promotion">
+	</table_data>
+	<table_data name="Realiser">
+	</table_data>
+	<table_data name="Reference">
+	</table_data>
+	<table_data name="Referentiel_de_formation">
+	</table_data>
+	<table_data name="Stage">
+	</table_data>
+	<table_data name="Stagiaire">
+	</table_data>
+	<table_data name="Utilisateurs">
+	<row>
+		<field name="id_utilisateur">10</field>
+		<field name="uti_identifiant">dieu</field>
+		<field name="uti_mot_de_passe"></field>
+		<field name="uti_mel">dieu@ciel.org</field>
+		<field name="uti_etat_compte">actif</field>
+		<field name="uti_derniere_connexion">0000-00-00 00:00:00</field>
+		<field name="id_groupe">1</field>
+	</row>
+	<row>
+		<field name="id_utilisateur">11</field>
+		<field name="uti_identifiant">lolo</field>
+		<field name="uti_mot_de_passe">lolo</field>
+		<field name="uti_mel">lolo@moi.fr</field>
+		<field name="uti_etat_compte">actif</field>
+		<field name="uti_derniere_connexion">0000-00-00 00:00:00</field>
+		<field name="id_groupe">1</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
