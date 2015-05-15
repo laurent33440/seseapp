@@ -95,7 +95,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      */
     public function testGetReorderFunctionList(){
         $functionsModel = new FunctionReferentialDefinitionModel();
-        $functionsModel->getFunctionsFromDataBase();
+        $functionsModel->getAll();
         $f = $functionsModel->get_descriptions();
         $id= $functionsModel->getFunctionIdDbFromDescription($f[1]);//second element
         $reorder= $this->object->getReorderFunctionList($id);
@@ -149,7 +149,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
 //        $this->object->set_functionsList(array('Fonction 2', 'Fonction 1','Fonction 3','Fonction 4' )); //'Fonction 2' is the choice -- first element 
         $this->object->set_functionsList('Fonction 2'); //'Fonction 2' is the choice 
         $this->object->set_activitiesDescriptionsList('Mon activit&eacute; test test test -- ligne (n)');
-        $this->object->addActivityToDataBase();
+        $this->object->append();
         //see data base
         $this->assertTrue(true);
     }
@@ -158,12 +158,12 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      * @depends testAddActivityToDataBase 
      */
     public function testUpdateActivityDescription(){
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $this->assertEquals(1,$this->object->updateActivityDescription('activité mise à jour', 1)); //one update
         $tst = $this->object->get_activitiesDescriptionsList();
         $this->assertEquals('activité mise à jour', $tst[0]);
         //test db
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $tst = $this->object->get_activitiesDescriptionsList();
         $this->assertEquals('activité mise à jour', $tst[0]);
     }
@@ -172,12 +172,12 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      * @depends testAddActivityToDataBase 
      */
     public function testUpdateActivityReference(){
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $this->assertEquals(1,$this->object->updateActivityReference('ref à jour', 1)); //one update
         $tst = $this->object->get_activitiesReferencesList();
         $this->assertEquals('ref à jour', $tst[0]);
         //test db
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $tst = $this->object->get_activitiesReferencesList();
         $this->assertEquals('ref à jour', $tst[0]);
     }
@@ -186,12 +186,12 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      * @depends testAddActivityToDataBase 
      */
     public function testUpdateActivityFunction(){
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $this->assertEquals(1,$this->object->updateActivityFunction('Fonction 5', 1)); //one update
         $tst = $this->object->get_functionsList();
         $this->assertEquals('Fonction 5', $tst[0]);
         //test db
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $tst = $this->object->get_functionsList();
         $this->assertEquals(array('Fonction 5', 'Fonction 1', 'Fonction 2','Fonction 3','Fonction 4'), $tst[0]);
     }
@@ -424,7 +424,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
                 );
         $expDesc = array('Mon activit&eacute; test test test 1 ', 'Mon activit&eacute; test test test 2 ', 'Mon activit&eacute; test test test 3 ');
         $this->assertEquals(array( 'Fonction 1','Fonction 2','Fonction 3', 'Fonction 4', 'Fonction 5' ), $this->object->getDefinedFunctions());
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $refs=$this->object->get_activitiesReferencesList();
         $funcs=$this->object->get_functionsList();
         $descs=$this->object->get_activitiesDescriptionsList();
@@ -452,7 +452,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      * @depends testGetAllActivitesToModel
      */
     public function testGetClassVarsValues(){
-        $this->object->addBlankToModel();
+        $this->object->addBlank();
         //var_dump($this->object->getClassVarsValues());
         //must be array of members name and values
         //function list add a list of all functions descriptions avalaible
@@ -462,7 +462,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      * @depends testAddActivityToDataBase_multiple
      */
     public function testRemoveActivityFromIdFromDataBase(){
-        $this->object->getActivitesFromDataBase();
+        $this->object->getAll();
         $this->object->removeActivityFromIdFromDataBase(2);
         //see db
         $this->assertTrue(true);

@@ -52,7 +52,7 @@ class FunctionReferentialDefinitionModel extends AModel{
      * Get members's values of model from data base
      * 
      */
-    public function getFunctionsFromDataBase(){
+    public function getAll(){
         $this->_descriptions=array();
         $collection= new DataAccess('Fonction');
         $funcs = $collection->GetAll();

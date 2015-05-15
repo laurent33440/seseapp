@@ -62,7 +62,7 @@ class CreateAdminAccountModel extends AModel{
      * Validate model towards user inputs values
      */
     public function isValide(){
-        if($this->_adminPass == $this->_adminPassConfirm){
+        if($this->_adminPass === $this->_adminPassConfirm){
             return true;
         }else{
             return false;

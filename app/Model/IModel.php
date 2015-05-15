@@ -1,0 +1,24 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author laurent
+ */
+interface IModel {
+    //generic methods model view (Form) <--> data base  
+    public function addBlank();
+    public function append();
+    public function getAll();
+    public function update($property);
+    public function deleteFromId($id);
+    public function deleteFromProperty($property);
+    
+    //generic inter model methods
+    public function select($property, $selector);
+}

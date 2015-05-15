@@ -8,12 +8,16 @@
 
 namespace Model;
 
+use IModel;
+use Dal\DbLibrary\DataAccess;
+use Dal\ModelDb\Activite\ActiviteObject;
+
 /**
  * Description of ActivitiesReferenceDefinitionModel
  *
  * @author laurent
  */
-class ActivitiesReferenceDefinitionModel extends AModel{
+class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     
     /**
      * DATA STRUCTURE - VIEW MODEL
@@ -30,7 +34,7 @@ class ActivitiesReferenceDefinitionModel extends AModel{
     /* 
      * Fonctions list descriptions
      */
-    private $_functionsList = array(); 
+    protected $_functionsList = array(); 
     
     
     /**
@@ -40,7 +44,7 @@ class ActivitiesReferenceDefinitionModel extends AModel{
         
     }
     
-    public function set_activitiesReferencesList($_activitiesReferencesList) {
+    public function set_activitiesTreeList($_activitiesReferencesList) {
         if(!in_array( $_activitiesReferencesList, $this->_activitiesTreeList)){
             $this->_activitiesTreeList[] = $_activitiesReferencesList;
         }else{//already exist
@@ -76,7 +80,7 @@ class ActivitiesReferenceDefinitionModel extends AModel{
     /**
      *  GENERIC
      */
-    public function addBlankToModel(){
+    public function addBlank(){
         $this->set_activitiesReferencesList('');
         $this->set_functionsList($this->getDefinedFunctions()); //set default function list for future activity
         $this->set_activitiesDescriptionsList('');
@@ -88,7 +92,7 @@ class ActivitiesReferenceDefinitionModel extends AModel{
      */
     public function getDefinedFunctions(){
         $functionModel =  new FunctionReferentialDefinitionModel();
-        $functionModel->getFunctionsFromDataBase();
+        $functionModel->getAll();
         return  $functionModel->get_descriptions();
     }
     
@@ -108,10 +112,13 @@ class ActivitiesReferenceDefinitionModel extends AModel{
     /**
      * GENERIC ADD
      * Add the last activity from model to database
-     * @return num db Id of added activity, -1 if the row already exists
-     * @throws Exception
      */
-    public function addActivityToDataBase() {
+    public function append() {
+        $collection= new DataAccess('Activite');
+        $item = new ActiviteObject();
+        $item->act_ref_activite = $this->_activitiesTreeList[count($this->_activitiesTreeList)-1][0];
+        $item->act_descriptif_activite = $this->_activitiesTreeList[count($this->_activitiesTreeList)-1][2];
+        $fid = $this->_activitiesTreeList[count($this->_activitiesTreeList)-1][1];
 
     }
     
@@ -123,7 +130,7 @@ class ActivitiesReferenceDefinitionModel extends AModel{
      * Fill in model's datas from database
      * 
      */
-    public function getActivitesFromDataBase(){
+    public function getAll(){
         $this->resetModel();
             
     }
@@ -224,7 +231,7 @@ class ActivitiesReferenceDefinitionModel extends AModel{
     public function getReorderFunctionList($functionId){
         //retrieve function description from id
         $functionModel =  new FunctionReferentialDefinitionModel();
-        $functionModel->getFunctionsFromDataBase();
+        $functionModel->getAll();
         $functionList =  $functionModel->get_descriptions();
         $functionDesc = $functionModel->getFunctionDescriptionFromIdDb($functionId);
         //remove

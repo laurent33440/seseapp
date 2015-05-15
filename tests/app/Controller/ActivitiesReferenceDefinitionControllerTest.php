@@ -93,7 +93,7 @@ class ActivitiesReferenceDefinitionControllerTest extends PHPUnit_Framework_Test
             $activitiesModel->set_activitiesReferencesList("A1-$n" );
             $activitiesModel->set_functionsList(array('Fonction 3', 'Fonction 1','Fonction 2','Fonction 4','Fonction 5'));
             $activitiesModel->set_activitiesDescriptionsList("Mon activit&eacute; $n");
-            $activitiesModel->addActivityToDataBase();
+            $activitiesModel->append();
         }
     }
 

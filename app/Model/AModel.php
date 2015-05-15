@@ -17,16 +17,6 @@ use ReflectionProperty;
  */
 abstract class AModel {
     const ERR_DUPLICATE='!!valeur dupliquée!!';
-    
-    protected $_dataBaseHandler = null; //hold instance of data base handler
-    
-    /**
-     * get data base handler
-     * @return Object : data base handler
-     */
-    public function getDataBaseHandler(){
-        return $this->_dataBaseHandler;
-    }
 
     /**
      * Retrieve private members of child model
@@ -92,24 +82,6 @@ abstract class AModel {
         }
         return $varsValues;
     }
-
-
-    /**
-     * OBSOLETE
-     * 
-     * Check matching keys in dictionary
-     * @param type $array : testing array's keys
-     * @param type $keys : keys references
-     * @return boolean : true all keys matched
-     */
-//    protected function array_keys_exists($array,$keys) {
-//        foreach($keys as $k) {
-//            if(!isset($array[$k])) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
     
     /**
      * Check if keys in an associative array is include in another

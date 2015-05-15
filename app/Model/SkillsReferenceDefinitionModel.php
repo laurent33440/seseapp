@@ -130,7 +130,7 @@ class SkillsReferenceDefinitionModel extends AModel{
      * return list of activities description available to view part
      */
     public function getDefinedActivities(){
-        $this->_activitiesModel->getActivitesFromDataBase();
+        $this->_activitiesModel->getAll();
         return  $this->_activitiesModel->get_activitiesDescriptionsList();
     }
     
@@ -343,11 +343,5 @@ class SkillsReferenceDefinitionModel extends AModel{
         }
         return false; 
     }
-    
-    //debug
-    public function getDataBaseHandler() {
-        return parent::getDataBaseHandler();
-    }
-    
     
 }
