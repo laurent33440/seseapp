@@ -27,7 +27,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (form_val_activitiesTreeList as $idActivity => $activityDatas) {
+                                <?php foreach (form_val_activityRefList as $idActivity => $activityRef) {
                                     echo"
                                     <tr>
                                         <td>
@@ -36,13 +36,13 @@
                                               id=\"activityReference#$idActivity\"
                                               name=\"form_activitiesReferencesList#$idActivity\"
                                               placeholder=\"Entrez la référence de l'activité\"
-                                              value=\"".$activityDatas[0]."\">
+                                              value=\"".$activityRef."\">
                                             </div><!-- /input-group -->
                                         </td>
                                         <td>
 
                                             <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"functionChoosenForActivity#$idActivity\">";
-                                            foreach ($activityDatas[1] as $idFunction => $function) {
+                                            foreach (form_val_functionList as $idFunction => $function) {
                                                 echo"
                                                     <option
                                                         value=\"$function\">$function
@@ -58,7 +58,7 @@
                                                 id=\"activityDescription#$idActivity\"
                                                 name=\"form_activitiesDescriptionsList#$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
-                                                value = \"$activityDatas[2]\"
+                                                value = \"form_val_activityDescriptionList[$idActivity]\"
                                                 >
                                                 <span class=\"input-group-btn\">
                                                     <button class=\"btn btn-success\" name=\"BUTTON_ADD_ACTIVITY\" value=\"$idActivity\" id=\"addActivity#$idActivity\" type=\"submit\">

@@ -19,6 +19,5 @@ interface IModel {
     public function deleteFromId($id);
     public function deleteFromProperty($property);
     
-    //generic inter model methods
-    public function select($property, $selector);
+   
 }
