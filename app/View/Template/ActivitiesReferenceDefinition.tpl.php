@@ -42,7 +42,7 @@
                                         <td>
 
                                             <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"functionChoosenForActivity#$idActivity\">";
-                                            foreach (form_val_functionList as $idFunction => $function) {
+                                            foreach (form_val_functionList[$idActivity] as $idFunction => $function) {
                                                 echo"
                                                     <option
                                                         value=\"$function\">$function
@@ -58,7 +58,7 @@
                                                 id=\"activityDescription#$idActivity\"
                                                 name=\"form_activitiesDescriptionsList#$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
-                                                value = \"form_val_activityDescriptionList[$idActivity]\"
+                                                value = \"".form_val_activityDescriptionList[$idActivity]."\"
                                                 >
                                                 <span class=\"input-group-btn\">
                                                     <button class=\"btn btn-success\" name=\"BUTTON_ADD_ACTIVITY\" value=\"$idActivity\" id=\"addActivity#$idActivity\" type=\"submit\">
