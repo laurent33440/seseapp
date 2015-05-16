@@ -21,49 +21,63 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     
     /**
      * DATA STRUCTURE - VIEW MODEL
-     * array(
-     *      idActivity=> array(
-     *              activityRef,
-     *              array(idFunction=>functionDescription)
-     *              activityDescription
-     *              )
-     * )
+     * 
+     * activityRefList = array(id=>ref)
+     * activityDescriptionList = array(id=>description)
+     * functionList = array(idFunction => functionDescription
      */
-    private $_activitiesTreeList = array();
+    private $_activityRefList = array();
     
-    /* 
-     * Fonctions list descriptions
-     */
+    private $_activityDescriptionList = array();
+    
     protected $_functionsList = array(); 
     
     
     /**
      *  REFACTOR
      */
-    public function __construct(){
-        
+    public function __construct(){}
+    
+   
+    public function set_activityRefList($_activitiesReferencesList) {
+        if(!in_array( $_activitiesReferencesList, $this->_activityRefList)){
+            $this->_activityRefList[] = $_activitiesReferencesList;
+        }else{//already exist
+            $this->_activityRefList[] = $_activitiesReferencesList.self::ERR_DUPLICATE;
+        }
     }
     
-    public function set_activitiesTreeList($_activitiesReferencesList) {
-        if(!in_array( $_activitiesReferencesList, $this->_activitiesTreeList)){
-            $this->_activitiesTreeList[] = $_activitiesReferencesList;
-        }else{//already exist
-            $this->_activitiesTreeList[] = $_activitiesReferencesList.self::ERR_DUPLICATE;
-        }
+    public function set_activityDescriptionList($_activityDescriptionList) {
+        $this->_activityDescriptionList[] = $_activityDescriptionList;
     }
 
     public function set_functionsList($_functionsList) {
         $this->_functionsList[] = $_functionsList;
     }
-
     
-    public function get_activitiesReferencesList() {
-        //var_dump($this->_activitiesReferencesList);
-        return $this->_activitiesTreeList;
+    public function get_activityRefList() {
+        return $this->_activityRefList;
     }
-    
+
+    public function get_activityDescriptionList() {
+        return $this->_activityDescriptionList;
+    }
+
+        
     public function get_functionsList() {
         return $this->_functionsList;
+    }
+    
+    public function deleteFromId($id) {
+
+    }
+
+    public function deleteFromProperty($property) {
+
+    }
+
+    public function update($property) {
+
     }
 
     
@@ -73,7 +87,7 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
      * reset all class's members
      */
     public function resetModel(){
-        $this->_activitiesTreeList=array();
+        $this->_activityRefList=array();
         $this->_functionsList=array();
     }
     
@@ -116,9 +130,9 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     public function append() {
         $collection= new DataAccess('Activite');
         $item = new ActiviteObject();
-        $item->act_ref_activite = $this->_activitiesTreeList[count($this->_activitiesTreeList)-1][0];
-        $item->act_descriptif_activite = $this->_activitiesTreeList[count($this->_activitiesTreeList)-1][2];
-        $fid = $this->_activitiesTreeList[count($this->_activitiesTreeList)-1][1];
+        $item->act_ref_activite = $this->_activityRefList[count($this->_activityRefList)-1][0];
+        $item->act_descriptif_activite = $this->_activityRefList[count($this->_activityRefList)-1][2];
+        $fid = $this->_activityRefList[count($this->_activityRefList)-1][1];
 
     }
     
