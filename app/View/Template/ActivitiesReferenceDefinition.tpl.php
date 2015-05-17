@@ -33,7 +33,7 @@
                                         <td>
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
-                                              id=\"activityReference#$idActivity\"
+                                              id=\"activityRef#$idActivity\"
                                               name=\"form_activitiesReferencesList#$idActivity\"
                                               placeholder=\"Entrez la référence de l'activité\"
                                               value=\"".$activityRef."\">
@@ -41,11 +41,11 @@
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"functionChoosenForActivity#$idActivity\">";
+                                            <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"function#$idActivity\">";
                                             foreach (form_val_functionList[$idActivity] as $idFunction => $function) {
                                                 echo"
                                                     <option
-                                                        value=\"$function\">$function
+                                                        value=\"$idFunction::$function\">$function
                                                     </option>
                                                 ";
                                             }

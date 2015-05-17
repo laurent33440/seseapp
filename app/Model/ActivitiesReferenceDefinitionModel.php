@@ -22,21 +22,17 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     /**
      * DATA STRUCTURE - VIEW MODEL
      * 
-     * activityRefList = array(id=>ref)
-     * activityDescriptionList = array(id=>description)
-     * functionList = array(idFunction => functionDescription
+     * activityRefList = array(idActivity => ref)
+     * activityDescriptionList = array(idActivity => description)
+     * functionList = array(idActivity => 
+     *                          array(idFunction => functionDescription) first item is function choosen for a given activity
+     *                )
      */
     private $_activityRefList = array();
     
     private $_activityDescriptionList = array();
     
-    protected $_functionsList = array(); 
-    
-    
-    /**
-     *  REFACTOR
-     */
-    public function __construct(){}
+    protected $_functionList = array(); 
     
    
     public function set_activityRefList($_activitiesReferencesList) {
@@ -51,8 +47,9 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $this->_activityDescriptionList[] = $_activityDescriptionList;
     }
 
-    public function set_functionsList($_functionsList) {
-        $this->_functionsList[] = $_functionsList;
+    public function set_functionsList($functionIdVal, $idActivity) {
+        $f = explode('::', $functionIdVal);
+        $this->_functionList[$idActivity] = array($f[0]=>$f[1]);//idFunction=>FunctionDescription
     }
     
     public function get_activityRefList() {
@@ -63,32 +60,8 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         return $this->_activityDescriptionList;
     }
 
-        
-    public function get_functionsList() {
-        return $this->_functionsList;
-    }
-    
-    public function deleteFromId($id) {
-
-    }
-
-    public function deleteFromProperty($property) {
-
-    }
-
-    public function update($property) {
-
-    }
-
-    
-    /**
-     * PRIVATE
-     * 
-     * reset all class's members
-     */
-    public function resetModel(){
-        $this->_activityRefList=array();
-        $this->_functionsList=array();
+    public function get_functionList() {
+        return $this->_functionList;
     }
     
     /**
@@ -101,52 +74,64 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
 
     /**
-     * -PRIVATE
-     * return list functions avalable to view part 
-     */
-    public function getDefinedFunctions(){
-        $functionModel =  new FunctionReferentialDefinitionModel();
-        $functionModel->getAll();
-        return  $functionModel->get_descriptions();
-    }
-    
-    /**
-     * -PRIVATE
-     * Matches needs for view part 
-     */
-    public function updateModelView(){
-        $functionModel =  new FunctionReferentialDefinitionModel();
-        for ($i=0; $i<count($this->_functionsList); $i++) {
-            if(!is_array($this->_functionsList[$i])){
-                $this->_functionsList[$i]=$this->getReorderFunctionList($functionModel->getFunctionIdDbFromDescription($this->_functionsList[$i]));
-            }
-        }
-    }
-    
-    /**
-     * GENERIC ADD
      * Add the last activity from model to database
      */
     public function append() {
         $collection= new DataAccess('Activite');
         $item = new ActiviteObject();
-        $item->act_ref_activite = $this->_activityRefList[count($this->_activityRefList)-1][0];
-        $item->act_descriptif_activite = $this->_activityRefList[count($this->_activityRefList)-1][2];
-        $fid = $this->_activityRefList[count($this->_activityRefList)-1][1];
-
+        $item->act_ref_activite = end($this->_activityRefList);
+        $item->act_descriptif_activite = end($this->_activityDescriptionListList);
+        $function = end($this->_functionList);
+        $item->id_fonction=reset(array_keys($function));
+        $collection->Insert($item);
     }
     
-    
-    
     /**
-     * GENERIC GETALL 
-     * 
      * Fill in model's datas from database
      * 
      */
     public function getAll(){
         $this->resetModel();
+        $collection= new DataAccess('Activite');
+        $all = $collection->GetAll();
+        foreach ($all as $item) {
+            $this->_activityRefList[$item->id_activite] = $item->act_ref_activite;
+            $this->_activityDescriptionList[$item->id_activite] = $item->act_descriptif_activite;
+            $this->_functionList[$item->id_activite] = $this->getReorderFunctionList($item->id_fonction);
+        }
+        
             
+    }
+
+    public function update( $property, $val,$id) {
+        $collection= new DataAccess('Activite');
+        $item = $collection->GetById($id);
+        switch($property){
+            case 'activityRef':
+                $item->act_ref_activite = $val;
+                $this->_activityRefList[$id]=$val;
+                break;
+            case 'activityDescription':
+                $item->act_descriptif_activite = $val;
+                $this->_activityDescriptionList[$id]=$val;
+                break;
+            case 'function':
+                $this->set_functionsList($val, $id);
+                $idFuncAndFuncDesc= explode('::',$val);
+                $item->id_fonction=$idFuncAndFuncDesc[0];
+                break;
+            default :
+                return;
+        }
+        $collection->Update($item);
+    }
+    
+    public function deleteFromId($id) {
+
+    }
+
+    public function deleteFromProperty($property, $val) {
+
     }
     
     /**
@@ -180,58 +165,36 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
     
     /**
-     * UPDATE MODEL 1
+     * PRIVATE
      * 
-     * Update model view and db of description activity 
-     * @param string $value  new value
-     * @param numerical $id id (view side 1,2,3...) of activity
-     * @return int : number of rows updated
+     * reset all class's members
      */
-    public function updateActivityDescription($value, $id){
-       
+    public function resetModel(){
+        $this->_activityRefList=array();
+        $this->_functionList=array();
     }
     
     /**
-     * UPDATE MODEL 2
-     * 
-     * Update model view and db of activity reference
-     * @param string $value  new value
-     * @param numerical $id id (view side 1,2,3...) of activity
-     * @return int : number of rows updated
+     * -PRIVATE
+     * return list functions avalable to view part 
      */
-    public function updateActivityReference($value, $id){
-        
+    public function getDefinedFunctions(){
+        $functionModel =  new FunctionReferentialDefinitionModel();
+        $functionModel->getAll();
+        return  $functionModel->get_descriptions();
     }
     
     /**
-     * UPDATE MODEL 3
-     * 
-     * Update model view and db of activity function
-     * @param string $value  new value
-     * @param numerical $id id (view side 1,2,3...) of activity
-     * @return int : number of rows updated
+     * -PRIVATE
+     * Matches needs for view part 
      */
-    public function updateActivityFunction($value, $id){
- 
-    }
-    
-    /**
-     * GENERIC DELETE 
-     * 
-     * @throws Exception
-     */
-    public function delActivitiesFromDataBase( array $activitiesIdToDelete = null){
-
-    }
-    
-    /**
-     * GENERIC DELETE 
-     * 
-     * Remove an activity from data base
-     * @param integer $id 
-     */
-    public function removeActivityFromIdFromDataBase($id){
-        
+    public function updateModelView(){
+        $functionModel =  new FunctionReferentialDefinitionModel();
+        for ($i=0; $i<count($this->_functionList); $i++) {
+            if(!is_array($this->_functionList[$i])){
+                $this->_functionList[$i]=$this->getReorderFunctionList($functionModel->getFunctionIdDbFromDescription($this->_functionList[$i]));
+            }
+        }
     }
 
 

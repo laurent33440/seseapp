@@ -15,7 +15,7 @@ interface IModel {
     public function addBlank();
     public function append();
     public function getAll();
-    public function update($property);
+    public function update($property, $val, $id);
     public function deleteFromId($id);
     public function deleteFromProperty($property);
     

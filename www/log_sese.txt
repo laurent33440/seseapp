@@ -8829,3 +8829,243 @@
 12-05-2015 12:57:20 - INFO  --> end Class MainRouter 
 12-05-2015 12:57:20 - INFO  --> destruct : Controller\AboutController 
 12-05-2015 12:57:20 - INFO  --> Controller\AboutController saving state controller : About::run-->running 
+17-05-2015 18:08:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+17-05-2015 18:08:32 - INFO  --> Controller\AboutController restoring state controller : About::run-->idle 
+17-05-2015 18:08:32 - INFO  --> Class MainRouter - controller trigged : About::run 
+17-05-2015 18:08:32 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:32 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:32 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:32 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:32 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:32 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:32 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => unknown user
+            [USER_GROUP] => unknown user role
+            [INDEX] => /
+            [REFERENTIAL] => /index.php//referentiel
+            [FUNCTION] => /index.php//fonction
+            [ACTIVITY] => /index.php//activite
+            [SKILL] => /index.php//competence
+            [PROMOTION] => /index.php//promotion
+            [TEACHER] => /index.php//enseignant
+            [TRAINEE] => /index.php//stagiaire
+            [WORK_DATE] => /index.php//stage
+            [PASSWORD] => /index.php//acces
+            [WORK_DEFINITION] => /index.php//stage
+            [WORK_VISIT_DEFINITION] => /index.php//visite
+            [WORK_COMMENT_DEFINITION] => /index.php//commentaire
+            [INTERNAL_CONTACT] => /index.php//contact_interne
+            [TUTOR_LIST] => /index.php//liste_stagiaire
+        )
+
+    [body] => Array
+        (
+            [INDEX] => /
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+17-05-2015 18:08:32 - DEBUG --> View\ViewHandler Model params for builder : View\AboutBuilder => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => unknown user
+            [USER_GROUP] => unknown user role
+            [INDEX] => /
+            [REFERENTIAL] => /index.php//referentiel
+            [FUNCTION] => /index.php//fonction
+            [ACTIVITY] => /index.php//activite
+            [SKILL] => /index.php//competence
+            [PROMOTION] => /index.php//promotion
+            [TEACHER] => /index.php//enseignant
+            [TRAINEE] => /index.php//stagiaire
+            [WORK_DATE] => /index.php//stage
+            [PASSWORD] => /index.php//acces
+            [WORK_DEFINITION] => /index.php//stage
+            [WORK_VISIT_DEFINITION] => /index.php//visite
+            [WORK_COMMENT_DEFINITION] => /index.php//commentaire
+            [INTERNAL_CONTACT] => /index.php//contact_interne
+            [TUTOR_LIST] => /index.php//liste_stagiaire
+        )
+
+    [body] => Array
+        (
+            [INDEX] => /
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+17-05-2015 18:08:32 - INFO  --> end Class MainRouter 
+17-05-2015 18:08:32 - INFO  --> destruct : Controller\AboutController 
+17-05-2015 18:08:32 - INFO  --> Controller\AboutController saving state controller : About::run-->running 
+17-05-2015 18:08:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+17-05-2015 18:08:40 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+17-05-2015 18:08:40 - INFO  --> Class MainRouter - controller trigged : Login::check 
+17-05-2015 18:08:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:40 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+17-05-2015 18:08:40 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+17-05-2015 18:08:40 - INFO  --> end Class MainRouter 
+17-05-2015 18:08:40 - INFO  --> destruct : Controller\LoginController 
+17-05-2015 18:08:40 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+17-05-2015 18:08:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+17-05-2015 18:08:59 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+17-05-2015 18:08:59 - INFO  --> Class MainRouter - controller trigged : Login::check 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-05-2015 18:08:59 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-05-2015 18:08:59 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => true
+            [MODAL_TITLE] => Erreur d'authentification
+            [MODAL_MESSAGE] => Vérifiez votre identifiant et/ou votre mot de passe 
+        )
+
+)
+ 
+17-05-2015 18:08:59 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => true
+            [MODAL_TITLE] => Erreur d'authentification
+            [MODAL_MESSAGE] => Vérifiez votre identifiant et/ou votre mot de passe 
+        )
+
+)
+ 
+17-05-2015 18:08:59 - INFO  --> end Class MainRouter 
+17-05-2015 18:08:59 - INFO  --> destruct : Controller\LoginController 
+17-05-2015 18:08:59 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
