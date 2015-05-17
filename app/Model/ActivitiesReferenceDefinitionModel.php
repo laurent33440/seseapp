@@ -8,7 +8,7 @@
 
 namespace Model;
 
-use IModel;
+//use Model\IModel;
 use Dal\DbLibrary\DataAccess;
 use Dal\ModelDb\Activite\ActiviteObject;
 

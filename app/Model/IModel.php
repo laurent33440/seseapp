@@ -6,6 +6,8 @@
  * and open the template in the editor.
  */
 
+namespace Model;
+
 /**
  *
  * @author laurent
@@ -17,7 +19,7 @@ interface IModel {
     public function getAll();
     public function update($property, $val, $id);
     public function deleteFromId($id);
-    public function deleteFromProperty($property);
+    public function deleteFromProperty($property,$val);
     
    
 }
