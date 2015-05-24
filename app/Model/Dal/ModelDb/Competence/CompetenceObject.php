@@ -18,7 +18,7 @@ class CompetenceObject {
     public $id_competence;
     public $comp_ref_comptetence;
     public $comp_intitule_competence;
-    public $descriptif_competence;
+    public $comp_descriptif_competence;
     public $comp_est_evaluable;
     public $comp_est_evaluee;
     public $comp_niveau_competence;

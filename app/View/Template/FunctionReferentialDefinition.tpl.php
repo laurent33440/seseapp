@@ -25,22 +25,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (form_val_descriptions as $ref => $value) {
+                                <?php foreach (form_val_descriptionList as $idFunc => $value) {
                                     echo"
                                         <tr>
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"foncDesc#$ref\"
-                                                  name=\"form_descriptions#$ref\"
+                                                  id=\"_descriptionList#$idFunc\"
+                                                  name=\"form_descriptions#$idFunc\"
                                                   placeholder=\"Entrez le descriptif de la fonction\"
                                                   value = \"$value\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD_FUNCTION\" id=\"addFunction#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD_FUNCTION\" id=\"addFunction#$idFunc\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"BUTTON_DEL_FUNCTION\" value=\"$ref\" id=\"delFunction#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"BUTTON_DEL_FUNCTION\" value=\"$idFunc\" id=\"delFunction#$idFunc\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>

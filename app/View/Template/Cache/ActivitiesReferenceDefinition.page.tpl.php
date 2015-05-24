@@ -101,12 +101,10 @@
 
 
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h3>Etape de définition des activités liées au référentiel de formation </h3>
         <p>Dans cette étape vous allez définir les activités liées au référentiel de formation et aux fonctions déjà définies.</p>
-        <!--<p><a class="btn btn-primary btn-lg" role="button"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>-->
       </div>
     </div>
 
@@ -130,25 +128,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($this->_arrayParamslist[2] as $idSkill => $skill) {
+                                <?php foreach ($this->_arrayParamslist[0] as $idActivity => $activityRef) {
                                     echo"
                                     <tr>
                                         <td>
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
-                                              id=\"activityReference#$idSkill\"
-                                              name=\"_activitiesReferencesList#$idSkill\"
+                                              id=\"_activityRefList#$idActivity\"
+                                              name=\"form_activitiesReferencesList#$idActivity\"
                                               placeholder=\"Entrez la référence de l'activité\"
-                                              value=\"".$this->_arrayParamslist[0][$idSkill]."\">
+                                              value=\"".$activityRef."\">
                                             </div><!-- /input-group -->
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"_functionsList#$idSkill\" id=\"functionChoosenForActivity#$idSkill\">";
-                                            foreach ($this->_arrayParamslist[1][$idSkill] as $idFunction => $function) {
+                                            <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"_functionList#$idActivity\">";
+                                            foreach ($this->_arrayParamslist[2][$idActivity] as $idFunction => $function) {
                                                 echo"
                                                     <option
-                                                        value=\"$function\">$function
+                                                        value=\"$idFunction#$function\">$function
                                                     </option>
                                                 ";
                                             }
@@ -158,17 +156,17 @@
                                         <td>
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
-                                                id=\"activityDescription#$idSkill\"
-                                                name=\"_activitiesDescriptionsList#$idSkill\"
+                                                id=\"_activityDescriptionList#$idActivity\"
+                                                name=\"form_activitiesDescriptionsList#$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
-                                                value = \"$skill\"
+                                                value = \"".$this->_arrayParamslist[1][$idActivity]."\"
                                                 >
                                                 <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddActivity\" value=\"$idSkill\" id=\"addActivity#$idSkill\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddActivity\" value=\"$idActivity\" id=\"addActivity#$idActivity\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelActivity\" value=\"$idSkill\" id=\"delActivity#$idSkill\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelActivity\" value=\"$idActivity\" id=\"delActivity#$idActivity\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>

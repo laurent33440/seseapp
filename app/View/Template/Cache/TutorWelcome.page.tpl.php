@@ -112,7 +112,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Informations générales - visites programmées -  mardi 28 avril 2015 </h3>
+            <h3 class="panel-title">Informations générales - visites programmées -  mardi 19 mai 2015 </h3>
         </div>
         <div class="panel-body">
             <div class="table-responsive" id="visit_table">
@@ -125,7 +125,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($this->_arrayParamslist[0] as $date => $infos) {
+                                <?php foreach (form_val_visitsInfos as $date => $infos) {
                                     echo"
                                         <tr>
                                             <td> 

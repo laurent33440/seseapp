@@ -8,9 +8,8 @@
 
 namespace Model;
 
-//use Model\IModel;
-use Dal\DbLibrary\DataAccess;
-use Dal\ModelDb\Activite\ActiviteObject;
+use Model\Dal\DbLibrary\DataAccess;
+use Model\Dal\ModelDb\Activite\ActiviteObject;
 
 /**
  * Description of ActivitiesReferenceDefinitionModel
@@ -25,14 +24,14 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
      * activityRefList = array(idActivity => ref)
      * activityDescriptionList = array(idActivity => description)
      * functionList = array(idActivity => 
-     *                          array(idFunction => functionDescription) first item is function choosen for a given activity
+     *                          array(idFunction => functionDescription) //first item is function choosen for a given activity
      *                )
      */
     private $_activityRefList = array();
     
     private $_activityDescriptionList = array();
     
-    protected $_functionList = array(); 
+    private $_functionList = array(); 
     
    
     public function set_activityRefList($_activitiesReferencesList) {
@@ -47,9 +46,13 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $this->_activityDescriptionList[] = $_activityDescriptionList;
     }
 
-    public function set_functionsList($functionIdVal, $idActivity) {
-        $f = explode('::', $functionIdVal);
-        $this->_functionList[$idActivity] = array($f[0]=>$f[1]);//idFunction=>FunctionDescription
+    public function set_functionList($functionIdVal, $idActivity) {
+        if(!is_array($functionIdVal)){
+            $f = explode('#', $functionIdVal); //setter by view
+            $this->_functionList[$idActivity] = array($f[0]=>$f[1]);//idFunction=>FunctionDescription
+        }else{
+            $this->_functionList[$idActivity] = $functionIdVal; // list of functions
+        }
     }
     
     public function get_activityRefList() {
@@ -65,12 +68,20 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
     
     /**
+     * reset all class's members
+     */
+    public function resetModel(){
+        $this->_activityRefList=array();
+        $this->_functionList=array();
+    }
+    
+    /**
      *  GENERIC
      */
     public function addBlank(){
-        $this->set_activitiesReferencesList('');
-        $this->set_functionsList($this->getDefinedFunctions()); //set default function list for future activity
-        $this->set_activitiesDescriptionsList('');
+        $this->set_activityRefList('');
+        $this->set_functionList($this->getDefinedFunctions(),'?idActivity?'); //set default function list for future activity
+        $this->set_activityDescriptionList('');
     }
 
     /**
@@ -107,17 +118,17 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $collection= new DataAccess('Activite');
         $item = $collection->GetById($id);
         switch($property){
-            case 'activityRef':
+            case '_activityRefList':
                 $item->act_ref_activite = $val;
                 $this->_activityRefList[$id]=$val;
                 break;
-            case 'activityDescription':
+            case '_activityDescriptionList':
                 $item->act_descriptif_activite = $val;
                 $this->_activityDescriptionList[$id]=$val;
                 break;
-            case 'function':
-                $this->set_functionsList($val, $id);
-                $idFuncAndFuncDesc= explode('::',$val);
+            case '_functionList':
+                $this->set_functionList($val, $id);
+                $idFuncAndFuncDesc= explode('#',$val);
                 $item->id_fonction=$idFuncAndFuncDesc[0];
                 break;
             default :
@@ -127,11 +138,13 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
     
     public function deleteFromId($id) {
-
+        $collection= new DataAccess('Activite');
+        $item = $collection->GetById($id);
+        $collection->Delete($item);
     }
 
     public function deleteFromProperty($property, $val) {
-
+        //??
     }
     
     /**
@@ -165,23 +178,13 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
     
     /**
-     * PRIVATE
-     * 
-     * reset all class's members
-     */
-    public function resetModel(){
-        $this->_activityRefList=array();
-        $this->_functionList=array();
-    }
-    
-    /**
      * -PRIVATE
      * return list functions avalable to view part 
      */
     public function getDefinedFunctions(){
         $functionModel =  new FunctionReferentialDefinitionModel();
         $functionModel->getAll();
-        return  $functionModel->get_descriptions();
+        return  $functionModel->get_descriptionList();
     }
     
     /**
@@ -197,7 +200,6 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         }
     }
 
-
     /**
      * PRIVATE
      * 
@@ -209,7 +211,7 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         //retrieve function description from id
         $functionModel =  new FunctionReferentialDefinitionModel();
         $functionModel->getAll();
-        $functionList =  $functionModel->get_descriptions();
+        $functionList =  $functionModel->get_descriptionList();
         $functionDesc = $functionModel->getFunctionDescriptionFromIdDb($functionId);
         //remove
         $functionList = array_diff($functionList, array($functionDesc));

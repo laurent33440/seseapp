@@ -16,36 +16,39 @@ use Model\Dal\ModelDb\Fonction\FonctionObject;
  *
  * @author prog
  */
-class FunctionReferentialDefinitionModel extends AModel{
+class FunctionReferentialDefinitionModel extends AModel implements IModel{
     //view
-    private $_descriptions=array();
+    private $_descriptionList=array();
     
-    public function get_descriptions() {
-        return $this->_descriptions;
+    public function get_descriptionList() {
+        return $this->_descriptionList;
     }
     
     // for setter view
-    public function set_descriptions($_description) {
-        $this->_descriptions[] = $_description;
+    public function set_descriptionList($_description) {
+        $this->_descriptionList[] = $_description;
     }
     
+    public function addBlank() {
+        $this->_descriptionList[] ='';
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function resetModel() {
+        $this->_descriptionList=array();
+    }
+
     /**
      * Add last value of model view to 'Fonction' table
      */
-    public function addFunctionToDataBase(){
+    public function append(){
         $collection= new DataAccess('Fonction');
         $f= new FonctionObject();
-        $f->f_description = $this->_descriptions[count($this->_descriptions)-1];
+        $f->f_description = $this->_descriptionList[count($this->_descriptionList)-1];
         $collection->Insert($f);
-    }
-    
-    /**
-     * 
-     */
-    public function delFunctionFromDataBase($id){
-        $collection= new DataAccess('Fonction');
-        $f =$collection->GetByID($id);
-        $collection->Delete($f);
     }
     
     /**
@@ -53,13 +56,37 @@ class FunctionReferentialDefinitionModel extends AModel{
      * 
      */
     public function getAll(){
-        $this->_descriptions=array();
+        $this->resetModel();
         $collection= new DataAccess('Fonction');
         $funcs = $collection->GetAll();
         foreach($funcs as $func){
-            $this->_descriptions[$func->id_fonction] = $func->f_description;
+            $this->_descriptionList[$func->id_fonction] = $func->f_description;
         }    
     }
+    
+    /**
+     * 
+     * @param array $func
+     */
+    public function update($property, $val, $id){
+        if($property==='_descriptionList'){
+            $collection = new DataAccess('Fonction');
+            $f = $collection->GetByID($id);
+            $f->f_description = $val;
+            $collection->Update($f);
+            $this->_descriptionList[$id]=$val;
+        }
+    }
+    
+    /**
+     * 
+     */
+    public function deleteFromId($id){
+        $collection= new DataAccess('Fonction');
+        $f =$collection->GetByID($id);
+        $collection->Delete($f);
+    }
+    
     
     /**
      * 
@@ -83,18 +110,9 @@ class FunctionReferentialDefinitionModel extends AModel{
         return $f->id_fonction;
     }
 
-    /**
-     * 
-     * @param array $func
-     */
-    public function updateFunctionInDataBase(array $func){
-        $collection = new DataAccess('Fonction');
-        $f = $collection->GetByID($func['id']);
-        $f->f_description = $func['value'];
-        $collection->Update($f);
-    }
     
     /**
+     * PRIVATE
      * Erase empty and blank values from array - keep ordering key 
      * @param array $a : array to clean
      * @return array 

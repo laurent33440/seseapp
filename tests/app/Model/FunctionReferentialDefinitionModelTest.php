@@ -43,7 +43,7 @@ class FunctionReferentialDefinitionModelTest extends PHPUnit_Framework_TestCase 
             $this->object->set_descriptions($val);
         }
         var_dump($this->object->get_descriptions());
-        $this->object->addFunctionToDataBase();
+        $this->object->append();
         //see database
         $this->assertEquals(true, true);
         return $vals;

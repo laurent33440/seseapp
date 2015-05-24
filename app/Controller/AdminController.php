@@ -103,7 +103,7 @@ class AdminController extends AControllerState{
     
     public function buildSendView(){
         //get values from model
-        $this->_model->getReferentialFromDataBase();
+        $this->_model->getAll();
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
         $formArray['INDEX'] = $this->_index.'/referentiel';
@@ -116,7 +116,7 @@ class AdminController extends AControllerState{
         $varsModel = $this->_model->getClassVars();
         $params = $this->findAllParamsFromForm($datas, $varsModel);
         $this->_model->setClassVarsValues($params);
-        $this->_model->createReferential();
+        $this->_model->append();
     }
 
 
@@ -128,7 +128,7 @@ class AdminController extends AControllerState{
             switch ($this->_state){
                 case self::IDLE :
                     $this->_model->getAll();
-                    $this->_model->set_descriptions('');//force new input on form
+                    $this->_model->addBlank();;//force new input on form
                     $this->buildSendViewFunctionDefinition();
                     $this->_state = self::RUNNING;
                     break;
@@ -137,7 +137,7 @@ class AdminController extends AControllerState{
                         if(!$this->_request->isXmlHttpRequest()){ 
                             if($this->computeFonctionDefinition($this->_request->request->all()) === true){
                                 $this->_model->getAll();
-                                $this->_model->set_descriptions('');//add new input on form
+                                $this->_model->addBlank();;//add new input on form
                                 $this->buildSendViewFunctionDefinition();
                             }else{
                                 $this->_state = self::STOPPED;
@@ -149,13 +149,13 @@ class AdminController extends AControllerState{
                         } 
                     }else{//direct url access
                         $this->_model->getAll();
-                        $this->_model->set_descriptions('');//add new input on form
+                        $this->_model->addBlank();//add new input on form
                         $this->buildSendViewFunctionDefinition();
                     }
                     break;
                 case self::STOPPED:
                     $this->_model->getAll(); // retrieve datas 
-                    $this->_model->set_descriptions('');//force new input on form
+                    $this->_model->addBlank();//force new input on form
                     $this->buildSendViewFunctionDefinition();
                     $this->_state = self::RUNNING;
                     break;
@@ -207,12 +207,12 @@ class AdminController extends AControllerState{
                 $this->_model->setClassVarsValues($model);
                 Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
             }
-            $this->_model->addFunctionToDataBase();
+            $this->_model->append();
             return true;
         }else{
             if(array_key_exists($this->_BUTTONS_FUNCTIONS['BUTTON_DEL_FUNCTION'], $datas)){ //del button
                 $id = $datas[$this->_BUTTONS_FUNCTIONS['BUTTON_DEL_FUNCTION']];
-                $this->_model->delFunctionFromDataBase($id); 
+                $this->_model->deleteFromId($id); 
                 return true;
             }else{ //main submit all done
                 return false;
@@ -223,16 +223,19 @@ class AdminController extends AControllerState{
     /**
      * -update value from AJAX event
      * @param array $datas
+     *      AJAX_ID = propertyName#Id_Or_Key_for_this_property
+     *      AJAX_VAL = value to be updated
      * @return boolean
      */
     public function computeXmlHttpRequestFunctionDefinition(array $datas){
         if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
-            $id = $datas['AJAX_ID'];
+            $params = $datas['AJAX_ID'];
             $val = $datas['AJAX_VAL'];
-            Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> id : '.$id.' val : '.$val);
-            $id = explode('#',$id);
-            $id= $id[1];
-            $this->_model->updateFunctionInDataBase(array('id'=>$id, 'value'=>$val) );
+            $params = explode('#',$params);
+            $property=$params[0];
+            $id= $params[1];
+            Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> property : '.$property.' val : '.$val.'  id : '.$id);
+            $this->_model->update($property, $val, $id);
             return true;
         }
     }
@@ -403,7 +406,7 @@ class AdminController extends AControllerState{
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
                         if(!$this->_request->isXmlHttpRequest()){ 
-                            $this->_model->getSkillsFromDataBase();//restore model for processing
+                            $this->_model->getAll();//restore model for processing
                             if($this->computeSkill($this->_request->request->all()) === true){ //continue processing 
                                 $this->_model->addBlank();//force new input on form 
                                 $this->buildViewSkillDefinition();
@@ -421,14 +424,14 @@ class AdminController extends AControllerState{
                             $this->computeXmlHttpRequest($this->_request->request->all());
                         }     
                     }else{// direct url access
-                        $this->_model->getSkillsFromDataBase();//restore model
+                        $this->_model->getAll();//restore model
                         $this->_model->addBlank();//force new input on form
                         $this->buildViewSkillDefinition();
                         $this->sendModelView('SkillsReferenceDefinition');
                     }
                     break;
                 case self::STOPPED:
-                    $this->_model->getSkillsFromDataBase();//restore model
+                    $this->_model->getAll();//restore model
                     $this->_model->addBlank();//force new input on form
                     $this->buildViewSkillDefinition();
                     $this->sendModelView('SkillsReferenceDefinition');
@@ -488,7 +491,7 @@ class AdminController extends AControllerState{
                 \Logger::getInstance()->logDebug(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
                 $this->_model->setClassVarsValues($model);
                 \Logger::getInstance()->logDebug(__CLASS__.'-- Members model AFTER ADD: --'.print_r($this->_model->getMembersModel(), true));
-                $this->_model->addSkillToDataBase();
+                $this->_model->append();
                 return true;
                 break;
             case $this->_BUTTONS_SKILLS['BUTTON_BIND_ACTIVITY'] : 
@@ -512,7 +515,7 @@ class AdminController extends AControllerState{
                 break;
             case $this->_BUTTONS_SKILLS['BUTTON_DEL_SKILL'] : 
                 $skillId = $datas[$this->_BUTTONS_SKILLS['BUTTON_DEL_SKILL']];
-                $this->_model->deleteSkill($skillId);
+                $this->_model->deleteFromId($skillId);
                 return true;
                 break;
             default : //submit form, all done

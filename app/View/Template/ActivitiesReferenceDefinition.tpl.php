@@ -33,7 +33,7 @@
                                         <td>
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
-                                              id=\"activityRef#$idActivity\"
+                                              id=\"_activityRefList#$idActivity\"
                                               name=\"form_activitiesReferencesList#$idActivity\"
                                               placeholder=\"Entrez la référence de l'activité\"
                                               value=\"".$activityRef."\">
@@ -41,11 +41,11 @@
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"function#$idActivity\">";
+                                            <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach (form_val_functionList[$idActivity] as $idFunction => $function) {
                                                 echo"
                                                     <option
-                                                        value=\"$idFunction::$function\">$function
+                                                        value=\"$idFunction#$function\">$function
                                                     </option>
                                                 ";
                                             }
@@ -55,7 +55,7 @@
                                         <td>
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
-                                                id=\"activityDescription#$idActivity\"
+                                                id=\"_activityDescriptionList#$idActivity\"
                                                 name=\"form_activitiesDescriptionsList#$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
                                                 value = \"".form_val_activityDescriptionList[$idActivity]."\"

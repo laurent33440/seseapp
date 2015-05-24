@@ -102,8 +102,7 @@ class DataAccess{
         $sth->execute();
         //Récupération des lignes
         $result = $sth->fetchAll();
-        foreach($result as $row)
-        { 
+        foreach($result as $row){ 
             //Ajout à la collection après le mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
@@ -123,8 +122,7 @@ class DataAccess{
         //On récupère le résultat
         $result = $sth->fetchAll();
         //S’il ya quelque chose
-        if (isset($result[0]))
-        {
+        if (isset($result[0])){
             //Création de l’objet et mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
@@ -146,8 +144,7 @@ class DataAccess{
         //On récupère le résultat
         $result = $sth->fetchAll();
         //S’il ya quelque chose
-        if (isset($result[0]))
-        {
+        if (isset($result[0])){
             //Création de l’objet et mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
@@ -169,8 +166,7 @@ class DataAccess{
         //On récupère le résultat
         $result = $sth->fetchAll();
         //S’il ya quelque chose
-        if (isset($result[0]))
-        {
+        if (isset($result[0])){
             //Création de l’objet et mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;

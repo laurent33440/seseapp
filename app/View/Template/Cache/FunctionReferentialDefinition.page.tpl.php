@@ -126,22 +126,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($this->_arrayParamslist[0] as $ref => $value) {
+                                <?php foreach ($this->_arrayParamslist[0] as $idFunc => $value) {
                                     echo"
                                         <tr>
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"foncDesc#$ref\"
-                                                  name=\"_descriptions#$ref\"
+                                                  id=\"_descriptionList#$idFunc\"
+                                                  name=\"form_descriptions#$idFunc\"
                                                   placeholder=\"Entrez le descriptif de la fonction\"
                                                   value = \"$value\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddFunction\" id=\"addFunction#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddFunction\" id=\"addFunction#$idFunc\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelFunction\" value=\"$ref\" id=\"delFunction#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelFunction\" value=\"$idFunc\" id=\"delFunction#$idFunc\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>

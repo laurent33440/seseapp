@@ -8,45 +8,50 @@
 
 namespace Model;
 
+use Model\Dal\DbLibrary\DataAccess;
+use Model\Dal\ModelDb\Competence\CompetenceObject;
+use Model\Dal\ModelDb\Constituer\ConstituerObject;
+
 /**
  * Description of SkillsReferenceDefinitionModel
  *
  * @author laurent
  */
-class SkillsReferenceDefinitionModel extends AModel{
+class SkillsReferenceDefinitionModel extends AModel implements IModel{
     const SKILL_LEVEL = 10; // max skill level
     const AUTONOMY_LEVEL = 10; // max autonomy level
     
     /** Acts at two side  :
-     * 1) As reference counter for skills count.
-     * 2) holds references for skills
-     * @var array
+     * array(idSkill => skillReference)
      */
     private $_skillsReferencesList = array();
     
     /**
      * Holds list of avalable activities
-     * @var array 
+     * array(idActivity => ActivityDescription)
      * 
      */
     private $_activitiesList; 
     
     /**
      * Holds list of lists of activities binded to a skill
-     * @var array 
+     * array(idSkill => array(
+     *                          idActivity=> ActivityDescription
+     *                  )
+     * )
      */
     private $_bindedActivitiesLists = array(); 
     
     /**
      * List of descriptions for each skill
-     * @var array
+     * array(idSkill => skillDescription)
      */
     private $_skillsDescriptionsList = array();
     
     /**
      * Model use for skill definition
      * @var ActivitiesReferenceDefinitionModel
-     * This member is protected because it isn't binded in table model of data base
+     * This member is protected because it isn't binded to view template
      */
     protected $_activitiesModel;
     
@@ -55,9 +60,6 @@ class SkillsReferenceDefinitionModel extends AModel{
      */
     public function __construct(){
         try{
-            //connect to database 
-            $accessDb = new AccessDataBase();
-            $this->_dataBaseHandler = $accessDb->connectToDataBaseDefined();
             $this->_activitiesModel =  new ActivitiesReferenceDefinitionModel();
             $this->set_activitiesList($this->getDefinedActivities());
         }catch (Exception $e){
@@ -78,8 +80,14 @@ class SkillsReferenceDefinitionModel extends AModel{
         $this->_activitiesList = $_activitiesList;
     }
     
+    /**
+     * 
+     * @param type $bindedActivity : activity name to bind
+     * @param type $skillId : skill Id hosting binding  
+     * @param int $activityId : optional activity id
+     */
     public function set_bindedActivitiesLists($bindedActivity, $skillId=0, $activityId=null){
-        if(!empty($this->_bindedActivitiesLists[$skillId])){
+        if(!empty($this->_bindedActivitiesLists[$skillId])){// binding exist ?
             if(!in_array($bindedActivity, $this->_bindedActivitiesLists[$skillId])){ //activity already binded?
                 if(!isset($activityId)){
                     $this->_bindedActivitiesLists[$skillId][]=$bindedActivity;// add at bottom of list
@@ -125,90 +133,116 @@ class SkillsReferenceDefinitionModel extends AModel{
     public function get_skillsDescriptionsList() {
         return $this->_skillsDescriptionsList;
     }
+
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function resetModel() {
+        $this->_skillsReferencesList = array();
+        $this->_skillsDescriptionsList= array();
+        $this->_bindedActivitiesLists= array();
+        $this->_activitiesList=array();
+    }
+
+    public function update($property, $val, $id) {
+        
+    }
+
     
     /**
      * return list of activities description available to view part
      */
     public function getDefinedActivities(){
         $this->_activitiesModel->getAll();
-        return  $this->_activitiesModel->get_activitiesDescriptionsList();
+        return  $this->_activitiesModel->get_activityDescriptionList();
     }
     
     /**
      * 
      */
-    public function addBlankToModel(){
+    public function addBlank(){
         $this->set_skillsReferencesList('');
-        $this->set_bindedActivitiesLists($this->_activitiesList[0], count($this->_skillsReferencesList)-1);
+        $this->set_bindedActivitiesLists(reset($this->_activitiesList), count($this->_bindedActivitiesLists));
         $this->set_skillsDescriptionsList('');
     }
     
     /**
      * Add last skill of model to data base
-     * @return integer data base id of skill added
+     * 
      */
-    public function addSkillToDataBase(){
-        $idSkill = $this->_dataBaseHandler->dbQI(array( 'comp_ref_competence'=> $this->_skillsReferencesList[count($this->_skillsReferencesList)-1], 
-                                            'comp_descriptif_competence' => $this->_skillsDescriptionsList[count($this->_skillsDescriptionsList)-1],
-                                            'comp_est_evaluable' => true,
-                                            'comp_est_evaluee' => false,
-                                            'comp_niveau_competence' => self::SKILL_LEVEL,
-                                            'comp_niveau_autonomie' => self::AUTONOMY_LEVEL
-                                            ), 
-                                    'Competence');
+    public function append(){
+        $collection = new DataAccess('Competence');
+        $item = new CompetenceObject();
+        $item->comp_ref_comptetence= end($this->_skillsReferencesList[]);
+        $item->comp_descriptif_competence = end($this->_skillsDescriptionsList[]);
+        $item->comp_est_evaluable = true;
+        $item->comp_est_evaluee = false;
+        $item->comp_niveau_competence = self::SKILL_LEVEL;
+        $item->comp_niveau_autonomie = self::AUTONOMY_LEVEL;
+        $collection->Insert($item);
         // add entries to table 'Constituer'
-        foreach ($this->_bindedActivitiesLists[count($this->_skillsReferencesList)-1] as $activityDescription){ 
-            $id = $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $this->_activitiesModel->getActivityIdFromActivityDescription($activityDescription), 
-                                                        'id_competence' => $idSkill), 
-                                            'Constituer');
+        $links= new DataAccess('Constituer');
+        foreach (end($this->_bindedActivitiesLists[]) as $idActivity => $activityDescription){ 
+            $aLink = new ConstituerObject();
+            $aLink->id_activite = $idActivity;
+            $aLink->id_competence = $item->id_competence;
+            $links->Insert($aLink);
         }
-        return $idSkill;
+        
+//        $idSkill = $this->_dataBaseHandler->dbQI(array( 'comp_ref_competence'=> $this->_skillsReferencesList[count($this->_skillsReferencesList)-1], 
+//                                            'comp_descriptif_competence' => $this->_skillsDescriptionsList[count($this->_skillsDescriptionsList)-1],
+//                                            'comp_est_evaluable' => true,
+//                                            'comp_est_evaluee' => false,
+//                                            'comp_niveau_competence' => self::SKILL_LEVEL,
+//                                            'comp_niveau_autonomie' => self::AUTONOMY_LEVEL
+//                                            ), 
+//                                    'Competence');
+//        // add entries to table 'Constituer'
+//        foreach ($this->_bindedActivitiesLists[count($this->_skillsReferencesList)-1] as $activityDescription){ 
+//            $id = $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $this->_activitiesModel->getActivityIdFromActivityDescription($activityDescription), 
+//                                                        'id_competence' => $idSkill), 
+//                                            'Constituer');
+//        }
     }
     
     /**
      * Fill in model's datas from database
      * 
      */
-    public function getSkillsFromDataBase(){
-        $this->_skillsReferencesList = array();
-        $this->_skillsDescriptionsList= array();
-        $this->_bindedActivitiesLists= array();
-        $this->_activitiesList=array();
+    public function getAll(){
+        $this->resetModel();
         $this->set_activitiesList($this->getDefinedActivities());
-        $skills = $this->_dataBaseHandler->dbQS('Competence');
-        //fill
-        $i=0;
-        foreach($skills as $skill){
-                $this->set_skillsReferencesList($skill['comp_ref_competence']);
-                $this->set_skillsDescriptionsList($skill['comp_descriptif_competence']);
-                //get all activities for this skill
-                $idSkill = $skill['id_competence'];
-                $activitiesId = $this->_dataBaseHandler->dbQS('Constituer', array('id_activite'), "id_competence = '$idSkill'");
-                foreach ($activitiesId as  $id) {
-                    //$this->set_bindedActivitiesLists($this->_activitiesModel->getActivityDescriptionFromActivityId($id['id_activite']),$i,$id['id_activite']); // id activity comes from data base - see future use
-                    $this->set_bindedActivitiesLists($this->_activitiesModel->getActivityDescriptionFromActivityId($id['id_activite']),$i); // id activity is an index of array
-                }
-                $i++;
-        }   
-    }
-    
-    /**
-     * Update model's skill to data base
-     * @param integer $skillId skill id to update to data base
-     * @return boolean true if update ok false else
-     */
-    public function updateSkill($skillId=0){
-        if(isset($this->_skillsReferencesList[$skillId])){
-            $id = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
-            $updateCount = $this->_dataBaseHandler->dbQU('Competence',
-                                                        array( 'comp_ref_competence'=> $this->_skillsReferencesList[$skillId], 
-                                                        'comp_descriptif_competence' => $this->_skillsDescriptionsList[$skillId]),
-                                                        "id_competence = '$id'"
-                                                    );
-            return ($updateCount===1);
-        }else{
-            return false;
+        $collection = new DataAccess('Competence');
+        $all = $collection->GetAll();
+        foreach($all as $skill){
+            $this->_skillsReferencesList[$skill->id_competence] = $skill->comp_ref_competence;
+            $this->_skillsDescriptionsList[$skill->id_competence] = $skill->comp_descriptif_competence;
+            //get all activities for this skill
+            $links = new DataAccess('Constituer');
+            $links->GetAllByColumnValue('id_competence', $skill->id_competence);
+            foreach($links as  $link){
+                $this->set_bindedActivitiesLists($this->_activitiesList[$link->id_activite],$skill->id_competence, $link->id_activite);
+            }
         }
+        
+        
+//        $skills = $this->_dataBaseHandler->dbQS('Competence');
+//        //fill
+//        $i=0;
+//        foreach($skills as $skill){
+//                $this->set_skillsReferencesList($skill['comp_ref_competence']);
+//                $this->set_skillsDescriptionsList($skill['comp_descriptif_competence']);
+//                //get all activities for this skill
+//                $idSkill = $skill['id_competence'];
+//                $activitiesId = $this->_dataBaseHandler->dbQS('Constituer', array('id_activite'), "id_competence = '$idSkill'");
+//                foreach ($activitiesId as  $id) {
+//                    //$this->set_bindedActivitiesLists($this->_activitiesModel->getActivityDescriptionFromActivityId($id['id_activite']),$i,$id['id_activite']); // id activity comes from data base - see future use
+//                    $this->set_bindedActivitiesLists($this->_activitiesModel->getActivityDescriptionFromActivityId($id['id_activite']),$i); // id activity is an index of array
+//                }
+//                $i++;
+//        }   
     }
     
     /**
@@ -216,7 +250,7 @@ class SkillsReferenceDefinitionModel extends AModel{
      * @param type $skillId
      * @return boolean
      */
-    public function deleteSkill($skillId=0){
+    public function deleteFromId($skillId=0){
         if(isset($this->_skillsReferencesList[$skillId])){
             //db
             $id = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
@@ -235,6 +269,7 @@ class SkillsReferenceDefinitionModel extends AModel{
 
 
     /**
+     * PRIVATE
      * "SELECT id_competence FROM `Competence` WHERE comp_ref_competence = \'some ref\'";
      * @param type $skillReference
      */
@@ -245,31 +280,6 @@ class SkillsReferenceDefinitionModel extends AModel{
                 return $id['id_competence'];
         else
             return false;
-    }
-    
-    /**
-     * NOT USED
-     * @param type $skillId
-     * @param type $activityDescription
-     * @return boolean false if wrong parameters, true else
-     */
-    public function bindActivityToSkill($skillId, $activityDescription){
-//        var_dump(in_array($activityDescription, $this->_activitiesList));
-//        var_dump(isset($this->_skillsReferencesList[$skillId]));
-        if(in_array($activityDescription, $this->_activitiesList) && isset($this->_skillsReferencesList[$skillId])){
-            if(!in_array($activityDescription, array_values($this->_bindedActivitiesLists[$skillId]))){ //activity already binded?
-                //db
-                $skillIdDb = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
-                $activityId = $this->_activitiesModel->getActivityIdFromActivityDescription($activityDescription);
-                $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $activityId, 
-                                                      'id_competence' => $skillIdDb), 
-                                                      'Constituer'); // last insert id is 0 with primary composite keys (mySql) 
-                //view
-                $this->set_bindedActivitiesLists($activityDescription, $skillId, $activityId );// activityId comes from data base FIXME : keep it or change it ?
-                return true;
-            }
-        }
-        return false;
     }
     
     /**
