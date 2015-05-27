@@ -9,11 +9,10 @@
 namespace Model;
 
 /**
- *
+ * generic methods model view (Form) <--> data base  
  * @author laurent
  */
 interface IModel {
-    //generic methods model view (Form) <--> data base  
     public function resetModel();
     public function addBlank();
     public function append();
