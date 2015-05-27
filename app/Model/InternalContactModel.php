@@ -79,11 +79,11 @@ class InternalContactModel extends AModel{
          Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.'  emailto :'.print_r($this->emailTo, true));
         //check mail to : FIXME useless
         $collection = new DataAccess('Enseignant');
-        if(!$collection->GetAllByColumnValue('ens_mel_enseignant', $this->emailTo)){
+        if(count($collection->GetAllByColumnValue('ens_mel_enseignant', $this->emailTo))==0){
             $collection = new DataAccess('Stagiaire');
-            if(!$collection->GetByColumnValue('sta_mel_stagiaire', $this->emailTo)){
+            if(count($collection->GetByColumnValue('sta_mel_stagiaire', $this->emailTo))==0){
                 $collection = new DataAccess('Collaborateur');
-                if(!$collection->GetByColumnValue('col_mel', $this->emailTo)){
+                if(count($collection->GetByColumnValue('col_mel', $this->emailTo))==0){
                     return false;
                 }
             }

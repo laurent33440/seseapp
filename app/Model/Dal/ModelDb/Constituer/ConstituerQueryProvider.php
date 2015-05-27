@@ -18,7 +18,7 @@ use Model\Dal\DbLibrary\IQueryProvider;
 class ConstituerQueryProvider implements IQueryProvider{
     
     static function InsertQuery(){
-        return "Insert into Competence (
+        return "Insert into Constituer (
                                         id_activite,
                                         id_competence
                                          )
@@ -30,29 +30,29 @@ class ConstituerQueryProvider implements IQueryProvider{
     }
 
     static function SelectByIDQuery(){
-        return "Select * from Competence where id_activite=:id_activite AND id_competence=:id_competence";
+        return "Select * from Constituer where id_activite=:id_activite AND id_competence=:id_competence";
     }
 
     static function SelectByValueQuery($column){
-        return "Select * from Competence where $column=:$column";
+        return "Select * from Constituer where $column=:$column";
     }
 
     static function SelectAllQuery(){
-        return "Select * from Competence";
+        return "Select * from Constituer";
     }
 
     static function SelectIDQuery(){
-        return "Select max(id_activite) from Competence";
+        return "Select max(id_activite) from Constituer";
     }
 
     static function UpdateQuery(){
-        return "update Competence set    
+        return "update Constituer set    
                                         id_activite=:id_activite,
                                         id_competence=:id_competence
                                     where id_activite=:id_activite AND id_competence=:id_competence";
     }
 
     static function DeleteQuery(){
-        return "delete from Competence where id_activite=:id_activite AND id_competence=:id_competence";
+        return "delete from Constituer where id_activite=:id_activite AND id_competence=:id_competence";
     }
 }

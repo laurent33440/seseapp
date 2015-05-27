@@ -76,21 +76,6 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
 //        }
 //    }
 
-
-    /**
-     * @depends testGetDefinedActivities
-     */
-    public function testAddBlankToModel() {
-        $a = $this->object->addBlank();
-        $exp = array('Mon activit&eacute; test test test -- ligne (0)',
-            'Mon activit&eacute; test test test -- ligne (1)',
-            'Mon activit&eacute; test test test -- ligne (2)',
-            'Mon activit&eacute; test test test -- ligne (3)',
-            'Mon activit&eacute; test test test -- ligne (4)'
-        );
-        $this->assertEquals($exp, $this->object->get_activitiesList());
-    }
-
     public function testSet_bindedActivitiesLists() {
         $a11 = 'activity 1 binded to skill 1';
         $a21 = 'activity 2 binded to skill 1';
@@ -241,16 +226,118 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(array(array('activity 1 binded to skill 0', 4 => 'activity 3 binded to skill 0'), array(2 => 'activity 2 binded to skill 1', 3 => 'activity 3 binded to skill 1'), array(1 => 'activity 1 binded to skill 2', 0 => 'activity 2 binded to skill 2')), $this->object->get_bindedActivitiesLists());
         $this->assertEquals(array('my foo skill 1', 'my foo skill 2', 'my foo skill 3'), $this->object->get_skillsDescriptionsList());
     }
-
+    
+    
     ////////////////////////////////////////////////////////////////////////////CRUD tests 
 
-    public function testGetDefinedActivities() {
+    public function testgetDefinedActivities() {
         $a = $this->object->getDefinedActivities();
         foreach ($a as $key => $val) {
             $this->assertGreaterThanOrEqual(0, $key);
             $this->assertStringMatchesFormat('%s', $val);
         }
     }
+    
+    /**
+     * @depends testgetDefinedActivities
+     */
+    public function testaddBlank(){
+        $this->object->addBlank();
+        $this->assertEquals(array(''),$this->object->get_skillsReferencesList());
+        $this->assertEquals(array(''),$this->object->get_skillsDescriptionsList());
+        $list = end($this->object->get_bindedActivitiesLists());
+        $this->assertStringMatchesFormat('%s',reset($list));
+    }
+    
+    /**
+     * @depends testgetDefinedActivities
+     */
+    public function testgetAll(){
+        $this->object->getAll();
+        $a1 = $this->object->get_skillsReferencesList();
+        foreach ($a1 as $key => $val) {
+            $this->assertGreaterThanOrEqual(0, $key);
+            $this->assertStringMatchesFormat('%s', $val);
+        }
+        $a2 = $this->object->get_skillsDescriptionsList();
+        foreach ($a2 as $key => $val) {
+            $this->assertGreaterThanOrEqual(0, $key);
+            $this->assertStringMatchesFormat('%s', $val);
+        }
+        $a3 = $this->object->get_bindedActivitiesLists();
+        foreach ($a3 as $keySkill=>$arr) {
+            $this->assertArrayHasKey($keySkill, $a1);
+            $this->assertArrayHasKey($keySkill, $a2);
+            foreach ($arr as $key => $val) {
+                $this->assertGreaterThanOrEqual(0, $key);
+                $this->assertStringMatchesFormat('%s', $val);
+            }
+        }
+    }
+
+
+    /**
+     * @depends testgetAll
+     */
+    public function testappend(){
+        $this->object->set_skillsReferencesList('C99');
+        $this->object->set_skillsDescriptionsList('new skill');
+        //bind last(for example) activity to new skill
+        $this->object->set_bindedActivitiesLists(end($this->object->get_activitiesList()),null, end(array_keys($this->object->get_activitiesList())));//activity, id skill=null, id activity
+        $this->object->append();
+        $this->object->getAll();
+        $this->assertEquals('C99', end($this->object->get_skillsReferencesList()));
+        $this->assertEquals('new skill', end($this->object->get_skillsDescriptionsList()));
+        $ba_t =$this->object->get_bindedActivitiesLists();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $k  =$t['C99'];
+        $la_t = $ba_t[$k];
+        $this->assertEquals(1, count($la_t));
+        $this->assertEquals(end($this->object->get_activitiesList()), $la_t[end(array_keys($this->object->get_activitiesList()))]);
+    }
+    
+    /**
+     * @depends testappend
+     * @depends testgetAll
+     */
+    public function testdeleteFromId(){
+        $this->object->set_skillsReferencesList('C100');
+        $this->object->set_skillsDescriptionsList('new skill to delete');
+        //bind last(for example) activity to new skill
+        $this->object->set_bindedActivitiesLists(end($this->object->get_activitiesList()),null, end(array_keys($this->object->get_activitiesList())));//activity, id skill=null, id activity
+        $this->object->append();
+        $this->object->getAll();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $k  =$t['C100'];
+        $this->assertTrue($this->object->deleteFromId($k));
+        $this->assertNotEquals('C100', end($this->object->get_skillsReferencesList()));
+        $this->assertNotEquals('new skill to delete', end($this->object->get_skillsDescriptionsList()));
+        $this->assertFalse($this->object->deleteFromId(100000));//unknown id 
+    }
+    
+    /**
+     * @depends testappend
+     * @depends testgetAll
+     */
+    public function testbindActivityToSkill(){
+        $this->object->set_skillsReferencesList('C200_binding');
+        $this->object->set_skillsDescriptionsList('new skill to bind');
+        //bind last activity
+        $this->object->set_bindedActivitiesLists(end($this->object->get_activitiesList()),null, end(array_keys($this->object->get_activitiesList())));//activity, id skill=null, id activity
+        $this->object->append();
+        $this->object->getAll();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $ks  =$t['C200_binding'];
+        $t = array_flip($this->object->get_activitiesList());
+        $ka = reset($t);//first activity key
+        $this->object->bindActivityToSkill($ks, $ka);//bind first activity
+        $this->object->getAll();
+        $bt = $this->object->get_bindedActivitiesLists();
+        $at = $bt[$ks];
+        $this->assertEquals(reset($this->object->get_activitiesList()),$at[$ka]);
+        
+    }
+    
 
   
 }

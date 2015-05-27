@@ -82,16 +82,16 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     
     /**
      * 
-     * @param type $bindedActivity : activity name to bind
+     * @param type $bindedActivity : activity description to bind
      * @param type $skillId : skill Id hosting binding  
      * @param int $activityId : optional activity id
      */
     public function set_bindedActivitiesLists($bindedActivity, $skillId=0, $activityId=null){
-        if(!empty($this->_bindedActivitiesLists[$skillId])){// binding exist ?
-            if(!in_array($bindedActivity, $this->_bindedActivitiesLists[$skillId])){ //activity already binded?
+        if(!empty($this->_bindedActivitiesLists[$skillId])){// some binding exist ?
+            if(!in_array($bindedActivity, $this->_bindedActivitiesLists[$skillId])){ //activity not already binded?
                 if(!isset($activityId)){
                     $this->_bindedActivitiesLists[$skillId][]=$bindedActivity;// add at bottom of list
-                }else{
+                }else{//update
                     $this->_bindedActivitiesLists[$skillId][$activityId]=$bindedActivity;
                 }
             }
@@ -143,7 +143,7 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
         $this->_skillsReferencesList = array();
         $this->_skillsDescriptionsList= array();
         $this->_bindedActivitiesLists= array();
-        $this->_activitiesList=array();
+        $this->_activitiesList=  $this->getDefinedActivities();
     }
 
     public function update($property, $val, $id) {
@@ -175,8 +175,9 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     public function append(){
         $collection = new DataAccess('Competence');
         $item = new CompetenceObject();
-        $item->comp_ref_comptetence= end($this->_skillsReferencesList[]);
-        $item->comp_descriptif_competence = end($this->_skillsDescriptionsList[]);
+        //var_dump($this->_skillsReferencesList);
+        $item->comp_ref_competence= end($this->_skillsReferencesList);
+        $item->comp_descriptif_competence = end($this->_skillsDescriptionsList);
         $item->comp_est_evaluable = true;
         $item->comp_est_evaluee = false;
         $item->comp_niveau_competence = self::SKILL_LEVEL;
@@ -184,27 +185,13 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
         $collection->Insert($item);
         // add entries to table 'Constituer'
         $links= new DataAccess('Constituer');
-        foreach (end($this->_bindedActivitiesLists[]) as $idActivity => $activityDescription){ 
+        foreach (end($this->_bindedActivitiesLists) as $idActivity => $activityDescription){ 
             $aLink = new ConstituerObject();
             $aLink->id_activite = $idActivity;
             $aLink->id_competence = $item->id_competence;
+            //var_dump($aLink);
             $links->Insert($aLink);
         }
-        
-//        $idSkill = $this->_dataBaseHandler->dbQI(array( 'comp_ref_competence'=> $this->_skillsReferencesList[count($this->_skillsReferencesList)-1], 
-//                                            'comp_descriptif_competence' => $this->_skillsDescriptionsList[count($this->_skillsDescriptionsList)-1],
-//                                            'comp_est_evaluable' => true,
-//                                            'comp_est_evaluee' => false,
-//                                            'comp_niveau_competence' => self::SKILL_LEVEL,
-//                                            'comp_niveau_autonomie' => self::AUTONOMY_LEVEL
-//                                            ), 
-//                                    'Competence');
-//        // add entries to table 'Constituer'
-//        foreach ($this->_bindedActivitiesLists[count($this->_skillsReferencesList)-1] as $activityDescription){ 
-//            $id = $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $this->_activitiesModel->getActivityIdFromActivityDescription($activityDescription), 
-//                                                        'id_competence' => $idSkill), 
-//                                            'Constituer');
-//        }
     }
     
     /**
@@ -213,7 +200,6 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
      */
     public function getAll(){
         $this->resetModel();
-        $this->set_activitiesList($this->getDefinedActivities());
         $collection = new DataAccess('Competence');
         $all = $collection->GetAll();
         foreach($all as $skill){
@@ -221,28 +207,11 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
             $this->_skillsDescriptionsList[$skill->id_competence] = $skill->comp_descriptif_competence;
             //get all activities for this skill
             $links = new DataAccess('Constituer');
-            $links->GetAllByColumnValue('id_competence', $skill->id_competence);
-            foreach($links as  $link){
+            $all = $links->GetAllByColumnValue('id_competence', $skill->id_competence);
+            foreach($all as  $link){
                 $this->set_bindedActivitiesLists($this->_activitiesList[$link->id_activite],$skill->id_competence, $link->id_activite);
             }
         }
-        
-        
-//        $skills = $this->_dataBaseHandler->dbQS('Competence');
-//        //fill
-//        $i=0;
-//        foreach($skills as $skill){
-//                $this->set_skillsReferencesList($skill['comp_ref_competence']);
-//                $this->set_skillsDescriptionsList($skill['comp_descriptif_competence']);
-//                //get all activities for this skill
-//                $idSkill = $skill['id_competence'];
-//                $activitiesId = $this->_dataBaseHandler->dbQS('Constituer', array('id_activite'), "id_competence = '$idSkill'");
-//                foreach ($activitiesId as  $id) {
-//                    //$this->set_bindedActivitiesLists($this->_activitiesModel->getActivityDescriptionFromActivityId($id['id_activite']),$i,$id['id_activite']); // id activity comes from data base - see future use
-//                    $this->set_bindedActivitiesLists($this->_activitiesModel->getActivityDescriptionFromActivityId($id['id_activite']),$i); // id activity is an index of array
-//                }
-//                $i++;
-//        }   
     }
     
     /**
@@ -250,18 +219,24 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
      * @param type $skillId
      * @return boolean
      */
-    public function deleteFromId($skillId=0){
-        if(isset($this->_skillsReferencesList[$skillId])){
-            //db
-            $id = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
-            $this->_dataBaseHandler->dbQD('Constituer',"id_competence = '$id'");
-            $updateCount = $this->_dataBaseHandler->dbQD('Competence',"id_competence = '$id'");
+    public function deleteFromId($skillId){
+        $collection = new DataAccess('Competence');
+        $skill = $collection->GetByID($skillId);
+        if(isset($this->_skillsReferencesList[$skillId]) && $skill != false){
+            //delete entries from table 'Constituer'
+            $links = new DataAccess('Constituer');
+            $all = $links->GetAllByColumnValue('id_competence', $skillId);
+            foreach ($all as $link) {
+                $links->Delete($link);
+            }
+            //delete skill
+            $collection->Delete($skill);
             //view
             unset($this->_skillsReferencesList[$skillId]); //delete
             $this->_skillsReferencesList = array_values($this->_skillsReferencesList);//re indexing
             unset($this->_skillsDescriptionsList[$skillId]); //delete
             $this->_skillsDescriptionsList = array_values($this->_skillsDescriptionsList);//re indexing
-            return ($updateCount===1);
+            return true;
         }else{
             return false;
         }
@@ -283,22 +258,32 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     }
     
     /**
-     * Bind to data base multiple activities to a skill 
+     * Bind activity to a skill 
      * @param integer $skillId skill id model view
      * @return boolean true binding ok
      */
-    public function bindMultipleActivitiesToSkill($skillId){
+    public function bindActivityToSkill($skillId, $activityId){
         if(isset($this->_skillsReferencesList[$skillId])){
-            foreach ($this->_bindedActivitiesLists[$skillId] as $activity) {
-                $skillIdDb = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
-                $activityId = $this->_activitiesModel->getActivityIdFromActivityDescription($activity);
-                $r = $this->_dataBaseHandler->dbQS('Constituer', array('*'), "id_activite = '$activityId' AND id_competence = '$skillIdDb'", persistant\PdoCrud::MODE_FETCH_SIMPLE);
-                if($r->rowCount()===0){
-                    $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $activityId, 
-                                                          'id_competence' => $skillIdDb), 
-                                                          'Constituer'); // last insert id is 0 with primary composite keys (mySql)
-                }
+            $collection = new DataAccess('Constituer');
+            if(($link= $collection->GetByCompositeKeys(array('id_competence'=>$skillId, 'id_activite'=>$activityId)))===false){
+                //add binding
+                $link = new ConstituerObject();
+                $link->id_activite = $activityId;
+                $link->id_competence= $skillId;
+                $collection->Insert($link);
             }
+            //view already update
+            
+//            foreach ($this->_bindedActivitiesLists[$skillId] as $activity) {
+//                $skillIdDb = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
+//                $activityId = $this->_activitiesModel->getActivityIdFromActivityDescription($activity);
+//                $r = $this->_dataBaseHandler->dbQS('Constituer', array('*'), "id_activite = '$activityId' AND id_competence = '$skillIdDb'", persistant\PdoCrud::MODE_FETCH_SIMPLE);
+//                if($r->rowCount()===0){
+//                    $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $activityId, 
+//                                                          'id_competence' => $skillIdDb), 
+//                                                          'Constituer'); // last insert id is 0 with primary composite keys (mySql)
+//                }
+//            }
             return true;
         }
         return false;

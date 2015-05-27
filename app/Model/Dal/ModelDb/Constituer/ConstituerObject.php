@@ -17,5 +17,3 @@ class ConstituerObject {
     public $id_activite;
     public $id_competence;
 }
-
-//Notice: Undefined index: id_activite in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/Dal/ModelDb/Constituer/ConstituerMappingProvider.php on line 22

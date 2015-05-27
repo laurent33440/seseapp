@@ -273,7 +273,7 @@ class WorkDefinitionModel extends AModel{
         }else{
             $links = new Dal\DbLibrary\DataAccess('Employer');
             $idEmployeeList = $links->GetAllByColumnValue('id_entreprise', $id_company);
-            if ($idEmployeeList!=false){
+            if (count($idEmployeeList)!=0){
                 $collection = new DataAccess('Collaborateur');
                 foreach ($idEmployeeList as $id) {
                     $row = $collection->GetById($id);

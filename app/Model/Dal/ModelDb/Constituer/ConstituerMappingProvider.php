@@ -49,6 +49,13 @@ class ConstituerMappingProvider implements IMappingProvider{
         $retval[':id_activite'] = $item->id_activite;
         return $retval;
     }
+    
+    static function MapToRowGetByCompositeKeys($keys){
+        foreach ($keys as $key => $value) {
+            $retval [":$key"]=$value;
+        }
+        return $retval;
+    }
 
     static function GetID($item){
         return $item->id_competence;

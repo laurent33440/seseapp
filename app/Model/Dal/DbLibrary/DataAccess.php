@@ -198,10 +198,9 @@ class DataAccess{
                 call_user_func($this->NameSpaceObjectDb.$this->MappingProvider."::MapFromRow",$row,$objectItem);		
                 $retval[$cpt++]=$objectItem;
             }
-        return $retval;
         }
-        //on retourne false si on n'a rien trouvé
-        return FALSE;
+        // empty array if not found
+        return $retval; 
     }
 
 }

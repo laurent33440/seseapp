@@ -16,7 +16,7 @@ namespace Model\Dal\ModelDb\Competence;
  */
 class CompetenceObject {
     public $id_competence;
-    public $comp_ref_comptetence;
+    public $comp_ref_competence;
     public $comp_intitule_competence;
     public $comp_descriptif_competence;
     public $comp_est_evaluable;

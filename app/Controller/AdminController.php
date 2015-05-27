@@ -504,7 +504,7 @@ class AdminController extends AControllerState{
                 \Logger::getInstance()->logDebug(__CLASS__.' BIND Activity to skill : ADD to model ->  val : '.  print_r($model, true));
                 $this->_model->setClassVarsValues($model);
                 \Logger::getInstance()->logDebug(__CLASS__.'-- Members model AFTER ADD: --'.print_r($this->_model->getMembersModel(), true));
-                $this->_model->bindMultipleActivitiesToSkill($skillId);
+                $this->_model->bindActivityToSkill($skillId);
                 return true;
                 break;
             case $this->_BUTTONS_SKILLS['BUTTON_FREE_ACTIVITY'] :
