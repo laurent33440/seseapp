@@ -43,11 +43,13 @@
 
                                             <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach (form_val_functionList[$idActivity] as $idFunction => $function) {
-                                                echo"
-                                                    <option
-                                                        value=\"$idFunction#$function\">$function
-                                                    </option>
-                                                ";
+                                               
+                                                    echo"
+                                                        <option
+                                                            value=\"$idFunction#$function\">$function
+                                                        </option>
+                                                    ";
+                                                
                                             }
                                     echo "
                                             </select>
