@@ -179,12 +179,12 @@
                                                             </thead>
                                                             <tbody>
                                                             ";
-                                                                foreach ($this->_arrayParamslist[2][$idSkill] as $idActivity => $activityBinded) {
+                                                                foreach ($this->_arrayParamslist[2][$idSkill] as $activityId => $activityBinded) {
                                                                     echo"
                                                                     <tr>
                                                                         <td>
                                                                             <div class=\"input-group\">
-                                                                              <select class=\"form-control\" name=\"_bindedActivitiesLists#$idSkill#$idSkill#$idActivity\" id=\"activityChoosenForSkill#$idSkill#$idActivity\">
+                                                                              <select class=\"form-control\" name=\"_bindedActivitiesLists#$idSkill#$idSkill#$activityId\" id=\"activityChoosenForSkill#$idSkill#$activityId\">
                                                                                 ";
                                                                                 foreach ($this->_arrayParamslist[1] as $activity) {
                                                                                     echo"
@@ -196,10 +196,10 @@
                                                                                 echo "
                                                                               </select>
                                                                               <span class=\"input-group-btn\">
-                                                                                <button class=\"btn btn-sm btn-info\" name=\"ButtonSubmitBindActivity\" value=\"$idSkill\" id=\"addActivity#$idSkill\" type=\"submit\">
+                                                                                <button class=\"btn btn-sm btn-info\" name=\"ButtonSubmitBindActivity\" value=\"$idSkill#$activityId\" id=\"addActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-paperclip\"></span>
                                                                                     Associer</button>
-                                                                                <button class=\"btn btn-sm btn-warning\" name=\"ButtonSubmitFreeActivity\" value=\"$idSkill#$activityBinded\" id=\"delActivity#$idSkill\" type=\"submit\">
+                                                                                <button class=\"btn btn-sm btn-warning\" name=\"ButtonSubmitFreeActivity\" value=\"$idSkill#$activityId\" id=\"delActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-resize-full\"></span>
                                                                                     Dissocier</button>
                                                                               </span>

@@ -52,29 +52,8 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         
     }
-
-    //some fixture
-//    public static function fonctionsListProvider() {
-//        $vals = array('Fonction 0', 'Fonction 1', 'Fonction 2', 'Fonction 3', 'Fonction 4');
-//        $functionsModel = new FunctionReferentialDefinitionModel();
-//        $functionsModel->delFunctionsFromDataBase();
-//        foreach ($vals as $val) {
-//            $functionsModel->set_descriptions($val);
-//        }
-//        $functionsModel->addFunctionToDataBase();
-//        return array(array($vals));
-//    }
-
-//    public static function ActivitiesProvider() {
-//        self::fonctionsListProvider();
-//        self::$activitiesReferences = new ActivitiesReferenceDefinitionModel();
-//        for ($n = 0; $n < 5; $n++) {
-//            self::$activitiesReferences->set_activitiesReferencesList("A$n-$n test");
-//            self::$activitiesReferences->set_functionsList("Fonction $n");
-//            self::$activitiesReferences->set_activitiesDescriptionsList("Mon activit&eacute; test test test -- ligne ($n)");
-//            self::$activitiesReferences->addActivityToDataBase();
-//        }
-//    }
+    
+    //////////////////////// model view tests
 
     public function testSet_bindedActivitiesLists() {
         $a11 = 'activity 1 binded to skill 1';
@@ -275,7 +254,6 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
         }
     }
 
-
     /**
      * @depends testgetAll
      */
@@ -338,6 +316,23 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
         
     }
     
+    /**
+     * @depends testappend
+     * @depends testgetAll
+     * @depends testbindActivityToSkill
+     */
+    public function testfreeBindedActivity(){
+        $this->object->getAll();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $ks  =$t['C200_binding'];
+        $t = array_flip($this->object->get_activitiesList());
+        $ka = reset($t);//first activity key
+        $this->object->freeBindedActivity($ks, $ka);//unbind
+        $this->object->getAll();
+        $bt = $this->object->get_bindedActivitiesLists();
+        $at = $bt[$ks];
+        $this->assertNotContains(reset($this->object->get_activitiesList()),$at);
+    }
 
   
 }

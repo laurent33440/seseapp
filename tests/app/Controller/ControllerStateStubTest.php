@@ -36,6 +36,26 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
         
     }
     
+    public function testexplode(){
+        $v1 = 'a##b';
+        $p= explode('##', $v1);
+        $this->assertEquals('a', $p[0]);
+        $this->assertEquals('b', $p[1]);
+        $v1 = 'a##b#c#d';
+        $p= explode('##', $v1);
+        $this->assertEquals('a', $p[0]);
+        $this->assertEquals('b#c#d', $p[1]);
+        $p1= explode('#', $p[1]);
+        $this->assertEquals('b', $p1[0]);
+        $this->assertEquals('c', $p1[1]);
+        $this->assertEquals('d', $p1[2]);
+        $v1 = 'x';
+        $p1= explode('#', $v1);
+        $this->assertEquals(1, count($p1));
+        
+    }
+
+
     /**
      * paramX : vectors from datas posted
      * model : attributes's names of model
@@ -68,73 +88,103 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                 );
         $param2 = array( 
                 '_var1#0' => 'c100',
-                '_var2#0' => 'Savoir souder',
+                '_var2#1' => 'Savoir souder',
                 'ButtonSubmitAddSkill' => 0    
             
                 );
-        $exp2 = array('0'=>array( 
-                    '_var1' => 'c100',
-                    '_var2' => 'Savoir souder',
-                    )
-                );
-        
+        $exp2 = array(  '_var1'=>array('c100',0),
+                        '_var2'=>array('Savoir souder',1)
+            );
         $param21 = array( 
-                '_var1#0' => 'c100',
-                '_var2#0' => 'Savoir souder',
-                '_var3' => 'simple',
+                '_var1#0#1' => 'c100',
+                '_var2#1#2' => 'Savoir souder',
                 'ButtonSubmitAddSkill' => 0    
             
                 );
-        $exp21 = array('0'=>array( 
-                    '_var1' => 'c100',
-                    '_var2' => 'Savoir souder',
-                    ),
-                    '_var3' => 'simple',
+        $exp21 = array(  '_var1'=>array('c100',0,1),
+                        '_var2'=>array('Savoir souder',1,2)
+            );
+        $param22 = array( 
+                '_var1#0#1' => 'c100',
+                '_var2#1' => 'Savoir souder',
+                '_var3#1#2#3' => 'lundi',
+                'ButtonSubmitAddSkill' => 0    
+            
                 );
+        $exp22 = array(  '_var1'=>array('c100',0,1),
+                        '_var2'=>array('Savoir souder',1),
+                        '_var3'=>array('lundi',1,2,3)
+            );
+                    
         $param3 = array( 
-                '_var1#0' => 'c100',
-                '_var2#0' => 'Savoir souder',
-                '_var3#0#0#1' => 'Mon activité test test test 2', 
+                '_var1##0' => 'c100',
+                '_var2##0' => 'Savoir souder',
                 'ButtonSubmitAddSkill' => 0    
             
                 );
         $exp3 = array('0'=>array( 
                     '_var1' => 'c100',
                     '_var2' => 'Savoir souder',
-                    0=>array('_var3' => array('Mon activité test test test 2',0,1))
                     )
                 );
+        
         $param31 = array( 
-                '_var1#0' => 'c100',
-                '_var2' => 'Savoir souder',
-                '_var3#0#0#1' => 'Mon activité test test test 2', 
+                '_var1##0' => 'c100',
+                '_var2##0' => 'Savoir souder',
+                '_var3' => 'simple',
                 'ButtonSubmitAddSkill' => 0    
             
                 );
         $exp31 = array('0'=>array( 
                     '_var1' => 'c100',
+                    '_var2' => 'Savoir souder',
+                    ),
+                    '_var3' => 'simple',
+                );
+        $param4 = array( 
+                '_var1##0' => 'c100',
+                '_var2##0' => 'Savoir souder',
+                '_var3##0#0#1' => 'Mon activité test test test 2', 
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp4 = array('0'=>array( 
+                    '_var1' => 'c100',
+                    '_var2' => 'Savoir souder',
+                    0=>array('_var3' => array('Mon activité test test test 2',0,1))
+                    )
+                );
+        $param41 = array( 
+                '_var1##0' => 'c100',
+                '_var2' => 'Savoir souder',
+                '_var3##0#0#1' => 'Mon activité test test test 2', 
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp41 = array('0'=>array( 
+                    '_var1' => 'c100',
                     0=>array('_var3' => array('Mon activité test test test 2',0,1))
                     ),
                     '_var2' => 'Savoir souder'
                 );
-        $param4 = array( 
-                '_var1#0' => 'c100',
-                '_var2#0' => 'Savoir souder',
-                '_var3#0#0#0' => 'Mon activité test test test 1',
-                '_var1#1' => 'c200',
-                '_var2#1' => 'Savoir écrire',
-                '_var3#1#1#1' => 'Mon activité test test test 2',
+        $param5 = array( 
+                '_var1##0' => 'c100',
+                '_var2##0' => 'Savoir souder',
+                '_var3##0#0#0' => 'Mon activité test test test 1',
+                '_var1##1' => 'c200',
+                '_var2##1' => 'Savoir écrire',
+                '_var3##1#1#1' => 'Mon activité test test test 2',
                 'ButtonSubmitAddSkill' => 1
                 );
-        $exp4 = array('0'=>array( 
+        $exp5 = array('0'=>array( 
                     '_var1' => 'c100',
                     '_var2' => 'Savoir souder',
                     0 => array('_var3' =>array('Mon activité test test test 1',0,0)),
                     ),
                     '1'=>array( 
-                    '_var1' => 'c200',
-                    '_var2' => 'Savoir écrire',
-                    0 => array('_var3' =>array('Mon activité test test test 2',1,1)),
+                        '_var1' => 'c200',
+                        '_var2' => 'Savoir écrire',
+                        0 => array('_var3' =>array('Mon activité test test test 2',1,1)),
                     ),
                 );
         $param10 = array( 
@@ -148,9 +198,12 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
             array($param12,$model, $exp12, 'simple var -> value incomplete '),
             array($param2,$model, $exp2, 'simple indexé var->value'),
             array($param21,$model, $exp21, 'simple indexé var->value mixe '),
+            array($param22,$model, $exp22, 'simple indexé var->value mixe '),
             array($param3,$model, $exp3, 'complex indexé var->value'),
             array($param31,$model, $exp31, 'complex indexé var->value mixe'),
             array($param4,$model, $exp4, 'complex multi indexé var->value'),
+            array($param41,$model, $exp41, 'complex multi indexé var->value'),
+            array($param5,$model, $exp5, 'complex multi indexé var->value'),
             array($param10,$model, $exp10, 'aucun'),
         );
     }

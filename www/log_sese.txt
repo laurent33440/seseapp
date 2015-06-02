@@ -1,19 +1,19 @@
-26-05-2015 15:03:47 - INFO  --> 
+02-06-2015 15:21:40 - INFO  --> 
 ======== Log SESE Start ========
 --------------------------------- 
-26-05-2015 15:03:47 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
-26-05-2015 15:03:47 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
-26-05-2015 15:03:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-26-05-2015 15:03:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-26-05-2015 15:03:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-26-05-2015 15:03:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-26-05-2015 15:03:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-26-05-2015 15:03:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-26-05-2015 15:03:47 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+02-06-2015 15:21:40 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+02-06-2015 15:21:40 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+02-06-2015 15:21:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+02-06-2015 15:21:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+02-06-2015 15:21:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+02-06-2015 15:21:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+02-06-2015 15:21:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+02-06-2015 15:21:40 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+02-06-2015 15:21:40 - DEBUG --> View\ViewHandler Model params from controler :  => Array
 (
     [body] => Array
         (
-            [DATE] => mardi 26 mai 2015
+            [DATE] => mardi 02 juin 2015
         )
 
     [header] => Array
@@ -49,11 +49,11 @@
 
 )
  
-26-05-2015 15:03:47 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+02-06-2015 15:21:40 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
 (
     [body] => Array
         (
-            [DATE] => mardi 26 mai 2015
+            [DATE] => mardi 02 juin 2015
         )
 
     [header] => Array
@@ -89,6 +89,6 @@
 
 )
  
-26-05-2015 15:03:47 - INFO  --> end Class MainRouter 
-26-05-2015 15:03:47 - INFO  --> destruct : Controller\AdminController 
-26-05-2015 15:03:47 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+02-06-2015 15:21:40 - INFO  --> end Class MainRouter 
+02-06-2015 15:21:40 - INFO  --> destruct : Controller\AdminController 
+02-06-2015 15:21:40 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 

@@ -133,7 +133,7 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
                                                   id=\"_descriptionList#$idFunc\"
-                                                  name=\"form_descriptions#$idFunc\"
+                                                  name=\"_descriptionList#$idFunc\"
                                                   placeholder=\"Entrez le descriptif de la fonction\"
                                                   value = \"$value\">
                                                   <span class=\"input-group-btn\">

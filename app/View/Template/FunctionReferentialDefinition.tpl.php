@@ -32,7 +32,7 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
                                                   id=\"_descriptionList#$idFunc\"
-                                                  name=\"form_descriptions#$idFunc\"
+                                                  name=\"form_descriptionList#$idFunc\"
                                                   placeholder=\"Entrez le descriptif de la fonction\"
                                                   value = \"$value\">
                                                   <span class=\"input-group-btn\">

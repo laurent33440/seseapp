@@ -110,7 +110,7 @@
 
 <div class="container-fluid">
 
-    <form  method="post" action="<?php echo' /seseapp/index.php/administrateur/activite '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/activite '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -135,20 +135,22 @@
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
                                               id=\"_activityRefList#$idActivity\"
-                                              name=\"form_activitiesReferencesList#$idActivity\"
+                                              name=\"_activityRefList#$idActivity\"
                                               placeholder=\"Entrez la référence de l'activité\"
                                               value=\"".$activityRef."\">
                                             </div><!-- /input-group -->
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"form_functionsList#$idActivity\" id=\"_functionList#$idActivity\">";
+                                            <select class=\"form-control\" name=\"_functionList#$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach ($this->_arrayParamslist[2][$idActivity] as $idFunction => $function) {
-                                                echo"
-                                                    <option
-                                                        value=\"$idFunction#$function\">$function
-                                                    </option>
-                                                ";
+                                               
+                                                    echo"
+                                                        <option
+                                                            value=\"$idFunction#$function\">$function
+                                                        </option>
+                                                    ";
+                                                
                                             }
                                     echo "
                                             </select>
@@ -157,7 +159,7 @@
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
                                                 id=\"_activityDescriptionList#$idActivity\"
-                                                name=\"form_activitiesDescriptionsList#$idActivity\"
+                                                name=\"_activityDescriptionList#$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
                                                 value = \"".$this->_arrayParamslist[1][$idActivity]."\"
                                                 >

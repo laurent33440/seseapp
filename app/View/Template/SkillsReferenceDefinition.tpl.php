@@ -98,7 +98,7 @@
                                                                                 <button class=\"btn btn-sm btn-info\" name=\"BUTTON_BIND_ACTIVITY\" value=\"$idSkill#$activityId\" id=\"addActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-paperclip\"></span>
                                                                                     Associer</button>
-                                                                                <button class=\"btn btn-sm btn-warning\" name=\"BUTTON_FREE_ACTIVITY\" value=\"$idSkill#$activityBinded\" id=\"delActivity#$idSkill\" type=\"submit\">
+                                                                                <button class=\"btn btn-sm btn-warning\" name=\"BUTTON_FREE_ACTIVITY\" value=\"$idSkill#$activityId\" id=\"delActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-resize-full\"></span>
                                                                                     Dissocier</button>
                                                                               </span>

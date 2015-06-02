@@ -189,7 +189,6 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
             $aLink = new ConstituerObject();
             $aLink->id_activite = $idActivity;
             $aLink->id_competence = $item->id_competence;
-            //var_dump($aLink);
             $links->Insert($aLink);
         }
     }
@@ -233,33 +232,16 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
             $collection->Delete($skill);
             //view
             unset($this->_skillsReferencesList[$skillId]); //delete
-            $this->_skillsReferencesList = array_values($this->_skillsReferencesList);//re indexing
             unset($this->_skillsDescriptionsList[$skillId]); //delete
-            $this->_skillsDescriptionsList = array_values($this->_skillsDescriptionsList);//re indexing
             return true;
         }else{
             return false;
         }
     }
-
-
-    /**
-     * PRIVATE
-     * "SELECT id_competence FROM `Competence` WHERE comp_ref_competence = \'some ref\'";
-     * @param type $skillReference
-     */
-    public function getSkillIdFromSkillReference($skillReference){
-        $r = $this->_dataBaseHandler->dbQS('Competence', array('id_competence'), "comp_ref_competence = '$skillReference'", persistant\PdoCrud::MODE_FETCH_SIMPLE);
-        if($r->rowCount()===1)
-            foreach ($r as $id)
-                return $id['id_competence'];
-        else
-            return false;
-    }
     
     /**
      * Bind activity to a skill 
-     * @param integer $skillId skill id model view
+     * @param integer $skillId skill id ; acitivityId 
      * @return boolean true binding ok
      */
     public function bindActivityToSkill($skillId, $activityId){
@@ -272,18 +254,6 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
                 $link->id_competence= $skillId;
                 $collection->Insert($link);
             }
-            //view already update
-            
-//            foreach ($this->_bindedActivitiesLists[$skillId] as $activity) {
-//                $skillIdDb = $this->getSkillIdFromSkillReference($this->_skillsReferencesList[$skillId]);
-//                $activityId = $this->_activitiesModel->getActivityIdFromActivityDescription($activity);
-//                $r = $this->_dataBaseHandler->dbQS('Constituer', array('*'), "id_activite = '$activityId' AND id_competence = '$skillIdDb'", persistant\PdoCrud::MODE_FETCH_SIMPLE);
-//                if($r->rowCount()===0){
-//                    $this->_dataBaseHandler->dbQI(array(  'id_activite'=> $activityId, 
-//                                                          'id_competence' => $skillIdDb), 
-//                                                          'Constituer'); // last insert id is 0 with primary composite keys (mySql)
-//                }
-//            }
             return true;
         }
         return false;
@@ -296,47 +266,56 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
      * @param type $activityDescription
      * @return boolean
      */
-    public function freeBindedActivity($skillId, $activityDescription){
-        if($skillId==='*' && $activityDescription==='*'){
-            for($i=0 ; $i<count($this->_skillsReferencesList) ; $i++)
-                $this->_bindedActivitiesLists[$i] = array(); //reset view
-            return $this->_dataBaseHandler->dbQD('Constituer');
-        }else{
-            if(isset($this->_skillsReferencesList[$skillId])){
-                //var_dump($this->_bindedActivitiesLists);
-                if(in_array($activityDescription, $this->_bindedActivitiesLists[$skillId])){
-                    //view
-                    $a = $this->_bindedActivitiesLists[$skillId];
-                    unset($a[array_keys($a, $activityDescription)[0]]); //delete
-                    $this->_bindedActivitiesLists[$skillId] = array_values($a);// re indexing
-                     //db
-                    $aId = $this->_activitiesModel->getActivityIdFromActivityDescription($activityDescription);
-                    return $this->_dataBaseHandler->dbQD('Constituer', "id_activite = '$aId'");
-                }
+    public function freeBindedActivity($skillId, $activityId){
+        if(isset($this->_skillsReferencesList[$skillId])){
+            $collection = new DataAccess('Constituer');
+            if(($link= $collection->GetByCompositeKeys(array('id_competence'=>$skillId, 'id_activite'=>$activityId)))!=false){
+                //delete binding
+                $collection->Delete($link);
             }
-            return false;
+            //view
+            unset($this->_bindedActivitiesLists[$skillId][$activityId]); //delete
+            return true;
         }
+        return false;
     }
     
-    public function updateBindedActivity($skillId, $activityId, $newActivityDescription){
-        if(isset($this->_skillsReferencesList[$skillId])){
-            $a = $this->_bindedActivitiesLists[$skillId];
-            if(isset($a[$activityId])){
-                if(in_array($newActivityDescription, $this->_activitiesList)){
-                    //view
-                    $activityToUpdate = $a[$activityId];
-                    $a[$activityId] = $newActivityDescription;
-                    $this->_bindedActivitiesLists[$skillId] = $a;
-                    //db
-                    $skillReference = $this->_skillsReferencesList[$skillId];
-                    $newId = $this->_activitiesModel->getActivityIdFromActivityDescription($newActivityDescription);
-                    $oldId = $this->_activitiesModel->getActivityIdFromActivityDescription($activityToUpdate);
-                    $skillIdDb = $this->getSkillIdFromSkillReference($skillReference);
-                    return $this->_dataBaseHandler->dbQU('Constituer', array('id_activite' => "$newId"),"id_activite = '$oldId' AND id_competence = '$skillIdDb'");
-                }
-            }
-        }
-        return false; 
-    }
+    //UNUSED
+//    public function updateBindedActivity($skillId, $activityId, $newActivityDescription){
+//        if(isset($this->_skillsReferencesList[$skillId])){
+//            $a = $this->_bindedActivitiesLists[$skillId];
+//            if(isset($a[$activityId])){
+//                if(in_array($newActivityDescription, $this->_activitiesList)){
+//                    //view
+//                    $activityToUpdate = $a[$activityId];
+//                    $a[$activityId] = $newActivityDescription;
+//                    $this->_bindedActivitiesLists[$skillId] = $a;
+//                    //db
+//                    $skillReference = $this->_skillsReferencesList[$skillId];
+//                    $newId = $this->_activitiesModel->getActivityIdFromActivityDescription($newActivityDescription);
+//                    $oldId = $this->_activitiesModel->getActivityIdFromActivityDescription($activityToUpdate);
+//                    $skillIdDb = $this->getSkillIdFromSkillReference($skillReference);
+//                    return $this->_dataBaseHandler->dbQU('Constituer', array('id_activite' => "$newId"),"id_activite = '$oldId' AND id_competence = '$skillIdDb'");
+//                }
+//            }
+//        }
+//        return false; 
+//    }
+    
+    
+    /**
+     * UNUSED
+     * PRIVATE
+     * "SELECT id_competence FROM `Competence` WHERE comp_ref_competence = \'some ref\'";
+     * @param type $skillReference
+     */
+//    public function getSkillIdFromSkillReference($skillReference){
+//        $r = $this->_dataBaseHandler->dbQS('Competence', array('id_competence'), "comp_ref_competence = '$skillReference'", persistant\PdoCrud::MODE_FETCH_SIMPLE);
+//        if($r->rowCount()===1)
+//            foreach ($r as $id)
+//                return $id['id_competence'];
+//        else
+//            return false;
+//    }
     
 }

@@ -79,7 +79,10 @@ class LoginController extends AControllerState{
      * @return boolean true if controller must run for further inputs , false if submit form
      */
     public function compute(array $datas){
-        $this->_model->setClassVarsValues($this->getPostedDataModel( $this->_model->getClassVars(),$datas));
+        //$this->_model->setClassVarsValues($this->getPostedDataModel( $this->_model->getClassVars(),$datas));
+        $varsModel = $this->_model->getClassVars();
+        $params = $this->findAllParamsFromForm($datas, $varsModel);
+        $this->_model->setClassVarsValues($params);
         if($this->_model->isUserKnown()){
             //get groupe name
             $grpName = $this->_model->get_groupNameOfUser();

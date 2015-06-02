@@ -247,6 +247,7 @@ class AdminController extends AControllerState{
             $this->_model = new ActivitiesReferenceDefinitionModel();
             switch ($this->_state){
                 case self::IDLE :
+                    $this->_model->getAll();//restore model
                     $this->_model->addBlank();//force new input on form
                     $this->buildViewActivityDefinition();
                     $this->sendModelView('ActivitiesReferenceDefinition');
@@ -308,7 +309,7 @@ class AdminController extends AControllerState{
     public function buildViewActivityDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
+        $formArray['INDEX'] = $this->_index.'/activite';
         foreach ($this->_BUTTONS_ACTIVITIES as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }
@@ -332,7 +333,8 @@ class AdminController extends AControllerState{
             $varsModel = $this->_model->getClassVars();
             $params = $this->findAllParamsFromForm($datas, $varsModel);
             //add only the right row
-            //\Logger::getInstance()->logDebug(__CLASS__.' ID ADD BUTTON : '.$datas[$this->_BUTTONS_NAMES['BUTTON_ADD_NAME']]);
+            \Logger::getInstance()->logDebug(__CLASS__.' ID ADD BUTTON : '.$datas[$this->_BUTTONS_ACTIVITIES['BUTTON_ADD_ACTIVITY']]);
+            \Logger::getInstance()->logDebug(__CLASS__.' params extract : '.  print_r($params, true));
             $model = $params[$datas[$this->_BUTTONS_ACTIVITIES['BUTTON_ADD_ACTIVITY']]];//get datas from button id 
             \Logger::getInstance()->logDebug(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
 //            foreach($params as $model){
@@ -341,7 +343,7 @@ class AdminController extends AControllerState{
 //            }
             \Logger::getInstance()->logDebug(__CLASS__.'-- Members model AFTER ADD: --'.print_r($this->_model->getMembersModel(), true));
             $this->_model->append();
-            $this->_model->updateModelView();//update model view (functions list) -- move this to model
+            //$this->_model->updateModelView();//update model view (functions list) -- move this to model
             return true;
         }else{
             if(array_key_exists($this->_BUTTONS_ACTIVITIES['BUTTON_DEL_ACTIVITY'], $datas)){

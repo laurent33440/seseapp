@@ -17,7 +17,10 @@ use Model\Dal\ModelDb\Fonction\FonctionObject;
  * @author prog
  */
 class FunctionReferentialDefinitionModel extends AModel implements IModel{
-    //view
+    /**
+     * DATA STRUCTURE
+     * array(idFunction => functionDescription)
+     */
     private $_descriptionList=array();
     
     public function get_descriptionList() {
@@ -47,7 +50,7 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
     public function append(){
         $collection= new DataAccess('Fonction');
         $f= new FonctionObject();
-        $f->f_description = $this->_descriptionList[count($this->_descriptionList)-1];
+        $f->f_description = end($this->_descriptionList);
         $collection->Insert($f);
     }
     
@@ -93,34 +96,35 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
      * @param num $id data base of an existing function
      * @return string function description if exists null else
      */
-    public function getFunctionDescriptionFromIdDb($id){
-        $collection = new DataAccess('Fonction');
-        $f=$collection->GetByColumnValue('id_fonction', $id);
-        return $f->f_description;
-    }
+//    public function getFunctionDescriptionFromIdDb($id){
+//        $collection = new DataAccess('Fonction');
+//        $f=$collection->GetByColumnValue('id_fonction', $id);
+//        return $f->f_description;
+//    }
     
     /**
      * 
      * @param string $description data base of an existing function
      * @return num id function if exists null else
      */
-    public function getFunctionIdDbFromDescription($description){
-        $collection = new DataAccess('Fonction');
-        $f=$collection->GetByColumnValue('f_description', $description);
-        return $f->id_fonction;
-    }
+//    public function getFunctionIdDbFromDescription($description){
+//        $collection = new DataAccess('Fonction');
+//        $f=$collection->GetByColumnValue('f_description', $description);
+//        return $f->id_fonction;
+//    }
 
     
     /**
+     * UNUSED
      * PRIVATE
      * Erase empty and blank values from array - keep ordering key 
      * @param array $a : array to clean
      * @return array 
      */
-    public function delBlankEmptyValues(array $a){
-        $a = array_map('trim', $a); //suppress blanks at begining and at end of values in array
-        return array_values(array_filter($a));
-    }       
+//    public function delBlankEmptyValues(array $a){
+//        $a = array_map('trim', $a); //suppress blanks at begining and at end of values in array
+//        return array_values(array_filter($a));
+//    }       
 
 
     

@@ -62,7 +62,7 @@ abstract class AControllerState {
         if(!$this->_state = $this->getSavedSequenceState()){
             $this->_state = self::IDLE;
         }
-        //$this->_index=$this->getRootPath().$this->_request->getPathInfo();
+        //OLD - $this->_index=$this->getRootPath().$this->_request->getPathInfo();
         $this->_index=  '/'.\Bootstrap::ENTRY_SCRIPT.'/'.\SeseSession::getInstance()->get('user_connected/group').
         \Logger::getInstance()->logInfo( get_class($this).' restoring state controller : '.$this->_rootName.'::'.$this->_action. '-->'.$this->_state);
     }
@@ -384,21 +384,6 @@ abstract class AControllerState {
         }
         return $formValues;
     }
-
-    /**
-     * FIXME : remove this 
-     * Retrieve all values of model attributes from posted datas
-     * @param array $modelVars :  names of model's attributes
-     * @param array $postedDatas : set of all posted 'form name var' => value
-     * @return an array : set of 'model var name' => value
-     */
-    protected function getPostedDataModel($modelVars, $postedDatas){
-        $datas = array();
-        foreach ($modelVars as $value) {
-            $datas[$value]= $postedDatas[$value];
-        }
-        return $datas;
-    }
     
     /**
      * Find all values from form towards member's model
@@ -412,23 +397,35 @@ abstract class AControllerState {
         $matches = array();
         foreach($keysForm as $keyForm) {
             if(!empty($formDatas[$keyForm])){
-                if(preg_match('/(?P<param>\w+)#/', $keyForm, $matches) === 1){ //matches complex <form_name-model>#param1 => value,<form_name-model>#param1#param2 => value
+                if(preg_match('/(?P<param>\w+)##/', $keyForm, $matches) === 1){ //matches complex <form_name-model>##key => value OR <form_name-model>##key#param1#param2#... => value
                     if(in_array($matches['param'], $varsModel)){
-                        $vals=explode('#',$keyForm);
-                        if(count($vals)>2){
+                        $parts =explode('##',$keyForm);
+                        $args=explode('#',$parts[1]);
+                        if(count($args)>1){
                             $t=array();
-                            for($i=2; $i<count($vals);$i++){
-                                $t[] = $vals[$i];
+                            for($i=1; $i<count($args);$i++){
+                                $t[] = $args[$i];
                             }
-                            $result[$vals[1]][] = array($matches['param']=> array_merge(array($formDatas[$keyForm]),$t));
+                            $result[$args[0]][] = array($matches['param']=> array_merge(array($formDatas[$keyForm]),$t));
                         }else{
-                            $result[$vals[1]][$matches['param']] = $formDatas[$keyForm];
+                            $result[$parts[1]][$matches['param']] = $formDatas[$keyForm];
                         }
                     }
-                }else{ // matches simple form_param => value_param
-                    if(preg_match('/(?P<param>\w+)/', $keyForm, $matches) === 1){
-                        if(in_array($matches['param'], $varsModel)){
-                            $result[$matches['param']] = $formDatas[$keyForm];
+                }else{ 
+                    if(preg_match('/(?P<param>\w+)#/', $keyForm, $matches) === 1){ // matches <form_name-model>#param1#param2#... => value
+                            if(in_array($matches['param'], $varsModel)){
+                                $parts =explode('#',$keyForm);
+                                $t=array();
+                                for($i=1; $i<count($parts);$i++){
+                                    $t[] = $parts[$i];
+                                }
+                                $result[$matches['param']] = array_merge(array($formDatas[$keyForm]),$t);
+                            }
+                    }else{
+                        if(preg_match('/(?P<param>\w+)/', $keyForm, $matches) === 1){// matches simple form_param => value_param
+                            if(in_array($matches['param'], $varsModel)){
+                                $result[$matches['param']] = $formDatas[$keyForm];
+                            }   
                         }
                         
                     }

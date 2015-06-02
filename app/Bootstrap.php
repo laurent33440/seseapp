@@ -58,7 +58,7 @@ class Bootstrap {
       $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");
 
       //Session
-      $session = SeseSession::getInstance();
+      $session = SeseSession::getInstance(self::DEBUG_SESE);
       $session->setName(self::APPLICATION_NAME);
       $session->start();
       if(!$session->has(self::APPLICATION_NAME)){

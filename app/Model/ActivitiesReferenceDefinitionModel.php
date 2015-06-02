@@ -24,8 +24,9 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
      * activityRefList = array(idActivity => ref)
      * activityDescriptionList = array(idActivity => description)
      * functionList = array(idActivity => 
-     *                          array(idFunction => functionDescription) //first item is function choosen for a given activity
+     *                          array(idFunction => functionDescription, ...) //first item is function choosen for a given activity
      *                )
+     * IT MUST HAVE UNICITY FOR idActivity FOR EACH LIST.
      */
     private $_activityRefList = array();
     
@@ -34,22 +35,31 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     private $_functionList = array(); 
     
    
-    public function set_activityRefList($_activitiesReferencesList) {
+    public function set_activityRefList($_activitiesReferencesList,$id=null) {
         if(!in_array( $_activitiesReferencesList, $this->_activityRefList)){
-            $this->_activityRefList[] = $_activitiesReferencesList;
+            $this->_activityRefList[$id] = $_activitiesReferencesList;
         }else{//already exist
-            $this->_activityRefList[] = $_activitiesReferencesList.self::ERR_DUPLICATE;
+            $this->_activityRefList[$id] = $_activitiesReferencesList.self::ERR_DUPLICATE;
         }
     }
     
-    public function set_activityDescriptionList($_activityDescriptionList) {
-        $this->_activityDescriptionList[] = $_activityDescriptionList;
+    public function set_activityDescriptionList($_activityDescriptionList,$id=null) {
+        $this->_activityDescriptionList[$id] = $_activityDescriptionList;
     }
 
-    public function set_functionList($functionIdVal, $idActivity) {
+    /**
+     * Set function list contain : 
+     * 1 - if param1 is a list of {id, function} avalaible
+     *      list is added for the current id Activity
+     * 2 - if param1 is a composite parameter from view (Form) 'id_function#function'
+     *      'id_function' and 'function' are used to build a list with top element 'function' for the current id Activity
+     * @param type $functionIdVal: list of {id, function} or composite parameter 'id_value#value'
+     * @param type $idActivity : activity binded to function
+     */
+    public function set_functionList($functionIdVal, $idActivity=null) {
         if(!is_array($functionIdVal)){
             $f = explode('#', $functionIdVal); //setter by view
-            $this->_functionList[$idActivity] = array($f[0]=>$f[1]);//idFunction=>FunctionDescription
+            $this->_functionList[$idActivity] = $this->getReorderFunctionList($f[1]);
         }else{
             $this->_functionList[$idActivity] = $functionIdVal; // list of functions
         }
@@ -73,15 +83,16 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     public function resetModel(){
         $this->_activityRefList=array();
         $this->_functionList=array();
+        $this->_activityDescriptionList=array();
     }
     
     /**
      *  GENERIC
      */
     public function addBlank(){
-        $this->set_activityRefList('');
-        $this->set_functionList($this->getDefinedFunctions(),'?idActivity?'); //set default function list for future activity
-        $this->set_activityDescriptionList('');
+        $this->set_activityRefList('','new');
+        $this->set_functionList($this->getDefinedFunctions(),'new'); //set default function list for future activity
+        $this->set_activityDescriptionList('','new');
     }
 
     /**
@@ -91,9 +102,10 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $collection= new DataAccess('Activite');
         $item = new ActiviteObject();
         $item->act_ref_activite = end($this->_activityRefList);
-        $item->act_descriptif_activite = end($this->_activityDescriptionListList);
+        $item->act_descriptif_activite = end($this->_activityDescriptionList);
         $function = end($this->_functionList);
         $item->id_fonction=reset(array_keys($function));
+        var_dump($item->id_fonction);
         $collection->Insert($item);
     }
     
@@ -108,10 +120,9 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         foreach ($all as $item) {
             $this->_activityRefList[$item->id_activite] = $item->act_ref_activite;
             $this->_activityDescriptionList[$item->id_activite] = $item->act_descriptif_activite;
-            $this->_functionList[$item->id_activite] = $this->getReorderFunctionList($item->id_fonction);
+            $list = $this->getDefinedFunctions();
+            $this->_functionList[$item->id_activite] = $this->getReorderFunctionList($list[$item->id_fonction]);
         }
-        
-            
     }
 
     public function update( $property, $val,$id) {
@@ -188,31 +199,28 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
     
     /**
+     * UNUSED
      * -PRIVATE
      * Matches needs for view part 
      */
-    public function updateModelView(){
-        $functionModel =  new FunctionReferentialDefinitionModel();
-        for ($i=0; $i<count($this->_functionList); $i++) {
-            if(!is_array($this->_functionList[$i])){
-                $this->_functionList[$i]=$this->getReorderFunctionList($functionModel->getFunctionIdDbFromDescription($this->_functionList[$i]));
-            }
-        }
-    }
+//    public function updateModelView(){
+//        $functionModel =  new FunctionReferentialDefinitionModel();
+//        for ($i=0; $i<count($this->_functionList); $i++) {
+//            if(!is_array($this->_functionList[$i])){
+//                $this->_functionList[$i]=$this->getReorderFunctionList($functionModel->getFunctionIdDbFromDescription($this->_functionList[$i]));
+//            }
+//        }
+//    }
 
     /**
      * PRIVATE
      * 
-     * Get function list and set function name on top of list from function db id
-     * @param num $functionId function db id to hire
+     * Get function list and set function name on top of list from function description
+     * @param num $function description to hire
      * @return List of functions ordered
      */
-    public function getReorderFunctionList($functionId){
-        //retrieve function description from id
-        $functionModel =  new FunctionReferentialDefinitionModel();
-        $functionModel->getAll();
-        $functionList =  $functionModel->get_descriptionList();
-        $functionDesc = $functionModel->getFunctionDescriptionFromIdDb($functionId);
+    public function getReorderFunctionList($functionDesc){
+        $functionList =$this->getDefinedFunctions();
         //remove
         $functionList = array_diff($functionList, array($functionDesc));
         //add

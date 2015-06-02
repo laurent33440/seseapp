@@ -37,29 +37,32 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
     protected function tearDown() {
         
     }
+    
+    public function testGetDefinedFunctions() {
+        $this->object->set_functionList($this->object->getDefinedFunctions(),0);
+        $tst = $this->object->get_functionList();
+        foreach ($tst as $list) {
+            foreach ($list as $id=>$val){
+                $this->assertGreaterThanOrEqual(0, $id);
+                $this->assertStringMatchesFormat('%s', $val);
+            }
+        }
+    }
+    
+    public function testaddBlank(){
+        $this->object->resetModel();
+        $this->object->addBlank();
+        $tst = $this->object->get_functionList();
+        //var_dump($tst);
+        foreach ($tst as $list) {
+            foreach ($list as $id=>$val){
+                $this->assertGreaterThanOrEqual(0, $id);
+                $this->assertStringMatchesFormat('%s', $val);
+            }
+        }
+    }
 
-    //some fixture
-//    public function fonctionsListProvider() {
-//        $vals = array('Fonction 1', 'Fonction 2', 'Fonction 3', 'Fonction 4', 'Fonction 5');
-//        $functionsModel = new FunctionReferentialDefinitionModel();
-//        $functionsModel->delFunctionsFromDataBase();
-//        foreach ($vals as $val) {
-//            $functionsModel->set_descriptions($val);
-//        }
-//        $functionsModel->addFunctionToDataBase();
-//        return array(array($vals));
-//    }
-
-    /**
-     * @dataProvider fonctionsListProvider
-     */
-//    public function testGetDefinedFunctions(array $refFuncs) {
-//        $this->object->set_functionsList($this->object->getDefinedFunctions());
-//        $tst = $this->object->get_functionsList();
-//        $this->assertEquals(array($refFuncs), $tst);
-//    }
-
-    public function testIsArrayInclude() {
+    public function testisArrayInclude() {
         $a = array('a' => 1, 'b' => 2, 'c' => 3);
         $al = array('a' => 1, 'c' => 3);
         $am = array('a' => 1, 'b' => 2, 'c' => 3, 'foo' => 'bar');
@@ -72,36 +75,69 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
     /**
      * 
      */
-    public function testSetClassVarsValues() {
-        $full_properties = array('_activitiesReferencesList' => 'A1', '_functionsList' => 'f1', '_activitiesDescriptionsList' => 'activité1');
-        $subset_properties = array('_activitiesReferencesList' => 'A1', '_activitiesDescriptionsList' => 'activité1');
-        $ko_properties = array('_activitiesReferencesList' => 'A1', '_functionsList' => 'f1', '_activitiesDescriptionsList' => 'activité1', '_somethingwrong' => 'foo');
+    public function testsetClassVarsValues() {
+        $full_properties = array(
+                    0=>array('_activityRefList' => array('A1',1)), // activity ref and id
+                    1=>array('_functionList' => array('10#f1',1)), //here main value is formatted as : id_of_value#value. Second argument is id activity
+                    2=>array('_activityDescriptionList' => array('activité1',1)) //activity description and id
+            );
+        $subset_properties = array(
+                    0=>array('_activityRefList' => array('A1',2)), // activity ref and id
+                    2=>array('_activityDescriptionList' => array('activité1',2)) //activity description and id
+            );
+        $ko_properties = array(
+                    0=>array('_activityRefList' => array('A1',1)), // activity ref and id
+                    1=>array('_functionList' => array('10#f1',1)), //here main value is formatted as : id_of_value#value. Second argument is id activity
+                    2=>array('_activityDescriptionList' => array('activité1',1)), //activity description and id
+                    '_someWrongProperty' => 'foo'
+            );
         $this->assertTrue($this->object->setClassVarsValues($full_properties));
-        $this->assertEquals(array('A1'), $this->object->get_activitiesReferencesList());
-        $this->assertEquals(array('f1'), $this->object->get_functionsList());
-        $this->assertEquals(array('activité1'), $this->object->get_activitiesDescriptionsList());
+        $this->assertEquals(array(1=>'A1'), $this->object->get_activityRefList());
+        $tst = $this->object->get_functionList();
+        foreach ($tst as $key=>$list) {
+            $this->assertEquals(1,$key); // id Activity
+            foreach ($list as $id=>$val){
+                $this->assertGreaterThanOrEqual(0, $id);//id func
+                $this->assertStringMatchesFormat('%s', $val);//func
+            }
+        }
+        $this->assertEquals(array(1=>'activité1'), $this->object->get_activityDescriptionList());
         $this->object->resetModel();
         $this->assertTrue($this->object->setClassVarsValues($subset_properties));
-        $this->assertEquals(array('A1'), $this->object->get_activitiesReferencesList());
-        $this->assertEquals(array(), $this->object->get_functionsList());
-        $this->assertEquals(array('activité1'), $this->object->get_activitiesDescriptionsList());
+        $this->assertEquals(array(2=>'A1'), $this->object->get_activityRefList());
+        $this->assertEquals(array(), $this->object->get_functionList());
+        $this->assertEquals(array(2=>'activité1'), $this->object->get_activityDescriptionList());
         $this->object->resetModel();
         $this->assertFalse($this->object->setClassVarsValues($ko_properties));
-        $this->assertEquals(array(), $this->object->get_activitiesReferencesList());
-        $this->assertEquals(array(), $this->object->get_functionsList());
-        $this->assertEquals(array(), $this->object->get_activitiesDescriptionsList());
+        $this->assertEquals(array(), $this->object->get_activityRefList());
+        $this->assertEquals(array(), $this->object->get_functionList());
+        $this->assertEquals(array(), $this->object->get_activityDescriptionList());
     }
 
     /**
      * @depends testGetDefinedFunctions
      */
-    public function testGetReorderFunctionList() {
+    public function testgetReorderFunctionList() {
         $functionsModel = new FunctionReferentialDefinitionModel();
         $functionsModel->getAll();
-        $f = $functionsModel->get_descriptions();
-        $id = $functionsModel->getFunctionIdDbFromDescription($f[1]); //second element
-        $reorder = $this->object->getReorderFunctionList($id);
-        $this->assertEquals(array('Fonction 2', 'Fonction 1', 'Fonction 3', 'Fonction 4', 'Fonction 5'), $reorder);
+        $f = $functionsModel->get_descriptionList();
+        reset($f);
+        $eltToTop = next($f);//second element
+        $reorder = $this->object->getReorderFunctionList($eltToTop);
+        $this->assertEquals($eltToTop, reset($reorder));
+        $eltToTop = next($f);//
+        $eltToTop = next($f);//fourth element
+        $reorder = $this->object->getReorderFunctionList($eltToTop);
+        $this->assertEquals($eltToTop, reset($reorder));
+    }
+    
+    public function testappend(){
+        $model = array('_activityRefList' => 'A4',
+                        '_functionList' => '15645#func8',
+                        '_activityDescriptionList' => 'mon activité'
+            );
+        $this->object->setClassVarsValues($model);
+        $this->object->append();
     }
 
 //    public function testAddToModelDuplicate() {
@@ -115,7 +151,6 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
 //        $this->assertEquals(2, count($tst));
 //        $this->assertEquals('A1-1 test' . ActivitiesReferenceDefinitionModel::ERR_DUPLICATE, $tst[1]);
 //    }
-
 //    public function testUpdateModelView() {
 //        $this->object->set_activitiesReferencesList('A1-1 test');
 //        $this->object->set_activitiesReferencesList('A1-2 test');
@@ -136,14 +171,12 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
 //        );
 //        $this->assertEquals($exp, $this->object->get_functionsList());
 //    }
-
 //    public function testIsExistingBlankInArray(){
 //        $a = array('k1'=>'one', 'k2'=>'   ','k3'=>'two    ', 'k4'=>'');
 //        $b = array('k1'=>'one', 'k2'=>'bis   ','k3'=>'two    ', 'k4'=>' exist');
 //        $this->assertTrue($this->object->isExistingBlankInArray($a));
 //        $this->assertFalse($this->object->isExistingBlankInArray($b));
 //    }
-
 //    public function testAddActivityToDataBase() {
 //        $this->object->set_activitiesReferencesList('A1-1 test');
 ////        $this->object->set_functionsList(array('Fonction 2', 'Fonction 1','Fonction 3','Fonction 4' )); //'Fonction 2' is the choice -- first element 
@@ -195,7 +228,6 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
 //        $tst = $this->object->get_functionsList();
 //        $this->assertEquals(array('Fonction 5', 'Fonction 1', 'Fonction 2', 'Fonction 3', 'Fonction 4'), $tst[0]);
 //    }
-
     // add blank activity
 //    public function testAddActivityToDataBase_blank_activity(){ //musn't be added'
 //        $this->object->set_activitiesReferencesList('    ');
@@ -475,9 +507,10 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
 //        //see data base
 //        $this->assertTrue(true);
 //    }
+//    
 
-    //extra tests
-    public function testReorderFunctionList() {
+    /////////////////////////////////////////////////////////////////////////////extra tests
+    public function testreorderFunctionList() {
         $tst = array('testf1', 'testf2', 'testf3', 'testf4', 'testf5');
         $exp = array('testf3', 'testf1', 'testf2', 'testf4', 'testf5');
         //testf3 choosen
@@ -489,7 +522,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $this->assertEquals($exp, $tst);
     }
 
-    public function testUniqueInArray() {
+    public function testuniqueInArray() {
         //$a = array('a','b','b','c','d','e','a','d');
         $a = array('a', 'b', 'b', 'c');
 //        $b_a=array('aa','bb','cc','dd','ee','aa','dd'); //linked list whith $a
@@ -520,7 +553,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $this->assertEquals(array('aa', 'bb', 'cc'), $arr);
     }
 
-    public function testNormalizeLists() {
+    public function testnormalizeLists() {
         $a = array(0 => 'a', 1 => 'b', 2 => 'c', 3 => 'd', 4 => 'e', 5 => 'a', 6 => 'd');
         $b_a = array(0 => 'aa', 1 => 'bb', 2 => 'cc', 3 => 'dd', 4 => 'ee', 5 => 'aa', 6 => 'dd'); //let say it's linked list whith $a
         $d = null;

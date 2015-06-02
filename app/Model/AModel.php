@@ -48,7 +48,7 @@ abstract class AModel {
     
     /**
      * Set members values of model
-     * @param list keys of member name and value : property_name => value OR id=>array(property_name => array(main_value, arg1, arg2, ...)
+     * @param list keys of member name and value : property_name => value OR array(id=>array(property_name => array(main_value, arg1, arg2, ...),...)
      * @return boolean true if all members are matched 
      */
     public function setClassVarsValues($keysVarsValues){
@@ -58,8 +58,8 @@ abstract class AModel {
                 //if $value is an array this is the property name associated with arguments of the setting method
                 if(is_array($value)){
                     $k = array_keys($value);
-                    //var_dump($value);
-                    //var_dump($value[$k[0]]);
+//                    var_dump($value);
+//                    var_dump($value[$k[0]]);
                     call_user_func_array(array($this, 'set'.$k[0]),$value[$k[0]]);
                 }else{
                     $this->{'set'.$var}($value);

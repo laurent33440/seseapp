@@ -1,0 +1,86 @@
+
+Anomalies SESE APP : 
+====================
+12/03 : 
+1 - _SESSION : gestion en test? voir composant symfony
+
+15/03 : 
+1- CSS bootstrap non chargé suivant url!
+KO : 
+========
+Url = http://localhost/seseapp/index.php/
+
+Infos paths SESE : Path info : / || base url : /seseapp/index.php || array(3) { ["_controller"]=> string(5) "Login" ["_action"]=> string(3) "run" ["_route"]=> string(11) "login_route" }
+
+Entete REQUETTE  : GET URL requette : http://localhost/seseapp/index.php/bootstrap3.2.0-dist/css/bootstrap.css
+Host: localhost
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://localhost/seseapp/index.php/
+Cookie: PHPSESSID=b3si8vfi4htl4gqous6d54trn3; Groupe=administrateur; SESE=tldrdlj4j5i903sho9gs1t3hp2
+Connection: keep-alive
+
+En tete Réponse : 
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Length: 283
+Content-Type: text/html
+Date: Sun, 15 Mar 2015 08:56:07 GMT
+Keep-Alive: timeout=5, max=99
+Server: Apache/2.4.7 (Ubuntu)
+Vary: Accept-Encoding
+X-Powered-By: PHP/5.5.9-1ubuntu4.6
+
+Réponse infos paths SESE : Path info : /bootstrap-3.2.0-dist/css/bootstrap.css || base url : /seseapp/index.php || rien
+<b>Warning</b>:  require(/home/laurent/Dropbox/Projets/web/seseapp/app/View/Builder.php): failed to open stream: No such file or directory in <b>/home/laurent/Dropbox/Projets/web/seseapp/app/Bootstrap.php</b> on line <b>49</b><br />
+<br />
+<b>Fatal error</b>:  require(): Failed opening required '/home/laurent/Dropbox/Projets/web/seseapp/app/View/Builder.php' (include_path='.:/usr/share/php:/usr/share/pear') in <b>/home/laurent/Dropbox/Projets/web/seseapp/app/Bootstrap.php</b> on line <b>49</b><br />
+
+
+OK :
+=========
+Url = http://localhost/seseapp/index.php
+
+Infos paths SESE : Path info : / || base url : /seseapp/index.php || array(3) { ["_controller"]=> string(5) "Login" ["_action"]=> string(3) "run" ["_route"]=> string(11) "login_route" } 
+
+Entete REQUETTE  : GET URL requette : http://localhost/seseapp/bootstrap3.2.0-dist/css/bootstrap.css
+Host: localhost
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:36.0) Gecko/20100101 Firefox/36.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://localhost/seseapp/index.php
+Cookie: PHPSESSID=b3si8vfi4htl4gqous6d54trn3; Groupe=administrateur; SESE=tldrdlj4j5i903sho9gs1t3hp2
+Connection: keep-alive
+If-Modified-Since: Thu, 26 Jun 2014 16:14:11 GMT
+If-None-Match: "205c2-4fcbf7bb11ac0-gzip"
+Cache-Control: max-age=0
+
+En tete Réponse : 
+Accept-Ranges: bytes
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Length: 19516
+Content-Type: text/css
+Date: Sun, 15 Mar 2015 09:01:56 GMT
+Etag: "205c2-4fcbf7bb11ac0-gzip"
+Keep-Alive: timeout=5, max=96
+Last-Modified: Thu, 26 Jun 2014 16:14:11 GMT
+Server: Apache/2.4.7 (Ubuntu)
+Vary: Accept-Encoding
+
+SOLUTION : 
+************************
+Dans le HEAD de la page ajout de '/' racine... :
+...
+ <link href="{{!/bootstrap-3.2.0-dist/css/bootstrap.css!}}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{!/app_css/welcome.css!}}" rel="stylesheet">
+    <link href="{{!/app_css/admin.css!}}" rel="stylesheet">
+...
+
+
+16/03 :
+Propagation de l'Identification d'un utilisateur... 
