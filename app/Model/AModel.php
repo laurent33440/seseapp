@@ -52,22 +52,60 @@ abstract class AModel {
      * @return boolean true if all members are matched 
      */
     public function setClassVarsValues($keysVarsValues){
-        $allMatched = $this->isArrayInclude($keysVarsValues,$this->getClassVars());
-        if($allMatched){
-            foreach ($keysVarsValues as $var => $value) {
-                //if $value is an array this is the property name associated with arguments of the setting method
-                if(is_array($value)){
-                    $k = array_keys($value);
-//                    var_dump($value);
-//                    var_dump($value[$k[0]]);
-                    call_user_func_array(array($this, 'set'.$k[0]),$value[$k[0]]);
-                }else{
+        foreach ($keysVarsValues as $var => $value) {
+            if(is_array($value)){//if $value is an array 2 cases :
+            //1)$var is the property name associated with arguments of the setting method (main value and arguments)
+            //2)$var is a key and not an property name. Then First key of $value MUST be a valid property name.
+                if($this->isPropertyModel($var)){//case 1
+                    call_user_func_array(array($this, 'set'.$var),$value);
+                }else{//case 2 
+                    foreach ($value as $key => $valProperty) {//loop
+                        if($this->isPropertyModel($key)){
+                            if(!is_array($valProperty)){ //single value
+                                call_user_func_array(array($this, 'set'.$key),array($valProperty));
+                            }else{// list of arguments : array(main_value, arg1, arg2, ...)
+                                call_user_func_array(array($this, 'set'.$key),$valProperty); 
+                            }
+                        }else{//something wrong ...
+                            return false;
+                        }
+                    }
+                }
+            }else{
+                if($this->isPropertyModel($var)){
                     $this->{'set'.$var}($value);
+                }else{
+                    return false;
                 }
             }
         }
-        return $allMatched;
+        return true;
     }
+    
+    /**
+     * Set members values of model
+     * @param list keys of member name and value : property_name => value OR array(id=>array(property_name => array(main_value, arg1, arg2, ...),...)
+     * @return boolean true if all members are matched 
+     */
+//    public function setClassVarsValues_old($keysVarsValues){
+//        $allMatched = $this->isArrayInclude($keysVarsValues,$this->getClassVars());
+//        if($allMatched){
+//            var_dump($keysVarsValues);
+//            foreach ($keysVarsValues as $var => $value) {
+//                //if $value is an array this is the property name associated with arguments of the setting method
+//                if(is_array($value)){
+//                    $k = array_keys($value);
+////                    var_dump($value);
+////                    var_dump($value[$k[0]]);
+//                    call_user_func_array(array($this, 'set'.$k[0]),$value[$k[0]]);
+//                }else{
+//                    $this->{'set'.$var}($value);
+//                }
+//            }
+//        }
+//        return $allMatched;
+//    }
+    
     
     /**
      * Retrieve members values of model
@@ -84,25 +122,15 @@ abstract class AModel {
     }
     
     /**
-     * Check if keys in an associative array is include in another
-     * @param type $tstArray : testing array's keys
-     * @param type $refArray : keys references
-     * @return boolean : true, all testing array keys are in array reference
+     * 
+     * @param type $var
      */
-    public function isArrayInclude($tstArray,$refArray) {
-        $tk = array_keys($tstArray);
-        foreach($tk as $k) {
-            if(is_numeric($k)){
-                $t = $tstArray[$k];
-                $kt = array_keys($t);
-                $k = $kt[0];
-            }
-            if(!in_array($k, $refArray)) {
-                return false;
-            }
-        }
-        return true;
+    public function isPropertyModel($var){
+        return (in_array($var, $this->getClassVars(),true));//strict checking (type)
     }
+
+
+    
     
     /**
      * Save all members in SESSION

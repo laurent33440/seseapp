@@ -386,10 +386,18 @@ abstract class AControllerState {
     }
     
     /**
-     * Find all values from form towards member's model
-     * @param array $formDatas : datas from form construct as set of : {<member_name-model>#param1 => value},{<member_name-model>#param1#param2 => value}, mixed datas(keys => values), ...
-     * @param array $varsModel : members of model
-     * @return two dimensionnals array : ordered dictionnary (member's name => member's values)  
+     * Extract datas from form datas (raw post) towards model properties and format of datas
+     * @param array $formDatas : datas from form construct as set of : 
+     * 1){<member_name-model> => value},
+     * 2){<member_name-model>#param1#param2... => value},
+     * 3){<member_name-model>##key => value}, 
+     * 4){<member_name-model>##key#param1#param2... => value}, 
+     * @param array $varsModel : properties of model
+     * @return array : 
+     * 1)array(<member_name-model> => value, ...)
+     * 2)array(<member_name-model> => array(value, param1, param2, ...), ...)
+     * 3)array(key => array(<member_name-model> => value), ...)
+     * 4)array(key => array(<member_name-model> => array(value, param1, param2,...)), ...)
      */
     public function findAllParamsFromForm(array $formDatas, array $varsModel){
         $keysForm = array_keys($formDatas);

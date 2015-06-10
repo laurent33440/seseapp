@@ -80,31 +80,6 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($exp4, $this->object->get_bindedActivitiesLists()); // no change
     }
 
-    public function isArrayIncludeProvider() {
-        $ref1 = array('a', 'b', 'c');
-        $tst1 = array('a' => 1, 'b' => 2, 'c' => 3);
-        $tst2 = array('a' => 1, 'c' => 3);
-        $tst3 = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4);
-        $ref2 = array('a', 'b', 'c', 'k1', 'k2');
-        $tst4 = array('a' => 1, 'b' => 2, 'c' => 3, 0 => array('k1' => array('val1')), 1 => array('k2' => array('val2')));
-        $tst5 = array('a' => 1, 'b' => 2, 1 => array('k2' => array('val2')));
-        $tst6 = array('a' => 1, 'b' => 2, 0 => array('k_unknown' => array('val1')), 1 => array('k2' => array('val2')));
-        return array(
-            array($tst1, $ref1, true),
-            array($tst2, $ref1, true),
-            array($tst3, $ref1, false),
-            array($tst4, $ref2, true),
-            array($tst5, $ref2, true),
-            array($tst6, $ref2, false),
-        );
-    }
-
-    /**
-     * @dataProvider isArrayIncludeProvider
-     */
-    public function testIsArrayInclude(array $tst, array $ref, $result) {
-        $this->assertEquals($result, $this->object->isArrayInclude($tst, $ref));
-    }
 
     /**
      * tests for setters of models

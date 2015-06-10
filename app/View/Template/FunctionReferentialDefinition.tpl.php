@@ -32,11 +32,11 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
                                                   id=\"_descriptionList#$idFunc\"
-                                                  name=\"form_descriptionList#$idFunc\"
+                                                  name=\"form_descriptionList##$idFunc\"
                                                   placeholder=\"Entrez le descriptif de la fonction\"
                                                   value = \"$value\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD_FUNCTION\" id=\"addFunction#$idFunc\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD_FUNCTION\" value=\"$idFunc\" id=\"addFunction#$idFunc\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>

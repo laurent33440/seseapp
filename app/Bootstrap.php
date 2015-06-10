@@ -13,7 +13,7 @@
  * @author laurent
  */
 class Bootstrap {
-    //const CONFIG_DIR = ''
+    //const CONFIG_DIR = ROOT.'/app/config';
     const APP_URL='/seseapp';
     const ENTRY_SCRIPT = 'index.php';
     const APPLICATION_NAME = 'SESE';

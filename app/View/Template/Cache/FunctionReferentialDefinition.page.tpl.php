@@ -133,11 +133,11 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
                                                   id=\"_descriptionList#$idFunc\"
-                                                  name=\"_descriptionList#$idFunc\"
+                                                  name=\"_descriptionList##$idFunc\"
                                                   placeholder=\"Entrez le descriptif de la fonction\"
                                                   value = \"$value\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddFunction\" id=\"addFunction#$idFunc\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddFunction\" value=\"$idFunc\" id=\"addFunction#$idFunc\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>

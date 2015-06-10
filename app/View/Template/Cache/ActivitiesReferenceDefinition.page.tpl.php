@@ -135,14 +135,14 @@
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
                                               id=\"_activityRefList#$idActivity\"
-                                              name=\"_activityRefList#$idActivity\"
+                                              name=\"_activityRefList##$idActivity\"
                                               placeholder=\"Entrez la référence de l'activité\"
                                               value=\"".$activityRef."\">
                                             </div><!-- /input-group -->
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"_functionList#$idActivity\" id=\"_functionList#$idActivity\">";
+                                            <select class=\"form-control\" name=\"_functionList##$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach ($this->_arrayParamslist[2][$idActivity] as $idFunction => $function) {
                                                
                                                     echo"
@@ -159,7 +159,7 @@
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
                                                 id=\"_activityDescriptionList#$idActivity\"
-                                                name=\"_activityDescriptionList#$idActivity\"
+                                                name=\"_activityDescriptionList##$idActivity#$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
                                                 value = \"".$this->_arrayParamslist[1][$idActivity]."\"
                                                 >

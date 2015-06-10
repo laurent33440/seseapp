@@ -201,12 +201,12 @@ class AdminController extends AControllerState{
         //check buttons
         if(array_key_exists($this->_BUTTONS_FUNCTIONS['BUTTON_ADD_FUNCTION'], $datas)){ //add button
             $varsModel = $this->_model->getClassVars();
+            Logger::getInstance()->logDebug(__CLASS__.'properties model : '.print_r($varsModel, true));
             $params = $this->findAllParamsFromForm($datas, $varsModel);
             Logger::getInstance()->logInfo(__CLASS__.' all params : '.  print_r($params, true));
-            foreach($params as $model){
-                $this->_model->setClassVarsValues($model);
-                Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
-            }
+            $model = $params[$datas[$this->_BUTTONS_FUNCTIONS['BUTTON_ADD_FUNCTION']]];//get datas from button id 
+            $this->_model->setClassVarsValues($model);
+            Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
             $this->_model->append();
             return true;
         }else{

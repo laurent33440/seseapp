@@ -49,7 +49,7 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
 
     /**
      * Set function list contain : 
-     * 1 - if param1 is a list of {id, function} avalaible
+     * 1 - if param1 is a list of {id, function} avalable
      *      list is added for the current id Activity
      * 2 - if param1 is a composite parameter from view (Form) 'id_function#function'
      *      'id_function' and 'function' are used to build a list with top element 'function' for the current id Activity
@@ -58,7 +58,7 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
      */
     public function set_functionList($functionIdVal, $idActivity=null) {
         if(!is_array($functionIdVal)){
-            $f = explode('#', $functionIdVal); //setter by view
+            $f = explode('#', $functionIdVal); // view structure
             $this->_functionList[$idActivity] = $this->getReorderFunctionList($f[1]);
         }else{
             $this->_functionList[$idActivity] = $functionIdVal; // list of functions
@@ -105,7 +105,7 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $item->act_descriptif_activite = end($this->_activityDescriptionList);
         $function = end($this->_functionList);
         $item->id_fonction=reset(array_keys($function));
-        var_dump($item->id_fonction);
+        //var_dump($item->id_fonction);
         $collection->Insert($item);
     }
     
@@ -221,10 +221,12 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
      */
     public function getReorderFunctionList($functionDesc){
         $functionList =$this->getDefinedFunctions();
+        //get key 
+        $kf = array_keys($functionList, $functionDesc, true);
         //remove
         $functionList = array_diff($functionList, array($functionDesc));
         //add
-        array_unshift($functionList, $functionDesc);
+        $functionList = array( $kf[0]=>$functionDesc)  + $functionList;
         return $functionList;
     }
     

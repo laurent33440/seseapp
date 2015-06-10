@@ -28,12 +28,12 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
     }
     
     // for setter view
-    public function set_descriptionList($_description) {
-        $this->_descriptionList[] = $_description;
+    public function set_descriptionList($_description, $id=null) {
+        $this->_descriptionList[$id] = $_description;
     }
     
     public function addBlank() {
-        $this->_descriptionList[] ='';
+        $this->_descriptionList['new'] ='';
     }
 
     public function deleteFromProperty($property, $val) {
@@ -114,17 +114,7 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
 //    }
 
     
-    /**
-     * UNUSED
-     * PRIVATE
-     * Erase empty and blank values from array - keep ordering key 
-     * @param array $a : array to clean
-     * @return array 
-     */
-//    public function delBlankEmptyValues(array $a){
-//        $a = array_map('trim', $a); //suppress blanks at begining and at end of values in array
-//        return array_values(array_filter($a));
-//    }       
+   
 
 
     
