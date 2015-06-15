@@ -43,14 +43,12 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
     
     public function testOrderingArray(){
         $functionList =array(20=>'f0', 21=>'f1', 22=>'f2',23=>'f3',24=>'f4');
-        $functionDesc = 'f3';
+        $functionDesc = 'f3';//to top
         $kf = array_keys($functionList, $functionDesc, true);
         //remove
         $functionList = array_diff($functionList, array($functionDesc));
-        //var_dump($functionList);
         //add
         $functionList = array($kf[0]=>$functionDesc)+$functionList;
-        //array_unshift($functionList, $functionDesc);
         $this->assertEquals(array(23=>'f3', 20=>'f0', 21=>'f1', 22=>'f2',24=>'f4'), $functionList);
     }
     
@@ -86,7 +84,6 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $this->object->resetModel();
         $this->object->addBlank();
         $tst = $this->object->get_functionList();
-        //var_dump($tst);
         foreach ($tst as $list) {
             foreach ($list as $id=>$val){
                 $this->assertGreaterThanOrEqual(0, $id);
@@ -104,10 +101,15 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $functionsModel->getAll();
         $f = $functionsModel->get_descriptionList();
         $formValFunc = reset(array_keys($f)).'#'.reset($f); //structure view
-        $model = array(
+        $model2 = array(
                 '_activityRefList' => array('A1','new'),
                 '_functionList' => array($formValFunc,'new'),
                 0 => array('_activityDescriptionList' => array('activité1','new'))
+        );
+        $model = array(
+                '_activityRefList' => 'A1',
+                '_functionList' => array($formValFunc,1),
+                '_activityDescriptionList' => 'activité1'
         );
         $subset_properties = array(
                     '_activityRefList' => array('A1',2), // activity ref and id
@@ -120,16 +122,16 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
                     '_someWrongProperty' => 'foo'
             );
         $this->assertTrue($this->object->setClassVarsValues($model));
-        $this->assertEquals(array('new'=>'A1'), $this->object->get_activityRefList());
+        $this->assertEquals(array('A1'), $this->object->get_activityRefList());
         $tst = $this->object->get_functionList();
         foreach ($tst as $key=>$list) {
-            $this->assertEquals('new',$key); // id Activity
+            //$this->assertEquals('new',$key); // id Activity
             foreach ($list as $id=>$val){
                 $this->assertGreaterThanOrEqual(0, $id);//id func
                 $this->assertStringMatchesFormat('%s', $val);//func
             }
         }
-        $this->assertEquals(array('new'=>'activité1'), $this->object->get_activityDescriptionList());
+        $this->assertEquals(array('activité1'), $this->object->get_activityDescriptionList());
         $this->object->resetModel();
         $this->assertTrue($this->object->setClassVarsValues($subset_properties));
         $this->assertEquals(array(2=>'A1'), $this->object->get_activityRefList());
@@ -140,7 +142,13 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
     }
     
     public function testgetAll(){
-        
+        $this->object->resetModel();
+        $this->object->getAll();
+        $list=$this->object->get_activityRefList();
+        foreach ($list as $key => $value) {
+            $this->assertGreaterThanOrEqual(0, $key);//id 
+            $this->assertStringMatchesFormat('%s', $value);
+        }
     }
     
     /**
@@ -154,13 +162,43 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $f = $functionsModel->get_descriptionList();
         $formValFunc = reset(array_keys($f)).'#'.reset($f);
         $model = array(
-                '_activityRefList' => array('A1','new'),
+                '_activityRefList' => array('TEST','new'),
                 '_functionList' => array($formValFunc,'new'),
-                0 => array('_activityDescriptionList' => array('activité1','new'))
+                0 => array('_activityDescriptionList' => array('TESTactivitéTEST','new'))
         );
         $this->object->setClassVarsValues($model);//append this values to model
         $this->object->append();//persistent
+        $this->object->resetModel();
+        $this->object->getAll();
+        $this->assertTrue(in_array('TEST',$this->object->get_activityRefList()));
     }
+    
+    public function testupdate(){
+        $this->object->getAll();
+        $list = $this->object->get_activityDescriptionList();
+        $id=  array_keys($list, 'TESTactivitéTEST', true);
+        $this->object->update('_activityDescriptionList', 'TESTactivitéTEST_UPDATE', $id[0]);
+        $this->object->resetModel();
+        $this->object->getAll();
+        $list = $this->object->get_activityDescriptionList();
+        $this->assertTrue(in_array('TESTactivitéTEST_UPDATE', $list));
+                
+    }
+    
+    /**
+     * @depends testupdate
+     */
+    public function testdeleteFromId(){
+        $this->object->getAll();
+        $list = $this->object->get_activityDescriptionList();
+        $k=  array_keys($list, 'TESTactivitéTEST_UPDATE', true);
+        $this->object->deleteFromId($k[0]);
+        $this->object->resetModel();
+        $this->object->getAll();
+        $list = $this->object->get_activityDescriptionList();
+        $this->assertFalse(in_array('TESTactivitéTEST', $list));
+    }
+    
 
 
 }

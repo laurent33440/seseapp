@@ -12,6 +12,13 @@ use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Competence\CompetenceObject;
 use Model\Dal\ModelDb\Constituer\ConstituerObject;
 
+//
+//Notice: Undefined index: 691#393 in /home/laurent/Dropbox/Projets/web/seseapp/app/Controller/AdminController.php on line 505
+//
+//Warning: Invalid argument supplied for foreach() in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/AModel.php on line 55
+//
+//Warning: Missing argument 2 for Model\SkillsReferenceDefinitionModel::bindActivityToSkill(), called in /home/laurent/Dropbox/Projets/web/seseapp/app/Controller/AdminController.php on line 509 and defined in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/SkillsReferenceDefinitionModel.php on line 247
+
 /**
  * Description of SkillsReferenceDefinitionModel
  *

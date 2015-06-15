@@ -1,299 +1,94 @@
-10-06-2015 11:42:05 - INFO  --> 
+15-06-2015 16:07:18 - INFO  --> 
 ======== Log SESE Start ========
 --------------------------------- 
-10-06-2015 11:42:05 - INFO  --> Controller\AdminController restoring state controller : Admin::activityDefinition-->running 
-10-06-2015 11:42:05 - INFO  --> Class MainRouter - controller trigged : Admin::activityDefinition 
-10-06-2015 11:42:05 - DEBUG --> Controller\AdminController-- RAW POST -- Array
+15-06-2015 16:07:18 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+15-06-2015 16:07:18 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+15-06-2015 16:07:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+15-06-2015 16:07:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+15-06-2015 16:07:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+15-06-2015 16:07:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+15-06-2015 16:07:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+15-06-2015 16:07:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+15-06-2015 16:07:18 - DEBUG --> View\ViewHandler Model params from controler :  => Array
 (
-    [_activityRefList##393] => A3
-    [_functionList##393] => 0#fonc3
-    [_activityDescriptionList##393#393] => Activité 3
-    [_activityRefList##395] => A100
-    [_functionList##395] => 0#fonc4
-    [_activityDescriptionList##395#395] => Activité 10
-    [_activityRefList##396] => A100!!valeur dupliqu
-    [_functionList##396] => 0#fonc4
-    [_activityDescriptionList##396#396] => Activité 10
-    [_activityRefList##397] => A100!!valeur dupliqu
-    [_functionList##397] => 2#fonc5
-    [_activityDescriptionList##397#397] => Activité 10
-    [_activityRefList##new] => A4
-    [_functionList##new] => 15638#func6
-    [_activityDescriptionList##new#new] => activité 4
-    [ButtonSubmitAddActivity] => new
-)
- 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Controller\AdminController-- Members model BEFORE ADD: --Array
-(
-    [_activityRefList] => Array
+    [body] => Array
         (
-            [393] => A3
-            [395] => A100
-            [396] => A100!!valeur dupliqu
-            [397] => A100!!valeur dupliqu
+            [DATE] => lundi 15 juin 2015
         )
 
-    [_activityDescriptionList] => Array
+    [header] => Array
         (
-            [393] => Activité 3
-            [395] => Activité 10
-            [396] => Activité 10
-            [397] => Activité 10
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
         )
 
-    [_functionList] => Array
+    [footer] => Array
         (
-            [393] => Array
-                (
-                    [0] => fonc3
-                    [1] => fonc4
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [395] => Array
-                (
-                    [0] => fonc4
-                    [1] => fonc3
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [396] => Array
-                (
-                    [0] => fonc4
-                    [1] => fonc3
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [397] => Array
-                (
-                    [0] => fonc4
-                    [1] => fonc3
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
         )
 
 )
  
-10-06-2015 11:42:05 - DEBUG --> Controller\AdminController ID ADD BUTTON : new 
-10-06-2015 11:42:05 - DEBUG --> Controller\AdminController params extract : Array
+15-06-2015 16:07:18 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
 (
-    [393] => Array
+    [body] => Array
         (
-            [_activityRefList] => A3
-            [_functionList] => 0#fonc3
-            [0] => Array
-                (
-                    [_activityDescriptionList] => Array
-                        (
-                            [0] => Activité 3
-                            [1] => 393
-                        )
-
-                )
-
+            [DATE] => lundi 15 juin 2015
         )
 
-    [395] => Array
+    [header] => Array
         (
-            [_activityRefList] => A100
-            [_functionList] => 0#fonc4
-            [0] => Array
-                (
-                    [_activityDescriptionList] => Array
-                        (
-                            [0] => Activité 10
-                            [1] => 395
-                        )
-
-                )
-
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
         )
 
-    [396] => Array
+    [footer] => Array
         (
-            [_activityRefList] => A100!!valeur dupliqu
-            [_functionList] => 0#fonc4
-            [0] => Array
-                (
-                    [_activityDescriptionList] => Array
-                        (
-                            [0] => Activité 10
-                            [1] => 396
-                        )
-
-                )
-
-        )
-
-    [397] => Array
-        (
-            [_activityRefList] => A100!!valeur dupliqu
-            [_functionList] => 2#fonc5
-            [0] => Array
-                (
-                    [_activityDescriptionList] => Array
-                        (
-                            [0] => Activité 10
-                            [1] => 397
-                        )
-
-                )
-
-        )
-
-    [new] => Array
-        (
-            [_activityRefList] => A4
-            [_functionList] => 15638#func6
-            [0] => Array
-                (
-                    [_activityDescriptionList] => Array
-                        (
-                            [0] => activité 4
-                            [1] => new
-                        )
-
-                )
-
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
         )
 
 )
  
-10-06-2015 11:42:05 - DEBUG --> Controller\AdminController ADD to model ->  val : Array
-(
-    [_activityRefList] => A4
-    [_functionList] => 15638#func6
-    [0] => Array
-        (
-            [_activityDescriptionList] => Array
-                (
-                    [0] => activité 4
-                    [1] => new
-                )
-
-        )
-
-)
- 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:05 - DEBUG --> Controller\AdminController-- Members model AFTER ADD: --Array
-(
-    [_activityRefList] => Array
-        (
-            [393] => A3
-            [395] => A100
-            [396] => A100!!valeur dupliqu
-            [397] => A100!!valeur dupliqu
-            [] => A4
-        )
-
-    [_activityDescriptionList] => Array
-        (
-            [393] => Activité 3
-            [395] => Activité 10
-            [396] => Activité 10
-            [397] => Activité 10
-            [new] => activité 4
-        )
-
-    [_functionList] => Array
-        (
-            [393] => Array
-                (
-                    [0] => fonc3
-                    [1] => fonc4
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [395] => Array
-                (
-                    [0] => fonc4
-                    [1] => fonc3
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [396] => Array
-                (
-                    [0] => fonc4
-                    [1] => fonc3
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [397] => Array
-                (
-                    [0] => fonc4
-                    [1] => fonc3
-                    [2] => fonc5
-                    [3] => func6
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-            [] => Array
-                (
-                    [0] => func6
-                    [1] => fonc3
-                    [2] => fonc4
-                    [3] => fonc5
-                    [4] => func7
-                    [5] => func8
-                    [6] => func9
-                )
-
-        )
-
-)
- 
-10-06-2015 11:42:05 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-10-06-2015 11:42:06 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-10-06-2015 11:42:06 - INFO  --> destruct : Controller\AdminController 
-10-06-2015 11:42:06 - INFO  --> Controller\AdminController saving state controller : Admin::activityDefinition-->running 
+15-06-2015 16:07:18 - INFO  --> end Class MainRouter 
+15-06-2015 16:07:18 - INFO  --> destruct : Controller\AdminController 
+15-06-2015 16:07:18 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 

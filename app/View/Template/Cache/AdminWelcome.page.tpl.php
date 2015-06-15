@@ -110,7 +110,7 @@
                             <h3 class="panel-title">Informations générales</h3>
                         </div>
                         <div class="panel-body">
-                            mercredi 10 juin 2015 
+                            lundi 15 juin 2015 
                         </div>
                     </div>
                 </div>

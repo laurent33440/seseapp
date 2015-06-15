@@ -350,7 +350,7 @@ class AdminController extends AControllerState{
                 $this->_model->getAll();//restore model
                 $id = $datas[$this->_BUTTONS_ACTIVITIES['BUTTON_DEL_ACTIVITY']];
                 \Logger::getInstance()->logDebug(__CLASS__.' DEL to model ->  id : '.  $id);
-                $this->_model->removeActivityFromIdFromDataBase(++$id); // 0 based
+                $this->_model->deleteFromId($id);
                 return true;
             }else{//main submit all done
                 return false;
@@ -461,7 +461,7 @@ class AdminController extends AControllerState{
     public function buildViewSkillDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
+        $formArray['INDEX'] = $this->_index.'/competence';
         foreach ($this->_BUTTONS_SKILLS as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }

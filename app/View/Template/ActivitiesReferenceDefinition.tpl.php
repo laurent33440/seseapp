@@ -41,7 +41,7 @@
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"form_functionList##$idActivity\" id=\"_functionList#$idActivity\">";
+                                            <select class=\"form-control\" name=\"form_functionList#$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach (form_val_functionList[$idActivity] as $idFunction => $function) {
                                                
                                                     echo"
@@ -58,7 +58,7 @@
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
                                                 id=\"_activityDescriptionList#$idActivity\"
-                                                name=\"form_activityDescriptionList##$idActivity#$idActivity\"
+                                                name=\"form_activityDescriptionList##$idActivity\"
                                                 placeholder=\"Entrez le descriptif de l'activité\"
                                                 value = \"".form_val_activityDescriptionList[$idActivity]."\"
                                                 >

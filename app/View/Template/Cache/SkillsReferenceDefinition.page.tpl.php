@@ -109,7 +109,7 @@
     </div>
 
 <div class="container">
-    <form  method="post" action="<?php echo' /seseapp/index.php/administrateur/competence '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/competence '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">

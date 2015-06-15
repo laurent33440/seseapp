@@ -11,6 +11,11 @@ namespace Model;
 use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Activite\ActiviteObject;
 
+
+//Notice: Trying to get property of non-object in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/Dal/ModelDb/Activite/ActiviteMappingProvider.php on line 63
+
+//Strict Standards: Only variables should be passed by reference in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/ActivitiesReferenceDefinitionModel.php on line 114
+
 /**
  * Description of ActivitiesReferenceDefinitionModel
  *
@@ -36,15 +41,23 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     
    
     public function set_activityRefList($_activitiesReferencesList,$id=null) {
-        if(!in_array( $_activitiesReferencesList, $this->_activityRefList)){
-            $this->_activityRefList[$id] = $_activitiesReferencesList;
-        }else{//already exist
-            $this->_activityRefList[$id] = $_activitiesReferencesList.self::ERR_DUPLICATE;
+        if($id!=null){
+            if(!in_array( $_activitiesReferencesList, $this->_activityRefList)){
+                $this->_activityRefList[$id] = $_activitiesReferencesList;
+            }else{//already exist
+                $this->_activityRefList[$id] = $_activitiesReferencesList.self::ERR_DUPLICATE;
+            }
+        }else{
+            $this->_activityRefList[] = $_activitiesReferencesList;
         }
     }
     
     public function set_activityDescriptionList($_activityDescriptionList,$id=null) {
-        $this->_activityDescriptionList[$id] = $_activityDescriptionList;
+        if($id!=null){
+            $this->_activityDescriptionList[$id] = $_activityDescriptionList;
+        }else{
+            $this->_activityDescriptionList[] = $_activityDescriptionList;//append
+        }
     }
 
     /**
@@ -198,20 +211,6 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         return  $functionModel->get_descriptionList();
     }
     
-    /**
-     * UNUSED
-     * -PRIVATE
-     * Matches needs for view part 
-     */
-//    public function updateModelView(){
-//        $functionModel =  new FunctionReferentialDefinitionModel();
-//        for ($i=0; $i<count($this->_functionList); $i++) {
-//            if(!is_array($this->_functionList[$i])){
-//                $this->_functionList[$i]=$this->getReorderFunctionList($functionModel->getFunctionIdDbFromDescription($this->_functionList[$i]));
-//            }
-//        }
-//    }
-
     /**
      * PRIVATE
      * 
