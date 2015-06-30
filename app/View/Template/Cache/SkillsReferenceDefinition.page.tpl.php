@@ -133,7 +133,7 @@
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
                                               id=\"skillReference#$idSkill\"
-                                              name=\"_skillsReferencesList#$idSkill\"
+                                              name=\"_skillsReferencesList##$idSkill\"
                                               placeholder=\"Entrez la référence de la compétence\"
                                               value=\"".$this->_arrayParamslist[0][$idSkill]."\"
                                               >
@@ -143,7 +143,7 @@
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
                                                 id=\"skillDescription#$idSkill\"
-                                                name=\"_skillsDescriptionsList#$idSkill\"
+                                                name=\"_skillsDescriptionsList##$idSkill\"
                                                 placeholder=\"Entrez le descriptif de la compétence\"
                                                 value = \"$skill\"
                                                 >
@@ -179,27 +179,35 @@
                                                             </thead>
                                                             <tbody>
                                                             ";
-                                                                foreach ($this->_arrayParamslist[2][$idSkill] as $activityId => $activityBinded) {
+                                                                foreach ($this->_arrayParamslist[2][$idSkill] as $activityId => $activityBinded ) { // for a given skill list all activities binded                                                                    
                                                                     echo"
                                                                     <tr>
                                                                         <td>
                                                                             <div class=\"input-group\">
-                                                                              <select class=\"form-control\" name=\"_bindedActivitiesLists#$idSkill#$idSkill#$activityId\" id=\"activityChoosenForSkill#$idSkill#$activityId\">
+                                                                              <select class=\"form-control\" name=\"_bindedActivitiesLists##$idSkill#$idSkill\" id=\"activityChoosenForSkill#$idSkill\">
                                                                                 ";
-                                                                                foreach ($this->_arrayParamslist[1] as $activity) {
+                                                                                foreach ($this->_arrayParamslist[1] as $selectedActivityId => $activity) { //list all activities available
+                                                                                    if($selectedActivityId===$activityId){// find binded activity in list
+                                                                                        $selected= 'selected="selected"';
+                                                                                        $activityIdAlreadySelected = $activityId;
+                                                                                    }else{
+                                                                                        $selected='';
+                                                                                    }
+                                            
                                                                                     echo"
                                                                                     <option
-                                                                                        value=\"$activity\">$activity
+                                                                                        $selected
+                                                                                        value=\"$selectedActivityId\">$activity
                                                                                     </option>
                                                                                     ";
                                                                                 }
                                                                                 echo "
                                                                               </select>
                                                                               <span class=\"input-group-btn\">
-                                                                                <button class=\"btn btn-sm btn-info\" name=\"ButtonSubmitBindActivity\" value=\"$idSkill#$activityId\" id=\"addActivity#$idSkill\" type=\"submit\">
+                                                                                <button class=\"btn btn-sm btn-info\" name=\"ButtonSubmitBindActivity\" value=\"$idSkill\" id=\"addActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-paperclip\"></span>
                                                                                     Associer</button>
-                                                                                <button class=\"btn btn-sm btn-warning\" name=\"ButtonSubmitFreeActivity\" value=\"$idSkill#$activityId\" id=\"delActivity#$idSkill\" type=\"submit\">
+                                                                                <button class=\"btn btn-sm btn-warning\" name=\"ButtonSubmitFreeActivity\" value=\"$idSkill#$activityIdAlreadySelected\" id=\"delActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-resize-full\"></span>
                                                                                     Dissocier</button>
                                                                               </span>
@@ -208,6 +216,7 @@
 
                                                                     </tr>
                                                                     ";
+                                                                    
                                                                 }
                                                                 echo"
                                                                  </tbody>

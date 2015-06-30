@@ -125,7 +125,7 @@
         </div>
     </div>
 
-    <form  method="post" action="<?php echo' /index.php/enseignant '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/enseignant/stage '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -321,7 +321,7 @@
                                             <input type="text" required class="form-control" id="inputAdminName" 
                                                    name="<?php echo'_employeeFirstName'; ?>" 
                                                    placeholder="Nom de l'enseignant"
-                                                   value="<?php echo''; ?>">
+                                                   value="<?php echo'employee test'; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -348,7 +348,7 @@
                                             <input type="text" required class="form-control" id="inputAdminName" 
                                                    name="<?php echo'_employeeRole'; ?>" 
                                                    placeholder="Nom de l'enseignant"
-                                                   value="<?php echo''; ?>">
+                                                   value="<?php echo'employee role test'; ?>">
                                             </div>
                                         </div>
                                     </div>

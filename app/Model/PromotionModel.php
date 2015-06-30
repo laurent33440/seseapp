@@ -16,10 +16,21 @@ use Model\Dal\ModelDb\Promotion\PromotionObject;
  *
  * @author laurent
  */
-class PromotionModel extends AModel{
+class PromotionModel extends AModel implements IModel{
     
-    //view model
+    /**
+     * view model
+     */
+    
+    /**
+     * array(id => value)
+     * @var array 
+     */
     private $_descriptions = array();
+    /**
+     * array(id => value)
+     * @var array 
+     */
     private $_references = array();
     
     public function get_references() {
@@ -30,51 +41,30 @@ class PromotionModel extends AModel{
         return $this->_descriptions;
     }
     
-    public function set_references($_reference) {
-        $this->_references[] = $_reference;
+    public function set_references($_reference, $id=null) {
+        if($id != null){
+            $this->_references[$id] = $_reference;
+        }else{
+            $this->_references['new'] = $_reference;
+        }
     }
 
-    public function set_descriptions($description) {
-        $this->_descriptions[] = $description;
-    }
-    
-    /**
-     * 
-     */
-    public function addBlankToViewModel(){
-        $this->_references[]='';
-        $this->_descriptions[]='';
-    }
-    
-    /**
-     * Get all promotions from data base - reset view model
-     */
-    public function getAllPromotions(){
-        $this->_references=array();//reset
-        $this->_descriptions=array();//reset
-        $collection = new DataAccess('Promotion');
-        $promotions = $collection->GetAll();
-        foreach ($promotions as $promotion) {
-            $this->set_references($promotion->pro_reference_promotion);
-            $this->set_descriptions($promotion->pro_nom_promotion);
+    public function set_descriptions($description, $id=null) {
+        if($id != null){
+            $this->_descriptions[$id] = $description;
+        }else{
+            $this->_descriptions['new'] = $description;
         }
     }
     
-    /**
-     * Append last model view to data base
-     */
-    public function appendPromotion(){
-        $ref = $this->_references[count($this->_references)-1];//last
-        $decription = $this->_descriptions[count($this->_descriptions)-1];//last
-        $this->addPromotion($ref, $decription);
+    public function addBlank() {
+        $this->_references['new']='';
+        $this->_descriptions['new']='';
     }
 
-    /**
-     * Add promotion to data base
-     * @param type $ref
-     * @param type $decription
-     */
-    public function addPromotion($ref, $decription){
+    public function append() {
+        $ref = end($this->_references);//last
+        $decription = end($this->_descriptions);//last
         $collection = new DataAccess('Promotion');
         $promotion = new PromotionObject;
         $promotion->pro_reference_promotion = $ref;
@@ -82,28 +72,47 @@ class PromotionModel extends AModel{
         $collection->Insert($promotion);
     }
 
-    
-    /**
-     * Delete promotion from database
-     * @param type $ref
-     */
-    public function delPromotion($ref){
+    public function deleteFromId($id) {
         $collection = new DataAccess('Promotion');
-        $promotion=$collection->GetByColumnValue('pro_reference_promotion',$ref);
+        $promotion=$collection->GetByID($id);
         $collection->Delete($promotion);
+    }
+
+    public function deleteFromProperty($property, $val) {
+        //
+    }
+
+    public function getAll() {
+        $this->resetModel();
+        $collection = new DataAccess('Promotion');
+        $promotions = $collection->GetAll();
+        foreach ($promotions as $promotion) {
+            $this->set_references($promotion->pro_reference_promotion, $promotion->id_promotion);
+            $this->set_descriptions($promotion->pro_nom_promotion, $promotion->id_promotion);
+        }
+    }
+
+    public function resetModel() {
+        $this->_descriptions=array();
+        $this->_references=array();
+    }
+
+    public function update($property, $val, $id) {
+        //
     }
     
     /**
+     * UNUSED
      * Update promotion in data base
      * @param type $ref
      * @param type $description
      */
-    public function updatePromotion($ref, $description){
-        $collection = new DataAccess('Promotion');
-        $promotion=$collection->GetByColumnValue('pro_reference_promotion',$ref);
-        $promotion->pro_reference_promotion = $ref;
-        $promotion->pro_nom_promotion = $description;
-        $collection->Update($promotion);
-    }
+//    public function updatePromotion($ref, $description){
+//        $collection = new DataAccess('Promotion');
+//        $promotion=$collection->GetByColumnValue('pro_reference_promotion',$ref);
+//        $promotion->pro_reference_promotion = $ref;
+//        $promotion->pro_nom_promotion = $description;
+//        $collection->Update($promotion);
+//    }
     
 }

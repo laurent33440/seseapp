@@ -55,7 +55,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        unknown user : unknown user role<span class="caret"></span>
+                        lolo : administrateur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -75,23 +75,23 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 
-                                <li><a href="/index.php//referentiel"><span class="glyphicon glyphicon-book " aria-hidden="true"></span>Référentiel de formation</a></li>
-                                <li><a href="/index.php//fonction"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Fonctions</a></li>
-                                <li><a href="/index.php//activite"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Activités</a></li>
-                                <li><a href="/index.php//competence"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Compétences</a></li>
+                                <li><a href="/index.php/administrateur/referentiel"><span class="glyphicon glyphicon-book " aria-hidden="true"></span>Référentiel de formation</a></li>
+                                <li><a href="/index.php/administrateur/fonction"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Fonctions</a></li>
+                                <li><a href="/index.php/administrateur/activite"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Activités</a></li>
+                                <li><a href="/index.php/administrateur/competence"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Compétences</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li><a href="/index.php//promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
-                        <li><a href="/index.php//enseignant"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
+                        <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
+                        <li><a href="/index.php/administrateur/enseignant"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li><a href="/index.php//stagiaire"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
-                        <li><a href="/index.php//stage"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
+                        <li><a href="/index.php/administrateur/stagiaire"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
+                        <li><a href="/index.php/administrateur/stage"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li><a href="/index.php//acces"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
+                        <li><a href="/index.php/administrateur/acces"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
                         <li><a href=""><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Archiver la base de données</a></li>
                         
                     </ul>
@@ -111,7 +111,7 @@
 
 <div class="container-fluid">
 
-    <form  method="post" action="<?php echo' /seseapp/index.php/administrateur/promotion '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/promotion '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -127,14 +127,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($this->_arrayParamslist[1] as $idWork=>$ref ) {
+                                <?php foreach ($this->_arrayParamslist[1] as $idPromotion=>$ref ) {
                                     echo"
                                         <tr>
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"promoRef#$ref\"
-                                                  name=\"_references#$ref\"
+                                                  id=\"promoRef#$idPromotion\"
+                                                  name=\"_references##$idPromotion\"
                                                   placeholder=\"Entrez la référence de la promotion\"
                                                   value = \"$ref\">
                                                </div><!-- /input-group -->
@@ -142,16 +142,16 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"promotionDescription#$ref\"
-                                                  name=\"_descriptions#$ref\"
+                                                  id=\"promotionDescription#$idPromotion\"
+                                                  name=\"_descriptions##$idPromotion\"
                                                   placeholder=\"Entrez le descriptif de la promotion\"
-                                                  value = \"".$this->_arrayParamslist[0][$idWork]."\">
+                                                  value = \"".$this->_arrayParamslist[0][$idPromotion]."\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" id=\"addPromotion#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" value=\"$idPromotion\" id=\"addPromotion#$ref\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$ref\" id=\"delPromotion#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$idPromotion\" id=\"delPromotion#$ref\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>
@@ -245,7 +245,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/index.php/administrateur',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -268,7 +268,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/index.php/administrateur',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

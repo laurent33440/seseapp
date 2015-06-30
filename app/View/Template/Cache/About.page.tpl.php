@@ -69,9 +69,9 @@
           <h3> Informations générales concernant l'application SESE </h3>
           <p>
           <ul>
-              <li><a href = "#">Objet de l'application</a>
-              <li><a href = "#">Droits sur l'information</a>
-              <li><a href = "#">Licence d'utilisation</a>
+              <li><a href = "#about_sese">Objet de l'application</a>
+              <li><a href = "#rights_law">Droits sur l'information</a>
+              <li><a href = "#license">Licence d'utilisation</a>
           </ul>
           </p>
         </div>
@@ -80,7 +80,7 @@
       <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                  <div class="panel-heading" id="about_sese">
                     <h3 class="panel-title">L'application SESE (Suivi et Evaluations des Stafgiaires en Entreprise </h3>
                   </div>
                   <div class="panel-body">
@@ -99,7 +99,7 @@
                 </div>
                 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                  <div class="panel-heading" id="rights_law">
                     <h3 class="panel-title">L'application SESE et le droit</h3>
                   </div>
                   <div class="panel-body">
@@ -373,7 +373,7 @@
                 </div>
                 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                  <div class="panel-heading" id="license">
                     <h3 class="panel-title">License GPL version 3</h3>
                   </div>
                   <div class="panel-body">

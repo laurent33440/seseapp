@@ -50,6 +50,7 @@ class TeacherController extends AControllerState{
             $this->_model = new WorkDefinitionModel();
             switch ($this->_state){
                 case self::IDLE :
+                    $this->_model->getAll();
                     $this->buildViewWorkDefinition();
                     $this->sendModelView('WorkDefinition');
                     $this->_state = self::RUNNING;
@@ -63,6 +64,7 @@ class TeacherController extends AControllerState{
                             }
                         }else{
                             if($this->computeWorkDefinition($this->_request->request->all()) === true){
+                                $this->_model->getAll();//update
                                 $this->buildViewWorkDefinition();
                                 $this->sendModelView('WorkDefinition');
                             }else{
@@ -76,11 +78,13 @@ class TeacherController extends AControllerState{
                             }
                         }
                     }else{//direct url access
+                        $this->_model->getAll();
                         $this->buildViewWorkDefinition();
                         $this->sendModelView('WorkDefinition');
                     }
                     break;
                 case self::STOPPED:
+                    $this->_model->getAll();
                     $this->buildViewWorkDefinition();
                     $this->sendModelView('WorkDefinition');
                     $this->_state = self::RUNNING;
@@ -106,7 +110,7 @@ class TeacherController extends AControllerState{
     public function buildViewWorkDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->_index;
+        $formArray['INDEX'] = $this->_index.'/stage';
         foreach ($this->_BUTTONS as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }
@@ -123,8 +127,7 @@ class TeacherController extends AControllerState{
             $params = $this->findAllParamsFromForm($datas, $varsModel);
             Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
             $this->_model->setClassVarsValues($params);
-            $this->_model->addWork();
-            //$this->_model->upDateModel();
+            $this->_model->append();
             return true;
         }else{
             if(array_key_exists($this->_BUTTONS['BUTTON_DEL'], $datas)){ //del button

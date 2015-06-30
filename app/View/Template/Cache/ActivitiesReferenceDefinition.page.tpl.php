@@ -142,7 +142,7 @@
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"_functionList#$idActivity\" id=\"_functionList#$idActivity\">";
+                                            <select class=\"form-control\" name=\"_functionList##$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach ($this->_arrayParamslist[2][$idActivity] as $idFunction => $function) {
                                                
                                                     echo"

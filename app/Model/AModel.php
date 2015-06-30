@@ -16,6 +16,7 @@ use ReflectionProperty;
  * @author laurent
  */
 abstract class AModel {
+    const __BY_VALUE_TO_TEMPLATE__='__BY_VALUE_TO_TEMPLATE__';//pass property of model by value to template to be evaluated in template -- see generator in template engine
     const ERR_DUPLICATE='!!valeur dupliquée!!';
 
     /**

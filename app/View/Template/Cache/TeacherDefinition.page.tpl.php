@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <form  method="post" action="<?php echo' /index.php/administrateur '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/enseignant '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -121,92 +121,179 @@
                     <?php 
                     echo"
                     <select class=\"form-control\" name=\"_teachersList\" id=\"teacherChoosenForUpdate\">";
-                        foreach ($this->_arrayParamslist[0] as $idPromotion => $teacher) {
+                        foreach ($this->_arrayParamslist[0] as $idTeacher => $teacher) {
+                            if(21 === $idTeacher){//select current teacher
+                                $select= 'selected="selected"';
+                            }else{
+                                $select= '';
+                            }
+                            
                             echo"
-                                <option value=\"$idPromotion\">$teacher </option>
+                                <option 
+                                    $select
+                                    value=\"$idTeacher\">$teacher 
+                                </option>
                             ";
                         }
                     echo "
                     </select>";
                     ?>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Formulaire de création des enseignants
-                </div>
-                <div class="panel-body">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Promotion associé à cet enseignant
-                        </div>
-                        <div class="panel-body">
-                            <?php 
-                            echo"
-                            <select class=\"form-control\" name=\"_promotionsList\" id=\"promotionChoosenForUpdate\">";
-                                foreach ($this->_arrayParamslist[1] as $idPromotion => $promotion) {
-                                    echo"
-                                        <option value=\"$idPromotion\">$promotion </option>
-                                    ";
-                                }
-                            echo "
-                            </select>";
-                            ?>
-                        </div>
+                    
+                    <div class="form-group"> <!-- spacer -->
                     </div>
-
-                    <div class="form-group">
-                        <label for="inputAdminName" class="control-label col-xs-2">Nom de l'enseignant</label>
-                        <div class="col-xs-10">
-                            <input type="text" required class="form-control" id="inputAdminName" 
-                                   name="<?php echo'_teacherLastName'; ?>" 
-                                   placeholder="Nom de l'enseignant"
-                                   value="<?php echo'zola'; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAdminPass" class="control-label col-xs-2">Prénom de l'enseignant</label>
-                        <div class="col-xs-10">
-                            <input type="text" required class="form-control" id="inputAdminPass" 
-                                   name="<?php echo'_teacherFirstName'; ?>"
-                                   placeholder="Prénom de l'enseignant"
-                                   value="<?php echo'emile'; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAdminPass2" class="control-label col-xs-2">Mél de l'enseignant </label>
-                        <div class="col-xs-10">
-                            <input type="mail" required class="form-control" id="inputAdminPass2" 
-                                   name="<?php echo'_teacherMail'; ?>" 
-                                   placeholder=""
-                                   value="<?php echo'laurentauthier@voila.fr'; ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAdminPass2" class="control-label col-xs-2">Discipline de l'enseignant </label>
-                        <div class="col-xs-10">
-                            <input type="text" required class="form-control" id="inputAdminPass2" 
-                                   name="<?php echo'_teacherSkill'; ?>" 
-                                   placeholder="Discipline de l'enseignant"
-                                   value="<?php echo'français'; ?>">
-                        </div>
-                    </div>
-                            
-                            
+                    
                     <div class="col-md-4">
-                        <button class="btn btn-success btn-block" name="<?php echo'ButtonSubmitAddTeacher'; ?>" id="addFunction" type="submit">
+                        <button class="btn btn-success btn-block" name="<?php echo'ButtonSubmitCreateTeacher'; ?>" id="addFunction" type="submit">
                             <span class="glyphicon glyphicon-plus-sign"></span>
                             Ajouter un enseignant
                         </button>
                     </div>
-                    <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4">
+                        <button class="btn btn-warning btn-block" name="<?php echo'ButtonSubmitEditTeacher'; ?>" id="addFunction" type="submit">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Modifier l'enseignant
+                        </button>
+                    </div>
+                    <div class="col-md-4 ">
                         <button class="btn btn-danger btn-block" name="<?php echo'ButtonSubmitDelTeacher'; ?>" id="delFunction" type="submit">
                             <span class="glyphicon glyphicon-minus-sign"></span>
                             Supprimer cet enseignant
                         </button>
                     </div>
+                    
+                    <div class="form-group"> <!-- spacer -->
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <button class="btn btn-info btn-block" name="<?php echo'ButtonSubmitImportTeacher'; ?>" id="addFunction" type="submit">
+                            <span class="glyphicon glyphicon-cloud-download"></span>
+                            !!!!FUTUR INACTIF!!!Importer des enseignants à partir d'une source externe
+                        </button>
+                    </div>
+                    
                 </div>
             </div>
+            
+            <!-- optionnal form panel creating/updating teacher.  -->
+            <?php 
+            if(0==true){
+                echo"
+                <div class=\"panel panel-default\">
+                    <div class=\"panel-heading\">
+                        Formulaire de création/édition des enseignants 
+                    </div>
+                    <div class=\"panel-body\">
+                        <div class=\"panel panel-default\">
+                            <div class=\"panel-heading\">
+                                Promotion associé à cet enseignant
+                            </div>
+                            <div class=\"panel-body\">
+
+                                <select class=\"form-control\" name=\"_promotionsList\" id=\"promotionChoosenForUpdate\">";
+                                    foreach ($this->_arrayParamslist[1] as $idPromotion => $promotion) {
+                                        echo"
+                                            <option value=\"$idPromotion\">$promotion </option>
+                                        ";
+                                    }
+                                echo "
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label for=\"inputAdminName\" class=\"control-label col-xs-2\">Nom de l'enseignant</label>
+                            <div class=\"col-xs-10\">
+                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminName\" 
+                                       name=\"_teacherLastName\" 
+                                       placeholder=\"Nom de l'enseignant\"
+                                       value=\"zola\">
+                            </div>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"inputAdminPass\" class=\"control-label col-xs-2\">Prénom de l'enseignant</label>
+                            <div class=\"col-xs-10\">
+                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass\" 
+                                       name=\"_teacherFirstName\"
+                                       placeholder=\"Prénom de l'enseignant\"
+                                       value=\"emile\">
+                            </div>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"inputAdminPass2\" class=\"control-label col-xs-2\">Mél de l'enseignant </label>
+                            <div class=\"col-xs-10\">
+                                <input type=\"mail\" required class=\"form-control\" id=\"inputAdminPass2\" 
+                                       name=\"_teacherMail\" 
+                                       placeholder=\"\"
+                                       value=\"zola@voila.fr\">
+                            </div>
+                        </div>
+                        <div class=\"form-group\">
+                            <label for=\"inputAdminPass2\" class=\"control-label col-xs-2\">Discipline de l'enseignant </label>
+                            <div class=\"col-xs-10\">
+                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass2\" 
+                                       name=\"_teacherSkill\" 
+                                       placeholder=\"Discipline de l'enseignant\"
+                                       value=\"français\">
+                            </div>
+                        </div>
+
+
+                        <div class=\"col-md-12\">
+                            <button class=\"btn btn-success btn-block\" name=\"ButtonSubmitAddTeacher\" id=\"addFunction\" type=\"submit\">
+                                <span class=\"glyphicon glyphicon-plus-sign\"></span>
+                                Valider cet enseignant
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                ";
+            }
+            ?>
+            <!-- end optional form -->
+            
+            <!-- optionnal form panel importing teacher.  -->
+            <?php 
+            if(0==true){
+                echo"
+                <div class=\"panel panel-default\">
+                    <div class=\"panel-heading\">
+                        Formulaire d'importation des enseignants 
+                    </div>
+                    <div class=\"panel-body\">
+                        <div class=\"panel panel-default\">
+                            <div class=\"panel-heading\">
+                                Formats disponibles associés à l'import
+                            </div>
+                            <div class=\"panel-body\">
+
+                                <select class=\"form-control\" name=\"_formatImportList\" id=\"formatImportList\">";
+                                    foreach ($this->_arrayParamslist[2] as  $format) {
+                                        echo"
+                                            <option value=\"$format\">$format </option>
+                                        ";
+                                    }
+                                echo "
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class=\"col-md-12\">
+                            <button class=\"btn btn-success btn-block\" name=\"ButtonSubmitChooseImportTeacher\" id=\"addFunction\" type=\"submit\">
+                                <span class=\"glyphicon glyphicon-plus-sign\"></span>
+                                Choisir le fichier à importer
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                ";
+            }
+            ?>
+            <!-- end optional form -->
+            
         </div>
 
         <div class="row">

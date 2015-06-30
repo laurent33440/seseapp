@@ -11,9 +11,6 @@ namespace Model;
 use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Activite\ActiviteObject;
 
-
-//Notice: Trying to get property of non-object in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/Dal/ModelDb/Activite/ActiviteMappingProvider.php on line 63
-
 //Strict Standards: Only variables should be passed by reference in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/ActivitiesReferenceDefinitionModel.php on line 114
 
 /**
@@ -117,7 +114,8 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $item->act_ref_activite = end($this->_activityRefList);
         $item->act_descriptif_activite = end($this->_activityDescriptionList);
         $function = end($this->_functionList);
-        $item->id_fonction=reset(array_keys($function));
+        $k=array_keys($function);
+        $item->id_fonction=reset($k);
         //var_dump($item->id_fonction);
         $collection->Insert($item);
     }
@@ -172,36 +170,6 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     }
     
     /**
-     * PRIVATE
-     * 
-     * "SELECT id_activite FROM `Activite` WHERE act_ref_activite = \'A1-1 test\'";
-     * @param type $activityReference
-     */
-    public function getActivityIdFromActivityReference($activityReference){
-        
-    }
-    
-    /**
-     * INTER MODELS SERVICE
-     * 
-     * "SELECT id_activite FROM `Activite` WHERE act_descriptif_activite = \'une description\'";
-     * @param type $activityDescription
-     */
-    public function getActivityIdFromActivityDescription($activityDescription){
-        
-    }
-    
-    /**
-     * INTER MODELS SERVICE
-     * 
-     * "SELECT act_descriptif_activite FROM `Activite` WHERE id_activite = \'1234\'";
-     * @param type $activityId
-     */
-    public function getActivityDescriptionFromActivityId($activityId){
-        
-    }
-    
-    /**
      * -PRIVATE
      * return list functions avalable to view part 
      */
@@ -228,6 +196,38 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
         $functionList = array( $kf[0]=>$functionDesc)  + $functionList;
         return $functionList;
     }
+    
+    /**
+     * PRIVATE - UNUSED-->
+     * 
+     * "SELECT id_activite FROM `Activite` WHERE act_ref_activite = \'A1-1 test\'";
+     * @param type $activityReference
+     */
+//    public function getActivityIdFromActivityReference($activityReference){
+//        
+//    }
+    
+    /**
+     * INTER MODELS SERVICE
+     * 
+     * "SELECT id_activite FROM `Activite` WHERE act_descriptif_activite = \'une description\'";
+     * @param type $activityDescription
+     */
+//    public function getActivityIdFromActivityDescription($activityDescription){
+//        
+//    }
+    
+    /**
+     * INTER MODELS SERVICE
+     * 
+     * "SELECT act_descriptif_activite FROM `Activite` WHERE id_activite = \'1234\'";
+     * @param type $activityId
+     */
+//    public function getActivityDescriptionFromActivityId($activityId){
+//        
+//    }
+    
+    
     
 
 }

@@ -109,7 +109,7 @@
       </div>
     </div>
 
-    <form  method="post" action="<?php echo' /seseapp/index.php/administrateur/stage '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/stage '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -133,7 +133,7 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
                                                   id=\"workDateName#$work\"
-                                                  name=\"_workDateName#$work\"
+                                                  name=\"_workDateName##$idWork\"
                                                   placeholder=\"Entrez la dénomination de la période de stage\"
                                                   value = \"$work\">
                                                </div><!-- /input-group -->
@@ -142,7 +142,7 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
                                                   id=\"dateOn#$work\"
-                                                  name=\"_dateOn#$work\"
+                                                  name=\"_dateOn##$idWork\"
                                                   placeholder=\"Entrez la date de début de stage\"
                                                   value = \"".$this->_arrayParamslist[1][$idWork]."\">
                                                </div><!-- /input-group -->
@@ -151,15 +151,15 @@
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
                                                   id=\"dateOff#$work\"
-                                                  name=\"_dateOff#$work\"
+                                                  name=\"_dateOff##$idWork\"
                                                   placeholder=\"Entrez la date de fin de stage\"
                                                   value = \"".$this->_arrayParamslist[2][$idWork]."\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" id=\"addWorkdate#$work\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" value=\"$idWork\" id=\"addWorkdate#$work\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$work\" id=\"delWorkdate#$work\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$idWork\" id=\"delWorkdate#$idWork\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>

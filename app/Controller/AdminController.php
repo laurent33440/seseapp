@@ -41,7 +41,12 @@ class AdminController extends AControllerState{
                                     'BUTTON_BIND_ACTIVITY' => 'ButtonSubmitBindActivity',
                                     'BUTTON_FREE_ACTIVITY' => 'ButtonSubmitFreeActivity');
     private $_BUTTONS_PROMOTIONS = array('BUTTON_ADD_PROMOTION' => 'ButtonSubmitAddPromotion', 'BUTTON_DEL_PROMOTION' => 'ButtonSubmitDelPromotion');
-    private $_BUTTONS_TEACHERS = array('BUTTON_ADD_TEACHER' => 'ButtonSubmitAddTeacher', 'BUTTON_DEL_TEACHER' => 'ButtonSubmitDelTeacher');
+    private $_BUTTONS_TEACHERS = array('BUTTON_CREATE_TEACHER' => 'ButtonSubmitCreateTeacher',
+                                    'BUTTON_EDIT_TEACHER' => 'ButtonSubmitEditTeacher',
+                                    'BUTTON_ADD_TEACHER' => 'ButtonSubmitAddTeacher', 
+                                    'BUTTON_IMPORT_TEACHER' => 'ButtonSubmitImportTeacher',
+                                    'BUTTON_CHOOSE_IMPORT_TEACHER' => 'ButtonSubmitChooseImportTeacher',
+                                    'BUTTON_DEL_TEACHER' => 'ButtonSubmitDelTeacher');
     
     //private $_BUTTONS = array('BUTTON_ADD' => 'ButtonSubmitAdd', 'BUTTON_DEL' => 'ButtonSubmitDel');
    
@@ -257,7 +262,7 @@ class AdminController extends AControllerState{
                     if($this->_request->isMethod('POST')){
                         if(!$this->_request->isXmlHttpRequest()){ 
                             if($this->computeActivityDefinition($this->_request->request->all()) === true){ //continue processing 
-//                                $this->_model->getAllActivitesToModel();//restore functions list -- see model
+                                $this->_model->getAll();
                                 $this->_model->addBlank();//force new input on form
                                 $this->buildViewActivityDefinition();
                                 $this->sendModelView('ActivitiesReferenceDefinition');
@@ -337,13 +342,9 @@ class AdminController extends AControllerState{
             \Logger::getInstance()->logDebug(__CLASS__.' params extract : '.  print_r($params, true));
             $model = $params[$datas[$this->_BUTTONS_ACTIVITIES['BUTTON_ADD_ACTIVITY']]];//get datas from button id 
             \Logger::getInstance()->logDebug(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
-//            foreach($params as $model){
             $this->_model->setClassVarsValues($model);
-//                \Logger::getInstance()->logDebug(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
-//            }
             \Logger::getInstance()->logDebug(__CLASS__.'-- Members model AFTER ADD: --'.print_r($this->_model->getMembersModel(), true));
             $this->_model->append();
-            //$this->_model->updateModelView();//update model view (functions list) -- move this to model
             return true;
         }else{
             if(array_key_exists($this->_BUTTONS_ACTIVITIES['BUTTON_DEL_ACTIVITY'], $datas)){
@@ -400,6 +401,7 @@ class AdminController extends AControllerState{
             }
             switch ($this->_state){
                 case self::IDLE :
+                    $this->_model->getAll();//restore model
                     $this->_model->addBlank();//force new input on form
                     $this->buildViewSkillDefinition();
                     $this->sendModelView('SkillsReferenceDefinition');
@@ -410,6 +412,7 @@ class AdminController extends AControllerState{
                         if(!$this->_request->isXmlHttpRequest()){ 
                             $this->_model->getAll();//restore model for processing
                             if($this->computeSkill($this->_request->request->all()) === true){ //continue processing 
+                                $this->_model->getAll();//restore model->update view model
                                 $this->_model->addBlank();//force new input on form 
                                 $this->buildViewSkillDefinition();
                                 $this->sendModelView('SkillsReferenceDefinition');
@@ -488,6 +491,7 @@ class AdminController extends AControllerState{
                 $varsModel = $this->_model->getClassVars();
                 $params = $this->findAllParamsFromForm($datas, $varsModel);
                 //add only the right row
+                \Logger::getInstance()->logDebug(__CLASS__.' Params from form : '.print_r($params, true));
                 //\Logger::getInstance()->logDebug(__CLASS__.' ID ADD BUTTON : '.$datas[$this->_BUTTONS_NAMES['BUTTON_ADD_NAME']]);
                 $model = $params[$datas[$this->_BUTTONS_SKILLS['BUTTON_ADD_SKILL']]];//get datas from button id --> skill id
                 \Logger::getInstance()->logDebug(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
@@ -503,7 +507,7 @@ class AdminController extends AControllerState{
                 //add only the right row
                 $skillId = $datas[$this->_BUTTONS_SKILLS['BUTTON_BIND_ACTIVITY']];//get datas from button id --> skill id
                 $model = $params[$skillId];
-                \Logger::getInstance()->logDebug(__CLASS__.' BIND Activity to skill : ADD to model ->  val : '.  print_r($model, true));
+                \Logger::getInstance()->logDebug(__CLASS__.' BIND Activity to skill : ADD to model ->  val : '.  print_r($skillId, true));
                 $this->_model->setClassVarsValues($model);
                 \Logger::getInstance()->logDebug(__CLASS__.'-- Members model AFTER ADD: --'.print_r($this->_model->getMembersModel(), true));
                 $this->_model->bindActivityToSkill($skillId);
@@ -512,7 +516,7 @@ class AdminController extends AControllerState{
             case $this->_BUTTONS_SKILLS['BUTTON_FREE_ACTIVITY'] :
                 \Logger::getInstance()->logDebug(__CLASS__.'-- Members model BEFORE FREE Activity: --'.print_r($this->_model->getMembersModel(), true));
                 $freeParams = explode('#',$datas[$this->_BUTTONS_SKILLS['BUTTON_FREE_ACTIVITY']]);
-                $this->_model->freeBindedActivity($freeParams[0], $freeParams[1]);// skill id , activity description
+                $this->_model->freeBindedActivity($freeParams[0], $freeParams[1]);// skill id , activity id selected
                 return true;
                 break;
             case $this->_BUTTONS_SKILLS['BUTTON_DEL_SKILL'] : 
@@ -541,7 +545,7 @@ class AdminController extends AControllerState{
             $this->_model = new PromotionModel();
             switch ($this->_state){
                 case self::IDLE :
-                    $this->_model->addBlankToViewModel();//force new input on form
+                    $this->_model->addBlank();//force new input on form
                     $this->buildViewPromotionDefinition();
                     $this->sendModelView('PromotionDefinition');
                     $this->_state = self::RUNNING;
@@ -549,8 +553,8 @@ class AdminController extends AControllerState{
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
                         if($this->computePromotionDefinition($this->_request->request->all()) === true){
-                            $this->_model->getAllPromotions();
-                            $this->_model->addBlankToViewModel();//add new input on form
+                            $this->_model->getAll();
+                            $this->_model->addBlank();//add new input on form
                             $this->buildViewPromotionDefinition();
                             $this->sendModelView('PromotionDefinition');
                         }else{
@@ -563,15 +567,15 @@ class AdminController extends AControllerState{
                             $this->_redirect->send();
                         }
                     }else{//direct url access
-                        $this->_model->getAllPromotions();
-                        $this->_model->addBlankToViewModel();//add new input on form
+                        $this->_model->getAll();
+                        $this->_model->addBlank();//add new input on form
                         $this->buildViewPromotionDefinition();
                         $this->sendModelView('PromotionDefinition');
                     }
                     break;
                 case self::STOPPED:
-                    $this->_model->getAllPromotions();
-                    $this->_model->addBlankToViewModel();//add new input on form
+                    $this->_model->getAll();
+                    $this->_model->addBlank();//add new input on form
                     $this->buildViewPromotionDefinition();
                     $this->sendModelView('PromotionDefinition');
                     $this->_state = self::RUNNING;
@@ -597,7 +601,8 @@ class AdminController extends AControllerState{
     public function buildViewPromotionDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
+        $formArray['INDEX'] = $this->_index.'/promotion';
+        //$formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
         foreach ($this->_BUTTONS_PROMOTIONS as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }
@@ -610,16 +615,20 @@ class AdminController extends AControllerState{
         if(array_key_exists($this->_BUTTONS_PROMOTIONS['BUTTON_ADD_PROMOTION'], $datas)){
             $varsModel = $this->_model->getClassVars();
             $params = $this->findAllParamsFromForm($datas, $varsModel);
-            foreach($params as $model){
-                $this->_model->setClassVarsValues($model);
-                Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
-            }
-            $this->_model->appendPromotion();
+            Logger::getInstance()->logInfo(__CLASS__.' PARAMS : '.  print_r($params, true));
+            $id = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_ADD_PROMOTION']];//get id to append
+            $this->_model->setClassVarsValues($params[$id]);
+            Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($params[$id], true));
+//            foreach($params as $model){
+//                $this->_model->setClassVarsValues($model);
+//                Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
+//            }
+            $this->_model->append();
             return true;
         }else{
             if(array_key_exists($this->_BUTTONS_PROMOTIONS['BUTTON_DEL_PROMOTION'], $datas)){ //del button
-                $ref = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_DEL_PROMOTION']];
-                $this->_model->delPromotion($ref);
+                $id = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_DEL_PROMOTION']];
+                $this->_model->deleteFromId($id);
                 return true;
             }else{ 
 //                if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
@@ -644,6 +653,7 @@ class AdminController extends AControllerState{
             $this->_model = new TeacherDefinitionModel();
             switch ($this->_state){
                 case self::IDLE :
+                    $this->_model->getAll();//restore
                     $this->buildViewTeacherDefinition();
                     $this->sendModelView('TeacherDefinition');
                     $this->_state = self::RUNNING;
@@ -652,11 +662,13 @@ class AdminController extends AControllerState{
                     if($this->_request->isMethod('POST')){
                         if($this->_request->isXmlHttpRequest()){ 
                             if($this->computeTeacherXmlHttpRequest($this->_request->request->all())===true){
+                                $this->_model->getAll();//update view
                                 $this->buildViewTeacherDefinition();
                                 $this->sendModelView('TeacherDefinition');
                             }
                         }else{
                             if($this->computeTeacherDefinition($this->_request->request->all()) === true){
+                                $this->_model->getAll();//update view
                                 $this->buildViewTeacherDefinition();
                                 $this->sendModelView('TeacherDefinition');
                             }else{
@@ -670,11 +682,13 @@ class AdminController extends AControllerState{
                             }
                         }
                     }else{//direct url access
+                        $this->_model->getAll();//restore
                         $this->buildViewTeacherDefinition();
                         $this->sendModelView('TeacherDefinition');
                     }
                     break;
                 case self::STOPPED:
+                    $this->_model->getAll();//restore
                     $this->buildViewTeacherDefinition();
                     $this->sendModelView('TeacherDefinition');
                     $this->_state = self::RUNNING;
@@ -700,7 +714,7 @@ class AdminController extends AControllerState{
     public function buildViewTeacherDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->_index;
+        $formArray['INDEX'] = $this->_index.'/enseignant';
         foreach ($this->_BUTTONS_TEACHERS as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }
@@ -709,26 +723,50 @@ class AdminController extends AControllerState{
     
     public function computeTeacherDefinition($datas){
         Logger::getInstance()->logDebug(__CLASS__.' raw post :'.  print_r($datas, true));
+        $varsModel = $this->_model->getClassVars();
+        $params = $this->findAllParamsFromForm($datas, $varsModel);
+        $this->_model->setClassVarsValues($params);
         //check buttons
-        if(array_key_exists($this->_BUTTONS_TEACHERS['BUTTON_ADD_TEACHER'], $datas)){
-            Logger::getInstance()->logDebug(__CLASS__.' button add trigged');
-            $varsModel = $this->_model->getClassVars();
-            Logger::getInstance()->logDebug(__CLASS__.' model vars : '.print_r($varsModel, true));
-            $params = $this->findAllParamsFromForm($datas, $varsModel);
-            Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
-            $this->_model->setClassVarsValues($params);
-            $this->_model->addTeacher();
-            $this->_model->upDateModel();
-            return true;
-        }else{
-            if(array_key_exists($this->_BUTTONS_TEACHERS['BUTTON_DEL_TEACHER'], $datas)){ //del button
-                $ref = $datas[$this->_BUTTONS_TEACHERS['BUTTON_DEL_TEACHER']];
-                $this->_model->delTeacher($ref);
-                $this->_model->upDateModel();
+        $a = array_intersect(array_keys($datas), array_values($this->_BUTTONS_TEACHERS));
+        $button = array_shift($a);
+        \Logger::getInstance()->logDebug(__CLASS__.'-- BUTTON Trigged--> : '.print_r($button, true));
+        switch ($button){
+            case $this->_BUTTONS_TEACHERS['BUTTON_CREATE_TEACHER']:
+                $this->_model->set_editFormVisible(1);
+                $this->_model->addBlank();
                 return true;
-            }else{ 
+            case $this->_BUTTONS_TEACHERS['BUTTON_EDIT_TEACHER']:
+                $this->_model->set_editFormVisible(1);
+                //retrieve teacher infos
+                $teacherDatas = $this->_model->get_teachersList();
+                $teacherId = array_keys($teacherDatas);
+                $this->_model->update('_teacherId',$teacherId[0]);
+                return true;
+            case $this->_BUTTONS_TEACHERS['BUTTON_ADD_TEACHER']:
+                Logger::getInstance()->logDebug(__CLASS__.' button add trigged');
+                //$varsModel = $this->_model->getClassVars();
+                Logger::getInstance()->logDebug(__CLASS__.' model vars : '.print_r($varsModel, true));
+                //$params = $this->findAllParamsFromForm($datas, $varsModel);
+                Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
+                //$this->_model->setClassVarsValues($params);
+                Logger::getInstance()->logDebug(__CLASS__.' teacherId : '.print_r($this->_model->get_teachersList(), true));
+                $this->_model->append();
+                $this->_model->set_editFormVisible(0);
+                return true;
+            case $this->_BUTTONS_TEACHERS['BUTTON_DEL_TEACHER']:
+                $teacherDatas = $this->_model->get_teachersList();
+                $teacherId = array_keys($teacherDatas);
+                $this->_model->deleteFromId($teacherId[0]);
+                return true;
+            case $this->_BUTTONS_TEACHERS['BUTTON_IMPORT_TEACHER']:
+                $this->_model->set_importFormVisible(1);
+                return true;
+            case $this->_BUTTONS_TEACHERS['BUTTON_CHOOSE_IMPORT_TEACHER']:
+                //FIXME : to be done
+                $this->_model->set_importFormVisible(0);
+                return true;
+            default : //submit form, all done
                 return false;
-            }
         }
     }
     
@@ -862,7 +900,8 @@ class AdminController extends AControllerState{
             $this->_model = new WorkDateModel();
             switch ($this->_state){
                 case self::IDLE :
-                    $this->_model->addBlankToViewModel();//force new input on form
+                    $this->_model->addBlank();//force new input on form
+                    $this->_model->getAll();
                     $this->buildViewWorkdateDefinition();
                     $this->sendModelView('WorkDateDefinition');
                     $this->_state = self::RUNNING;
@@ -870,8 +909,8 @@ class AdminController extends AControllerState{
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
                         if($this->computeWorkDateDefinition($this->_request->request->all()) === true){
-                            $this->_model->getAllWorkDates();
-                            $this->_model->addBlankToViewModel();//add new input on form
+                            $this->_model->getAll();
+                            $this->_model->addBlank();//add new input on form
                             $this->buildViewWorkdateDefinition();
                             $this->sendModelView('WorkDateDefinition');
                         }else{
@@ -884,15 +923,15 @@ class AdminController extends AControllerState{
                             $this->_redirect->send();
                         }
                     }else{//direct url access
-                        //$this->_model->getAllPromotions();
-                        $this->_model->addBlankToViewModel();//add new input on form
+                        $this->_model->getAll();
+                        $this->_model->addBlank();//add new input on form
                         $this->buildViewWorkdateDefinition();
                         $this->sendModelView('WorkDateDefinition');
                     }
                     break;
                 case self::STOPPED:
-                    //$this->_model->getAllPromotions();
-                    $this->_model->addBlankToViewModel();//add new input on form
+                    $this->_model->getAll();
+                    $this->_model->addBlank();//add new input on form
                     $this->buildViewWorkdateDefinition();
                     $this->sendModelView('WorkDateDefinition');
                     $this->_state = self::RUNNING;
@@ -918,7 +957,8 @@ class AdminController extends AControllerState{
     public function buildViewWorkdateDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
+        $formArray['INDEX'] = $this->_index.'/stage';
+        //$formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
         foreach ($this->_BUTTONS_PROMOTIONS as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }
@@ -931,16 +971,18 @@ class AdminController extends AControllerState{
         if(array_key_exists($this->_BUTTONS_PROMOTIONS['BUTTON_ADD_PROMOTION'], $datas)){
             $varsModel = $this->_model->getClassVars();
             $params = $this->findAllParamsFromForm($datas, $varsModel);
-            foreach($params as $model){
+            $id = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_ADD_PROMOTION']];
+            $model=$params[$id];
+            //foreach($params as $model){
                 $this->_model->setClassVarsValues($model);
                 Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
-            }
-            $this->_model->appendWorkDate();
+            //}
+            $this->_model->append();
             return true;
         }else{
             if(array_key_exists($this->_BUTTONS_PROMOTIONS['BUTTON_DEL_PROMOTION'], $datas)){ //del button
-                $ref = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_DEL_PROMOTION']];
-                $this->_model->delWorkDate($ref);
+                $id = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_DEL_PROMOTION']];
+                $this->_model->deleteFromId($id);
                 return true;
             }else{ 
                 if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
@@ -1021,7 +1063,7 @@ class AdminController extends AControllerState{
     public function buildViewAdminPasswordDefinition(){
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-        $formArray['INDEX'] = $this->_index;
+        $formArray['INDEX'] = $this->_index.'/acces';
         $this->buildBodyView($formArray);
     }
     

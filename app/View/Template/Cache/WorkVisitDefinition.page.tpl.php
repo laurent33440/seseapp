@@ -125,7 +125,7 @@
 
 <div class="container-fluid">
 
-    <form  method="post" action="<?php echo' /index.php/enseignant '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/enseignant/stage '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">

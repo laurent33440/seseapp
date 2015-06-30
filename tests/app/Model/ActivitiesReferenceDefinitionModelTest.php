@@ -83,6 +83,8 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
     public function testaddBlank(){
         $this->object->resetModel();
         $this->object->addBlank();
+        $this->assertEquals(array('new'=>''), $this->object->get_activityRefList());
+        $this->assertEquals(array('new'=>''), $this->object->get_activityDescriptionList());
         $tst = $this->object->get_functionList();
         foreach ($tst as $list) {
             foreach ($list as $id=>$val){
@@ -108,7 +110,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         );
         $model = array(
                 '_activityRefList' => 'A1',
-                '_functionList' => array($formValFunc,1),
+                '_functionList' => array($formValFunc,'new'),
                 '_activityDescriptionList' => 'activité1'
         );
         $subset_properties = array(
@@ -125,7 +127,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $this->assertEquals(array('A1'), $this->object->get_activityRefList());
         $tst = $this->object->get_functionList();
         foreach ($tst as $key=>$list) {
-            //$this->assertEquals('new',$key); // id Activity
+            $this->assertEquals('new',$key); // id Activity provided
             foreach ($list as $id=>$val){
                 $this->assertGreaterThanOrEqual(0, $id);//id func
                 $this->assertStringMatchesFormat('%s', $val);//func
@@ -145,9 +147,18 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $this->object->resetModel();
         $this->object->getAll();
         $list=$this->object->get_activityRefList();
+        $funcLists = $this->object->get_functionList();
+        $descList = $this->object->get_activityDescriptionList();
         foreach ($list as $key => $value) {
             $this->assertGreaterThanOrEqual(0, $key);//id 
             $this->assertStringMatchesFormat('%s', $value);
+            $this->assertTrue(in_array($key, array_keys($funcLists)));
+            foreach ($funcLists[$key] as $id=>$val){
+                $this->assertGreaterThanOrEqual(0, $id);
+                $this->assertStringMatchesFormat('%s', $val);
+            }
+            $this->assertTrue(in_array($key, array_keys($descList)));
+            $this->assertStringMatchesFormat('%s', $descList[$key]);
         }
     }
     
@@ -160,17 +171,28 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $functionsModel = new FunctionReferentialDefinitionModel();
         $functionsModel->getAll();
         $f = $functionsModel->get_descriptionList();
-        $formValFunc = reset(array_keys($f)).'#'.reset($f);
+        $formValFunc = end(array_keys($f)).'#'.end($f);
+//        $model = array(
+//                '_activityRefList' => array('TEST','new'),
+//                '_functionList' => array($formValFunc,'new'),
+//                0 => array('_activityDescriptionList' => array('TESTactivitéTEST','new'))
+//        );
         $model = array(
-                '_activityRefList' => array('TEST','new'),
+                '_activityRefList' => 'TEST',
                 '_functionList' => array($formValFunc,'new'),
-                0 => array('_activityDescriptionList' => array('TESTactivitéTEST','new'))
+                '_activityDescriptionList' => 'TESTactivitéTEST'
         );
         $this->object->setClassVarsValues($model);//append this values to model
         $this->object->append();//persistent
         $this->object->resetModel();
         $this->object->getAll();
-        $this->assertTrue(in_array('TEST',$this->object->get_activityRefList()));
+        $l = $this->object->get_activityRefList();
+        $this->assertTrue(in_array('TEST',$l));
+        $a = array_flip($l);
+        $k = $a['TEST'];
+        $fl=$this->object->get_functionList();
+        $this->assertEquals(end($f),reset($fl[$k]));
+        
     }
     
     public function testupdate(){
@@ -196,7 +218,7 @@ class ActivitiesReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase 
         $this->object->resetModel();
         $this->object->getAll();
         $list = $this->object->get_activityDescriptionList();
-        $this->assertFalse(in_array('TESTactivitéTEST', $list));
+        $this->assertFalse(in_array('TESTactivitéTEST_UPDATE', $list));
     }
     
 

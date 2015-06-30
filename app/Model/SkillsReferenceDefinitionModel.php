@@ -12,13 +12,6 @@ use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Competence\CompetenceObject;
 use Model\Dal\ModelDb\Constituer\ConstituerObject;
 
-//
-//Notice: Undefined index: 691#393 in /home/laurent/Dropbox/Projets/web/seseapp/app/Controller/AdminController.php on line 505
-//
-//Warning: Invalid argument supplied for foreach() in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/AModel.php on line 55
-//
-//Warning: Missing argument 2 for Model\SkillsReferenceDefinitionModel::bindActivityToSkill(), called in /home/laurent/Dropbox/Projets/web/seseapp/app/Controller/AdminController.php on line 509 and defined in /home/laurent/Dropbox/Projets/web/seseapp/app/Model/SkillsReferenceDefinitionModel.php on line 247
-
 /**
  * Description of SkillsReferenceDefinitionModel
  *
@@ -28,7 +21,7 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     const SKILL_LEVEL = 10; // max skill level
     const AUTONOMY_LEVEL = 10; // max autonomy level
     
-    /** Acts at two side  :
+    /** List of reference skills
      * array(idSkill => skillReference)
      */
     private $_skillsReferencesList = array();
@@ -75,11 +68,13 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
         }
     }
     
-    public function set_skillsReferencesList($_skillsReferencesList) {
+    public function set_skillsReferencesList($_skillsReferencesList, $skillId=null) {
         if(!in_array( $_skillsReferencesList, $this->_skillsReferencesList)){
-            $this->_skillsReferencesList[] = $_skillsReferencesList;
-        }else{//already exist, don't add to list
-            //$this->_skillsReferencesList[] = $_skillsReferencesList.self::ERR_DUPLICATE;
+            if($skillId!=null){
+                $this->_skillsReferencesList[$skillId] = $_skillsReferencesList;
+            }else{
+                $this->_skillsReferencesList['new'] = $_skillsReferencesList;//append
+            }
         }
     }
 
@@ -89,26 +84,16 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     
     /**
      * 
-     * @param type $bindedActivity : activity description to bind
-     * @param type $skillId : skill Id hosting binding  
-     * @param int $activityId : optional activity id
+     * @param string $activityIdValue : activity Id to bind
+     * @param int $skillId : skill Id hosting binding  
      */
-    public function set_bindedActivitiesLists($bindedActivity, $skillId=0, $activityId=null){
+    public function set_bindedActivitiesLists($activityId, $skillId){
         if(!empty($this->_bindedActivitiesLists[$skillId])){// some binding exist ?
-            if(!in_array($bindedActivity, $this->_bindedActivitiesLists[$skillId])){ //activity not already binded?
-                if(!isset($activityId)){
-                    $this->_bindedActivitiesLists[$skillId][]=$bindedActivity;// add at bottom of list
-                }else{//update
-                    $this->_bindedActivitiesLists[$skillId][$activityId]=$bindedActivity;
-                }
-            }
+            $this->_bindedActivitiesLists[$skillId][$activityId]=  $this->_activitiesList[$activityId];
         }else{ //new binded list
-            if(!isset($activityId)){
-                $activityId=0;
-            }
-            $this->_bindedActivitiesLists[$skillId] = array($activityId=>$bindedActivity);
+            $this->_bindedActivitiesLists[$skillId] = array($activityId=>  $this->_activitiesList[$activityId]);
         }
-    } 
+    }  
 
     /**
      * 
@@ -118,7 +103,7 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     public function set_skillsDescriptionsList($_skillsDescription, $skillId=null) {
         if(!in_array($_skillsDescription, $this->_skillsDescriptionsList)){
             if($skillId === null){
-                $this->_skillsDescriptionsList[] = $_skillsDescription; //append
+                $this->_skillsDescriptionsList['new'] = $_skillsDescription; //append
             }else{
                 $this->_skillsDescriptionsList[$skillId] = $_skillsDescription; //update
             }
@@ -143,7 +128,7 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
 
 
     public function deleteFromProperty($property, $val) {
-        
+        //??
     }
 
     public function resetModel() {
@@ -170,9 +155,10 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
      * 
      */
     public function addBlank(){
-        $this->set_skillsReferencesList('');
-        $this->set_bindedActivitiesLists(reset($this->_activitiesList), count($this->_bindedActivitiesLists));
-        $this->set_skillsDescriptionsList('');
+        $this->set_skillsReferencesList('','new');
+        $k=array_keys($this->_activitiesList);
+        $this->set_bindedActivitiesLists(reset($k), 'new');
+        $this->set_skillsDescriptionsList('', 'new');
     }
     
     /**
@@ -183,8 +169,8 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
         $collection = new DataAccess('Competence');
         $item = new CompetenceObject();
         //var_dump($this->_skillsReferencesList);
-        $item->comp_ref_competence= end($this->_skillsReferencesList);
-        $item->comp_descriptif_competence = end($this->_skillsDescriptionsList);
+        $item->comp_ref_competence= end($this->_skillsReferencesList); // TODO??? index 'new' should be a better choice
+        $item->comp_descriptif_competence = end($this->_skillsDescriptionsList);// TODO??? index 'new' should be a better choice
         $item->comp_est_evaluable = true;
         $item->comp_est_evaluee = false;
         $item->comp_niveau_competence = self::SKILL_LEVEL;
@@ -192,7 +178,7 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
         $collection->Insert($item);
         // add entries to table 'Constituer'
         $links= new DataAccess('Constituer');
-        foreach (end($this->_bindedActivitiesLists) as $idActivity => $activityDescription){ 
+        foreach (end($this->_bindedActivitiesLists) as $idActivity => $activityDescription){ // TODO??? index 'new' should be a better choice
             $aLink = new ConstituerObject();
             $aLink->id_activite = $idActivity;
             $aLink->id_competence = $item->id_competence;
@@ -215,7 +201,7 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
             $links = new DataAccess('Constituer');
             $all = $links->GetAllByColumnValue('id_competence', $skill->id_competence);
             foreach($all as  $link){
-                $this->set_bindedActivitiesLists($this->_activitiesList[$link->id_activite],$skill->id_competence, $link->id_activite);
+                $this->set_bindedActivitiesLists($link->id_activite,$skill->id_competence );
             }
         }
     }
@@ -251,15 +237,17 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
      * @param integer $skillId skill id ; acitivityId 
      * @return boolean true binding ok
      */
-    public function bindActivityToSkill($skillId, $activityId){
+    public function bindActivityToSkill($skillId){
         if(isset($this->_skillsReferencesList[$skillId])){
             $collection = new DataAccess('Constituer');
-            if(($link= $collection->GetByCompositeKeys(array('id_competence'=>$skillId, 'id_activite'=>$activityId)))===false){
-                //add binding
-                $link = new ConstituerObject();
-                $link->id_activite = $activityId;
-                $link->id_competence= $skillId;
-                $collection->Insert($link);
+            foreach($this->_bindedActivitiesLists[$skillId] as $activityId => $activity  ){
+                if(($link= $collection->GetByCompositeKeys(array('id_competence'=>$skillId, 'id_activite'=>$activityId)))===false){
+                    //add binding
+                    $link = new ConstituerObject();
+                    $link->id_activite = $activityId;
+                    $link->id_competence= $skillId;
+                    $collection->Insert($link);
+                }
             }
             return true;
         }

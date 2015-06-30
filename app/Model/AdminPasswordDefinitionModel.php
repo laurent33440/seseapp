@@ -9,6 +9,7 @@
 namespace Model;
 
 use Bootstrap;
+use SeseSession;
 use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Utilisateurs\UtilisateursObject;
 use \Exception\InternalException;
@@ -55,11 +56,12 @@ class AdminPasswordDefinitionModel extends AModel{
      */
     public function checkPasswords(){
         //check if user is administrateur
-        if(Bootstrap::$session->has('user_connected/name') && Bootstrap::$session->has('user_connected/group')){
-            if(Bootstrap::$session->get('user_connected/group')==='administrateur'){
+        $session=  SeseSession::getInstance();
+        if($session->has('user_connected/name') && $session->has('user_connected/group')){
+            if($session->get('user_connected/group')==='administrateur'){
                 //check password administrateur
                 $collection = new DataAccess('Utilisateurs');
-                $user = $collection->GetByColumnValue('uti_identifiant', Bootstrap::$session->get('user_connected/name'));
+                $user = $collection->GetByColumnValue('uti_identifiant', $session->get('user_connected/name'));
                 if($user->uti_mot_de_passe === $this->_adminCurrentPassword){
                     //check that new passwords matches
                     if($this->_adminNewPassword===$this->_adminConfirmPassword){

@@ -206,6 +206,31 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                             0 => array('_var3' =>array('Mon activité test test test 2',1,1)),
                     ),
                 );
+        $param52 = array( 
+                '_var1##0#1' => 'c100',
+                '_var2##0#1#2' => 'Savoir souder',
+                '_var3##0#1#2#3' => 'Mon activité test test test 1',
+                '_var2##0#2#3' => 'Savoir cabler', // WILL BE ADDED IN PARAMETERS SETTERS
+                '_var1##1' => 'c200',
+                '_var2##1' => 'Savoir écrire',
+                '_var3##1#1#1' => 'Mon activité test test test 2',
+                //'_var1##1' => 'c300',  //!!! WARNING OVERWRITE PREVIOUS SET !!! 
+                'ButtonSubmitAddSkill' => 1
+                );
+        $exp52 = array('0'=>array( 
+                            0 => array('_var1' =>array('c100',1)),
+                            1 => array('_var2' =>array('Savoir souder',1,2)),
+                            2 => array('_var3' =>array('Mon activité test test test 1',1,2,3)),
+                            3 => array('_var2' =>array('Savoir cabler',2,3)),
+                    ),
+                        '1'=>array( 
+                            '_var1' => 'c200', // '_var1' => 'c300', SEE WARNING IN VECTOR TEST
+                            '_var2' => 'Savoir écrire',
+                            0 => array('_var3' =>array('Mon activité test test test 2',1,1)),
+                            
+                    ),
+                );
+        
         $param10 = array( 
                 'ButtonSubmitAddSkill' => 0    
             
@@ -224,6 +249,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
             array($param41,$model, $exp41, 'complex multi indexé var->value'),
             array($param5,$model, $exp5, 'complex multi indexé var->value'),
             array($param51,$model, $exp51, 'complex multi indexé var->value'),
+            array($param52,$model, $exp52, 'complex multi indexé var->value'),
             array($param10,$model, $exp10, 'aucun'),
         );
     }

@@ -54,7 +54,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        l : enseignant<span class="caret"></span>
+                        unknown user : unknown user role<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -86,22 +86,22 @@
             <div class="col-lg-2 col-lg-offset-1">
               <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
               <h2>Création d'un stage</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/stage" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" href="/index.php//stage" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
               <h2>Contacts</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/contact_interne" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" href="/index.php//contact_interne" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
               <h2>Visites de stage</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/visite" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" href="/index.php//visite" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
               <h2>Journal des visites</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/commentaire" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" href="/index.php//commentaire" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
@@ -122,7 +122,7 @@
         </div>
     </div>
 <div class="container">
-    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/enseignant/contact_interne'; ?>">
+    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php//contact_interne'; ?>">
         
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Contact</label>
@@ -233,7 +233,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -256,7 +256,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

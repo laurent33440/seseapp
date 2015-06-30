@@ -41,7 +41,7 @@
                                         </td>
                                         <td>
 
-                                            <select class=\"form-control\" name=\"form_functionList#$idActivity\" id=\"_functionList#$idActivity\">";
+                                            <select class=\"form-control\" name=\"form_functionList##$idActivity\" id=\"_functionList#$idActivity\">";
                                             foreach (form_val_functionList[$idActivity] as $idFunction => $function) {
                                                
                                                     echo"

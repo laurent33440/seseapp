@@ -52,7 +52,8 @@ class Bootstrap {
 
       //log
       $log = Logger::getInstance();
-      $log->setLogFile("log_sese.txt", !self::DEBUG_SESE); //erase log each run
+      $log->setLogFile("log_sese.txt", true); //append logs
+      //$log->setLogFile("log_sese.txt", !self::DEBUG_SESE); //erase log each run
       $log->setLogFile("log_sese.txt");
       $log->setPriority(Logger::DEBUG);
       $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");

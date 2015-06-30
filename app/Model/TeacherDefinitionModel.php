@@ -19,7 +19,7 @@ use Model\Dal\ModelDb\Utilisateurs\UtilisateursObject;
  *
  * @author laurent
  */
-class TeacherDefinitionModel extends AModel{
+class TeacherDefinitionModel extends AModel implements IModel{
     //view 
     private $_teachersList= array();
     private $_promotionsList = array();
@@ -27,36 +27,20 @@ class TeacherDefinitionModel extends AModel{
     private $_teacherFirstName;
     private $_teacherMail;
     private $_teacherSkill;
-    
+    // flag to view editable form for teacher
+    private $_editFormVisible; //!!!! boolean doesn't work with template
     //current teacher id in view
-    protected $_teacherId; 
+    private $_teacherId; 
+     // flag to view import form for teacher
+    private $_importFormVisible; //!!!! boolean doesn't work with template
+    //format of import
+    private $_formatImportList=array('CSV', 'PRONOTE', 'SCONET');
     
     public function __construct() {
-        $this->updateModel();
-    }
-
-    public function get_teachersList() {
-        return $this->_teachersList;
-    }
-
-    public function get_promotionsList() {
-        return $this->_promotionsList;
-    }
-
-    public function get_teacherLastName() {
-        return $this->_teacherLastName;
-    }
-
-    public function get_teacherFirstName() {
-        return $this->_teacherFirstName;
-    }
-
-    public function get_teacherMail() {
-        return $this->_teacherMail;
-    }
-
-    public function get_teacherSkill() {
-        return $this->_teacherSkill;
+        $this->_editFormVisible=0; 
+        $this->_importFormVisible=0;
+        $this->_teacherId=null;
+        $this->getAllPromotion();
     }
 
     //second parameter is optional for setter in view model
@@ -91,33 +75,168 @@ class TeacherDefinitionModel extends AModel{
         $this->_teacherSkill = $_teacherSkill;
     }
     
-    public function updateModel(){
-        $this->getAllTeachers();
-        $this->getAllPromotion();
+    public function set_editFormVisible($_editFormVisible) {
+        $this->_editFormVisible = $_editFormVisible;
+    }
+    
+    public function set_teacherId($_teacherId) {
+        $this->_teacherId = $_teacherId;
+    }
+    public function set_importFormVisible($_importFormVisible) {
+        $this->_importFormVisible = $_importFormVisible;
+    }
+    public function set_formatImportList($_formatImportList) {
+        $this->_formatImportList = $_formatImportList;
     }
 
-    /**
-     * Get all teachers from data base - reset view model
-     */
-    public function getAllTeachers(){
-        $this->_teachersList=array();//reset
+    public function get_teachersList() {
+        return $this->_teachersList;
+    }
+
+    public function get_promotionsList() {
+        return $this->_promotionsList;
+    }
+
+    public function get_teacherLastName() {
+        return $this->_teacherLastName;
+    }
+
+    public function get_teacherFirstName() {
+        return $this->_teacherFirstName;
+    }
+
+    public function get_teacherMail() {
+        return $this->_teacherMail;
+    }
+
+    public function get_teacherSkill() {
+        return $this->_teacherSkill;
+    }
+    
+    public function get_editFormVisible() {
+        return $this->_editFormVisible;
+    }
+    
+    public function get_teacherId() {
+        if($this->_teacherId==='new'){//create teacher
+            return self::__BY_VALUE_TO_TEMPLATE__.$this->_teacherId;// to be computed in template
+        }
+        return $this->_teacherId;
+    }
+        
+    public function get_importFormVisible() {
+        return $this->_importFormVisible;
+    }
+    
+    public function get_formatImportList() {
+        return $this->_formatImportList;
+    }
+
+    
+    public function addBlank() {
+        $this->_teacherId='new';
+        $this->_teachersList['new']='Création d\'un enseignant';
+        $this->set_teacherFirstName('');
+        $this->set_teacherLastName('');
+        $this->set_teacherMail('');
+        $this->set_teacherSkill('');
+    }
+
+    public function append() {
+        $collection = new DataAccess('Enseignant');
+        $kt=array_keys($this->_teachersList);// id of teacher edited
+        $teacher = $collection->GetByID($kt[0]);
+        if($teacher ===false){//new teacher -> append
+            $teacher = new EnseignantObject;
+            $teacher->ens_prenom_enseignant = $this->_teacherFirstName;
+            $teacher->ens_nom_enseignant = $this->_teacherLastName;
+            $teacher->ens_mel_enseignant = $this->_teacherMail;
+            $teacher->ens_discipline = $this->_teacherSkill;
+            $collection->Insert($teacher);
+            //update Utilisateurs
+            //ajouter enseignant comme utilisateur(identifiant, mel, mot de passe) du groupe enseignant
+            $collection = new DataAccess('Groupe');
+            $groupe = $collection->GetByColumnValue('grp_nom_groupe','enseignant');
+            $this->addToTable('Utilisateurs', array('uti_identifiant'=>  $this->_teacherMail,
+                                                     'uti_mot_de_passe'=>  $this->_teacherMail,
+                                                     'uti_mel'=>  $this->_teacherMail,
+                                                     'id_groupe'=>$groupe->id_groupe));
+        }else{//update
+            $ident=$teacher->ens_mel_enseignant;
+            $teacher->ens_prenom_enseignant = $this->_teacherFirstName;
+            $teacher->ens_nom_enseignant = $this->_teacherLastName;
+            $teacher->ens_mel_enseignant = $this->_teacherMail;
+            $teacher->ens_discipline = $this->_teacherSkill;
+            $collection->Update($teacher);
+            //update Utilisateurs
+            $collection = new DataAccess('Utilisateurs');
+            $user = $collection->GetByColumnValue('uti_identifiant', $ident);
+            //update & reset password
+            $user->uti_identifiant=  $this->_teacherMail;
+            $user->uti_mot_de_passe=  $this->_teacherMail;
+            $user->uti_mel=  $this->_teacherMail;
+            $collection->Update($user);
+        }
+    }
+
+    public function deleteFromId($id) {
+        $collection = new DataAccess('Enseignant');
+        $teacher=$collection->GetByID($id);
+        $collection->Delete($teacher);
+        //delete from Utilisateurs with email value
+        $collection = new DataAccess('Utilisateurs');
+        $user = $collection->GetByColumnValue('uti_mel', $teacher->ens_mel_enseignant);
+        $collection->Delete($user);
+    }
+
+    public function deleteFromProperty($property, $val) {
+        //
+    }
+
+    public function getAll() {
+        //$this->resetModel();no reset : properties saved during all life cycle of this class 
         $collection = new DataAccess('Enseignant');
         $teachers = $collection->GetAll();
-        foreach ($teachers as $teacher) {
-            $identity = $teacher->ens_prenom_enseignant.' '.$teacher->ens_nom_enseignant;
-            $this->set_teachersList($teacher->id_enseignant,$identity);
-        }
         if(count($teachers)!=0){
-            $this->set_teacherFirstName($teachers[0]->ens_prenom_enseignant);
-            $this->set_teacherLastName($teachers[0]->ens_nom_enseignant);
-            $this->set_teacherMail($teachers[0]->ens_mel_enseignant);
-            $this->set_teacherSkill($teachers[0]->ens_discipline);
-            $this->_teacherId = $teachers[0]->id_enseignant;
+            foreach ($teachers as $teacher) {
+                $identity = $teacher->ens_prenom_enseignant.' '.$teacher->ens_nom_enseignant;
+                $this->set_teachersList($teacher->id_enseignant,$identity);
+            }
+            if($this->_teacherId===null){  
+                $this->set_teacherFirstName($teachers[0]->ens_prenom_enseignant);
+                $this->set_teacherLastName($teachers[0]->ens_nom_enseignant);
+                $this->set_teacherMail($teachers[0]->ens_mel_enseignant);
+                $this->set_teacherSkill($teachers[0]->ens_discipline);
+                $this->_teacherId = $teachers[0]->id_enseignant;
+            }else{
+                if($this->_teacherId != 'new'){//update case
+                    $this->selectTeacher($this->_teacherId);
+                }
+            }
         }else{
             $this->set_teachersList(0,'-----------------------');
         }
     }
-    
+
+    public function resetModel() {
+        $this->_teachersList=array();
+    }
+
+    /**
+     * 
+     * @param type $property
+     * @param type $val
+     * @param type $id : optionnal 
+     */
+    public function update($property, $val, $id=null) {
+        $this->{'set'.$property}($val);//set a property of model
+        $this->selectTeacher($this->_teacherId);//select teacher from current id 
+    }
+
+    /**
+     * PRIVATE
+     * @param type $id
+     */
     public function selectTeacher($id){
         $collection = new DataAccess('Enseignant');
         $teacher = $collection->GetByID($id);
@@ -128,58 +247,10 @@ class TeacherDefinitionModel extends AModel{
         $this->_teacherId = $teacher->id_enseignant;
        
     }
-
-
-    /**
-     * Add teacher to data base
-     * @param type $ref
-     * @param type $decription
-     */
-    public function addTeacher(){
-        $collection = new DataAccess('Enseignant');
-        $teacher = new EnseignantObject;
-        $teacher->ens_prenom_enseignant = $this->_teacherFirstName;
-        $teacher->ens_nom_enseignant = $this->_teacherLastName;
-        $teacher->ens_mel_enseignant = $this->_teacherMail;
-        $teacher->ens_discipline = $this->_teacherSkill;
-        $collection->Insert($teacher);
-        //update Utilisateurs
-        //ajouter enseignant comme utilisateur(identifiant, mel, mot de passe) du groupe enseignant
-        $collection = new DataAccess('Groupe');
-        $groupe = $collection->GetByColumnValue('grp_nom_groupe','enseignant');
-        $this->addToTable('Utilisateurs', array('uti_identifiant'=>  $this->_teacherMail,
-                                                 'uti_mot_de_passe'=>  $this->_teacherMail,
-                                                 'uti_mel'=>  $this->_teacherMail,
-                                                 'id_groupe'=>$groupe->id_groupe));
-    }
     
     /**
-     * Update teacher in data base
+     * PRIVATE
      */
-    public function updateTeacher(){
-        $collection = new DataAccess('Enseignant');
-        $teacher=$collection->GetByID($this->_teacherId);
-        $teacher->ens_prenom_enseignant = $this->_teacherFirstName;
-        $teacher->ens_nom_enseignant = $this->_teacherLastName;
-        $teacher->ens_mel_enseignant = $this->_teacherMail;
-        $teacher->ens_discipline = $this->_teacherSkill;
-        $collection->Update($teacher);
-        //update Utilisateurs...
-    }
-    
-    /**
-     * Delete teacher from data base
-     */
-    public function delTeacher(){
-        $collection = new DataAccess('Enseignant');
-        $teacher=$collection->GetByID($this->_teacherId);
-        $collection->Delete($teacher);
-        //delete from Utilisateurs with email value
-        $collection = new DataAccess('Utilisateurs');
-        $user = $collection->GetByColumnValue('uti_mel', $teacher->ens_mel_enseignant);
-        $collection->Delete($user);
-    }
-    
     public function getAllPromotion(){
         $collection = new DataAccess('Promotion');
         $promotions =$collection->GetAll();
@@ -189,6 +260,7 @@ class TeacherDefinitionModel extends AModel{
     }
     
     /**
+     * PRIVATE
      * Add to given table 
      * @param type $tableName table name 
      * @param array $rowValue  row name => row value
@@ -200,7 +272,7 @@ class TeacherDefinitionModel extends AModel{
         foreach ($rowValue as $row => $value){
             $table->$row=$value;
         }
-        var_dump($table);
+        //var_dump($table);
         $collection->Insert($table);
     }
    

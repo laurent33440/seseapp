@@ -111,7 +111,7 @@
       </div>
     </div>
     
-    <form  method="post" action="<?php echo' /index.php/administrateur '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/acces '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -125,7 +125,7 @@
                                 <input type="password" class="form-control" id="adminCurrentPassword" 
                                        placeholder="Entrez le mot de passe actuel de l'administrateur"
                                        name="<?php echo'_adminCurrentPassword'; ?>"
-                                       value="<?php echo''; ?>">
+                                       value="<?php echo'laurent'; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -134,7 +134,7 @@
                                 <input type="password" class="form-control" id="adminNewPassword" 
                                        placeholder="Nouveau mot de passe administrateur"
                                        name="<?php echo'_adminNewPassword'; ?>"
-                                       value="<?php echo''; ?>">
+                                       value="<?php echo'aaaaaaaaaaaaaaaa'; ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -143,7 +143,7 @@
                                 <input type="password" class="form-control" id="adminConfirmPassword" 
                                        placeholder="Confirmez le nouveau mot de passe administrateur"
                                        name="<?php echo'_adminConfirmPassword'; ?>"
-                                       value="<?php echo''; ?>">
+                                       value="<?php echo'bbbbbbbbbbbbbbb'; ?>">
                             </div>
                         </div>
                     
@@ -192,10 +192,10 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">MODAL_TITLE</h4> 
+            <h4 class="modal-title" id="myModalLabel">Informations fournies incorrectes...</h4> 
           </div> 
           <div class="modal-body"> 
-            <h3>MODAL_MESSAGE</h3> 
+            <h3>La confirmation du nouveau mot de passe n'est pas réalisée</h3> 
           </div> 
           <div class="modal-footer"> 
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button> 
@@ -215,7 +215,7 @@
     <script src="<?php echo'/bootstrap-3.2.0-dist/js/bootstrap.min.js'; ?>"></script>
     
      <!-- trigg modal -->
-        <?php if ( false ) echo'
+        <?php if ( true ) echo'
             <script> $(\'#basicModal\').modal({\'show\' : true, \'backdrop\' : false}); </script>
         '; ?>
         
