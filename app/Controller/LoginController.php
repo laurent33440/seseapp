@@ -37,7 +37,7 @@ class LoginController extends AControllerState{
     
     public function check(){
         $this->_model=new LoginModel();
-        $this->_model->eraseUserInSession();
+        //$this->_model->eraseUserInSession();
         if($this->_request->isMethod('POST')){
             if($this->compute($this->_request->request->all()) === true){ //continue processing : wrong parameters
                 $this->modalParameters = new ModalParameters('Erreur d\'authentification', 'Vérifiez votre identifiant et/ou votre mot de passe ');
@@ -79,16 +79,16 @@ class LoginController extends AControllerState{
      * @return boolean true if controller must run for further inputs , false if submit form
      */
     public function compute(array $datas){
-        //$this->_model->setClassVarsValues($this->getPostedDataModel( $this->_model->getClassVars(),$datas));
         $varsModel = $this->_model->getClassVars();
         $params = $this->findAllParamsFromForm($datas, $varsModel);
         $this->_model->setClassVarsValues($params);
         if($this->_model->isUserKnown()){
             //get groupe name
             $grpName = $this->_model->get_groupNameOfUser();
-            if(in_array($grpName, array('administrateur','enseignant','tuteur','stagiaire'))){
-                //save user in session
-                $this->_model->saveUserInSession();
+            //if(in_array($grpName, array('administrateur','enseignant','tuteur','stagiaire'))){
+            if($grpName != false){
+                //save user known
+                $this->_model->saveUserConnected();
                 //$this->_response = new RedirectResponse('/'.$grpName);
                 $this->_response = new RedirectResponse(\Bootstrap::ENTRY_SCRIPT.'/'.$grpName);
                 //$response->headers->setCookie(new Cookie('Groupe' , $grpName));

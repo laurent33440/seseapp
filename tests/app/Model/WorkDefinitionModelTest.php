@@ -479,10 +479,8 @@ class WorkDefinitionModelTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testDeleteFromProperty().
      */
     public function testDeleteFromProperty() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setId_trainee('5');//adjust to test - see db
+        $this->object->deleteFromProperty();
     }
 
     

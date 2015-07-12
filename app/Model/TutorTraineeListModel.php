@@ -17,7 +17,7 @@ use DateTime;
  *
  * @author laurent
  */
-class TutorTraineeListModel extends AModel{
+class TutorTraineeListModel extends AModel implements IModel{
     //view
     private $_traineeList=array();//trainee=>(period=>teacher)
     
@@ -28,14 +28,44 @@ class TutorTraineeListModel extends AModel{
     public function get_traineeList() {
         return $this->_traineeList;
     }
-   
+    
+    public function addBlank() {
+        
+    }
+
+    public function append() {
+        
+    }
+
+    public function deleteFromId($id) {
+        
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function getAll() {
+        
+    }
+
+    public function resetModel() {
+        
+    }
+
+    public function update($property, $val, $id) {
+        
+    }
+
+    
     /**
      * Get all work date from data base - reset view model
      */
     public function getAllTrainee(){
         $this->_traineeList=array();//reset
         $collection = new DataAccess('Collaborateur');
-        $tutor = $collection->GetByColumnValue('col_mel', \SeseSession::getInstance()->get('user_connected/name'));
+        $tutor = $collection->GetByColumnValue('col_mel', \UserConnected::getInstance()->getUserName());
+        //$tutor = $collection->GetByColumnValue('col_mel', \SeseSession::getInstance()->get('user_connected/name'));
         $collection = new DataAccess('Stage_defini');
         $works=$collection->GetAllByColumnValue('id_collaborateur', $tutor->id_collaborateur);
         foreach ($works as $work) {

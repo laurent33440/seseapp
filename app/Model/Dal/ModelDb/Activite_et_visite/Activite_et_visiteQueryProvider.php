@@ -24,8 +24,8 @@ class Activite_et_visiteQueryProvider implements IQueryProvider{
                                         aev_description_activite,
                                         aev_type_acteur,
                                         aev_id_type_acteur,
-                                        aev_date_viste,
-                                        aev_commentaire_viste,
+                                        aev_date_visite,
+                                        aev_commentaire_visite,
                                         id_enseignant,
                                         id_stagiaire
                                          )
@@ -35,8 +35,8 @@ class Activite_et_visiteQueryProvider implements IQueryProvider{
                                         :aev_description_activite,
                                         :aev_type_acteur,
                                         :aev_id_type_acteur,
-                                        :aev_date_viste,
-                                        :aev_commentaire_viste,
+                                        :aev_date_visite,
+                                        :aev_commentaire_visite,
                                         :id_enseignant,
                                         :id_stagiaire
                 )";
@@ -64,8 +64,8 @@ class Activite_et_visiteQueryProvider implements IQueryProvider{
                                         aev_description_activite=: aev_description_activite,
                                         aev_type_acteur=:aev_type_acteur,
                                         aev_id_type_acteur=:aev_id_type_acteur,
-                                        aev_date_viste=: aev_date_viste,
-                                        aev_commentaire_viste=:aev_commentaire_viste,
+                                        aev_date_visite=: aev_date_visite,
+                                        aev_commentaire_visite=:aev_commentaire_visite,
                                         id_enseignant: id_enseignant,
                                         id_stagiaire=:id_stagiaire
                                     where id_activite_et_visite=:id_activite_et_visite";

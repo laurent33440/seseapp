@@ -63,7 +63,7 @@ abstract class AControllerState {
             $this->_state = self::IDLE;
         }
         //OLD - $this->_index=$this->getRootPath().$this->_request->getPathInfo();
-        $this->_index=  '/'.\Bootstrap::ENTRY_SCRIPT.'/'.\SeseSession::getInstance()->get('user_connected/group').
+        $this->_index=  '/'.\Bootstrap::ENTRY_SCRIPT.'/'.  \UserConnected::getInstance()->getUserGroup();
         \Logger::getInstance()->logInfo( get_class($this).' restoring state controller : '.$this->_rootName.'::'.$this->_action. '-->'.$this->_state);
     }
 
@@ -77,11 +77,11 @@ abstract class AControllerState {
      * FIXME remove this  !
      * @param type $class
      */
-    protected function setRootControllerName($class) {
-        $tab=  explode('\\',$class); //avoid namespace
-        $rootName =  explode("Controller",$tab[count($tab)-1]);
-        $this->_rootName = $rootName[0];
-    }
+//    protected function setRootControllerName($class) {
+//        $tab=  explode('\\',$class); //avoid namespace
+//        $rootName =  explode("Controller",$tab[count($tab)-1]);
+//        $this->_rootName = $rootName[0];
+//    }
     
     /**
      * 

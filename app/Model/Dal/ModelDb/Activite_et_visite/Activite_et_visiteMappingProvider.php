@@ -58,8 +58,8 @@ class Activite_et_visiteMappingProvider implements IMappingProvider{
         $retval['aev_description_activite']= $item->aev_description_activite;
         $retval['aev_type_acteur']=$item->aev_type_acteur;
         $retval['aev_id_type_acteur']= $item->aev_id_type_acteur;
-        $retval['aev_date_viste']=$item->aev_date_viste;
-        $retval['aev_commentaire_viste'] = $item->aev_commentaire_viste;
+        $retval['aev_date_visite']=$item->aev_date_visite;
+        $retval['aev_commentaire_visite'] = $item->aev_commentaire_visite;
         $retval['id_enseignant']=$item->id_enseignant;
         $retval['id_stagiaire']=$item->id_stagiaire;
         return $retval;

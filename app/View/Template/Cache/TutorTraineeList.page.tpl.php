@@ -54,7 +54,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        unknown user : unknown user role<span class="caret"></span>
+                        t@t : tuteur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -77,31 +77,55 @@
     <div class="container">
         
         <div class="jumbotron">
-          <h2> Espace du tuteur</h2>
-          <p>Veuillez choisir une action</p>
+            <div class="row">
+                <div class="col-lg-10">
+                    <h2> Espace tuteur de stage</h2>
+                    <p>Veuillez choisir une action</p>
+                </div>
+                <div class="col-lg-2 ">
+                      <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                          <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
+                      </a>
+                </div>
+            </div>
         </div>
         
         <!-- Menu -->
         <div class="row">
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Stagiaire(s) en responsabilité</h2>
-              <p><a class="btn btn-default" href="/index.php//liste_stagiaire" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2 col-lg-offset-1">
+              <p>
+                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                      <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Contacts</h2>
-              <p><a class="btn btn-default" href="/index.php//contact_interne" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2 ">
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/liste_stagiaire" data-toggle="tooltip" data-placement="left" title="Stagiaires en responsabilité" role="button">
+                      <img class="img-rounded" src="/app_img/users.png" alt="Stagiaires en responsabilité">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Liste des activités possibles pour le stagiaire</h2>
-              <p><a class="btn btn-default" href="/index.php//visite" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
+                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Evaluer un stagiare</h2>
-              <p><a class="btn btn-default" href="/index.php//commentaire" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
+                      <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
+                  </a>
+              </p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
+                      <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
       
@@ -125,7 +149,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (form_val_traineeList as $trainee => $infos) {
+                                <?php foreach ($this->_arrayParamslist[0] as $trainee => $infos) {
                                     echo"
                                         <tr>
                                             <td> 
@@ -221,7 +245,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -244,7 +268,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

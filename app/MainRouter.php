@@ -25,16 +25,22 @@ class MainRouter {
     
     public function run() {
         try{
-            $locator = new FileLocator(array(CONFIG));
-            $loader = new YamlFileLoader($locator);
-            $routesCollection = $loader->load('routes.yml');
-            $context = new RequestContext();
-            $context->fromRequest(Request::createFromGlobals());//init context
-//            echo 'Path info : '.$context->getPathInfo().' || ';
-//            echo 'base url : '.$context->getBaseUrl().' || ';
-            $matcher = new UrlMatcher($routesCollection, $context);
-            $parameters = $matcher->match($context->getPathInfo());
-//            var_dump($parameters);
+            if(UserConnected::getInstance()->isUserConnected()){
+                $locator = new FileLocator(array(CONFIG));
+                $loader = new YamlFileLoader($locator);
+                $routesCollection = $loader->load('routes.yml');
+                $context = new RequestContext();
+                $context->fromRequest(Request::createFromGlobals());//init context
+    //            echo 'Path info : '.$context->getPathInfo().' || ';
+    //            echo 'base url : '.$context->getBaseUrl().' || ';
+                $matcher = new UrlMatcher($routesCollection, $context);
+                $parameters = $matcher->match($context->getPathInfo());
+    //            var_dump($parameters);
+                //$controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
+            }else{
+                $parameters = array('_controller'=>'Login', '_action'=>'check');
+               
+            }
             $controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
             if (is_file($controllerQualified)){
                 $controllerClass = 'Controller\\'.$parameters['_controller'].'Controller';
@@ -64,7 +70,7 @@ class MainRouter {
         catch (ResourceNotFoundException $re){ // If the resource could not be found
             new InternalException($re->getMessage());
         }   
-        catch (MethodNotAllowedException $me){ // If the resource was found but the request method is not allowed
+        catch (MethodNotAllowedException $me){ // If the resource was found but the requested method is not allowed
             new InternalException($me->getMessage()); 
         }
     }

@@ -179,7 +179,7 @@ class WorkDefinitionModel extends AModel implements IModel{
     $this->_companyEmail = $_Email;
     }
 
-    public function set_employeeList($id, $_employee) {
+    public function set_employeeList($id, $_employee=null) {
     $this->_employeeList[$id] = $_employee;
     }
 
@@ -203,6 +203,10 @@ class WorkDefinitionModel extends AModel implements IModel{
     $this->_employeeRole = $_employeeRole;
     }
     
+    public function setId_trainee($id_trainee) {
+        $this->id_trainee = $id_trainee;
+    }
+    
     public function addBlank() {
         //
     }
@@ -218,11 +222,23 @@ class WorkDefinitionModel extends AModel implements IModel{
     }
 
     public function deleteFromId($id) {
-        
+        //
     }
 
-    public function deleteFromProperty($property, $val) {
-        //
+    /**
+     * Delete work in progress from trainee id
+     * @param type $property : trainee_id
+     * @param type $val: unused
+     */
+    public function deleteFromProperty($property='id_trainee', $val=null) {
+        $collection = new DataAccess('Realiser');
+        $link = $collection->GetByColumnValue('id_stagiaire', $this->id_trainee);
+        $collection->Delete($link);
+        $collection = new DataAccess('Stage_defini');
+        var_dump($link);
+        $work = $collection->GetByID($link->id_stage_defini);
+        var_dump($work);
+        $collection->Delete($work);
     }
 
     public function getAll() {
@@ -334,19 +350,6 @@ class WorkDefinitionModel extends AModel implements IModel{
     }
     
     /**
-     * Add trainee to data base
-     */
-//    public function addWork(){
-//        $collection = new DataAccess('Stage_defini');
-//        $work = new Stage_definiObject;
-//        $work->stgdef_status = self::WORK_CREATED;
-//        $work->id_stage=$this->id_workName;
-//        $work->id_collaborateur=$this->addEmployee();
-//        $work->id_enseignant=$this->id_teacher;
-//        $collection->Insert($work);
-//    }
-    
-    /**
      * UNUSED 
      * Update teacher in data base
      */
@@ -360,22 +363,7 @@ class WorkDefinitionModel extends AModel implements IModel{
 //        $collection->Update($teacher);
 //        //update Utilisateurs...
 //    }
-    
-    /**
-     * Delete teacher from data base
-     */
-    public function delWork(){
-        $collection = new DataAccess('Stage');
-        $trainee=$collection->GetByID($this->_traineeId);
-        $collection->Delete($trainee);
-        //delete from Utilisateurs with email value
-        $collection = new DataAccess('Utilisateurs');
-        $user = $collection->GetByColumnValue('uti_mel', $trainee->sta_mel_stagiaire);
-        $collection->Delete($user);
-    }
-    
-    
-    
+      
     //PRIVATE
     public function addCompany(){
         $collection = new Dal\DbLibrary\DataAccess('Entreprise');

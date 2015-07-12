@@ -225,7 +225,7 @@
                                 <input type=\"mail\" required class=\"form-control\" id=\"inputAdminPass2\" 
                                        name=\"_teacherMail\" 
                                        placeholder=\"\"
-                                       value=\"zola@voila.fr\">
+                                       value=\"laurentauthier@voila.fr\">
                             </div>
                         </div>
                         <div class=\"form-group\">
@@ -255,7 +255,7 @@
             
             <!-- optionnal form panel importing teacher.  -->
             <?php 
-            if(0==true){
+            if(1==true){
                 echo"
                 <div class=\"panel panel-default\">
                     <div class=\"panel-heading\">

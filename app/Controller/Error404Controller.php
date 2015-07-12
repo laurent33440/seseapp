@@ -14,7 +14,7 @@ namespace controller;
  * @author prog
  */
 class Error404Controller extends AControllerState{
-    
+    // FIXME REFACTOR
     public function __construct(RequestHandler $request, SequenceState $sequenceState) {
         parent::__construct($request, $sequenceState);
         $this->setRootControllerName(__CLASS__);

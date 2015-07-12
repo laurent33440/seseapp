@@ -74,11 +74,12 @@ class HeaderModel {
         }else{//ok
             $this->_courseName=$year[0]->annee_scolaire;
         }
-        if(\SeseSession::getInstance()->has('user_connected/name')){
-            $this->_userName= \SeseSession::getInstance()->get('user_connected/name');
-        }
-        if(\SeseSession::getInstance()->has('user_connected/group')){
-            $this->_userRole= \SeseSession::getInstance()->get('user_connected/group');
-        }
+//        if(\SeseSession::getInstance()->has('user_connected/name')){
+            $this->_userName= \UserConnected::getInstance()->getUserName();
+            //$this->_userName= \SeseSession::getInstance()->get('user_connected/name');
+//        }
+//        if(\SeseSession::getInstance()->has('user_connected/group')){
+            $this->_userRole= \UserConnected::getInstance()->getUserGroup();
+//        }
     }
 }

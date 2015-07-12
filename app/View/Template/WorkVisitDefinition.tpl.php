@@ -1,10 +1,9 @@
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Main jumbotron for a call to action -->
 <div class="jumbotron">
   <div class="container">
     <h3>Définition des visites de stage</h3>
     <p>Définissez les visites des stagiaires qui vous sont attribués. </p>
-    <!--<p><a class="btn btn-primary btn-lg" role="button"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>-->
   </div>
 </div>
 
@@ -45,12 +44,12 @@
                                             <td>
                                                   <span class=\"input-group-btn\">
                                                     <button class=\"btn btn-success\" name=\"BUTTON_ADD\" id=\"add#$trainee\" type=\"submit\">
-                                                        <span class=\"glyphicon glyphicon-plus-sign\"></span>
-                                                        Ajouter
+                                                        <span class=\"glyphicon glyphicon-ok\"></span>
+                                                        Valider cette date
                                                     </button>
                                                     <button class=\"btn btn-danger\" name=\"BUTTON_DEL\" value=\"$trainee\" id=\"del#$trainee\" type=\"submit\">
-                                                        <span class=\"glyphicon glyphicon-minus-sign\"></span>
-                                                        Supprimer
+                                                        <span class=\"glyphicon glyphicon-remove\"></span>
+                                                        Effacer la date
                                                     </button>
                                                   </span>
                                                 
