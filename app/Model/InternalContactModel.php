@@ -24,7 +24,7 @@ class InternalContactModel extends AModel{
     private $_message;
     private $_emailChoosen;
     
-    //emailTo
+    //email to
     protected $emailTo;
     
     public function __construct(){
@@ -123,7 +123,7 @@ class InternalContactModel extends AModel{
         $mail->Password = 'laurent290867';
 
         //Set who the message is to be sent from
-        $mail->setFrom(\Bootstrap::$session->get('/user/name'), 'First Last');
+        $mail->setFrom(\UserConnected::getInstance()->getUserName(), 'First Last');
 
         //Set an alternative reply-to address
 //        $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -132,7 +132,7 @@ class InternalContactModel extends AModel{
         $mail->addAddress($this->emailTo, 'Destination');
 
         //Set the subject line
-        $mail->Subject = 'Test';
+        $mail->Subject = 'Un utilisateur de l\'application SESE vous contact';
 
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body
