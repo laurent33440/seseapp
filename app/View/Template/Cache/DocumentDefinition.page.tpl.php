@@ -127,81 +127,89 @@
                     <h1 class="page-header">Interface d'administration de SESE</h1>
 
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h3>Etape de définition des promotions liées à l'établissement de formation </h3>
-    <p>Dans cette étape vous allez définir les promotions liées à l'établissement de formation.</p>
-    <!--<p><a class="btn btn-primary btn-lg" role="button"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>-->
-  </div>
-</div>
-
-<div class="container-fluid">
-
-    <form  method="post" action="<?php echo' /index.php/administrateur/promotion '; ?>" class="form-horizontal" >
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Informations relatives au Promotion liées à l'établissement de formation
-                </div>
-                <div class="panel-body">
-                     <div class="table-responsive" id="func_table">
-                        <table class="table table-hover table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="active">Référence de la promotion</th>
-                                    <th class="active">Descriptif de la promotion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($this->_arrayParamslist[1] as $idPromotion=>$ref ) {
-                                    echo"
-                                        <tr>
-                                            <td> 
-                                                <div class=\"input-group\">
-                                                  <input type=\"text\" class=\"form-control\"
-                                                  id=\"promoRef#$idPromotion\"
-                                                  name=\"_references##$idPromotion\"
-                                                  placeholder=\"Entrez la référence de la promotion\"
-                                                  value = \"$ref\">
-                                               </div><!-- /input-group -->
-                                            </td>
-                                            <td>
-                                                <div class=\"input-group\">
-                                                  <input type=\"text\" class=\"form-control\"
-                                                  id=\"promotionDescription#$idPromotion\"
-                                                  name=\"_descriptions##$idPromotion\"
-                                                  placeholder=\"Entrez le descriptif de la promotion\"
-                                                  value = \"".$this->_arrayParamslist[0][$idPromotion]."\">
-                                                  <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" value=\"$idPromotion\" id=\"addPromotion#$ref\" type=\"submit\">
-                                                        <span class=\"glyphicon glyphicon-plus-sign\"></span>
-                                                        Ajouter
-                                                    </button>
-                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$idPromotion\" id=\"delPromotion#$ref\" type=\"submit\">
-                                                        <span class=\"glyphicon glyphicon-minus-sign\"></span>
-                                                        Supprimer
-                                                    </button>
-                                                  </span>
-                                                </div><!-- /input-group -->
-                                            </td>
-                                        </tr>
-                                    ";
-                                } ?>
-                            </tbody>
-                        </table>
+                <div class="container-fluid">
+                    <div class="jumbotron">
+                      <h2>Editer et créer les documents de références</h2>
+                      <p></p>
                     </div>
+                    <form class="form" role="form" method="post" action="<?php echo'/index.php/administrateur/document'; ?>">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Choisissez un documents existants ou créez un nouveau document</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label >Documents disponibles</label>
+                                        <select  class="form-control" name="_docName" >
+                                            <?php
+                                            foreach ($this->_arrayParamslist[2] as $doc) {
+                                                echo"
+                                                <option value=\"$doc\">$doc</option>
+                                                ";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label >Créer un nouveau document</label>
+                                        <input type="text" class="form-control" name="_newDocName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label >type de document</label>
+                                        <?php
+                                        foreach($this->_arrayParamslist[0] as $type){
+                                            echo"
+                                                <div class=\"radio-inline\">
+                                                    <label>
+                                                        <input type=\"radio\" name=\"_docType\" value=\"$type\"> $type
+                                                    </label>
+                                                </div>
+                                            ";
+                                        }
+                                    ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label >Lecteurs autorisés</label>
+                                        <?php
+                                        foreach($this->_arrayParamslist[1] as $reader){
+                                            echo"
+                                                <div class=\"checkbox-inline\">
+                                                    <label>
+                                                        <input type=\"checkbox\" name=\"_access##$reader\" value=\"$reader\"> $reader
+                                                    </label>
+                                                </div>
+                                            ";
+                                        }
+                                    ?>
+                                    </div>
+                                </div>      
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Tests avec Tiny MCE - les scripts sont placés dans le 'head' de la page  
+                                    <a href="http://www.tinymce.com/wiki.php/Installation" target="_blank">voir sur le site officiel</a>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <textarea id="textarea1" name="_doc" style="width:100%">
+                                            Ecrivez votre texte...
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-10 ">
+                                <input id="submit" name="submit" type="submit" value="Valider le document " class="btn btn-primary">
+                            </div>
+                        </div>
+                    </form>
+            
                 </div>
-            </div>
-        </div>
-
-        <div class="row">
-             <button class="btn btn-lg btn-primary btn-block" type="submit"> <span class="glyphicon glyphicon-check"></span> Valider les informations</button>
-        </div> 
-    </form>
-
-</div>
-            </div><!-- Center page -->
+                        </div><!-- Center page -->
         </div><!-- Row menu left -->
     </div> <!-- Main container -->
 

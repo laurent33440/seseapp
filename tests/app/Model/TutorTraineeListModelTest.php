@@ -51,7 +51,7 @@ class TutorTraineeListModelTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetAllVisits().
      */
     public function testgetAllTrainee() {
-        $this->object->getAllTrainee();
+        $this->object->getAll();
         $r=$this->object->get_traineeList();
         var_dump($r);
         $this->assertEquals(array(), $r );

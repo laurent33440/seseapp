@@ -246,11 +246,13 @@ abstract class AControllerState {
                                                 'USER_GROUP'=>$model->get_userRole(),
 //                                                'INDEX'=>  \Bootstrap::APP_URL,
                                                 'INDEX'=>  '/',
-                //admin space
+                //FIXME : REFACTOR THIS - BUG! BUG! ALL KEYS MUST HAVE DIFFERENTS STRUCTURE
+                //admin space  
                 'REFERENTIAL'=>  $this->_index.'/referentiel',
                 'FUNCTION'=>  $this->_index.'/fonction',
                 'ACTIVITY'=>  $this->_index.'/activite',
                 'SKILL'=>  $this->_index.'/competence',
+                'DOCUMENT'=>  $this->_index.'/document',
                 'PROMOTION'=>  $this->_index.'/promotion',
                 'TEACHER'=>  $this->_index.'/enseignant',
                 'TRAINEE'=> $this->_index.'/stagiaire',
@@ -263,6 +265,9 @@ abstract class AControllerState {
                 'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
                 //tutor space
                 'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
+                'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
+                'EVALUATE' => $this->_index.'/evaluation_stagiaire',
+                'TUTORPASS' => $this->_index.'/mot_de_passe'
 
                 );
                                                 
@@ -347,8 +352,8 @@ abstract class AControllerState {
     }
 
     /**
-     * Build a one to one set of 'form name' => 'model attribute name'
-     * and 'form place holder name' => 'default values model attribute'
+     * Build a one to one set of 'form name' => 'model property name'
+     * and 'form place holder name' => 'default values model property'
      * 
      * @return array : set of keys => values
      */
@@ -388,23 +393,23 @@ abstract class AControllerState {
     /**
      * Extract datas from form datas (raw post) towards model properties and format of datas
      * @param array $formDatas : datas from form construct as set of : 
-     * 1){<member_name-model> => value},
-     * 2){<member_name-model>#param1#param2... => value},
-     * 3){<member_name-model>##key => value}, 
-     * 4){<member_name-model>##key#param1#param2... => value}, 
+     * 1){<property_name-model> => value},
+     * 2){<property_name-model>#param1#param2... => value},
+     * 3){<property_name-model>##key => value}, 
+     * 4){<property_name-model>##key#param1#param2... => value}, 
      * @param array $varsModel : properties of model
      * @return array : 
-     * 1)array(<member_name-model> => value, ...)
-     * 2)array(<member_name-model> => array(value, param1, param2, ...), ...)
-     * 3)array(key => array(<member_name-model> => value), ...)
-     * 4)array(key => array(<member_name-model> => array(value, param1, param2,...)), ...)
+     * 1)array(<property_name-model> => value, ...)
+     * 2)array(<property_name-model> => array(value, param1, param2, ...), ...)
+     * 3)array(key => array(<property_name-model> => value), ...)
+     * 4)array(key => array(<property_name-model> => array(value, param1, param2,...)), ...)
      */
     public function findAllParamsFromForm(array $formDatas, array $varsModel){
         $keysForm = array_keys($formDatas);
         $result = array();
         $matches = array();
         foreach($keysForm as $keyForm) {
-            if(!empty($formDatas[$keyForm])){
+            //if(!empty($formDatas[$keyForm])){  !!!!! empty (null or 0 ) values are ALLOWED for a property
                 if(preg_match('/(?P<param>\w+)##/', $keyForm, $matches) === 1){ //matches complex <form_name-model>##key => value OR <form_name-model>##key#param1#param2#... => value
                     if(in_array($matches['param'], $varsModel)){
                         $parts =explode('##',$keyForm);
@@ -438,7 +443,7 @@ abstract class AControllerState {
                         
                     }
                 }
-            }
+            //}
         }
         return $result;
     }

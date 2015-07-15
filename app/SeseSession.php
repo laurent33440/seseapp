@@ -23,6 +23,7 @@ class SeseSession {
     private static $_instance;
     
     public function __construct($debug=false){
+      //$debug = Bootstrap::DEBUG_SESE;
       if($debug){
           $this->session = new Session(new MockFileSessionStorage(ROOT.'/tests', self::DEBUG_FILE_NAME)); //dev, debug
       }else{

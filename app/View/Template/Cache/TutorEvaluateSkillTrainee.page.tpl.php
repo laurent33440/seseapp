@@ -133,56 +133,98 @@
     </div><!-- /.container -->
       
 </div> <!-- section colored-->
- <div class="jumbotron">
-        <div class="container">
-          <h3> Contacter un utilisateur de SESE</h3>
-          <p>
-          
-          </p>
-        </div>
-    </div>
-<div class="container">
-    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/tuteur/contact_interne'; ?>">
-        
-        <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">Contact</label>
-            <div class="col-sm-10">
-                <?php
-                echo"
-                <select class=\"form-control\" name=\"_emailChoosen\" id=\"emailList\">
-                    ";
-                    foreach ($this->_arrayParamslist[0] as $email) {
-                        echo"
-                        <option
-                            value=\"$email\">$email
-                        </option>
-                        ";
-                    }
-                    echo "
-                </select>
-                ";
-                ?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="message" class="col-sm-2 control-label">Message</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" rows="4" name="_message"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-                <input id="submit" name="submit" type="submit" value="Envoyer" class="btn btn-primary">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-                <! Will be used to display an alert to the user>
-            </div>
-        </div>
-    </form>
+<form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/tuteur/evaluation_stagiaire'; ?>">
     
-</div>
+    <div class="jumbotron">
+            <div class="container">
+                <h2> Evaluer un stagiaire</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                        <h3> Choisir un stagiaire à évaluer</h3>
+                        </p>
+                    </div>
+                    <div class="col-md-8 ">
+                        
+                          <select class="form-control" name="_traineeName"  >
+                        <?php
+                          foreach ($this->_arrayParamslist[2] as  $name) {
+                              echo"<option value=\"$name\">$name</option>";
+                          }
+                        ?>
+                          </select>
+                        
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <div class="container">
+
+        <?php foreach ($this->_arrayParamslist[0] as $functionName => $activitiesList){
+            echo"
+        <div class=\"panel panel-default\">
+            <div class=\"panel-heading\">
+                <h3 class=\"panel-title\"><h3>$functionName</h3></h3>
+            </div>
+            <div class=\"panel-body\">
+                ";
+            foreach ($activitiesList as $activityName => $skillsList) {
+                echo"
+
+                <div class=\"table-responsive\" id=\"visit_table\">
+                            <table class=\"table table-hover table-striped table-bordered\">
+                                <thead>
+                                    <tr>
+                                        <th class=\"active\"> <h4>$activityName</h4></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                ";
+                                     foreach ($skillsList as $skillName => $levels) {
+                                        echo"
+                                            <tr>
+                                                <td> 
+                                                     <span class=\"glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span>
+                                                    $skillName"
+                                                    ."<select name =\"_results##$activityName#$activityName#$skillName\">";
+                                                    foreach ($levels as $levelCode => $levelName) {
+                                                        echo"<option value=\"$levelCode\">$levelName</option>";
+                                                    }
+                                                    echo"
+                                                    </select> 
+                                                    Autonomie
+                                                    <select name=\"_autonomyResults##$activityName#$skillName\">";
+                                                    foreach($this->_arrayParamslist[1] as $autonomyCode => $autonomyName){
+                                                        echo"<option value=\"$autonomyCode\">$autonomyName</option>";
+                                                    }
+                                                    echo"
+                                                    </select> 
+                                                </td>";
+                                        echo"                
+                                            </tr>
+                                        ";
+                                        }
+                                echo"
+                                </tbody> 
+                </table>";
+            } 
+            echo"   
+                </div>
+            </div>
+        </div>";
+        } 
+        ?>
+
+        <div class="form-group">
+            <div class="col-lg-10 ">
+                <input id="submit" name="submit" type="submit" value="Valider l'évaluation " class="btn btn-primary">
+            </div>
+        </div>
+
+
+    </div>
+</form>
 <footer>
     <div class="section-colored">
           <div class="container">

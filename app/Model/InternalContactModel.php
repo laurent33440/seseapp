@@ -123,7 +123,8 @@ class InternalContactModel extends AModel{
         $mail->Password = 'laurent290867';
 
         //Set who the message is to be sent from
-        $mail->setFrom(\UserConnected::getInstance()->getUserName(), 'First Last');
+        $from = \UserConnected::getInstance()->getUserName();
+        $mail->setFrom(\UserConnected::getInstance()->getUserName(), 'Utilisateur de SESE : '.$from);
 
         //Set an alternative reply-to address
 //        $mail->addReplyTo('replyto@example.com', 'First Last');

@@ -63,6 +63,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
      */
     public function paramsProvider(){
         $model = array('_var1','_var2','_var3');
+        //0
         $param1 = array( 
                 '_var1' => 'c100',
                 '_var2' => 'Savoir souder',
@@ -76,6 +77,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                     '_var3' => 'lundi',
             );
             
+        //1
         $param12 = array( 
                 '_var1' => 'c100',
                 '_var3' => 'lundi',
@@ -85,6 +87,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                     '_var1' => 'c100',
                     '_var3' => 'lundi',
                 );
+        //2
         $param2 = array( 
                 '_var1#0' => 'c100',
                 '_var2#1' => 'Savoir souder',
@@ -94,6 +97,17 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
         $exp2 = array(  '_var1'=>array('c100',0),
                         '_var2'=>array('Savoir souder',1)
             );
+        //3
+        $param20 = array( 
+                '_var1#a' => 'c100',
+                '_var2#b' => 'Savoir souder',
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp20 = array(  '_var1'=>array('c100','a'),
+                        '_var2'=>array('Savoir souder','b')
+            );
+        //4
         $param21 = array( 
                 '_var1#0#1' => 'c100',
                 '_var2#1#2' => 'Savoir souder',
@@ -103,6 +117,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
         $exp21 = array(  '_var1'=>array('c100',0,1),
                         '_var2'=>array('Savoir souder',1,2)
             );
+        //5
         $param22 = array( 
                 '_var1#0#1' => 'c100',
                 '_var2#1' => 'Savoir souder',
@@ -114,7 +129,20 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                         '_var2'=>array('Savoir souder',1),
                         '_var3'=>array('lundi',1,2,3)
             );
-                    
+        //6
+        $param23 = array( 
+                '_var1#0#1' => 'c100',
+                '_var1#1#0' => 'Savoir souder',
+                '_var1#1#2' => 'lundi',
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp23 = array(  '_var1'=>array('c100',0,1),
+                        '_var1'=>array('Savoir souder',0),
+                        '_var1'=>array('lundi',1,2)
+            );
+                  
+        //7
         $param3 = array( 
                 '_var1##0' => 'c100',
                 '_var2##0' => 'Savoir souder',
@@ -126,7 +154,19 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                     '_var2' => 'Savoir souder',
                     )
                 );
-        
+        //8
+        $param30 = array( 
+                '_var1##a' => 'c100',
+                '_var2##a' => 'Savoir souder',
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp30 = array('a'=>array( 
+                    '_var1' => 'c100',
+                    '_var2' => 'Savoir souder',
+                    )
+                );
+        //9
         $param31 = array( 
                 '_var1##0' => 'c100',
                 '_var2##0' => 'Savoir souder',
@@ -140,6 +180,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                     ),
                     '_var3' => 'simple',
                 );
+        //10
         $param4 = array( 
                 '_var1##0' => 'c100',
                 '_var2##0' => 'Savoir souder',
@@ -153,6 +194,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                     0=>array('_var3' => array('Mon activité test test test 2',0,1))
                     )
                 );
+        //11
         $param41 = array( 
                 '_var1##0' => 'c100',
                 '_var2' => 'Savoir souder',
@@ -166,6 +208,38 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                     ),
                     '_var2' => 'Savoir souder'
                 );
+        //12
+        $param42 = array( 
+                '_var1##aa' => 'c100',
+                '_var2##aa' => 'Savoir souder',
+                '_var3##bb#1' => 'Mon activité test test test 2', 
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp42 = array('aa'=>array( 
+                            '_var1' => 'c100',
+                            '_var2' => 'Savoir souder',),
+                        'bb'=>array(0=>array('_var3' => array('Mon activité test test test 2',1)))
+                    
+                );
+        //13
+        $param43 = array( 
+                '_var1##aa' => 'c100',
+                '_var1##aa' => 'Savoir souder',//doublons : valeur retenue
+                '_var3##bb#1' => 'Mon activité test test test 2', 
+                '_var3##bb#2' => 'Mon activité test test test 3', 
+                '_var3##bb#2' => 'Mon activité test test test 4', //doublons overwrite
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp43 = array('aa'=>array( 
+                            '_var1' => 'Savoir souder',
+                            ),
+                       'bb'=>array( 0=>array('_var3' => array('Mon activité test test test 2',1)),
+                                    1=>array('_var3' => array('Mon activité test test test 4',2)),
+                        )
+                );
+        //14
         $param5 = array( 
                 '_var1##0' => 'c100',
                 '_var2##0' => 'Savoir souder',
@@ -186,6 +260,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                         0 => array('_var3' =>array('Mon activité test test test 2',1,1)),
                     ),
                 );
+        //15
         $param51 = array( 
                 '_var1##0#1' => 'c100',
                 '_var2##0#1#2' => 'Savoir souder',
@@ -206,6 +281,7 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                             0 => array('_var3' =>array('Mon activité test test test 2',1,1)),
                     ),
                 );
+        //16
         $param52 = array( 
                 '_var1##0#1' => 'c100',
                 '_var2##0#1#2' => 'Savoir souder',
@@ -230,27 +306,49 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
                             
                     ),
                 );
-        
+        //17
         $param10 = array( 
                 'ButtonSubmitAddSkill' => 0    
             
                 );
         $exp10 = array();
+
+        //18 -bug with value 0
+        $param90 = array( 
+                '_var1' => 'c100',
+                '_var2' => 0,
+                '_var3' => 'lundi',
+                'ButtonSubmitAddSkill' => 0    
+            
+                );
+        $exp90 = array(
+                    '_var1' => 'c100',
+                    '_var2' => 0,
+                    '_var3' => 'lundi',
+            );
+        
+        
         
         return array(
             array($param1,$model, $exp1, 'simple var -> value'),
             array($param12,$model, $exp12, 'simple var -> value incomplete '),
             array($param2,$model, $exp2, 'simple indexé var->value'),
+            array($param20,$model, $exp20, 'simple indexé var->value'),
             array($param21,$model, $exp21, 'simple indexé var->value mixe '),
             array($param22,$model, $exp22, 'simple indexé var->value mixe '),
+            array($param23,$model, $exp23, 'simple indexé var->value mixe '),
             array($param3,$model, $exp3, 'complex indexé var->value'),
+            array($param30,$model, $exp30, 'complex indexé var->value'),
             array($param31,$model, $exp31, 'complex indexé var->value mixe'),
             array($param4,$model, $exp4, 'complex multi indexé var->value'),
             array($param41,$model, $exp41, 'complex multi indexé var->value'),
+            array($param42,$model, $exp42, 'complex multi indexé var->value'),
+            array($param43,$model, $exp43, 'complex multi indexé var->value'),
             array($param5,$model, $exp5, 'complex multi indexé var->value'),
             array($param51,$model, $exp51, 'complex multi indexé var->value'),
             array($param52,$model, $exp52, 'complex multi indexé var->value'),
             array($param10,$model, $exp10, 'aucun'),
+            array($param90,$model, $exp90, 'bug 0'),
         );
     }
 
@@ -258,9 +356,13 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
      * @dataProvider paramsProvider
      */
     public function testfindAllParamsFromForm(array $params, array $models, array $exps, $notes){
-        $this->assertEquals($exps,$this->object->findAllParamsFromForm($params, $models), $notes);
+        $r= $this->object->findAllParamsFromForm($params, $models);
+        //var_dump($r);
+        $this->assertEquals($exps,$r, $notes);
         
     }
+    
+    
     
     
 

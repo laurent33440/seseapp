@@ -47,6 +47,8 @@
                                 <li><a href="SKILL"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Compétences</a></li>
                             </ul>
                         </li>
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="DOCUMENT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="PROMOTION"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>

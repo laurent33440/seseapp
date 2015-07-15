@@ -46,23 +46,7 @@ class TutorTraineeListModel extends AModel implements IModel{
     }
 
     public function getAll() {
-        
-    }
-
-    public function resetModel() {
-        
-    }
-
-    public function update($property, $val, $id) {
-        
-    }
-
-    
-    /**
-     * Get all work date from data base - reset view model
-     */
-    public function getAllTrainee(){
-        $this->_traineeList=array();//reset
+        $this->resetModel();
         $collection = new DataAccess('Collaborateur');
         $tutor = $collection->GetByColumnValue('col_mel', \UserConnected::getInstance()->getUserName());
         //$tutor = $collection->GetByColumnValue('col_mel', \SeseSession::getInstance()->get('user_connected/name'));
@@ -86,6 +70,43 @@ class TutorTraineeListModel extends AModel implements IModel{
             }
         }
     }
+
+    public function resetModel() {
+        $this->_traineeList=array();//reset
+    }
+
+    public function update($property, $val, $id) {
+        
+    }
+
+    /**
+     * Get all work date from data base - reset view model
+     */
+//    public function getAllTrainee(){
+//        $this->_traineeList=array();//reset
+//        $collection = new DataAccess('Collaborateur');
+//        $tutor = $collection->GetByColumnValue('col_mel', \UserConnected::getInstance()->getUserName());
+//        //$tutor = $collection->GetByColumnValue('col_mel', \SeseSession::getInstance()->get('user_connected/name'));
+//        $collection = new DataAccess('Stage_defini');
+//        $works=$collection->GetAllByColumnValue('id_collaborateur', $tutor->id_collaborateur);
+//        foreach ($works as $work) {
+//            $idWork = $work->id_stage_defini;
+//            $idTeacher = $work->id_enseignant;
+//            $collection = new DataAccess('Enseignant');
+//            $teacher = $collection->GetByColumnValue('id_enseignant', $idTeacher);
+//            $teacherN = $teacher->ens_prenom_enseignant.' '.$teacher->ens_nom_enseignant;
+//            $collection = new DataAccess('Realiser');
+//            $links = $collection->GetAllByColumnValue('id_stage_defini', $idWork);
+//            $collection=new DataAccess('Stagiaire');
+//            foreach ($links as $elt){
+//                $trainee = $collection->GetByColumnValue('id_stagiaire',$elt->id_stagiaire );
+//                $period = $this->getWorkPeriod($elt->id_stagiaire);
+//                $this->_traineeList[$trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire] = array(
+//                    $period => $teacherN
+//                );
+//            }
+//        }
+//    }
     
     public function getWorkPeriod($idTrainee){
         $c=new DataAccess('Realiser');

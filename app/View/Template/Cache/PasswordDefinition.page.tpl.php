@@ -133,56 +133,65 @@
     </div><!-- /.container -->
       
 </div> <!-- section colored-->
- <div class="jumbotron">
-        <div class="container">
-          <h3> Contacter un utilisateur de SESE</h3>
-          <p>
-          
-          </p>
-        </div>
-    </div>
-<div class="container">
-    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/tuteur/contact_interne'; ?>">
-        
-        <div class="form-group">
-            <label for="email" class="col-sm-2 control-label">Contact</label>
-            <div class="col-sm-10">
-                <?php
-                echo"
-                <select class=\"form-control\" name=\"_emailChoosen\" id=\"emailList\">
-                    ";
-                    foreach ($this->_arrayParamslist[0] as $email) {
-                        echo"
-                        <option
-                            value=\"$email\">$email
-                        </option>
-                        ";
-                    }
-                    echo "
-                </select>
-                ";
-                ?>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="message" class="col-sm-2 control-label">Message</label>
-            <div class="col-sm-10">
-                <textarea class="form-control" rows="4" name="_message"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-                <input id="submit" name="submit" type="submit" value="Envoyer" class="btn btn-primary">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-                <! Will be used to display an alert to the user>
-            </div>
-        </div>
-    </form>
+
+
+
+<div class="container-fluid"> 
     
+    <div class="jumbotron">
+      <div class="container">
+        <h3>Modification de votre mot de passe</h3>
+        <p>Dans ce formulaire vous allez pouvoir modifier le mot de passe</p>
+      </div>
+    </div>
+    
+    <form  method="post" action="<?php echo' /index.php/tuteur/ '; ?>" class="form-horizontal" >
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Informations relatives à votre mot de passe dans l'application SESE
+                </div>
+                <div class="panel-body">
+                     
+                        <div class="form-group">
+                            <label for="inputdbSrv" class="control-label col-xs-2">Mot de passe actuel</label>
+                            <div class="col-xs-10">
+                                <input type="password" class="form-control" id="adminCurrentPassword" 
+                                       placeholder="Entrez le mot de passe actuel "
+                                       name="<?php echo'_adminCurrentPassword'; ?>"
+                                       value="<?php echo''; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputdbUser" class="control-label col-xs-2">Nouveau mot de passe </label>
+                            <div class="col-xs-10">
+                                <input type="password" class="form-control" id="adminNewPassword" 
+                                       placeholder="Nouveau mot de passe "
+                                       name="<?php echo'_adminNewPassword'; ?>"
+                                       value="<?php echo''; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputdbPassword" class="control-label col-xs-2">Confirmez le nouveau mot de passe </label>
+                            <div class="col-xs-10">
+                                <input type="password" class="form-control" id="adminConfirmPassword" 
+                                       placeholder="Confirmez le nouveau mot de passe "
+                                       name="<?php echo'_adminConfirmPassword'; ?>"
+                                       value="<?php echo''; ?>">
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+             <button class="btn btn-lg btn-primary btn-block" type="submit"> <span class="glyphicon glyphicon-check"></span> Valider les informations</button>
+        </div> 
+    </form>
+
 </div>
+
 <footer>
     <div class="section-colored">
           <div class="container">

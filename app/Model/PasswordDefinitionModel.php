@@ -8,10 +8,9 @@
 
 namespace Model;
 
-use Bootstrap;
-use SeseSession;
+
+use UserConnected;
 use Model\Dal\DbLibrary\DataAccess;
-use Model\Dal\ModelDb\Utilisateurs\UtilisateursObject;
 use \Exception\InternalException;
 
 /**
@@ -19,7 +18,7 @@ use \Exception\InternalException;
  *
  * @author laurent
  */
-class AdminPasswordDefinitionModel extends AModel{
+class PasswordDefinitionModel extends AModel{
     //view
     private $_adminCurrentPassword;
     private $_adminNewPassword;
@@ -56,12 +55,12 @@ class AdminPasswordDefinitionModel extends AModel{
      */
     public function checkPasswords(){
         //check if user is administrateur
-        $session=  SeseSession::getInstance();
-        if($session->has('user_connected/name') && $session->has('user_connected/group')){
-            if($session->get('user_connected/group')==='administrateur'){
+        $user=  UserConnected::getInstance();
+        if($user->isUserConnected()){
+            //if($session->get('user_connected/group')==='administrateur'){
                 //check password administrateur
                 $collection = new DataAccess('Utilisateurs');
-                $user = $collection->GetByColumnValue('uti_identifiant', $session->get('user_connected/name'));
+                $user = $collection->GetByColumnValue('uti_identifiant', $user->getUserName());
                 if($user->uti_mot_de_passe === $this->_adminCurrentPassword){
                     //check that new passwords matches
                     if($this->_adminNewPassword===$this->_adminConfirmPassword){
@@ -76,9 +75,9 @@ class AdminPasswordDefinitionModel extends AModel{
                     return 'Mot de passe administrateur incorrect!';
                 }
                 
-            }else{
-                return 'Vous n\'êtes pas administrateur, vous ne pouvez pas changer le mot de passe!';
-            }
+//            }else{
+//                return 'Vous n\'êtes pas administrateur, vous ne pouvez pas changer le mot de passe!';
+//            }
             
         }else{
             throw new InternalException('Pas d\'utilisateur connecté enregistré dans la session!!!');

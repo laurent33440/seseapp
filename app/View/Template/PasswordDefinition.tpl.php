@@ -5,8 +5,8 @@
     
     <div class="jumbotron">
       <div class="container">
-        <h3>Modification du mot de passe administrateur</h3>
-        <p>Dans ce formulaire vous allez pouvoir modifier le mot de passe administrateur</p>
+        <h3>TXT_HEADER1</h3>
+        <p>TXT_HEADER2</p>
       </div>
     </div>
     
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Informations relatives au mot de passe de l'administrateur de l'application SESE
+                    TXT_FORM
                 </div>
                 <div class="panel-body">
                      
@@ -22,25 +22,25 @@
                             <label for="inputdbSrv" class="control-label col-xs-2">Mot de passe actuel</label>
                             <div class="col-xs-10">
                                 <input type="password" class="form-control" id="adminCurrentPassword" 
-                                       placeholder="Entrez le mot de passe actuel de l'administrateur"
+                                       placeholder="Entrez le mot de passe actuel "
                                        name="{{!form_adminCurrentPassword!}}"
                                        value="{{!form_val_adminCurrentPassword!}}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputdbUser" class="control-label col-xs-2">Nouveau mot de passe administrateur</label>
+                            <label for="inputdbUser" class="control-label col-xs-2">Nouveau mot de passe </label>
                             <div class="col-xs-10">
                                 <input type="password" class="form-control" id="adminNewPassword" 
-                                       placeholder="Nouveau mot de passe administrateur"
+                                       placeholder="Nouveau mot de passe "
                                        name="{{!form_adminNewPassword!}}"
                                        value="{{!form_val_adminNewPassword!}}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputdbPassword" class="control-label col-xs-2">Confirmez le nouveau mot de passe administrateur</label>
+                            <label for="inputdbPassword" class="control-label col-xs-2">Confirmez le nouveau mot de passe </label>
                             <div class="col-xs-10">
                                 <input type="password" class="form-control" id="adminConfirmPassword" 
-                                       placeholder="Confirmez le nouveau mot de passe administrateur"
+                                       placeholder="Confirmez le nouveau mot de passe "
                                        name="{{!form_adminConfirmPassword!}}"
                                        value="{{!form_val_adminConfirmPassword!}}">
                             </div>

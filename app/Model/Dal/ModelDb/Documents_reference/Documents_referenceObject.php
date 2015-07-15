@@ -17,5 +17,5 @@ class Documents_referenceObject {
     public $id_documents_reference;
     public $drf_sujet;
     public $drf_description_doc;
-    public $id_refrentiel_de_formation;
+    public $id_referentiel_de_formation;
 }

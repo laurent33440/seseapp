@@ -94,11 +94,11 @@ class TestAModelTest extends \PHPUnit_Framework_TestCase {
      * @dataProvider setClassVarsValues_form1_provider
      * 
      */
-    public function testsetClassVarsValues_form1($tst, $exp){
-        $this->object->setClassVarsValues($tst);
-        $this->assertEquals($exp[0], $this->object->get_var1());
-        $this->assertEquals($exp[1], $this->object->get_list1());
-    }
+//    public function testsetClassVarsValues_form1($tst, $exp){
+//        $this->object->setClassVarsValues($tst);
+//        $this->assertEquals($exp[0], $this->object->get_var1());
+//        $this->assertEquals($exp[1], $this->object->get_list1());
+//    }
     
     /**
      * array(propertyName=> array(value, arg1,...),  ...)
@@ -123,12 +123,12 @@ class TestAModelTest extends \PHPUnit_Framework_TestCase {
      * array(propertyName=> array(value, arg1,...),  ...)
      * @dataProvider setClassVarsValues_form2_provider
      */
-    public function testsetClassVarsValues_form2($tst, $exp){
-        $this->object->setClassVarsValues($tst);
-        $this->assertEquals($exp[0], $this->object->get_var1());
-        $this->assertEquals($exp[1], $this->object->getArg1());
-        $this->assertEquals($exp[2], $this->object->get_list1());
-    }
+//    public function testsetClassVarsValues_form2($tst, $exp){
+//        $this->object->setClassVarsValues($tst);
+//        $this->assertEquals($exp[0], $this->object->get_var1());
+//        $this->assertEquals($exp[1], $this->object->getArg1());
+//        $this->assertEquals($exp[2], $this->object->get_list1());
+//    }
     
     /**
      * array(key => array(
@@ -174,12 +174,12 @@ class TestAModelTest extends \PHPUnit_Framework_TestCase {
      * )
      * @dataProvider setClassVarsValues_form3_provider
      */
-    public function testsetClassVarsValues_form3($tst, $exp){
-        $this->object->setClassVarsValues($tst);
-        $this->assertEquals($exp[0], $this->object->get_var1());
-        $this->assertEquals($exp[1], $this->object->getArg1());
-        $this->assertEquals($exp[2], $this->object->get_list1());
-    }
+//    public function testsetClassVarsValues_form3($tst, $exp){
+//        $this->object->setClassVarsValues($tst);
+//        $this->assertEquals($exp[0], $this->object->get_var1());
+//        $this->assertEquals($exp[1], $this->object->getArg1());
+//        $this->assertEquals($exp[2], $this->object->get_list1());
+//    }
     
     /**
      * Mixed form data
@@ -249,13 +249,84 @@ class TestAModelTest extends \PHPUnit_Framework_TestCase {
      * )
      * @dataProvider setClassVarsValues_form4_provider
      */
-    public function testsetClassVarsValues_form4($tst, $exp){
+//    public function testsetClassVarsValues_form4($tst, $exp){
+//        $this->object->setClassVarsValues($tst);
+//        $this->assertEquals($exp[0], $this->object->get_var1());
+//        $this->assertEquals($exp[1], $this->object->getArg1());
+//        $this->assertEquals($exp[2], $this->object->get_list1());
+//    }
+
+    /**
+     * Mixed form data multiple
+     * array(key1 => array(
+     *                  propertyName=>value, |
+     *                  propertyName=> array(value, arg1,...),  
+     *      key2 => array(
+     *                  propertyName=>value, |
+     *                  propertyName=> array(value, arg1,...),
+     *      ...)
+     * )
+     * @return test vector, expexted values
+     */
+    public function setClassVarsValues_form5_provider(){
+        return array(
+            //0
+            array(  array(
+                        'a'=>array(
+                                    0=>array('_var1' => array('value1',2))
+                            ),
+                ),
+                //expected
+                    array('value1', 2,array())),
+            //1
+            array(  array(
+                        'a'=>array(
+                                    0=>array('_var1' => array('value1',2))
+                            ),
+                        'b'=>array(
+                                    0=>array('_list1' => array('e1', 2000)),
+                                    1=>array('_var1' => array('value1',3))
+                            )
+                    ), 
+                //expected
+                    array('value1', 3,array(2000=>'e1'))),
+            //2
+            array(  array(
+                        'a'=>array(
+                                    0=>array('_var1' => array('value1',2)),
+                                    1=>array('_list1' => array('e1', 1000)),
+                            ),
+                        'b'=>array(
+                                    0=>array('_list1' => array('e2', 2000)),
+                                    1=>array('_var1' => array('value1',3)),
+                                    2=>array('_list1' => array('e3', 3000))
+                            ),
+                        '_var1' => 'value1'
+                    ), 
+                //expected
+                    array('value1', null,array(1000=>'e1', 2000=>'e2', 3000=>'e3'))),
+           
+            );
+    }
+    
+    /**
+     * Mixed form data multiple
+     * array(key => array(
+     *                  propertyName=>value, |
+     *                  propertyName=> array(value, arg1,...), 
+     *              array(
+     *                  propertyName=>value, |
+     *                  propertyName=> array(value, arg1,...), 
+     *      ...)
+     * )
+     * @dataProvider setClassVarsValues_form5_provider
+     */
+    public function testsetClassVarsValues_form5($tst, $exp){
         $this->object->setClassVarsValues($tst);
         $this->assertEquals($exp[0], $this->object->get_var1());
         $this->assertEquals($exp[1], $this->object->getArg1());
         $this->assertEquals($exp[2], $this->object->get_list1());
     }
-
 
 
 }

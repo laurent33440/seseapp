@@ -9,7 +9,6 @@
 namespace Model;
 
 use Model\Dal\DbLibrary\DataAccess;
-
 use DateTime;
 
 /**
@@ -17,12 +16,11 @@ use DateTime;
  *
  * @author laurent
  */
-class WelcomeTutorModel extends AModel{
+class WelcomeTutorModel extends AModel implements IModel{
     //view
     private $_visitsInfos=array();//date=>(trainee=>teacher)
     
     public function __construct() {
-        $this->getAllVisits();
     }
 
     public function get_visitsInfos() {
@@ -34,11 +32,24 @@ class WelcomeTutorModel extends AModel{
 //        $this->_visits[$trainee] = $_date;
 //    }
 
-    /**
-     * Get all work date from data base - reset view model
-     */
-    public function getAllVisits(){
-        $this->_visitsInfos=array();//reset
+    public function addBlank() {
+        
+    }
+
+    public function append() {
+        
+    }
+
+    public function deleteFromId($id) {
+        
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function getAll() {
+        $this->resetModel();
         $collection = new DataAccess('Activite_et_visite');
         $visits = $collection->GetAll();
         setlocale(LC_TIME, 'fr_FR.UTF8');
@@ -53,8 +64,19 @@ class WelcomeTutorModel extends AModel{
                 $this->_visitsInfos[$date] = array(
                     $trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire => 
                     $teacher->ens_prenom_enseignant.' '.$teacher->ens_nom_enseignant    );
+            }else{//no appointment
+                $this->_visitsInfos['non définie'] = array(
+                    'stagiaire' => 'enseignant référant');
             }
         }
+    }
+
+    public function resetModel() {
+        $this->_visitsInfos=array();//reset
+    }
+
+    public function update($property, $val, $id) {
+        
     }
     
     public function convertMysqlToFrDate($mysqlDate){

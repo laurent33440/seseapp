@@ -19,11 +19,12 @@ use Model\GeneralReferenceDefinitionModel;
 use Model\FunctionReferentialDefinitionModel;
 use Model\ActivitiesReferenceDefinitionModel;
 use Model\SkillsReferenceDefinitionModel;
+use Model\DocumentDefinitionModel;
 use Model\PromotionModel;
 use Model\TeacherDefinitionModel;
 use Model\TraineeDefinitionModel;
 use Model\WorkDateModel;
-use Model\AdminPasswordDefinitionModel;
+use Model\PasswordDefinitionModel;
 
 
 
@@ -1001,27 +1002,27 @@ class AdminController extends AControllerState{
     }
     
     ///////////// admin password definitions methods
-    
+   
     public function adminPasswordDefinition(){
         try{
-            $this->_model = new AdminPasswordDefinitionModel();
+            $this->_model = new PasswordDefinitionModel();
             switch ($this->_state){
                 case self::IDLE :
-                    $this->buildViewAdminPasswordDefinition();
-                    $this->sendModelView('AdminPasswordDefinition');
+                    $this->buildViewPasswordDefinition();
+                    $this->sendModelView('PasswordDefinition');
                     $this->_state = self::RUNNING;
                     break;
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
                         if($this->_request->isXmlHttpRequest()){ 
                             if($this->computeAdminPasswordXmlHttpRequest($this->_request->request->all())===true){
-                                $this->buildViewAdminPasswordDefinition();
-                                $this->sendModelView('AdminPasswordDefinition');
+                                $this->buildViewPasswordDefinition();
+                                $this->sendModelView('PasswordDefinition');
                             }
                         }else{
-                            if($this->computeAdminPasswordDefinition($this->_request->request->all()) === true){
-                                $this->buildViewAdminPasswordDefinition();
-                                $this->sendModelView('AdminPasswordDefinition');
+                            if($this->computePasswordDefinition($this->_request->request->all()) === true){
+                                $this->buildViewPasswordDefinition();
+                                $this->sendModelView('PasswordDefinition');
                             }else{
                                 $this->_state = self::STOPPED;
                                 //redirect to welcome admin page
@@ -1033,13 +1034,13 @@ class AdminController extends AControllerState{
                             }
                         }
                     }else{//direct url access
-                        $this->buildViewAdminPasswordDefinition();
-                        $this->sendModelView('AdminPasswordDefinition');
+                        $this->buildViewPasswordDefinition();
+                        $this->sendModelView('PasswordDefinition');
                     }
                     break;
                 case self::STOPPED:
-                    $this->buildViewAdminPasswordDefinition();
-                    $this->sendModelView('AdminPasswordDefinition');
+                    $this->buildViewPasswordDefinition();
+                    $this->sendModelView('PasswordDefinition');
                     $this->_state = self::RUNNING;
                     break;
                 case self::TERMINATED:
@@ -1060,9 +1061,16 @@ class AdminController extends AControllerState{
         }
     }
     
-    public function buildViewAdminPasswordDefinition(){
+    public function buildViewPasswordDefinition(){
+        $txt = array(   'TXT_HEADER1' => 'Modification du mot de passe administrateur',
+                        'TXT_HEADER2' => 'Dans ce formulaire vous allez pouvoir modifier le mot de passe administrateur',
+                        'TXT_FORM'=> 'Informations relatives au mot de passe de l\'administrateur de l\'application SESE'
+                );
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
+        foreach ($txt as $t=>$val){
+            $formArray[$t]=$val;
+        }
         $formArray['INDEX'] = $this->_index.'/acces';
         $this->buildBodyView($formArray);
     }
@@ -1084,23 +1092,114 @@ class AdminController extends AControllerState{
             Logger::getInstance()->logDebug(__CLASS__.' model result : '.$result);
             return true;
         }
-
     }
     
     public function computeAdminPasswordXmlHttpRequest($datas){
         return true;//continue 
-//        if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
-//            $nameId = $datas['AJAX_ID'];
-//            $val = $datas['AJAX_VAL'];
-//            Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> name id : '.$nameId.' ::: val : '.$val);
-////            if($nameId==='traineeChoosenForUpdate'){
-////                $this->_model->selectTrainee($val);
-////            }
-//            return true;//update view
-//        }else{
-//            return false; //nothing to update
+    }
+    
+    ///////////// documents definitions methods
+    
+    public function documentDefinition(){
+        try{
+            $this->_model = new DocumentDefinitionModel();
+            switch ($this->_state){
+                case self::IDLE :
+                    $this->_model->getAll();
+                    $this->buildViewDocumentDefinition();
+                    $this->sendModelView('DocumentDefinition');
+                    $this->_state = self::RUNNING;
+                    break;
+                case self::RUNNING:
+                    if($this->_request->isMethod('POST')){
+                        if($this->_request->isXmlHttpRequest()){ 
+                            if($this->computeAdminPasswordXmlHttpRequest($this->_request->request->all())===true){
+                                $this->buildViewDocumentDefinition();
+                                $this->sendModelView('DocumentDefinition');
+                            }
+                        }else{
+                            if($this->computeDocumentDefinition($this->_request->request->all()) === true){
+                                $this->buildViewDocumentDefinition();
+                                $this->sendModelView('DocumentDefinition');
+                            }else{
+                                $this->_state = self::STOPPED;
+                                //redirect to welcome admin page
+                                $this->_redirect = new RedirectResponse($this->_index);
+                                // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
+                                $this->_redirect->prepare($this->_request);  
+                                Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
+                                $this->_redirect->send();
+                            }
+                        }
+                    }else{//direct url access
+                        $this->_model->getAll();
+                        $this->buildViewDocumentDefinition();
+                        $this->sendModelView('DocumentDefinition');
+                    }
+                    break;
+                case self::STOPPED:
+                    $this->_model->getAll();
+                    $this->buildViewDocumentDefinition();
+                    $this->sendModelView('DocumentDefinition');
+                    $this->_state = self::RUNNING;
+                    break;
+                case self::TERMINATED:
+                    break;
+                case self::ON_INPUT_ERROR:
+                    break;
+                default :
+                    throw new InternalException('Unknom state in '.__CLASS__. ' State Unknown :  '.$this->_state);
+            }
+        }catch (Exception $e){
+            $this->_state = self::ON_INPUT_ERROR;
+            $this->_error = $e;
+            if (!($e instanceof DataBaseException)){
+                throw new InternalException($e->getMessage());
+            }else{
+                throw $e;
+            }
+        }
+    }
+    
+    public function buildViewDocumentdefinition(){
+//        $txt = array(   'TXT_HEADER1' => 'Modification du mot de passe administrateur',
+//                        'TXT_HEADER2' => 'Dans ce formulaire vous allez pouvoir modifier le mot de passe administrateur',
+//                        'TXT_FORM'=> 'Informations relatives au mot de passe de l\'administrateur de l\'application SESE'
+//                );
+        $formArray = $this->buildCompleteFormArray();
+        $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
+//        foreach ($txt as $t=>$val){
+//            $formArray[$t]=$val;
+//        }
+        $formArray['INDEX'] = $this->_index.'/document';
+        $this->buildBodyView($formArray);
+    }
+    
+    public function computeDocumentDefinition($datas){
+        Logger::getInstance()->logDebug(__CLASS__.' raw post :'.  print_r($datas, true));
+        $varsModel = $this->_model->getClassVars();
+        Logger::getInstance()->logDebug(__CLASS__.' model vars : '.print_r($varsModel, true));
+        $params = $this->findAllParamsFromForm($datas, $varsModel);
+        Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
+        $this->_model->setClassVarsValues($params);
+        $this->_model->append();
+        return true;
+        //$result=$this->_model->checkPasswords();
+//        Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.' model result : '.$result);
+//        if($result===true){ // -- WARNING STRICT EQUALITY NEEDED
+//            //password changed - done
+//            return false;
+//        }else{// wrong passwords... 
+//            $this->modalParameters=new ModalParameters('Informations fournies incorrectes...', $result);
+//            Logger::getInstance()->logDebug(__CLASS__.' model result : '.$result);
+//            return true;
 //        }
     }
+    
+    public function computeDocumentDefinitionXmlHttpRequest($datas){
+        return true;//continue 
+    }
+    
     
     
     

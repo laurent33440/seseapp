@@ -57,19 +57,22 @@ abstract class AModel {
             if(is_array($value)){//if $value is an array 2 cases :
             //1)$var is the property name associated with arguments of the setting method (main value and arguments)
             //2)$var is a key and not an property name. Then First key of $value MUST be a valid property name.
+            //3)$value is an enumeration of properties => args   
                 if($this->isPropertyModel($var)){//case 1
                     call_user_func_array(array($this, 'set'.$var),$value);
-                }else{//case 2 
+                }else{//case 2 & 3
                     foreach ($value as $key => $valProperty) {//loop
-                        if($this->isPropertyModel($key)){
+                        if($this->isPropertyModel($key)){ //2
                             if(!is_array($valProperty)){ //single value
                                 call_user_func_array(array($this, 'set'.$key),array($valProperty));
                             }else{// list of arguments : array(main_value, arg1, arg2, ...)
                                 call_user_func_array(array($this, 'set'.$key),$valProperty); 
                             }
-                        }else{//something wrong ...
-                            return false;
-                        }
+                        }else{// case 3 get property and args from key
+                            $k = array_keys($valProperty);
+                            $prop = $k[0];
+                            call_user_func_array(array($this, 'set'.$prop),$valProperty[$prop]); 
+                        }    
                     }
                 }
             }else{
@@ -82,42 +85,36 @@ abstract class AModel {
         }
         return true;
     }
-    
-    /**
-     * Set members values of model
-     * @param list keys of member name and value : property_name => value OR array(id=>array(property_name => array(main_value, arg1, arg2, ...),...)
-     * @return boolean true if all members are matched 
-     */
-//    public function setClassVarsValues_old($keysVarsValues){
-//        $allMatched = $this->isArrayInclude($keysVarsValues,$this->getClassVars());
-//        if($allMatched){
-//            var_dump($keysVarsValues);
-//            foreach ($keysVarsValues as $var => $value) {
-//                //if $value is an array this is the property name associated with arguments of the setting method
-//                if(is_array($value)){
-//                    $k = array_keys($value);
-////                    var_dump($value);
-////                    var_dump($value[$k[0]]);
-//                    call_user_func_array(array($this, 'set'.$k[0]),$value[$k[0]]);
-//                }else{
-//                    $this->{'set'.$var}($value);
-//                }
-//            }
-//        }
-//        return $allMatched;
-//    }
-    
-    
-    /**
+   
+/**
+     * 
+     * FIXME : USE REFLECTION
      * Retrieve members values of model
      * @return set of member's name => value
      */
+//    public function getClassVarsValues_old(){
+//        $varsValues = array();
+//        $vars = $this->getClassVars();
+//        foreach ($vars as $var) {
+//            $val = $this->{'get'.$var}();
+//            $varsValues[$var] = $val;
+//        }
+//        return $varsValues;
+//    }  
+    
+    /**
+     * Retrieve properties values of model with getter
+     * @return set of member's name => value
+     */
     public function getClassVarsValues(){
+        $reflection = new ReflectionClass($this);
         $varsValues = array();
         $vars = $this->getClassVars();
         foreach ($vars as $var) {
-            $val = $this->{'get'.$var}();
-            $varsValues[$var] = $val;
+            if($reflection->hasMethod('get'.$var)){
+                $val = $this->{'get'.$var}();
+                $varsValues[$var] = $val;
+            }
         }
         return $varsValues;
     }

@@ -69,7 +69,7 @@
     
 
 
-    <!-- Menu
+    <!-- Generic
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
  <div class="section-colored-menu"> <!--see "app_sese.css" -->
@@ -83,7 +83,7 @@
                     <p>Veuillez choisir une action</p>
                 </div>
                 <div class="col-lg-2 ">
-                      <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                      <a class="btn btn-default" href="/index.php/tuteur/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
                           <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
                       </a>
                 </div>
@@ -115,19 +115,20 @@
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
+                  <a class="btn btn-default" href="/index.php/tuteur/liste_activites" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
                       <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
                   </a>
               </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
+                  <a class="btn btn-default" href="/index.php/tuteur/evaluation_stagiaire" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
                       <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
                   </a>
               </p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
+        <!-- end Menu -->
       
     </div><!-- /.container -->
       
@@ -136,7 +137,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Informations générales - visites programmées -  dimanche 12 juillet 2015 </h3>
+            <h3 class="panel-title">Informations générales - visites programmées -  mercredi 15 juillet 2015 </h3>
         </div>
         <div class="panel-body">
             <div class="table-responsive" id="visit_table">
@@ -149,7 +150,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (form_val_visitsInfos as $date => $infos) {
+                                <?php foreach ($this->_arrayParamslist[0] as $date => $infos) {
                                     echo"
                                         <tr>
                                             <td> 

@@ -31,10 +31,12 @@ class SeseSessionTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testGetInstance().
      */
     public function testGetInstance() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $session = $this->object->getInstance();
+        $session->setName('unit_test_debug_session');
+        $session->start();
+        $session->set('unit_test_debug_session', 'started');
+        $this->assertTrue($session->isStarted());
+        $this->assertEquals('started', $session->get('unit_test_debug_session'));
     }
 
     /**
