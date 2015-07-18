@@ -1,0 +1,1885 @@
+18-07-2015 10:45:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:45:03 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+18-07-2015 10:45:03 - INFO  --> Class MainRouter - controller trigged : Login::check 
+18-07-2015 10:45:03 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:03 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:03 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:03 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:03 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:03 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:03 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:45:03 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:45:03 - INFO  --> end Class MainRouter 
+18-07-2015 10:45:03 - INFO  --> destruct : Controller\LoginController 
+18-07-2015 10:45:03 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+18-07-2015 10:45:08 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:45:08 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+18-07-2015 10:45:08 - INFO  --> Class MainRouter - controller trigged : Login::check 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:08 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:08 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => true
+            [MODAL_TITLE] => Erreur d'authentification
+            [MODAL_MESSAGE] => Vérifiez votre identifiant et/ou votre mot de passe 
+        )
+
+)
+ 
+18-07-2015 10:45:08 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => true
+            [MODAL_TITLE] => Erreur d'authentification
+            [MODAL_MESSAGE] => Vérifiez votre identifiant et/ou votre mot de passe 
+        )
+
+)
+ 
+18-07-2015 10:45:08 - INFO  --> end Class MainRouter 
+18-07-2015 10:45:08 - INFO  --> destruct : Controller\LoginController 
+18-07-2015 10:45:08 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+18-07-2015 10:45:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:45:12 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+18-07-2015 10:45:12 - INFO  --> Class MainRouter - controller trigged : Login::check 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:12 - INFO  --> Class Controller\LoginController -- Redirect to administrateur for user :lolo 
+18-07-2015 10:45:12 - INFO  --> end Class MainRouter 
+18-07-2015 10:45:12 - INFO  --> destruct : Controller\LoginController 
+18-07-2015 10:45:12 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+18-07-2015 10:45:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:45:12 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+18-07-2015 10:45:12 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:12 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:12 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [body] => Array
+        (
+            [DATE] => samedi 18 juillet 2015
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:45:12 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+(
+    [body] => Array
+        (
+            [DATE] => samedi 18 juillet 2015
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:45:12 - INFO  --> end Class MainRouter 
+18-07-2015 10:45:12 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:45:12 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+18-07-2015 10:45:15 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:45:15 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->idle 
+18-07-2015 10:45:15 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:15 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:15 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [body] => Array
+        (
+            [form_documentTypeList] => _documentTypeList
+            [form_readerList] => _readerList
+            [form_docList] => _docList
+            [form_documentType] => _documentType
+            [form_docName] => _docName
+            [form_newDocName] => _newDocName
+            [form_access] => _access
+            [form_documentContent] => _documentContent
+            [form_ph_documentTypeList] => 
+            [form_ph_readerList] => 
+            [form_ph_docList] => 
+            [form_ph_documentType] => 
+            [form_ph_docName] => 
+            [form_ph_newDocName] => 
+            [form_ph_access] => 
+            [form_ph_documentContent] => 
+            [form_val_documentTypeList] => Array
+                (
+                    [0] => Convention
+                    [1] => Document pédagogique
+                )
+
+            [form_val_readerList] => Array
+                (
+                    [0] => Tuteur
+                    [1] => Stagiaire
+                )
+
+            [form_val_docList] => Array
+                (
+                    [1] => doc_test
+                    [2] => doc_test2
+                    [5] => doc_fonction_formate
+                    [6] => doc_fonction_formate
+                    [7] => doc_formate2
+                )
+
+            [form_val_documentContent] => <p>doc test 1</p>
+            [INDEX] => /index.php/administrateur/document
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur/document
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+            [DOC] => <p>doc test 1</p>
+            [TITLE] => doc_test
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+)
+ 
+18-07-2015 10:45:15 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+(
+    [body] => Array
+        (
+            [form_documentTypeList] => _documentTypeList
+            [form_readerList] => _readerList
+            [form_docList] => _docList
+            [form_documentType] => _documentType
+            [form_docName] => _docName
+            [form_newDocName] => _newDocName
+            [form_access] => _access
+            [form_documentContent] => _documentContent
+            [form_ph_documentTypeList] => 
+            [form_ph_readerList] => 
+            [form_ph_docList] => 
+            [form_ph_documentType] => 
+            [form_ph_docName] => 
+            [form_ph_newDocName] => 
+            [form_ph_access] => 
+            [form_ph_documentContent] => 
+            [$this->_arrayParamslist[0]] => Array
+                (
+                    [0] => Convention
+                    [1] => Document pédagogique
+                )
+
+            [$this->_arrayParamslist[1]] => Array
+                (
+                    [0] => Tuteur
+                    [1] => Stagiaire
+                )
+
+            [$this->_arrayParamslist[2]] => Array
+                (
+                    [1] => doc_test
+                    [2] => doc_test2
+                    [5] => doc_fonction_formate
+                    [6] => doc_fonction_formate
+                    [7] => doc_formate2
+                )
+
+            [form_val_documentContent] => <p>doc test 1</p>
+            [INDEX] => /index.php/administrateur/document
+            [form_val_documentTypeList] => $this->_arrayParamslist[0]
+            [form_val_readerList] => $this->_arrayParamslist[1]
+            [form_val_docList] => $this->_arrayParamslist[2]
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur/document
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+            [DOC] => <p>doc test 1</p>
+            [TITLE] => doc_test
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+)
+ 
+18-07-2015 10:45:15 - INFO  --> end Class MainRouter 
+18-07-2015 10:45:15 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:45:15 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:45:18 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:45:18 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:45:18 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:45:18 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_fonction_formate
+)
+ 
+18-07-2015 10:45:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:18 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_fonction_formate 
+18-07-2015 10:45:18 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:45:18 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 5 
+18-07-2015 10:45:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:45:18 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <p class="western" style="page-break-before: always;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>3. DELIMITATION DES ACTIVITES</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p> 
+18-07-2015 10:45:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:45:18 - INFO  --> end Class MainRouter 
+18-07-2015 10:45:18 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:45:18 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:54:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:54:35 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:54:35 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:54:35 - DEBUG --> Controller\AdminController raw post :Array
+(
+    [_docName] => doc_fonction_formate
+    [_newDocName] => 
+    [_documentContent] => <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>DELIMITATION DES ACTIVITES</strong></span></span></h1>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p>
+    [submit] => Valider le document 
+)
+ 
+18-07-2015 10:54:35 - DEBUG --> Controller\AdminController model vars : Array
+(
+    [0] => _documentTypeList
+    [1] => _readerList
+    [2] => _docList
+    [3] => _documentType
+    [4] => _docName
+    [5] => _newDocName
+    [6] => _access
+    [7] => _documentContent
+)
+ 
+18-07-2015 10:54:35 - DEBUG --> Controller\AdminController params : Array
+(
+    [_docName] => doc_fonction_formate
+    [_newDocName] => 
+    [_documentContent] => <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>DELIMITATION DES ACTIVITES</strong></span></span></h1>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p>
+)
+ 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> Controller\AdminController acces au document : Array
+(
+)
+ 
+18-07-2015 10:54:36 - INFO  --> Class Controller\AdminController -- Redirection vers l'accueil administrateur 
+18-07-2015 10:54:36 - INFO  --> end Class MainRouter 
+18-07-2015 10:54:36 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:54:36 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->stopped 
+18-07-2015 10:54:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:54:36 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+18-07-2015 10:54:36 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:36 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:36 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [body] => Array
+        (
+            [DATE] => samedi 18 juillet 2015
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:54:36 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+(
+    [body] => Array
+        (
+            [DATE] => samedi 18 juillet 2015
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:54:37 - INFO  --> end Class MainRouter 
+18-07-2015 10:54:37 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:54:37 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+18-07-2015 10:54:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:54:41 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->stopped 
+18-07-2015 10:54:41 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:41 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:41 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [body] => Array
+        (
+            [form_documentTypeList] => _documentTypeList
+            [form_readerList] => _readerList
+            [form_docList] => _docList
+            [form_documentType] => _documentType
+            [form_docName] => _docName
+            [form_newDocName] => _newDocName
+            [form_access] => _access
+            [form_documentContent] => _documentContent
+            [form_ph_documentTypeList] => 
+            [form_ph_readerList] => 
+            [form_ph_docList] => 
+            [form_ph_documentType] => 
+            [form_ph_docName] => 
+            [form_ph_newDocName] => 
+            [form_ph_access] => 
+            [form_ph_documentContent] => 
+            [form_val_documentTypeList] => Array
+                (
+                    [0] => Convention
+                    [1] => Document pédagogique
+                )
+
+            [form_val_readerList] => Array
+                (
+                    [0] => Tuteur
+                    [1] => Stagiaire
+                )
+
+            [form_val_docList] => Array
+                (
+                    [1] => doc_test
+                    [2] => doc_test2
+                    [5] => doc_fonction_formate
+                    [6] => doc_fonction_formate
+                    [7] => doc_formate2
+                )
+
+            [form_val_documentContent] => <p>doc test 1</p>
+            [INDEX] => /index.php/administrateur/document
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur/document
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+            [DOC] => <p>doc test 1</p>
+            [TITLE] => doc_test
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+)
+ 
+18-07-2015 10:54:41 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+(
+    [body] => Array
+        (
+            [form_documentTypeList] => _documentTypeList
+            [form_readerList] => _readerList
+            [form_docList] => _docList
+            [form_documentType] => _documentType
+            [form_docName] => _docName
+            [form_newDocName] => _newDocName
+            [form_access] => _access
+            [form_documentContent] => _documentContent
+            [form_ph_documentTypeList] => 
+            [form_ph_readerList] => 
+            [form_ph_docList] => 
+            [form_ph_documentType] => 
+            [form_ph_docName] => 
+            [form_ph_newDocName] => 
+            [form_ph_access] => 
+            [form_ph_documentContent] => 
+            [$this->_arrayParamslist[0]] => Array
+                (
+                    [0] => Convention
+                    [1] => Document pédagogique
+                )
+
+            [$this->_arrayParamslist[1]] => Array
+                (
+                    [0] => Tuteur
+                    [1] => Stagiaire
+                )
+
+            [$this->_arrayParamslist[2]] => Array
+                (
+                    [1] => doc_test
+                    [2] => doc_test2
+                    [5] => doc_fonction_formate
+                    [6] => doc_fonction_formate
+                    [7] => doc_formate2
+                )
+
+            [form_val_documentContent] => <p>doc test 1</p>
+            [INDEX] => /index.php/administrateur/document
+            [form_val_documentTypeList] => $this->_arrayParamslist[0]
+            [form_val_readerList] => $this->_arrayParamslist[1]
+            [form_val_docList] => $this->_arrayParamslist[2]
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur/document
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+            [DOC] => <p>doc test 1</p>
+            [TITLE] => doc_test
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+)
+ 
+18-07-2015 10:54:41 - INFO  --> end Class MainRouter 
+18-07-2015 10:54:41 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:54:41 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:54:48 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:54:48 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:54:48 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:54:48 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_fonction_formate
+)
+ 
+18-07-2015 10:54:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:48 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_fonction_formate 
+18-07-2015 10:54:48 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:54:48 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 5 
+18-07-2015 10:54:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:54:48 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>DELIMITATION DES ACTIVITES</strong></span></span></h1>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p> 
+18-07-2015 10:54:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:54:48 - INFO  --> end Class MainRouter 
+18-07-2015 10:54:48 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:54:48 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:13 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:13 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:13 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_fonction_formate
+)
+ 
+18-07-2015 10:55:13 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:13 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:13 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_fonction_formate 
+18-07-2015 10:55:13 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:55:13 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 5 
+18-07-2015 10:55:13 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:13 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>DELIMITATION DES ACTIVITES</strong></span></span></h1>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p> 
+18-07-2015 10:55:13 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:13 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:13 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:13 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:16 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:16 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:16 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_fonction_formate
+)
+ 
+18-07-2015 10:55:16 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:16 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:16 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_fonction_formate 
+18-07-2015 10:55:16 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:55:16 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 5 
+18-07-2015 10:55:16 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:16 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>DELIMITATION DES ACTIVITES</strong></span></span></h1>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p> 
+18-07-2015 10:55:16 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:16 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:16 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:16 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:18 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:18 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:18 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:18 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_fonction_formate
+)
+ 
+18-07-2015 10:55:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:18 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_fonction_formate 
+18-07-2015 10:55:18 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:55:18 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 5 
+18-07-2015 10:55:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:18 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="text-decoration: underline;"><strong>DELIMITATION DES ACTIVITES</strong></span></span></h1>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les interventions du technicien titulaire du baccalaur&eacute;at professionnel </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>SYSTEMES ELECTRONIQUES NUMERIQUES </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">se situent dans le cadre global du service client et regroupent les fonctions :</span></span></p>
+<table style="height: 632px;" width="1222" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F1 Fonction pr&eacute;paration des &eacute;quipements <br /></strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-1 : pr&eacute;parer, int&eacute;grer, assembler, raccorder les mat&eacute;riels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-2 : int&eacute;grer les logiciels</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 1-3 : tester et valider</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F2 - Fonction installation - mise en service</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-1 : participer &agrave; la pr&eacute;paration sur site</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-2 : mettre en place, raccorder, tester et valider les supports de transmission</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 2-3 : mettre en place les &eacute;quipements, les logiciels, configurer, param&eacute;trer, tester et valider</span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F3 - Fonction maintenance</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-1 : effectuer la maintenance pr&eacute;ventive</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 3-2 : effectuer la maintenance corrective</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" bgcolor="#ddd9c3" width="635">
+<p class="western" align="center"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>F4 - Fonction organisation</strong></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="border: 1px solid #000000; padding: 0cm 0.19cm;" valign="top" width="635">
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-1 : r&eacute;aliser la prise en charge du mat&eacute;riel</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-2 : s&rsquo;informer et se documenter</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-3 : participer &agrave; la relation client&egrave;le</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-4 : respecter les obligations l&eacute;gales et r&eacute;glementaires</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A 4-5 : participer &agrave; la gestion de son activit&eacute;</span></span></p>
+<p class="western">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">A l&rsquo;occasion de ces activit&eacute;s, le technicien devra conduire un acte professionnel pertinent, notamment dans sa composante &eacute;conomique et environnementale, cette d&eacute;marche s&rsquo;int&eacute;grant en permanence dans la gestion globale de l&rsquo;entreprise concern&eacute;e.</span></span></p>
+<p class="western">&nbsp;</p> 
+18-07-2015 10:55:18 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:18 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:18 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:18 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:21 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:21 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:21 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_formate2
+)
+ 
+18-07-2015 10:55:21 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:21 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:21 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_formate2 
+18-07-2015 10:55:21 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:55:21 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 7 
+18-07-2015 10:55:21 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:21 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <p class="western" style="page-break-before: always;"><span style="font-family: Arial,sans-serif;"><span style="font-size: large;"><span style="text-decoration: underline;"><strong>4-</strong></span></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: large;"><span style="text-decoration: underline;"><strong> Contexte de la formation en milieu professionnel</strong></span></span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La dur&eacute;e de la formation en milieu professionnel est de </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>22 semaines </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">r&eacute;parties en plusieurs s&eacute;quences d&rsquo;une dur&eacute;e minimale de 4 semaines, sur les trois ann&eacute;es de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>L&rsquo;organisation prendra en compte :</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les contraintes mat&eacute;rielles des entreprises et des &eacute;tablissements scolaires ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les objectifs p&eacute;dagogiques sp&eacute;cifiques &agrave; ces p&eacute;riodes ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les cursus d&rsquo;apprentissage.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les p&eacute;riodes de formation en milieu professionnel sont des phases d&eacute;terminantes de la formation menant au dipl&ocirc;me et, &agrave; ce titre, doivent &ecirc;tre en interaction avec la formation donn&eacute;e en centre de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Elles concourent &agrave; l&rsquo;acquisition des comp&eacute;tences requises pour l&rsquo;obtention du dipl&ocirc;me et visent &agrave; d&eacute;velopper les capacit&eacute;s d&rsquo;autonomie et de responsabilit&eacute; du candidat &agrave; l&rsquo;issue de sa formation. A cet effet, elles doivent permettre au futur dipl&ocirc;m&eacute; :</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de participer &agrave; des activit&eacute;s afin de conforter et d&rsquo;acqu&eacute;rir des savoirs et savoir-faire ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser les mat&eacute;riels ou les outillages sp&eacute;cifiques ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender par le concret les contraintes &eacute;conomiques, humaines, techniques de l&rsquo;entreprise ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender les contraintes de s&eacute;curit&eacute; et les m&eacute;thodes de travail ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;observer et d&rsquo;analyser au travers de situations r&eacute;elles, les diff&eacute;rents &eacute;l&eacute;ments d&rsquo;une strat&eacute;gie de qualit&eacute; et de percevoir concr&egrave;tement les co&ucirc;ts induits de la non qualit&eacute; ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser ses acquis dans le domaine de la communication, en mettant en oeuvre, en particulier, de v&eacute;ritables relations avec diff&eacute;rents interlocuteurs ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de prendre conscience de l&rsquo;importance de la comp&eacute;tence de tous les acteurs et services dans une entreprise.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La diversit&eacute; des entreprises, li&eacute;es au champs professionnels, susceptibles d&rsquo;accueillir en formation des candidats au baccalaur&eacute;at professionnel, tant par la nature de leurs activit&eacute;s que par leur taille, oblige &agrave; une certaine souplesse dans la d&eacute;finition des activit&eacute;s en entreprise et des capacit&eacute;s qu&rsquo;elles permettent d&rsquo;acqu&eacute;rir, ainsi que des modalit&eacute;s qui devront &ecirc;tre adapt&eacute;es &agrave; chaque situation particuli&egrave;re.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le choix des activit&eacute;s les plus pertinentes, en fonction de l&rsquo;entreprise d&rsquo;accueil, doit &ecirc;tre arr&ecirc;t&eacute; par l&rsquo;&eacute;quipe de professeurs, en liaison avec l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">L&rsquo;annexe p&eacute;dagogique jointe &agrave; la convention fixera les exigences minimum.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>Objectifs</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation en milieu professionnel vise en premier lieu &agrave; d&eacute;velopper les comp&eacute;tences et les savoirs associ&eacute;s d&eacute;finis par le r&eacute;f&eacute;rentiel de certification comme majoritairement acquis en entreprise encadr&eacute; par le tuteur.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La convention &eacute;tablie entre l&rsquo;&eacute;tablissement de formation et l&rsquo;entreprise fait appara&icirc;tre, apr&egrave;s n&eacute;gociation, les comp&eacute;tences qui seront &eacute;valu&eacute;es parmi celles list&eacute;es ci-dessous.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les savoirs sont ceux qui sont associ&eacute;s &agrave; ces comp&eacute;tences ainsi que ceux du domaine de l'&eacute;conomie - gestion.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les objectifs vis&eacute;s sont ceux d&eacute;finis ci-apr&egrave;s (Tableau U31).</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>R&ocirc;le du tuteur</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation du futur professionnel s&rsquo;appuie sur toute personne de l&rsquo;entreprise, mais particuli&egrave;rement sur le tuteur d&eacute;sign&eacute; par l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le tuteur a pour r&ocirc;le d&rsquo;accueillir le candidat au baccalaur&eacute;at professionnel et de suivre sa progression en l&rsquo;aidant &agrave; &eacute;voluer dans le contexte professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il transmet ou fait transmettre au candidat les connaissances sp&eacute;cifiques, pratiques et techniques indispensables au futur professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il lui facilite l&rsquo;acc&egrave;s aux diff&eacute;rents secteurs pr&eacute;sentant un int&eacute;r&ecirc;t professionnel, &eacute;conomique et social pour sa formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Tout en lui apportant les informations de base indispensables, il doit favoriser sa capacit&eacute; d&rsquo;autonomie et encourager sa curiosit&eacute; dans le cadre d&rsquo;une situation de travail et d&rsquo;un environnement nouveau.</span></span></p> 
+18-07-2015 10:55:21 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:21 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:21 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:21 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:47 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:47 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:47 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:47 - DEBUG --> Controller\AdminController raw post :Array
+(
+    [_docName] => doc_formate2
+    [_newDocName] => 
+    [_documentContent] => <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="font-size: large;"><span style="text-decoration: underline;"><strong>Contexte de la formation en milieu professionnel</strong></span></span></span></h1>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La dur&eacute;e de la formation en milieu professionnel est de </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>22 semaines </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">r&eacute;parties en plusieurs s&eacute;quences d&rsquo;une dur&eacute;e minimale de 4 semaines, sur les trois ann&eacute;es de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>L&rsquo;organisation prendra en compte :</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les contraintes mat&eacute;rielles des entreprises et des &eacute;tablissements scolaires ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les objectifs p&eacute;dagogiques sp&eacute;cifiques &agrave; ces p&eacute;riodes ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les cursus d&rsquo;apprentissage.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les p&eacute;riodes de formation en milieu professionnel sont des phases d&eacute;terminantes de la formation menant au dipl&ocirc;me et, &agrave; ce titre, doivent &ecirc;tre en interaction avec la formation donn&eacute;e en centre de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Elles concourent &agrave; l&rsquo;acquisition des comp&eacute;tences requises pour l&rsquo;obtention du dipl&ocirc;me et visent &agrave; d&eacute;velopper les capacit&eacute;s d&rsquo;autonomie et de responsabilit&eacute; du candidat &agrave; l&rsquo;issue de sa formation. A cet effet, elles doivent permettre au futur dipl&ocirc;m&eacute; :</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de participer &agrave; des activit&eacute;s afin de conforter et d&rsquo;acqu&eacute;rir des savoirs et savoir-faire ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser les mat&eacute;riels ou les outillages sp&eacute;cifiques ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender par le concret les contraintes &eacute;conomiques, humaines, techniques de l&rsquo;entreprise ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender les contraintes de s&eacute;curit&eacute; et les m&eacute;thodes de travail ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;observer et d&rsquo;analyser au travers de situations r&eacute;elles, les diff&eacute;rents &eacute;l&eacute;ments d&rsquo;une strat&eacute;gie de qualit&eacute; et de percevoir concr&egrave;tement les co&ucirc;ts induits de la non qualit&eacute; ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser ses acquis dans le domaine de la communication, en mettant en oeuvre, en particulier, de v&eacute;ritables relations avec diff&eacute;rents interlocuteurs ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de prendre conscience de l&rsquo;importance de la comp&eacute;tence de tous les acteurs et services dans une entreprise.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La diversit&eacute; des entreprises, li&eacute;es au champs professionnels, susceptibles d&rsquo;accueillir en formation des candidats au baccalaur&eacute;at professionnel, tant par la nature de leurs activit&eacute;s que par leur taille, oblige &agrave; une certaine souplesse dans la d&eacute;finition des activit&eacute;s en entreprise et des capacit&eacute;s qu&rsquo;elles permettent d&rsquo;acqu&eacute;rir, ainsi que des modalit&eacute;s qui devront &ecirc;tre adapt&eacute;es &agrave; chaque situation particuli&egrave;re.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le choix des activit&eacute;s les plus pertinentes, en fonction de l&rsquo;entreprise d&rsquo;accueil, doit &ecirc;tre arr&ecirc;t&eacute; par l&rsquo;&eacute;quipe de professeurs, en liaison avec l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">L&rsquo;annexe p&eacute;dagogique jointe &agrave; la convention fixera les exigences minimum.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>Objectifs</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation en milieu professionnel vise en premier lieu &agrave; d&eacute;velopper les comp&eacute;tences et les savoirs associ&eacute;s d&eacute;finis par le r&eacute;f&eacute;rentiel de certification comme majoritairement acquis en entreprise encadr&eacute; par le tuteur.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La convention &eacute;tablie entre l&rsquo;&eacute;tablissement de formation et l&rsquo;entreprise fait appara&icirc;tre, apr&egrave;s n&eacute;gociation, les comp&eacute;tences qui seront &eacute;valu&eacute;es parmi celles list&eacute;es ci-dessous.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les savoirs sont ceux qui sont associ&eacute;s &agrave; ces comp&eacute;tences ainsi que ceux du domaine de l'&eacute;conomie - gestion.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les objectifs vis&eacute;s sont ceux d&eacute;finis ci-apr&egrave;s (Tableau U31).</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>R&ocirc;le du tuteur</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation du futur professionnel s&rsquo;appuie sur toute personne de l&rsquo;entreprise, mais particuli&egrave;rement sur le tuteur d&eacute;sign&eacute; par l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le tuteur a pour r&ocirc;le d&rsquo;accueillir le candidat au baccalaur&eacute;at professionnel et de suivre sa progression en l&rsquo;aidant &agrave; &eacute;voluer dans le contexte professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il transmet ou fait transmettre au candidat les connaissances sp&eacute;cifiques, pratiques et techniques indispensables au futur professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il lui facilite l&rsquo;acc&egrave;s aux diff&eacute;rents secteurs pr&eacute;sentant un int&eacute;r&ecirc;t professionnel, &eacute;conomique et social pour sa formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Tout en lui apportant les informations de base indispensables, il doit favoriser sa capacit&eacute; d&rsquo;autonomie et encourager sa curiosit&eacute; dans le cadre d&rsquo;une situation de travail et d&rsquo;un environnement nouveau.</span></span></p>
+    [submit] => Valider le document 
+)
+ 
+18-07-2015 10:55:47 - DEBUG --> Controller\AdminController model vars : Array
+(
+    [0] => _documentTypeList
+    [1] => _readerList
+    [2] => _docList
+    [3] => _documentType
+    [4] => _docName
+    [5] => _newDocName
+    [6] => _access
+    [7] => _documentContent
+)
+ 
+18-07-2015 10:55:47 - DEBUG --> Controller\AdminController params : Array
+(
+    [_docName] => doc_formate2
+    [_newDocName] => 
+    [_documentContent] => <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="font-size: large;"><span style="text-decoration: underline;"><strong>Contexte de la formation en milieu professionnel</strong></span></span></span></h1>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La dur&eacute;e de la formation en milieu professionnel est de </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>22 semaines </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">r&eacute;parties en plusieurs s&eacute;quences d&rsquo;une dur&eacute;e minimale de 4 semaines, sur les trois ann&eacute;es de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>L&rsquo;organisation prendra en compte :</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les contraintes mat&eacute;rielles des entreprises et des &eacute;tablissements scolaires ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les objectifs p&eacute;dagogiques sp&eacute;cifiques &agrave; ces p&eacute;riodes ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les cursus d&rsquo;apprentissage.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les p&eacute;riodes de formation en milieu professionnel sont des phases d&eacute;terminantes de la formation menant au dipl&ocirc;me et, &agrave; ce titre, doivent &ecirc;tre en interaction avec la formation donn&eacute;e en centre de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Elles concourent &agrave; l&rsquo;acquisition des comp&eacute;tences requises pour l&rsquo;obtention du dipl&ocirc;me et visent &agrave; d&eacute;velopper les capacit&eacute;s d&rsquo;autonomie et de responsabilit&eacute; du candidat &agrave; l&rsquo;issue de sa formation. A cet effet, elles doivent permettre au futur dipl&ocirc;m&eacute; :</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de participer &agrave; des activit&eacute;s afin de conforter et d&rsquo;acqu&eacute;rir des savoirs et savoir-faire ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser les mat&eacute;riels ou les outillages sp&eacute;cifiques ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender par le concret les contraintes &eacute;conomiques, humaines, techniques de l&rsquo;entreprise ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender les contraintes de s&eacute;curit&eacute; et les m&eacute;thodes de travail ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;observer et d&rsquo;analyser au travers de situations r&eacute;elles, les diff&eacute;rents &eacute;l&eacute;ments d&rsquo;une strat&eacute;gie de qualit&eacute; et de percevoir concr&egrave;tement les co&ucirc;ts induits de la non qualit&eacute; ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser ses acquis dans le domaine de la communication, en mettant en oeuvre, en particulier, de v&eacute;ritables relations avec diff&eacute;rents interlocuteurs ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de prendre conscience de l&rsquo;importance de la comp&eacute;tence de tous les acteurs et services dans une entreprise.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La diversit&eacute; des entreprises, li&eacute;es au champs professionnels, susceptibles d&rsquo;accueillir en formation des candidats au baccalaur&eacute;at professionnel, tant par la nature de leurs activit&eacute;s que par leur taille, oblige &agrave; une certaine souplesse dans la d&eacute;finition des activit&eacute;s en entreprise et des capacit&eacute;s qu&rsquo;elles permettent d&rsquo;acqu&eacute;rir, ainsi que des modalit&eacute;s qui devront &ecirc;tre adapt&eacute;es &agrave; chaque situation particuli&egrave;re.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le choix des activit&eacute;s les plus pertinentes, en fonction de l&rsquo;entreprise d&rsquo;accueil, doit &ecirc;tre arr&ecirc;t&eacute; par l&rsquo;&eacute;quipe de professeurs, en liaison avec l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">L&rsquo;annexe p&eacute;dagogique jointe &agrave; la convention fixera les exigences minimum.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>Objectifs</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation en milieu professionnel vise en premier lieu &agrave; d&eacute;velopper les comp&eacute;tences et les savoirs associ&eacute;s d&eacute;finis par le r&eacute;f&eacute;rentiel de certification comme majoritairement acquis en entreprise encadr&eacute; par le tuteur.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La convention &eacute;tablie entre l&rsquo;&eacute;tablissement de formation et l&rsquo;entreprise fait appara&icirc;tre, apr&egrave;s n&eacute;gociation, les comp&eacute;tences qui seront &eacute;valu&eacute;es parmi celles list&eacute;es ci-dessous.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les savoirs sont ceux qui sont associ&eacute;s &agrave; ces comp&eacute;tences ainsi que ceux du domaine de l'&eacute;conomie - gestion.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les objectifs vis&eacute;s sont ceux d&eacute;finis ci-apr&egrave;s (Tableau U31).</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>R&ocirc;le du tuteur</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation du futur professionnel s&rsquo;appuie sur toute personne de l&rsquo;entreprise, mais particuli&egrave;rement sur le tuteur d&eacute;sign&eacute; par l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le tuteur a pour r&ocirc;le d&rsquo;accueillir le candidat au baccalaur&eacute;at professionnel et de suivre sa progression en l&rsquo;aidant &agrave; &eacute;voluer dans le contexte professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il transmet ou fait transmettre au candidat les connaissances sp&eacute;cifiques, pratiques et techniques indispensables au futur professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il lui facilite l&rsquo;acc&egrave;s aux diff&eacute;rents secteurs pr&eacute;sentant un int&eacute;r&ecirc;t professionnel, &eacute;conomique et social pour sa formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Tout en lui apportant les informations de base indispensables, il doit favoriser sa capacit&eacute; d&rsquo;autonomie et encourager sa curiosit&eacute; dans le cadre d&rsquo;une situation de travail et d&rsquo;un environnement nouveau.</span></span></p>
+)
+ 
+18-07-2015 10:55:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:47 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> Controller\AdminController acces au document : Array
+(
+)
+ 
+18-07-2015 10:55:48 - INFO  --> Class Controller\AdminController -- Redirection vers l'accueil administrateur 
+18-07-2015 10:55:48 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:48 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:48 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->stopped 
+18-07-2015 10:55:48 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:48 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+18-07-2015 10:55:48 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:48 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:48 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [body] => Array
+        (
+            [DATE] => samedi 18 juillet 2015
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:55:48 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+(
+    [body] => Array
+        (
+            [DATE] => samedi 18 juillet 2015
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+18-07-2015 10:55:48 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:48 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:48 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+18-07-2015 10:55:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:52 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->stopped 
+18-07-2015 10:55:52 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:52 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:52 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [body] => Array
+        (
+            [form_documentTypeList] => _documentTypeList
+            [form_readerList] => _readerList
+            [form_docList] => _docList
+            [form_documentType] => _documentType
+            [form_docName] => _docName
+            [form_newDocName] => _newDocName
+            [form_access] => _access
+            [form_documentContent] => _documentContent
+            [form_ph_documentTypeList] => 
+            [form_ph_readerList] => 
+            [form_ph_docList] => 
+            [form_ph_documentType] => 
+            [form_ph_docName] => 
+            [form_ph_newDocName] => 
+            [form_ph_access] => 
+            [form_ph_documentContent] => 
+            [form_val_documentTypeList] => Array
+                (
+                    [0] => Convention
+                    [1] => Document pédagogique
+                )
+
+            [form_val_readerList] => Array
+                (
+                    [0] => Tuteur
+                    [1] => Stagiaire
+                )
+
+            [form_val_docList] => Array
+                (
+                    [1] => doc_test
+                    [2] => doc_test2
+                    [5] => doc_fonction_formate
+                    [6] => doc_fonction_formate
+                    [7] => doc_formate2
+                )
+
+            [form_val_documentContent] => <p>doc test 1</p>
+            [INDEX] => /index.php/administrateur/document
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur/document
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+            [DOC] => <p>doc test 1</p>
+            [TITLE] => doc_test
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+)
+ 
+18-07-2015 10:55:52 - DEBUG --> View\ViewHandler Model params for builder : View\AdminBuilder => Array
+(
+    [body] => Array
+        (
+            [form_documentTypeList] => _documentTypeList
+            [form_readerList] => _readerList
+            [form_docList] => _docList
+            [form_documentType] => _documentType
+            [form_docName] => _docName
+            [form_newDocName] => _newDocName
+            [form_access] => _access
+            [form_documentContent] => _documentContent
+            [form_ph_documentTypeList] => 
+            [form_ph_readerList] => 
+            [form_ph_docList] => 
+            [form_ph_documentType] => 
+            [form_ph_docName] => 
+            [form_ph_newDocName] => 
+            [form_ph_access] => 
+            [form_ph_documentContent] => 
+            [$this->_arrayParamslist[0]] => Array
+                (
+                    [0] => Convention
+                    [1] => Document pédagogique
+                )
+
+            [$this->_arrayParamslist[1]] => Array
+                (
+                    [0] => Tuteur
+                    [1] => Stagiaire
+                )
+
+            [$this->_arrayParamslist[2]] => Array
+                (
+                    [1] => doc_test
+                    [2] => doc_test2
+                    [5] => doc_fonction_formate
+                    [6] => doc_fonction_formate
+                    [7] => doc_formate2
+                )
+
+            [form_val_documentContent] => <p>doc test 1</p>
+            [INDEX] => /index.php/administrateur/document
+            [form_val_documentTypeList] => $this->_arrayParamslist[0]
+            [form_val_readerList] => $this->_arrayParamslist[1]
+            [form_val_docList] => $this->_arrayParamslist[2]
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/administrateur/document
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+            [DOC] => <p>doc test 1</p>
+            [TITLE] => doc_test
+        )
+
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+            [USER_NAME] => lolo
+            [USER_GROUP] => administrateur
+            [INDEX] => /
+            [REFERENTIAL] => /index.php/administrateur/referentiel
+            [FUNCTION] => /index.php/administrateur/fonction
+            [ACTIVITY] => /index.php/administrateur/activite
+            [SKILL] => /index.php/administrateur/competence
+            [DOCUMENT] => /index.php/administrateur/document
+            [PROMOTION] => /index.php/administrateur/promotion
+            [TEACHER] => /index.php/administrateur/enseignant
+            [TRAINEE] => /index.php/administrateur/stagiaire
+            [WORK_DATE] => /index.php/administrateur/stage
+            [PASSWORD] => /index.php/administrateur/acces
+            [WORK_DEFINITION] => /index.php/administrateur/stage
+            [WORK_VISIT_DEFINITION] => /index.php/administrateur/visite
+            [WORK_COMMENT_DEFINITION] => /index.php/administrateur/commentaire
+            [INTERNAL_CONTACT] => /index.php/administrateur/contact_interne
+            [TUTOR_DOCUMENT] => /index.php/administrateur/document
+            [TUTOR_LIST] => /index.php/administrateur/liste_stagiaire
+            [ACTIVITIES_LIST] => /index.php/administrateur/liste_activites
+            [EVALUATE] => /index.php/administrateur/evaluation_stagiaire
+            [TUTORPASS] => /index.php/administrateur/mot_de_passe
+        )
+
+)
+ 
+18-07-2015 10:55:52 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:52 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:52 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+18-07-2015 10:55:55 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+18-07-2015 10:55:55 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+18-07-2015 10:55:55 - DEBUG --> Controller\AdminController AJAX : Array
+(
+    [AJAX_UPDATE] => document_change
+    [AJAX_VAL] => doc_formate2
+)
+ 
+18-07-2015 10:55:55 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:55 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:55 - DEBUG --> Model\DocumentDefinitionModel  AJAX VAL: doc_formate2 
+18-07-2015 10:55:55 - DEBUG --> Model\DocumentDefinitionModel  AJAX LIST DOC: Array
+(
+    [1] => doc_test
+    [2] => doc_test2
+    [5] => doc_fonction_formate
+    [6] => doc_fonction_formate
+    [7] => doc_formate2
+)
+ 
+18-07-2015 10:55:55 - DEBUG --> Model\DocumentDefinitionModel  AJAX ID: 7 
+18-07-2015 10:55:55 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+18-07-2015 10:55:55 - DEBUG --> Model\DocumentDefinitionModel TEST TEST : <h1 class="western" style="page-break-before: always; text-align: center;"><span style="font-family: Arial,sans-serif;"><span style="font-size: large;"><span style="text-decoration: underline;"><strong>Contexte de la formation en milieu professionnel</strong></span></span></span></h1>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La dur&eacute;e de la formation en milieu professionnel est de </span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>22 semaines </strong></span></span><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">r&eacute;parties en plusieurs s&eacute;quences d&rsquo;une dur&eacute;e minimale de 4 semaines, sur les trois ann&eacute;es de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>L&rsquo;organisation prendra en compte :</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les contraintes mat&eacute;rielles des entreprises et des &eacute;tablissements scolaires ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les objectifs p&eacute;dagogiques sp&eacute;cifiques &agrave; ces p&eacute;riodes ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; les cursus d&rsquo;apprentissage.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les p&eacute;riodes de formation en milieu professionnel sont des phases d&eacute;terminantes de la formation menant au dipl&ocirc;me et, &agrave; ce titre, doivent &ecirc;tre en interaction avec la formation donn&eacute;e en centre de formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Elles concourent &agrave; l&rsquo;acquisition des comp&eacute;tences requises pour l&rsquo;obtention du dipl&ocirc;me et visent &agrave; d&eacute;velopper les capacit&eacute;s d&rsquo;autonomie et de responsabilit&eacute; du candidat &agrave; l&rsquo;issue de sa formation. A cet effet, elles doivent permettre au futur dipl&ocirc;m&eacute; :</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de participer &agrave; des activit&eacute;s afin de conforter et d&rsquo;acqu&eacute;rir des savoirs et savoir-faire ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser les mat&eacute;riels ou les outillages sp&eacute;cifiques ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender par le concret les contraintes &eacute;conomiques, humaines, techniques de l&rsquo;entreprise ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;appr&eacute;hender les contraintes de s&eacute;curit&eacute; et les m&eacute;thodes de travail ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;observer et d&rsquo;analyser au travers de situations r&eacute;elles, les diff&eacute;rents &eacute;l&eacute;ments d&rsquo;une strat&eacute;gie de qualit&eacute; et de percevoir concr&egrave;tement les co&ucirc;ts induits de la non qualit&eacute; ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; d&rsquo;utiliser ses acquis dans le domaine de la communication, en mettant en oeuvre, en particulier, de v&eacute;ritables relations avec diff&eacute;rents interlocuteurs ;</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">&middot; de prendre conscience de l&rsquo;importance de la comp&eacute;tence de tous les acteurs et services dans une entreprise.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La diversit&eacute; des entreprises, li&eacute;es au champs professionnels, susceptibles d&rsquo;accueillir en formation des candidats au baccalaur&eacute;at professionnel, tant par la nature de leurs activit&eacute;s que par leur taille, oblige &agrave; une certaine souplesse dans la d&eacute;finition des activit&eacute;s en entreprise et des capacit&eacute;s qu&rsquo;elles permettent d&rsquo;acqu&eacute;rir, ainsi que des modalit&eacute;s qui devront &ecirc;tre adapt&eacute;es &agrave; chaque situation particuli&egrave;re.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le choix des activit&eacute;s les plus pertinentes, en fonction de l&rsquo;entreprise d&rsquo;accueil, doit &ecirc;tre arr&ecirc;t&eacute; par l&rsquo;&eacute;quipe de professeurs, en liaison avec l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">L&rsquo;annexe p&eacute;dagogique jointe &agrave; la convention fixera les exigences minimum.</span></span></p>
+<p class="western">&nbsp;</p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>Objectifs</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation en milieu professionnel vise en premier lieu &agrave; d&eacute;velopper les comp&eacute;tences et les savoirs associ&eacute;s d&eacute;finis par le r&eacute;f&eacute;rentiel de certification comme majoritairement acquis en entreprise encadr&eacute; par le tuteur.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La convention &eacute;tablie entre l&rsquo;&eacute;tablissement de formation et l&rsquo;entreprise fait appara&icirc;tre, apr&egrave;s n&eacute;gociation, les comp&eacute;tences qui seront &eacute;valu&eacute;es parmi celles list&eacute;es ci-dessous.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les savoirs sont ceux qui sont associ&eacute;s &agrave; ces comp&eacute;tences ainsi que ceux du domaine de l'&eacute;conomie - gestion.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Les objectifs vis&eacute;s sont ceux d&eacute;finis ci-apr&egrave;s (Tableau U31).</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;"><strong>R&ocirc;le du tuteur</strong></span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">La formation du futur professionnel s&rsquo;appuie sur toute personne de l&rsquo;entreprise, mais particuli&egrave;rement sur le tuteur d&eacute;sign&eacute; par l&rsquo;entreprise ou la collectivit&eacute; d&rsquo;accueil.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Le tuteur a pour r&ocirc;le d&rsquo;accueillir le candidat au baccalaur&eacute;at professionnel et de suivre sa progression en l&rsquo;aidant &agrave; &eacute;voluer dans le contexte professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il transmet ou fait transmettre au candidat les connaissances sp&eacute;cifiques, pratiques et techniques indispensables au futur professionnel.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Il lui facilite l&rsquo;acc&egrave;s aux diff&eacute;rents secteurs pr&eacute;sentant un int&eacute;r&ecirc;t professionnel, &eacute;conomique et social pour sa formation.</span></span></p>
+<p class="western"><span style="font-family: Arial,sans-serif;"><span style="font-size: small;">Tout en lui apportant les informations de base indispensables, il doit favoriser sa capacit&eacute; d&rsquo;autonomie et encourager sa curiosit&eacute; dans le cadre d&rsquo;une situation de travail et d&rsquo;un environnement nouveau.</span></span></p> 
+18-07-2015 10:55:55 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+18-07-2015 10:55:55 - INFO  --> end Class MainRouter 
+18-07-2015 10:55:55 - INFO  --> destruct : Controller\AdminController 
+18-07-2015 10:55:55 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 

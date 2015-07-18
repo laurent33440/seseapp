@@ -99,6 +99,10 @@ abstract class AControllerState {
         $this->_request=$request;
     }
     
+    public function getIndex(){
+        return $this->_index;
+    }
+    
     /**
      * 
      * @return type
@@ -264,6 +268,7 @@ abstract class AControllerState {
                 'WORK_COMMENT_DEFINITION'=> $this->_index.'/commentaire',
                 'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
                 //tutor space
+                'TUTOR_DOCUMENT'=> $this->_index.'/document',
                 'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
                 'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
                 'EVALUATE' => $this->_index.'/evaluation_stagiaire',
@@ -290,12 +295,15 @@ abstract class AControllerState {
     /**
      * 
      */
-    protected function buildFooterView(array $footerParams=null){
+    public function buildFooterView(array $footerParams=null){
         if(!$footerParams){
             if($this->modalParameters){
                 $footer =  array('INDEX'=>  $this->_index,'URI_COMPANY'=> \Bootstrap::COMPANY_URI, 'SHOW_MODAL'=>'true', 'MODAL_TITLE' => $this->modalParameters->getTitle(), 'MODAL_MESSAGE' => $this->modalParameters->getMessage());
             }else{
                 $footer = array('INDEX'=> $this->_index,'URI_COMPANY'=> \Bootstrap::COMPANY_URI, 'SHOW_MODAL' => 'false' );
+            }
+            if(!empty($this->_modelView['footer'])){
+                $footer = $this->_modelView['footer']+$footer; //replace all keys'value of 'footer' with 'modelView['footer']''s values and add ones that doesn't exist 
             }
             $this->_modelView['footer'] = $footer;
         }else{
@@ -337,6 +345,10 @@ abstract class AControllerState {
      */
     public function getModelView(){
         return $this->_modelView;
+    }
+    //!!USED ONLY FOR TESTING PURPOSE!!
+    public function setModelView(array $view){
+        $this->_modelView=$view;
     }
 
     /**

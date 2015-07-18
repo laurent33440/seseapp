@@ -1113,23 +1113,16 @@ class AdminController extends AControllerState{
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
                         if($this->_request->isXmlHttpRequest()){ 
-                            if($this->computeAdminPasswordXmlHttpRequest($this->_request->request->all())===true){
-                                $this->buildViewDocumentDefinition();
-                                $this->sendModelView('DocumentDefinition');
-                            }
+                            $this->computeDocumentDefinitionXmlHttpRequest($this->_request->request->all());
                         }else{
-                            if($this->computeDocumentDefinition($this->_request->request->all()) === true){
-                                $this->buildViewDocumentDefinition();
-                                $this->sendModelView('DocumentDefinition');
-                            }else{
-                                $this->_state = self::STOPPED;
-                                //redirect to welcome admin page
-                                $this->_redirect = new RedirectResponse($this->_index);
-                                // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
-                                $this->_redirect->prepare($this->_request);  
-                                Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
-                                $this->_redirect->send();
-                            }
+                            $this->computeDocumentDefinition($this->_request->request->all());
+                            $this->_state = self::STOPPED;
+                            //redirect to welcome admin page
+                            $this->_redirect = new RedirectResponse($this->_index);
+                            // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
+                            $this->_redirect->prepare($this->_request);  
+                            Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
+                            $this->_redirect->send();
                         }
                     }else{//direct url access
                         $this->_model->getAll();
@@ -1162,19 +1155,23 @@ class AdminController extends AControllerState{
     }
     
     public function buildViewDocumentdefinition(){
-//        $txt = array(   'TXT_HEADER1' => 'Modification du mot de passe administrateur',
-//                        'TXT_HEADER2' => 'Dans ce formulaire vous allez pouvoir modifier le mot de passe administrateur',
-//                        'TXT_FORM'=> 'Informations relatives au mot de passe de l\'administrateur de l\'application SESE'
-//                );
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
-//        foreach ($txt as $t=>$val){
-//            $formArray[$t]=$val;
-//        }
         $formArray['INDEX'] = $this->_index.'/document';
         $this->buildBodyView($formArray);
+        $this->buildDocumentDefinitionFooterView();
     }
     
+    public function buildDocumentDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['DOC']=$this->_model->get_documentContent();
+        $footer['TITLE']=$this->_model->get_documentSubject();
+        $footer['INDEX'] = $this->_index.'/document';
+        $this->_modelView['footer'] = $footer;
+    }
+
+
     public function computeDocumentDefinition($datas){
         Logger::getInstance()->logDebug(__CLASS__.' raw post :'.  print_r($datas, true));
         $varsModel = $this->_model->getClassVars();
@@ -1183,21 +1180,16 @@ class AdminController extends AControllerState{
         Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
         $this->_model->setClassVarsValues($params);
         $this->_model->append();
-        return true;
-        //$result=$this->_model->checkPasswords();
-//        Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.' model result : '.$result);
-//        if($result===true){ // -- WARNING STRICT EQUALITY NEEDED
-//            //password changed - done
-//            return false;
-//        }else{// wrong passwords... 
-//            $this->modalParameters=new ModalParameters('Informations fournies incorrectes...', $result);
-//            Logger::getInstance()->logDebug(__CLASS__.' model result : '.$result);
-//            return true;
-//        }
+        Logger::getInstance()->logDebug(__CLASS__.' acces au document : '.print_r($this->_model->get_access(), true));
     }
     
     public function computeDocumentDefinitionXmlHttpRequest($datas){
-        return true;//continue 
+        Logger::getInstance()->logDebug(__CLASS__.' AJAX : '.print_r($datas,true));
+        if(in_array('document_change', $datas)){
+            $this->_model->update('_docName', $datas['AJAX_VAL']);
+            $send = json_encode(array('title'=> $this->_model->get_documentSubject(),'doc'=>  $this->_model->get_documentContent()));
+            echo $send;
+        }
     }
     
     

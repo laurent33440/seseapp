@@ -1,0 +1,70 @@
+17-07-2015 12:03:45 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+17-07-2015 12:03:45 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+17-07-2015 12:03:45 - INFO  --> Class MainRouter - controller trigged : Login::check 
+17-07-2015 12:03:45 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-07-2015 12:03:45 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-07-2015 12:03:45 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-07-2015 12:03:45 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-07-2015 12:03:45 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+17-07-2015 12:03:45 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+17-07-2015 12:03:45 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+17-07-2015 12:03:45 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
+(
+    [header] => Array
+        (
+            [SCHOOL_NAME] => Lycee Philadelphe de Gerde
+            [COURSE_NAME] => 
+            [STUDY_YEAR] => 
+        )
+
+    [body] => Array
+        (
+            [form_userName] => _userName
+            [form_userPass] => _userPass
+            [form_ph_userName] => 
+            [form_ph_userPass] => 
+            [INDEX] => /
+            [ABOUT] => index.php/apropos
+        )
+
+    [footer] => Array
+        (
+            [INDEX] => /index.php/
+            [URI_COMPANY] => www.avalone-fr.com
+            [SHOW_MODAL] => false
+        )
+
+)
+ 
+17-07-2015 12:03:45 - INFO  --> end Class MainRouter 
+17-07-2015 12:03:45 - INFO  --> destruct : Controller\LoginController 
+17-07-2015 12:03:45 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 

@@ -363,6 +363,23 @@ class ControllerStateStubTest extends \PHPUnit_Framework_TestCase {
     }
     
     
+    public function testFooterParametersIncludeExclude(){
+        $exp_default = array('INDEX'=> $this->object->getIndex(),'URI_COMPANY'=> \Bootstrap::COMPANY_URI, 'SHOW_MODAL' => 'false' );
+        //prepare footer view to template - generic method
+        $this->object->buildFooterView();
+        $v = $this->object->getModelView();
+        $this->assertEquals($exp_default,  $v['footer']);
+        //the controller had create a set of footer parameters -this parameters are priviledged
+        $v = $this->object->getModelView(); 
+        $v['footer'] = array('INDEX'=>'/here.com', 'SHOW_MODAL'=>true, 'PARAM' => 'some value');
+        $this->object->setModelView($v);
+        //prepare footer view to template - generic method
+        $this->object->buildFooterView();
+        $exp = array('INDEX'=>'/here.com', 'URI_COMPANY'=> \Bootstrap::COMPANY_URI, 'SHOW_MODAL'=>true, 'PARAM' => 'some value');
+        $v = $this->object->getModelView();
+        $this->assertEquals($exp,  $v['footer']);
+    }
+    
     
     
 

@@ -75,6 +75,10 @@ tutor_route:
     path:     /tuteur
     defaults: { _controller : 'Tutor', _action : 'welcome' }
     
+tutor_document_list_route:
+    path:     /tuteur/document
+    defaults: { _controller : 'Tutor', _action : 'tutorDocumentList' }
+    
 tutor_trainee_list_route:
     path:     /tuteur/liste_stagiaire
     defaults: { _controller : 'Tutor', _action : 'traineeList' }

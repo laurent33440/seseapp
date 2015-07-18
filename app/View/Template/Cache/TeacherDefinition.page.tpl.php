@@ -43,14 +43,24 @@
 //        });
         
         tinymce.init({
-            selector: "textarea#textarea1",
+            selector: "#textarea1",
             language : 'fr_FR',
             plugins: [
                 "advlist autolink lists link image charmap print preview anchor",
                 "searchreplace visualblocks code fullscreen",
                 "insertdatetime media table contextmenu paste "
             ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
         });
 
     </script>
@@ -421,29 +431,49 @@
                console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'change',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               $.ajax({
+                   url:'/index.php/administrateur',
+                   data:{       AJAX_UPDATE:'document_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                       var ed = tinyMCE.activeEditor;
+                       ed.setContent(json.doc);
+                       setTitle(json.title);
+                   }
+               });
        });       
+       
               
     </script>
     
-<!--    <script type="text/javascript">
-        $(document).ready(function(){
-            alert('Page chargée');
-        });
-       
-   </script>-->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substituée dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
+    <script type="text/javascript">
+        function getDoc(){
+            $("#nom_document_en_edition").text('TITLE');
+            return 'DOC';
+        };
+    </script>
+    
+    <!-- m a j titre doc en edition -->
+    <script type="text/javascript">
+        function setTitle(title){
+            $("#nom_document_en_edition").text(title);
+        };
+    </script>
+    
+    <!-- agit sur bouton de validation de création/edition documents -->
+    <script type="text/javascript">
+        function highLightElement(){
+            $("#valide_document").css("background-color", "green");
+        };
+    </script>
+    
     
   </body>
 </html>

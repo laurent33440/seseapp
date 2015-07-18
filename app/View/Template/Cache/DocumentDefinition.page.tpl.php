@@ -43,14 +43,24 @@
 //        });
         
         tinymce.init({
-            selector: "textarea#textarea1",
+            selector: "#textarea1",
             language : 'fr_FR',
             plugins: [
                 "advlist autolink lists link image charmap print preview anchor",
                 "searchreplace visualblocks code fullscreen",
                 "insertdatetime media table contextmenu paste "
             ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
         });
 
     </script>
@@ -176,7 +186,7 @@
                                             echo"
                                                 <div class=\"checkbox-inline\">
                                                     <label>
-                                                        <input type=\"checkbox\" name=\"_access##$reader\" value=\"$reader\"> $reader
+                                                        <input type=\"checkbox\" name=\"_access##$reader#$reader\" value=\"$reader\"> $reader
                                                     </label>
                                                 </div>
                                             ";
@@ -188,13 +198,12 @@
                         </div>
                         <div class="row">
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Tests avec Tiny MCE - les scripts sont placés dans le 'head' de la page  
-                                    <a href="http://www.tinymce.com/wiki.php/Installation" target="_blank">voir sur le site officiel</a>
+                                <div id="nom_document_en_edition" class="panel-heading">
+                                    Document en cours d'edition
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-12">
-                                        <textarea id="textarea1" name="_doc" style="width:100%">
+                                        <textarea rows="35" cols="80" id="textarea1" name="_documentContent" style="width:100% ">
                                             Ecrivez votre texte...
                                         </textarea>
                                     </div>
@@ -203,7 +212,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-10 ">
-                                <input id="submit" name="submit" type="submit" value="Valider le document " class="btn btn-primary">
+                                <input id="valide_document" name="submit" type="submit" value="Valider le document " class="btn btn-primary">
                             </div>
                         </div>
                     </form>
@@ -244,7 +253,7 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">MODAL_TITLE</h4> 
+            <h4 class="modal-title" id="myModalLabel">MODAL_doc_test</h4> 
           </div> 
           <div class="modal-body"> 
             <h3>MODAL_MESSAGE</h3> 
@@ -280,7 +289,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/administrateur',
+                   '/index.php/administrateur/document',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -301,29 +310,49 @@
                console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'change',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               $.ajax({
+                   url:'/index.php/administrateur/document',
+                   data:{       AJAX_UPDATE:'document_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                       var ed = tinyMCE.activeEditor;
+                       ed.setContent(json.doc);
+                       setTitle(json.title);
+                   }
+               });
        });       
+       
               
     </script>
     
-<!--    <script type="text/javascript">
-        $(document).ready(function(){
-            alert('Page chargée');
-        });
-       
-   </script>-->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément <p>doc test 1</p> est substituée dans le modelView (modelView['footer']['<p>doc test 1</p>']) par le generateur de template -->
+    <script type="text/javascript">
+        function getDoc(){
+            $("#nom_document_en_edition").text('doc_test');
+            return '<p>doc test 1</p>';
+        };
+    </script>
+    
+    <!-- m a j titre doc en edition -->
+    <script type="text/javascript">
+        function setTitle(title){
+            $("#nom_document_en_edition").text(title);
+        };
+    </script>
+    
+    <!-- agit sur bouton de validation de création/edition documents -->
+    <script type="text/javascript">
+        function highLightElement(){
+            $("#valide_document").css("background-color", "green");
+        };
+    </script>
+    
     
   </body>
 </html>

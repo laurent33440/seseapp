@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 //use Exception\InternalException;
 use Logger;
 use Model\WelcomeTutorModel;
+use Model\DisplayDocumentModel;
 use Model\TutorTraineeListModel;
 use Model\InternalContactModel;
 use Model\TutorTraineeActivityListModel;
@@ -48,6 +49,16 @@ class TutorController extends AControllerState{
         $formArray['DATE'] = $date;
         $this->buildBodyView($formArray);
         $this->sendModelView('TutorWelcome');
+    }
+    
+    ///////////// tutor documents list
+    
+    public function tutorDocumentList(){// stateless
+        $this->_model=new DisplayDocumentModel();
+        $this->_model->getAll();
+        $formArray = $this->getValuesFromModelToForm();
+        $this->buildBodyView($formArray);
+        $this->sendModelView('DisplayDocument');
     }
     
     ///////////// tutor trainee list
@@ -346,6 +357,8 @@ class TutorController extends AControllerState{
 //            return false; //nothing to update
 //        }
     }
+    
+    
     
     
     

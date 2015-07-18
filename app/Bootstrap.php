@@ -50,14 +50,6 @@ class Bootstrap {
       // Autoload
       spl_autoload_register(array(__CLASS__, "autoload"));
 
-      //log
-      $log = Logger::getInstance();
-      $log->setLogFile("log_sese.txt", true); //append logs
-      //$log->setLogFile("log_sese.txt", !self::DEBUG_SESE); //erase log each run
-      $log->setLogFile("log_sese.txt");
-      $log->setPriority(Logger::DEBUG);
-      $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");
-
       //Session
       $session = SeseSession::getInstance(self::DEBUG_SESE);
       $session->setName(self::APPLICATION_NAME);
@@ -67,6 +59,14 @@ class Bootstrap {
           $session->set('state_history', '');
           //echo $session->getId();
       }
+      
+      //log
+      $log = Logger::getInstance();
+      $log->setLogFile('log_sese_'.$session->getId().'_.txt', true); //append logs
+      //$log->setLogFile("log_sese.txt", !self::DEBUG_SESE); //erase log each run
+      //$log->setLogFile("log_sese.txt");
+      $log->setPriority(Logger::DEBUG);
+      $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");
       
       // Route
       $mainRouter = new MainRouter();

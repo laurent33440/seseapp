@@ -48,7 +48,7 @@
                                             echo"
                                                 <div class=\"checkbox-inline\">
                                                     <label>
-                                                        <input type=\"checkbox\" name=\"_access##$reader\" value=\"$reader\"> $reader
+                                                        <input type=\"checkbox\" name=\"_access##$reader#$reader\" value=\"$reader\"> $reader
                                                     </label>
                                                 </div>
                                             ";
@@ -60,13 +60,12 @@
                         </div>
                         <div class="row">
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Tests avec Tiny MCE - les scripts sont placés dans le 'head' de la page  
-                                    <a href="http://www.tinymce.com/wiki.php/Installation" target="_blank">voir sur le site officiel</a>
+                                <div id="nom_document_en_edition" class="panel-heading">
+                                    Document en cours d'edition
                                 </div>
                                 <div class="panel-body">
                                     <div class="col-md-12">
-                                        <textarea id="textarea1" name="_doc" style="width:100%">
+                                        <textarea rows="35" cols="80" id="textarea1" name="_documentContent" style="width:100% ">
                                             Ecrivez votre texte...
                                         </textarea>
                                     </div>
@@ -75,7 +74,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-10 ">
-                                <input id="submit" name="submit" type="submit" value="Valider le document " class="btn btn-primary">
+                                <input id="valide_document" name="submit" type="submit" value="Valider le document " class="btn btn-primary">
                             </div>
                         </div>
                     </form>

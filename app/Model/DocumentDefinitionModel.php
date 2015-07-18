@@ -10,6 +10,8 @@ namespace Model;
 
 use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Documents_reference\Documents_referenceObject;
+use Model\Dal\ModelDb\Page\PageObject;
+use Model\Dal\ModelDb\Autoriser\AutoriserObject;
 
 /**
  * Description of DocumentDefinitionModel
@@ -25,7 +27,7 @@ class DocumentDefinitionModel extends AModel implements IModel{
     private $_docName;
     private $_newDocName=null;
     private $_access = array();
-    private $_doc;
+    private $_documentContent;
     
     public function get_documentTypeList() {
         return $this->_documentTypeList;
@@ -38,7 +40,19 @@ class DocumentDefinitionModel extends AModel implements IModel{
     public function get_docList() {
         return $this->_docList;
     }
+    public function get_documentContent() {
+        return $this->_documentContent;
+    }
     
+    public function get_documentSubject(){
+        return $this->_docName;
+    }
+
+            //for debug
+    public function get_access() {
+        return $this->_access;
+    }
+        
     public function set_documentType($_documentType) {
         $this->_documentType = $_documentType;
     }
@@ -51,12 +65,13 @@ class DocumentDefinitionModel extends AModel implements IModel{
         $this->_newDocName = $_newDocName;
     }
 
-    public function set_access($_access) {
-        $this->_access = $_access;
+    public function set_access($_access, $reader) {
+        $this->_access[$reader] = $_access;
+        
     }
 
-    public function set_doc($_doc) {
-        $this->_doc = $_doc;
+    public function set_documentContent($_doc) {
+        $this->_documentContent = $_doc;
     }
     
     public function addBlank() {
@@ -68,13 +83,16 @@ class DocumentDefinitionModel extends AModel implements IModel{
         if(!empty($this->_newDocName)){//new
             $drf = new Documents_referenceObject();
             $drf->drf_sujet = $this->_newDocName;
-            $drf->drf_description_doc = $this->_doc;
+            $drf->drf_description_doc = $this->_documentContent;
+            \Logger::getInstance()->logDebug(__CLASS__.'  DOC cONTENT: '.print_r($this->_documentContent,true));
             $collection->Insert($drf);
+            //m a j droits sur document
+            //$this->updateAccessToDoc($drf->drf_sujet);
         }else{//get existing & update
             $doc = $collection->GetByColumnValue('drf_sujet', $this->_docName);
-            $doc->drf_description_doc = $this->_doc;
+            $doc->drf_description_doc = $this->_documentContent;
             $collection->Update($doc);
-            
+            $this->updateAccessToDoc($this->_docName);
         }
     }
 
@@ -94,7 +112,19 @@ class DocumentDefinitionModel extends AModel implements IModel{
         
     }
 
-    public function update($property, $val, $id) {
+    public function update($property, $val, $id=null) {
+        if($property === '_docName'){
+            $this->getDocList();// update list
+            \Logger::getInstance()->logDebug(__CLASS__.'  AJAX VAL: '.print_r($val,true));
+            $this->_docName = $val;
+            \Logger::getInstance()->logDebug(__CLASS__.'  AJAX LIST DOC: '.print_r($this->_docList,true));
+            $id = array_search($val, $this->_docList);
+            \Logger::getInstance()->logDebug(__CLASS__.'  AJAX ID: '.print_r($id,true));
+            $collection = new DataAccess('Documents_reference');
+            $doc = $collection->GetByID($id);
+            $this->_documentContent = $doc->drf_description_doc;
+             \Logger::getInstance()->logDebug(__CLASS__.' TEST TEST : '.print_r($this->_documentContent,true));
+        }
         
     }
     
@@ -106,15 +136,26 @@ class DocumentDefinitionModel extends AModel implements IModel{
         }
         reset($docs);
         $doc=$docs[0];
-        $this->_doc = $doc->drf_description_doc;
+        $this->_documentContent = $doc->drf_description_doc;
+        $this->_docName = $doc->drf_sujet;
     }
-
     
-    
-
-
-
-
+    public function updateAccessToDoc($docTitle){
+        $p=new PageObject;
+        $p->pge_nom_page=$docTitle;
+        $cp=new DataAccess('Page');
+        $cp->Insert($p);
+        $ca = new DataAccess('Autoriser');
+        $cg = new DataAccess('Groupe');
+        foreach ($this->_access as $reader){
+            $a = new AutoriserObject;
+            $g=$cg->GetByColumnValue('grp_nom_groupe', $reader);
+            $a->id_groupe = $g->id_groupe;
+            $a->id_page = $p->id_page;
+            $a->type_droit = 'lecture';
+            $ca->Insert($a);
+        }
+    }
     
     
 }
