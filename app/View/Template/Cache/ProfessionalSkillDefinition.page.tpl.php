@@ -143,26 +143,25 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
-    <h3>Etape de définition des fonctions liées au référentiel de formation </h3>
-    <p>Dans cette étape vous allez définir les fonctions liées au référentiel de formation.</p>
-    <!--<p><a class="btn btn-primary btn-lg" role="button"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>-->
+    <h3>Etape de définition des critères de comportements en milieu professionnel </h3>
+    <p>Dans cette étape vous allez définir les critères d'évaluation des comportements professionnels.</p>
   </div>
 </div>
 
 <div class="container-fluid">
 
-    <form  method="post" action="<?php echo' /index.php/administrateur/fonction '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/attitude_professionnelle '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Informations relatives au fonctions liées au référentiel
+                    Informations relatives critères professionnels
                 </div>
                 <div class="panel-body">
                      <div class="table-responsive" id="func_table">
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Descriptif de la fonction</th>
+                                    <th class="active">Descriptif du critère d'évaluation</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -20,9 +20,9 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Référence de l'activité</th>
-                                    <th class="active">Fonction associée</th>
-                                    <th class="active">Descriptif de l'activité</th>
+                                    <th  style="width:10%;" class="active">Référence de l'activité</th>
+                                    <th  style="width:30%;"class="active">Fonction associée</th>
+                                    <th  style="width:60%;"class="active">Descriptif de l'activité</th>
 
                                 </tr>
                             </thead>

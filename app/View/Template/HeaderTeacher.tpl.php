@@ -49,7 +49,7 @@
                 <p>Veuillez choisir une action</p>
             </div>
             <div class="col-lg-2 ">
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                  <a class="btn btn-default" href="TEACHERPASS" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
                       <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
                   </a>
             </div>
@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
+                  <a class="btn btn-default" href="TEACHERDOCUMENT" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
                       <img class="img-rounded" src="/app_img/information.png" alt="Informations pédagogiques">
                   </a>
               </p>

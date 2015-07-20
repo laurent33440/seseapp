@@ -129,7 +129,7 @@
         <div class="row">
             <div class="col-lg-2 col-lg-offset-1">
               <p>
-                  <a class="btn btn-default" href="TUTOR_/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
                       <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
                   </a>
               </p>
@@ -172,7 +172,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Informations générales - visites programmées -  vendredi 17 juillet 2015 </h3>
+            <h3 class="panel-title">Informations générales - visites programmées -  lundi 20 juillet 2015 </h3>
         </div>
         <div class="panel-body">
             <div class="table-responsive" id="visit_table">

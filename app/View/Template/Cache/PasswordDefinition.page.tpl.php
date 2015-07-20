@@ -129,7 +129,7 @@
         <div class="row">
             <div class="col-lg-2 col-lg-offset-1">
               <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
                       <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
                   </a>
               </p>

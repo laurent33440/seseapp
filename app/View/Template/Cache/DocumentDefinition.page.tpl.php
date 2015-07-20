@@ -117,7 +117,10 @@
                             </ul>
                         </li>
                     </ul><ul class="nav nav-sidebar">
-                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents </a></li>
+                        <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
@@ -253,7 +256,7 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">MODAL_doc_test</h4> 
+            <h4 class="modal-title" id="myModalLabel">MODAL_Document vierge : définissez un nom de document</h4> 
           </div> 
           <div class="modal-body"> 
             <h3>MODAL_MESSAGE</h3> 
@@ -331,11 +334,11 @@
               
     </script>
     
-    <!-- script qui renvoie une doc a TINYMCE : l'élément <p>doc test 1</p> est substituée dans le modelView (modelView['footer']['<p>doc test 1</p>']) par le generateur de template -->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément <p>Copiez/Collez votre texte</p> est substituée dans le modelView (modelView['footer']['<p>Copiez/Collez votre texte</p>']) par le generateur de template -->
     <script type="text/javascript">
         function getDoc(){
-            $("#nom_document_en_edition").text('doc_test');
-            return '<p>doc test 1</p>';
+            $("#nom_document_en_edition").text('Document vierge : définissez un nom de document');
+            return '<p>Copiez/Collez votre texte</p>';
         };
     </script>
     

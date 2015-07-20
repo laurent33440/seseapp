@@ -129,7 +129,7 @@
         <div class="row">
             <div class="col-lg-2 col-lg-offset-1">
               <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
                       <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
                   </a>
               </p>
@@ -195,12 +195,49 @@
     </div>
     
     <div class="container">
+         <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class=\"panel-title\">Evaluation des attitudes professionnelles</h3>
+                </div>
+                <div class="panel-body">
+                     <div class="table-responsive" id="visit_table">
+                            <table class=\"table table-hover table-striped table-bordered\">
+                                <thead>
+                                    <tr>
+                                        <th class=\"active\"> <h4></h4></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($this->_arrayParamslist[3] as $skillName => $levels) {
+                                        echo"
+                                            <tr>
+                                                <td> 
+                                                     <span class=\"glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span>
+                                                    $skillName"
+                                                    ."<select name =\"_results##$skillName#$skillName#$skillName\">";
+                                                    foreach ($levels as $levelCode => $levelName) {
+                                                        echo"<option value=\"$levelCode\">$levelName</option>";
+                                                    }
+                                                    echo"
+                                                    </select> 
+                                                </td>";
+                                        echo"                
+                                            </tr>
+                                        ";
+                                        }
+                                        ?>
+                                </tbody>
+                            </table>
+                     </div>
+                </div>
+         </div>
 
         <?php foreach ($this->_arrayParamslist[0] as $functionName => $activitiesList){
             echo"
         <div class=\"panel panel-default\">
             <div class=\"panel-heading\">
-                <h3 class=\"panel-title\"><h3>$functionName</h3></h3>
+                <h2 class=\"panel-title\">$functionName</h2>
             </div>
             <div class=\"panel-body\">
                 ";

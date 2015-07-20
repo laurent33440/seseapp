@@ -19,6 +19,7 @@ use Model\GeneralReferenceDefinitionModel;
 use Model\FunctionReferentialDefinitionModel;
 use Model\ActivitiesReferenceDefinitionModel;
 use Model\SkillsReferenceDefinitionModel;
+use Model\ProfessionalSkillDefinitionModel;
 use Model\DocumentDefinitionModel;
 use Model\PromotionModel;
 use Model\TeacherDefinitionModel;
@@ -54,6 +55,20 @@ class AdminController extends AControllerState{
     
     public function __construct(Request $request, $action) {
         parent::__construct($request, $action);
+        //menu entries
+        $this->_modelView['header'] = array(
+                'REFERENTIAL'=>  $this->_index.'/referentiel',
+                'FUNCTION'=>  $this->_index.'/fonction',
+                'ACTIVITY'=>  $this->_index.'/activite',
+                'SKILL'=>  $this->_index.'/competence',
+                'PROFESSIONAL' => $this->_index.'/attitude_professionnelle',
+                'DOCUMENT'=>  $this->_index.'/document',
+                'PROMOTION'=>  $this->_index.'/promotion',
+                'TEACHER'=>  $this->_index.'/enseignant',
+                'TRAINEE'=> $this->_index.'/stagiaire',
+                'WORK_DATE'=>  $this->_index.'/stage',
+                'PASSWORD'=>  $this->_index.'/acces',
+        );
     }
     
    
@@ -397,9 +412,7 @@ class AdminController extends AControllerState{
 
     public function skillDefinition(){
         try{
-            if($this->_model === null){
-                $this->_model = new SkillsReferenceDefinitionModel();
-            }
+            $this->_model = new SkillsReferenceDefinitionModel();
             switch ($this->_state){
                 case self::IDLE :
                     $this->_model->getAll();//restore model
@@ -539,6 +552,126 @@ class AdminController extends AControllerState{
         // FIXME  : TO BE DONE
     }
     
+    ///////////// functions definitions methods
+    
+    public function professionalSkillDefinition(){
+        try{
+            $this->_model = new ProfessionalSkillDefinitionModel();
+            switch ($this->_state){
+                case self::IDLE :
+                    $this->_model->getAll();
+                    $this->_model->addBlank();;//force new input on form
+                    $this->buildSendViewProfessionalSkillDefinition();
+                    $this->_state = self::RUNNING;
+                    break;
+                case self::RUNNING:
+                    if($this->_request->isMethod('POST')){
+                        if(!$this->_request->isXmlHttpRequest()){ 
+                            if($this->computeFonctionDefinition($this->_request->request->all()) === true){
+                                $this->_model->getAll();
+                                $this->_model->addBlank();;//add new input on form
+                                $this->buildSendViewProfessionalSkillDefinition();
+                            }else{
+                                $this->_state = self::STOPPED;
+                                //redirect to welcome admin page
+                                $this->redirectTo($this->_index);
+                            }
+                        }else {//if AJAX don't response to client -- controller still running
+                            $this->computeXmlHttpRequestProfessionalSkillDefinition($this->_request->request->all());
+                        } 
+                    }else{//direct url access
+                        $this->_model->getAll();
+                        $this->_model->addBlank();//add new input on form
+                        $this->buildSendViewProfessionalSkillDefinition();
+                    }
+                    break;
+                case self::STOPPED:
+                    $this->_model->getAll(); // retrieve datas 
+                    $this->_model->addBlank();//force new input on form
+                    $this->buildSendViewProfessionalSkillDefinition();
+                    $this->_state = self::RUNNING;
+                    break;
+                case self::TERMINATED:
+                    break;
+                case self::ON_INPUT_ERROR:
+                    break;
+                default :
+                    throw new InternalException('Unknom state in '.__CLASS__. ' State Unknown :  '.$this->_state);
+            }
+        }catch (Exception $e){
+            $this->_state = self::ON_INPUT_ERROR;
+            $this->_error = $e;
+            if (!($e instanceof DataBaseException)){
+                throw new InternalException($e->getMessage());
+            }else{
+                throw $e;
+            }
+        }
+    }
+    
+    public function buildSendViewProfessionalSkillDefinition(){
+        $formArray = $this->buildCompleteFormArray();
+        $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
+        $formArray['INDEX'] = $this->_index.'/attitude_professionnelle';
+        foreach ($this->_BUTTONS_FUNCTIONS as $bCtrl => $bForm){
+            $formArray[$bCtrl] = $bForm;
+        }
+        $this->buildBodyView($formArray);
+        $this->sendModelView('ProfessionalSkillDefinition');
+    }
+    
+    /**
+     * Acts toward events from form :
+     * -Add new value to model
+     * -Del value from model
+     * -valide submit form
+     * @param array $datas : posted datas from form 
+     * @return boolean true if controller must run for further inputs , false if submit form
+     */
+    public function computeProfessionalSkillDefinition($datas){
+        Logger::getInstance()->logDebug(__CLASS__.'raw post :'.  print_r($datas, true));
+        //check buttons
+        if(array_key_exists($this->_BUTTONS_FUNCTIONS['BUTTON_ADD_FUNCTION'], $datas)){ //add button
+            $varsModel = $this->_model->getClassVars();
+            Logger::getInstance()->logDebug(__CLASS__.'properties model : '.print_r($varsModel, true));
+            $params = $this->findAllParamsFromForm($datas, $varsModel);
+            Logger::getInstance()->logInfo(__CLASS__.' all params : '.  print_r($params, true));
+            $model = $params[$datas[$this->_BUTTONS_FUNCTIONS['BUTTON_ADD_FUNCTION']]];//get datas from button id 
+            $this->_model->setClassVarsValues($model);
+            Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
+            $this->_model->append();
+            return true;
+        }else{
+            if(array_key_exists($this->_BUTTONS_FUNCTIONS['BUTTON_DEL_FUNCTION'], $datas)){ //del button
+                $id = $datas[$this->_BUTTONS_FUNCTIONS['BUTTON_DEL_FUNCTION']];
+                $this->_model->deleteFromId($id); 
+                return true;
+            }else{ //main submit all done
+                return false;
+            }
+        }
+    }
+    
+    /**
+     * -update value from AJAX event
+     * @param array $datas
+     *      AJAX_ID = propertyName#Id_Or_Key_for_this_property
+     *      AJAX_VAL = value to be updated
+     * @return boolean
+     */
+    public function computeXmlHttpRequestProfessionalSkillDefinition(array $datas){
+        if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
+            $params = $datas['AJAX_ID'];
+            $val = $datas['AJAX_VAL'];
+            $params = explode('#',$params);
+            $property=$params[0];
+            $id= $params[1];
+            Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> property : '.$property.' val : '.$val.'  id : '.$id);
+            $this->_model->update($property, $val, $id);
+            return true;
+        }
+    }
+    
     ///////////// promotions definitions methods
     
     public function promotionDefinition(){
@@ -547,6 +680,7 @@ class AdminController extends AControllerState{
             switch ($this->_state){
                 case self::IDLE :
                     $this->_model->addBlank();//force new input on form
+                    $this->_model->getAll();
                     $this->buildViewPromotionDefinition();
                     $this->sendModelView('PromotionDefinition');
                     $this->_state = self::RUNNING;
@@ -917,7 +1051,7 @@ class AdminController extends AControllerState{
                         }else{
                             $this->_state = self::STOPPED;
                             //redirect to welcome admin page
-                            $this->_redirect = new RedirectResponse($this->getRootPath().'/administrateur');
+                            $this->_redirect = new RedirectResponse($this->_index);
                             // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
                             $this->_redirect->prepare($this->_request);  
                             Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');

@@ -84,13 +84,15 @@ class DocumentDefinitionModel extends AModel implements IModel{
             $drf = new Documents_referenceObject();
             $drf->drf_sujet = $this->_newDocName;
             $drf->drf_description_doc = $this->_documentContent;
+            $drf->drf_type = $this->_documentType;
             \Logger::getInstance()->logDebug(__CLASS__.'  DOC cONTENT: '.print_r($this->_documentContent,true));
             $collection->Insert($drf);
             //m a j droits sur document
-            //$this->updateAccessToDoc($drf->drf_sujet);
+            $this->updateAccessToDoc($drf->drf_sujet);
         }else{//get existing & update
             $doc = $collection->GetByColumnValue('drf_sujet', $this->_docName);
             $doc->drf_description_doc = $this->_documentContent;
+            $doc->drf_type = $this->_documentType;
             $collection->Update($doc);
             $this->updateAccessToDoc($this->_docName);
         }

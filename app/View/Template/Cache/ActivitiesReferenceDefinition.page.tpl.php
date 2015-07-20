@@ -117,7 +117,10 @@
                             </ul>
                         </li>
                     </ul><ul class="nav nav-sidebar">
-                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents </a></li>
+                        <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
@@ -158,9 +161,9 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Référence de l'activité</th>
-                                    <th class="active">Fonction associée</th>
-                                    <th class="active">Descriptif de l'activité</th>
+                                    <th  style="width:10%;" class="active">Référence de l'activité</th>
+                                    <th  style="width:30%;"class="active">Fonction associée</th>
+                                    <th  style="width:60%;"class="active">Descriptif de l'activité</th>
 
                                 </tr>
                             </thead>
@@ -340,6 +343,7 @@
                        console.log('recu du serveur : '+json.doc);
                        var ed = tinyMCE.activeEditor;
                        ed.setContent(json.doc);
+                       setTitle(json.title);
                    }
                });
        });       
@@ -347,49 +351,28 @@
               
     </script>
     
-<!--     Script for tiny MCE  
-    <script type="text/javascript">
-           $("#textarea1").blur(function(){
-               alert($("#textarea1").attr('id'));
-//               console.log($(this).attr('id'));
-//               id=$(this).attr('id');
-//               val=$(this).val();
-//               alert('Input id :'+id+' '+'Input val :'+val);
-//               $.post(
-//                   '/index.php/administrateur',
-//                    {    ajax:'ok'
-//                    },
-//                    function(data){
-//                        alert(data.value);
-//                        console.log(data.value);
-//                        
-//                    },
-//                    'json'
-//               );
-           });
-
-    </script>-->
-    
     <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substituée dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
     <script type="text/javascript">
         function getDoc(){
-            $("#nom_document_en_edition").text('TITLEDOCUMENT');
+            $("#nom_document_en_edition").text('TITLE');
             return 'DOC';
         };
     </script>
     
+    <!-- m a j titre doc en edition -->
+    <script type="text/javascript">
+        function setTitle(title){
+            $("#nom_document_en_edition").text(title);
+        };
+    </script>
+    
+    <!-- agit sur bouton de validation de création/edition documents -->
     <script type="text/javascript">
         function highLightElement(){
             $("#valide_document").css("background-color", "green");
         };
     </script>
     
-<!--    <script type="text/javascript">
-        $(document).ready(function(){
-            alert('Page chargée');
-        });
-       
-   </script>-->
     
   </body>
 </html>

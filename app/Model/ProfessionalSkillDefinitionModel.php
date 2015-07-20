@@ -9,14 +9,14 @@
 namespace Model;
 
 use Model\Dal\DbLibrary\DataAccess;
-use Model\Dal\ModelDb\Fonction\FonctionObject;
+use Model\Dal\ModelDb\Attitude_professionnelle\Attitude_professionnelleObject;
 
 /**
- * Description of FunctionReferentialDefinition
+ * Description of ProfessionnalSkillDefinitionModel
  *
  * @author prog
  */
-class FunctionReferentialDefinitionModel extends AModel implements IModel{
+class ProfessionalSkillDefinitionModel extends AModel implements IModel{
     /**
      * DATA STRUCTURE
      * array(idFunction => functionDescription)
@@ -48,9 +48,9 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
      * Add last value of model view to 'Fonction' table
      */
     public function append(){
-        $collection= new DataAccess('Fonction');
-        $f= new FonctionObject();
-        $f->f_description = end($this->_descriptionList);
+        $collection= new DataAccess('Attitude_professionnelle');
+        $f= new Attitude_professionnelleObject();
+        $f->apro_critere = end($this->_descriptionList);
         $collection->Insert($f);
     }
     
@@ -60,10 +60,10 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
      */
     public function getAll(){
         $this->resetModel();
-        $collection= new DataAccess('Fonction');
-        $funcs = $collection->GetAll();
-        foreach($funcs as $func){
-            $this->_descriptionList[$func->id_fonction] = $func->f_description;
+        $collection= new DataAccess('Attitude_professionnelle');
+        $all = $collection->GetAll();
+        foreach($all as $func){
+            $this->_descriptionList[$func->id_attitude_professionnelle] = $func->apro_critere;
         }    
     }
     
@@ -73,9 +73,9 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
      */
     public function update($property, $val, $id){
         if($property==='_descriptionList'){
-            $collection = new DataAccess('Fonction');
+            $collection = new DataAccess('Attitude_professionnelle');
             $f = $collection->GetByID($id);
-            $f->f_description = $val;
+            $f->apro_critere = $val;
             $collection->Update($f);
             $this->_descriptionList[$id]=$val;
         }
@@ -85,7 +85,7 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
      * 
      */
     public function deleteFromId($id){
-        $collection= new DataAccess('Fonction');
+        $collection= new DataAccess('Attitude_professionnelle');
         $f =$collection->GetByID($id);
         $collection->Delete($f);
     }

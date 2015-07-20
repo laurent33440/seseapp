@@ -25,12 +25,49 @@
     </div>
     
     <div class="container">
+         <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class=\"panel-title\">Evaluation des attitudes professionnelles</h3>
+                </div>
+                <div class="panel-body">
+                     <div class="table-responsive" id="visit_table">
+                            <table class=\"table table-hover table-striped table-bordered\">
+                                <thead>
+                                    <tr>
+                                        <th class=\"active\"> <h4></h4></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach (form_val_professionnalSkillList as $skillName => $levels) {
+                                        echo"
+                                            <tr>
+                                                <td> 
+                                                     <span class=\"glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span>
+                                                    $skillName"
+                                                    ."<select name =\"_results##$skillName#$skillName#$skillName\">";
+                                                    foreach ($levels as $levelCode => $levelName) {
+                                                        echo"<option value=\"$levelCode\">$levelName</option>";
+                                                    }
+                                                    echo"
+                                                    </select> 
+                                                </td>";
+                                        echo"                
+                                            </tr>
+                                        ";
+                                        }
+                                        ?>
+                                </tbody>
+                            </table>
+                     </div>
+                </div>
+         </div>
 
         <?php foreach (form_val_functionList as $functionName => $activitiesList){
             echo"
         <div class=\"panel panel-default\">
             <div class=\"panel-heading\">
-                <h3 class=\"panel-title\"><h3>$functionName</h3></h3>
+                <h2 class=\"panel-title\">$functionName</h2>
             </div>
             <div class=\"panel-body\">
                 ";

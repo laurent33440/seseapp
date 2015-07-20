@@ -1,17 +1,17 @@
-17-07-2015 12:03:54 - INFO  --> 
+20-07-2015 11:42:26 - INFO  --> 
 ======== Log SESE Start ========
 --------------------------------- 
-17-07-2015 12:03:54 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
-17-07-2015 12:03:54 - INFO  --> Class MainRouter - controller trigged : Login::check 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
-17-07-2015 12:03:54 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
-17-07-2015 12:03:54 - DEBUG --> View\ViewHandler Model params from controler :  => Array
+20-07-2015 11:42:26 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+20-07-2015 11:42:26 - INFO  --> Class MainRouter - controller trigged : Login::check 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+20-07-2015 11:42:26 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+20-07-2015 11:42:26 - DEBUG --> View\ViewHandler Model params from controler :  => Array
 (
     [header] => Array
         (
@@ -41,7 +41,7 @@
 
 )
  
-17-07-2015 12:03:54 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
+20-07-2015 11:42:26 - DEBUG --> View\ViewHandler Model params for builder : View\LoginBuilder => Array
 (
     [header] => Array
         (
@@ -71,6 +71,6 @@
 
 )
  
-17-07-2015 12:03:54 - INFO  --> end Class MainRouter 
-17-07-2015 12:03:54 - INFO  --> destruct : Controller\LoginController 
-17-07-2015 12:03:54 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+20-07-2015 11:42:26 - INFO  --> end Class MainRouter 
+20-07-2015 11:42:26 - INFO  --> destruct : Controller\LoginController 
+20-07-2015 11:42:26 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 

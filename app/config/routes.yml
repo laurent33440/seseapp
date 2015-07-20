@@ -27,6 +27,10 @@ admin_skill_route:
     path:     /administrateur/competence
     defaults: { _controller : 'Admin', _action : 'skillDefinition' }
     
+admin_professional_skill_route:
+    path:     /administrateur/attitude_professionnelle
+    defaults: { _controller : 'Admin', _action : 'professionalSkillDefinition' }
+    
 admin_document_route:
     path:     /administrateur/document
     defaults: { _controller : 'Admin', _action : 'documentDefinition' }
@@ -54,6 +58,14 @@ admin_password_route:
 teacher_route:
     path:     /enseignant
     defaults: { _controller : 'Teacher', _action : 'welcome' }
+    
+teacher_password_route:
+    path:     /enseignant/mot_de_passe
+    defaults: { _controller : 'Teacher', _action : 'passwordDefinition' }
+    
+teacher_document_list_route:
+    path:     /enseignant/document
+    defaults: { _controller : 'Teacher', _action : 'documentList' }
     
 teacher_work_definition_route:
     path:     /enseignant/stage

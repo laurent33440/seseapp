@@ -48,7 +48,10 @@
                             </ul>
                         </li>
                     </ul><ul class="nav nav-sidebar">
-                        <li><a href="DOCUMENT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents </a></li>
+                        <li><a href="PROFESSIONAL"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="DOCUMENT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="PROMOTION"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>

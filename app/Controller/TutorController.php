@@ -37,6 +37,15 @@ class TutorController extends AControllerState{
     
     public function __construct(Request $request, $action) {
         parent::__construct($request, $action);
+        //menu entries
+        $this->_modelView['header'] = array(
+                'TUTORDOCUMENT'=> $this->_index.'/document',
+                'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
+                'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
+                'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
+                'EVALUATE' => $this->_index.'/evaluation_stagiaire',
+                'TUTORPASS' => $this->_index.'/mot_de_passe'
+            );
     }
    
     ///////////// tutor welcome

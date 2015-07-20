@@ -30,6 +30,41 @@
     <!-- css jQuery -->
     <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
     
+    <!--TINY MCE TESTS--> 
+    <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+        
+//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
+//        $(document).on('focusin', function(e) {
+//            if ($(event.target).closest(".mce-window").length) {
+//                        e.stopImmediatePropagation();
+//                }
+//        });
+        
+        tinymce.init({
+            selector: "#textarea1",
+            language : 'fr_FR',
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
+        });
+
+    </script>
+    
     
   </head>
  <body>
@@ -77,14 +112,13 @@
     <div class="container">
         
         <div class="jumbotron">
-          
           <div class="row">
             <div class="col-lg-10">
                 <h2> Espace enseignant</h2>
                 <p>Veuillez choisir une action</p>
             </div>
             <div class="col-lg-2 ">
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                  <a class="btn btn-default" href="/index.php/enseignant/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
                       <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
                   </a>
             </div>
@@ -95,7 +129,7 @@
         <div class="row">
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
+                  <a class="btn btn-default" href="/index.php/enseignant/document" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
                       <img class="img-rounded" src="/app_img/information.png" alt="Informations pédagogiques">
                   </a>
               </p>

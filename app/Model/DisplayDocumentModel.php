@@ -18,8 +18,11 @@ use Model\Dal\DbLibrary\DataAccess;
  * @author laurent
  */
 class DisplayDocumentModel extends AModel implements IModel{
+    //groups allways allowed to read doc
+    private $_FULL_READER_GROUP = array('administrateur', 'enseignant');
+    
     //view
-    private $_documentList; //array (title => doc)
+    private $_documentList=array(); //array (title => doc)
    
 
     public function get_documentList() {
@@ -49,19 +52,35 @@ class DisplayDocumentModel extends AModel implements IModel{
     public function getAll() {
         $user=  UserConnected::getInstance();
         $grpName = $user->getUserGroup();
-        $collection = new DataAccess('Groupe');
-        $gr = $collection->GetByColumnValue('grp_nom_groupe', $grpName);
-        $collection = new DataAccess('Autoriser');
-        $allPageId = $collection->GetAllByColumnValue('id_groupe', $gr->id_groupe);
-        $collPage = new DataAccess('Page');
-        $collDoc = new DataAccess('Documents_reference');
-        foreach ($allPageId as $id){
-            //get page name
-            $pageN = $collPage->GetByID($id);
-            //get doc from name
-            $doc = $collDoc->GetByColumnValue('drf_sujet', $pageN);
-            //set
-            $this->set_documentList($doc->drf_sujet, $doc->drf_description_doc);
+        if(in_array($grpName, $this->_FULL_READER_GROUP)){
+            $collDoc = new DataAccess('Documents_reference');
+            $all = $collDoc->GetAll();
+            foreach ($all as $doc) {
+                $this->set_documentList($doc->drf_sujet, $doc->drf_description_doc);
+            }
+        }else{
+            $collection = new DataAccess('Groupe');
+            $gr = $collection->GetByColumnValue('grp_nom_groupe', $grpName);
+            $collection = new DataAccess('Autoriser');
+            $allAuth = $collection->GetAllByColumnValue('id_groupe', $gr->id_groupe);
+            if(empty($allAuth)){
+                $this->set_documentList('Aucun document consultable', '-------------');
+            }else{
+                $collPage = new DataAccess('Page');
+                $collDoc = new DataAccess('Documents_reference');
+                //var_dump($allAuth);
+                foreach ($allAuth as $auth){
+                    //var_dump($auth);
+                    //get page name
+                    $page = $collPage->GetByID($auth->id_page);
+                    //var_dump($page);
+                    //get doc from name
+                    $doc = $collDoc->GetByColumnValue('drf_sujet', $page->pge_nom_page);
+                    //var_dump($doc);
+                    //set
+                    $this->set_documentList($doc->drf_sujet, $doc->drf_description_doc);
+                }
+            }
         }
     }
 

@@ -39,7 +39,6 @@ class MainRouter {
                 //$controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
             }else{
                 $parameters = array('_controller'=>'Login', '_action'=>'check');
-               
             }
             $controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
             if (is_file($controllerQualified)){

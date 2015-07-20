@@ -1,0 +1,13 @@
+20-07-2015 11:15:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+20-07-2015 11:15:01 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+20-07-2015 11:15:01 - INFO  --> Class MainRouter - controller trigged : Login::check 
+20-07-2015 11:15:01 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+20-07-2015 11:15:01 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base open 
+20-07-2015 11:15:01 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+20-07-2015 11:15:01 - DEBUG --> Model\Dal\DbLibrary\DataAccess data base closed 
+20-07-2015 11:15:01 - INFO  --> Class Controller\LoginController -- Redirect to tuteur for user :t@t 
+20-07-2015 11:15:01 - INFO  --> end Class MainRouter 
+20-07-2015 11:15:01 - INFO  --> destruct : Controller\LoginController 
+20-07-2015 11:15:01 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 

@@ -117,7 +117,10 @@
                             </ul>
                         </li>
                     </ul><ul class="nav nav-sidebar">
-                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents </a></li>
+                        <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
@@ -147,7 +150,7 @@
                             <h3 class="panel-title">Informations générales</h3>
                         </div>
                         <div class="panel-body">
-                            samedi 18 juillet 2015 
+                            lundi 20 juillet 2015 
                         </div>
                     </div>
                 </div>

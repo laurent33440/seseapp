@@ -243,6 +243,26 @@ abstract class AControllerState {
     protected function buildHeaderView(array $headerParams=null){
         if(!$headerParams){
             $model = new \Model\HeaderModel();
+            $header = array('SCHOOL_NAME'=>$model->get_schoolName(),
+                            'COURSE_NAME'=>$model->get_courseName(),
+                            'STUDY_YEAR'=>$model->get_studyYear(),
+                            'USER_NAME'=>$model->get_userName(),
+                            'USER_GROUP'=>$model->get_userRole(),
+                            'INDEX'=>  '/',
+            );
+            if(!empty($this->_modelView['header'])){
+                $header = $this->_modelView['header']+$header; //replace all keys'value of 'header' with 'modelView['header']''s values and add ones that doesn't exist 
+            }
+            $this->_modelView['header'] = $header;
+                                                
+        }else{
+            $this->_modelView['header'] = $headerParams;
+        }
+    }
+    
+    protected function buildHeaderView_old(array $headerParams=null){
+        if(!$headerParams){
+            $model = new \Model\HeaderModel();
             $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
                                                 'COURSE_NAME'=>$model->get_courseName(),
                                                 'STUDY_YEAR'=>$model->get_studyYear(),
@@ -268,7 +288,7 @@ abstract class AControllerState {
                 'WORK_COMMENT_DEFINITION'=> $this->_index.'/commentaire',
                 'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
                 //tutor space
-                'TUTOR_DOCUMENT'=> $this->_index.'/document',
+                'TUTORDOCUMENT'=> $this->_index.'/document',
                 'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
                 'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
                 'EVALUATE' => $this->_index.'/evaluation_stagiaire',
