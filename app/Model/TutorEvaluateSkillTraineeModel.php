@@ -29,6 +29,8 @@ class TutorEvaluateSkillTraineeModel extends AModel implements IModel{
     
     private $_traineeList = array();
     
+    private $_professionnalSkillList=array();//id=>description
+    
     private $_traineeName;
     
     private $_results = array();//{activite => {competence=>niveau}}
@@ -45,6 +47,10 @@ class TutorEvaluateSkillTraineeModel extends AModel implements IModel{
 
     public function get_autonomyList() {
         return $this->_autonomyList;
+    }
+    
+    public function get_professionnalSkillList() {
+        return $this->_professionnalSkillList;
     }
     
     public function get_traineeList() {//id=>name1.' '.name2
@@ -67,8 +73,6 @@ class TutorEvaluateSkillTraineeModel extends AModel implements IModel{
         $this->_autonomyResults[$skill] = $_autonomyResults;
     }
 
-    
-    
     public function addBlank() {
         
     }
@@ -98,6 +102,7 @@ class TutorEvaluateSkillTraineeModel extends AModel implements IModel{
 
     public function getAll() {
         //$this->buildTraineeList();
+        $this->buildProfessionnalSkillList();
         $this->buildFunctionlist();
         $this->_autonomyList=  $this->buildAutonomyLevels();
     }
@@ -108,6 +113,14 @@ class TutorEvaluateSkillTraineeModel extends AModel implements IModel{
 
     public function update($property, $val, $id) {
         
+    }
+    
+    public function buildProfessionnalSkillList(){
+        $coll = new DataAccess('Attitude_professionnelle');
+        $all = $coll->GetAll();
+        foreach ($all as $item) {
+            $this->_professionnalSkillList[$item->apro_critere] = $this->buildProfessionnalSkillLevel();
+        }
     }
 
     /**
@@ -157,6 +170,10 @@ class TutorEvaluateSkillTraineeModel extends AModel implements IModel{
     
     public function buildAutonomyLevels(){
         return array(0=>'Aide totale','Aide Partielle', 'Autonomie complète');
+    }
+    
+    public function buildProfessionnalSkillLevel(){
+        return array(0=>'Négligée','Moyenne', 'Bonne','Excellent');
     }
     
     
