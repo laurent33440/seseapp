@@ -45,7 +45,7 @@
                                                 <td> 
                                                      <span class=\"glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span>
                                                     $skillName"
-                                                    ."<select name =\"_results##$skillName#$skillName#$skillName\">";
+                                                    ."<select name =\"_professionalResults##$skillName#$skillName\">";
                                                     foreach ($levels as $levelCode => $levelName) {
                                                         echo"<option value=\"$levelCode\">$levelName</option>";
                                                     }
@@ -97,7 +97,7 @@
                                                     </select> 
                                                     Autonomie
                                                     <select name=\"_autonomyResults##$activityName#$skillName\">";
-                                                    foreach(form_val_autonomyList as $autonomyCode => $autonomyName){
+                                                    foreach(form_val_autonomyList[$skillName] as $autonomyCode => $autonomyName){
                                                         echo"<option value=\"$autonomyCode\">$autonomyName</option>";
                                                     }
                                                     echo"

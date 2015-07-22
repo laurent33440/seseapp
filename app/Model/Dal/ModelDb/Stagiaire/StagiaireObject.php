@@ -34,4 +34,6 @@ class StagiaireObject {
     public $sta_affiliation;
     public $id_promotion; //FrK
     public $id_enseignant; //FrK
+    
+    public $foreignKeyList = array('Activite_et_visite'=>'id_stagiaire', 'Attitude_professionnelle_evaluee'=>'id_stagiaire', 'Competences_evaluees'=>'id_stagiaire');
 }

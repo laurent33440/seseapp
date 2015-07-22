@@ -21,6 +21,7 @@ class Stage_definiQueryProvider implements IQueryProvider{
         return "Insert into Stage_defini (
                                          stgdef_est_ouvrable ,
                                          stgdef_status ,
+                                         stgdef_est_evalue,
                                          stgdef_commentaire_tuteur ,
                                          id_collaborateur ,
                                          id_stage ,
@@ -30,6 +31,7 @@ class Stage_definiQueryProvider implements IQueryProvider{
                           values(
                                         :stgdef_est_ouvrable,
                                         :stgdef_status,
+                                        :stgdef_est_evalue,
                                         :stgdef_commentaire_tuteur,
                                         :id_collaborateur,
                                         :id_stage,
@@ -57,6 +59,7 @@ class Stage_definiQueryProvider implements IQueryProvider{
         return "update Stage_defini set    
                                         stgdef_est_ouvrable=:stgdef_est_ouvrable,
                                         stgdef_status=:stgdef_status,
+                                        stgdef_est_evalue=:stgdef_est_evalue,
                                         stgdef_commentaire_tuteur=:stgdef_commentaire_tuteur,
                                         id_collaborateur=:id_collaborateur,
                                         id_stage=:id_stage,

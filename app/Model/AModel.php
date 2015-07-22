@@ -9,6 +9,7 @@ namespace Model;
 
 use ReflectionClass;
 use ReflectionProperty;
+use Model\Dal\DbLibrary\DataAccess;
 
 /**
  * Description of Model
@@ -85,6 +86,7 @@ abstract class AModel {
         }
         return true;
     }
+   
    
 /**
      * 
@@ -166,6 +168,22 @@ abstract class AModel {
      */
     public function getClassVarsPlaceHolder(){
         return array_fill(0, count($this->getClassVars()), '');
+    }
+    
+    
+    /**
+     * get all ref_code=>ref_libelle for a given ref_type
+     * @param type $typeRef : key to access all references for this 
+     * @return array ref_code=>ref_libelle
+     */
+    protected function getReferenceDb($typeRef){
+        $coll = new DataAccess('Reference');
+        $all=$coll->GetAllByColumnValue('ref_type', $typeRef);
+        $l=array();
+        foreach ($all as $ref) {
+            $l[$ref->ref_code]= $ref->ref_libelle;
+        }
+        return $l;
     }
     
     /**

@@ -22,4 +22,10 @@ class Referentiel_de_formationObject {
     public $rdf_descriptif;
     public $rdf_duree_formation;
     public $rdf_nombre_jours_stage;
+    
+    public $foreignKeyList = array('Activite'=>'id_referentiel_de_formation',
+                                        'Documents_reference'=>'id_referentiel_de_formation',
+                                        'Stage'=>'id_referentiel_de_formation',
+                                    'Promotion'=>'id_referentiel_de_formation');
+
 }

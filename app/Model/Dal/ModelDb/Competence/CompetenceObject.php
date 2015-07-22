@@ -23,4 +23,6 @@ class CompetenceObject {
     public $comp_est_evaluee;
     public $comp_niveau_competence;
     public $comp_niveau_autonomie;
+    
+    public $foreignKeyList = array('Constituer'=>'id_competence');
 }

@@ -6,16 +6,16 @@
  * and open the template in the editor.
  */
 
-namespace Model\Dal\ModelDb\Fonction;
+namespace Model\Dal\ModelDb\Reference;
 
 /**
- * Description of FonctionObject
+ * Description of ReferenceObject
  *
  * @author laurent
  */
-class FonctionObject {
-    public $id_fonction;
-    public $f_description;
-    
-    public $foreignKeyList = array('Activite'=>'id_fonction');
+class ReferenceObject {
+    public $id_reference;
+    public $ref_type;
+    public $ref_code;
+    public $ref_libelle;
 }

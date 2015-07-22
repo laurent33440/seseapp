@@ -21,18 +21,20 @@ class Attitude_professionnelle_evalueeQueryProvider implements IQueryProvider{
         return "Insert into Attitude_professionnelle_evaluee (
                                         
                                         aproeva_critere,
-                                        aproeva_choix
+                                        aproeva_choix,
+                                        id_stagiaire
                                          )
                                       
                           values(
                                         
                                         :aproeva_critere,
-                                        :aproeva_choix
+                                        :aproeva_choix,
+                                        :id_stagiaire
                 )";
     }
 
     static function SelectByIDQuery(){
-        return "Select * from Attitude_professionnelle_evaluee where attitude_professionnelle_evaluee=:attitude_professionnelle_evaluee ";
+        return "Select * from Attitude_professionnelle_evaluee where id_attitude_professionnelle_evaluee=:id_attitude_professionnelle_evaluee ";
     }
 
     static function SelectByValueQuery($column){
@@ -44,18 +46,19 @@ class Attitude_professionnelle_evalueeQueryProvider implements IQueryProvider{
     }
 
     static function SelectIDQuery(){
-        return "Select max(attitude_professionnelle_evaluee) from Attitude_professionnelle_evaluee";
+        return "Select max(id_attitude_professionnelle_evaluee) from Attitude_professionnelle_evaluee";
     }
 
     static function UpdateQuery(){
         return "update Attitude_professionnelle_evaluee set    
                                         
                                         aproeva_critere=:aproeva_critere,
-                                        aproeva_choix=:aproeva_choix
-                                    where attitude_professionnelle_evaluee=:attitude_professionnelle_evaluee ";
+                                        aproeva_choix=:aproeva_choix,
+                                        id_stagiaire=:id_stagiaire
+                                    where id_attitude_professionnelle_evaluee=:id_attitude_professionnelle_evaluee ";
     }
 
     static function DeleteQuery(){
-        return "delete from Attitude_professionnelle_evaluee where attitude_professionnelle_evaluee=:attitude_professionnelle_evaluee";
+        return "delete from Attitude_professionnelle_evaluee where id_attitude_professionnelle_evaluee=:id_attitude_professionnelle_evaluee";
     }
 }

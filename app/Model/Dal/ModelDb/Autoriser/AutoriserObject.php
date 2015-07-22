@@ -17,4 +17,6 @@ class AutoriserObject {
     public $id_groupe;
     public $id_page;
     public $type_droit;
+    
+    public $foreignKeyList = array('Groupe'=>'id_groupe');
 }

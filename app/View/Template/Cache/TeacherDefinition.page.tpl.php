@@ -162,7 +162,7 @@
                     echo"
                     <select class=\"form-control\" name=\"_teachersList\" id=\"teacherChoosenForUpdate\">";
                         foreach ($this->_arrayParamslist[0] as $idTeacher => $teacher) {
-                            if(21 === $idTeacher){//select current teacher
+                            if(23 === $idTeacher){//select current teacher
                                 $select= 'selected="selected"';
                             }else{
                                 $select= '';
@@ -216,7 +216,7 @@
             
             <!-- optionnal form panel creating/updating teacher.  -->
             <?php 
-            if(0==true){
+            if(1==true){
                 echo"
                 <div class=\"panel panel-default\">
                     <div class=\"panel-heading\">
@@ -247,7 +247,7 @@
                                 <input type=\"text\" required class=\"form-control\" id=\"inputAdminName\" 
                                        name=\"_teacherLastName\" 
                                        placeholder=\"Nom de l'enseignant\"
-                                       value=\"zola\">
+                                       value=\"authier\">
                             </div>
                         </div>
                         <div class=\"form-group\">
@@ -256,7 +256,7 @@
                                 <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass\" 
                                        name=\"_teacherFirstName\"
                                        placeholder=\"Prénom de l'enseignant\"
-                                       value=\"emile\">
+                                       value=\"laurent\">
                             </div>
                         </div>
                         <div class=\"form-group\">
@@ -265,7 +265,7 @@
                                 <input type=\"mail\" required class=\"form-control\" id=\"inputAdminPass2\" 
                                        name=\"_teacherMail\" 
                                        placeholder=\"\"
-                                       value=\"laurentauthier@voila.fr\">
+                                       value=\"lolo@ici.fr\">
                             </div>
                         </div>
                         <div class=\"form-group\">
@@ -274,7 +274,7 @@
                                 <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass2\" 
                                        name=\"_teacherSkill\" 
                                        placeholder=\"Discipline de l'enseignant\"
-                                       value=\"français\">
+                                       value=\"electronique\">
                             </div>
                         </div>
 

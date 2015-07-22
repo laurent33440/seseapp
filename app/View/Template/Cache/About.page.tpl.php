@@ -89,7 +89,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        l : enseignant<span class="caret"></span>
+                        lolo : administrateur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -507,7 +507,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/administrateur',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -530,7 +530,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/administrateur',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

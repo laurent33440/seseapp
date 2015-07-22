@@ -150,7 +150,7 @@
                             <h3 class="panel-title">Informations générales</h3>
                         </div>
                         <div class="panel-body">
-                            lundi 20 juillet 2015 
+                            mercredi 22 juillet 2015 
                         </div>
                     </div>
                 </div>

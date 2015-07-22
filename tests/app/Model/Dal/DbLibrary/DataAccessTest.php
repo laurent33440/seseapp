@@ -86,7 +86,7 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
         $teacher->ens_mel_enseignant = 'superlaurent@moi.org';
         $teacher->ens_discipline = 'super programmation';
         $this->object->Update($teacher);
-        
+
 //        $this->markTestIncomplete(
 //                'This test has not been implemented yet.'
 //        );
@@ -143,9 +143,17 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
     public function testGetByColumnValue() {
         $this->object = new DataAccess('Enseignant');
         $var = 'superlaurent@moi.org';
-        $r=$this->object->GetByColumnValue('ens_mel_enseignant', $var);
+        $r = $this->object->GetByColumnValue('ens_mel_enseignant', $var);
         //var_dump($r);
         $this->assertNotFalse($r);
+    }
+    
+    public function testGetByColumnValue_nullValue() {
+        $this->object = new DataAccess('Enseignant');
+        $var = null;
+        $r = $this->object->GetByColumnValue('ens_mel_enseignant', $var);
+        //var_dump($r);
+        $this->assertFalse($r);
     }
 
     /**
@@ -158,5 +166,32 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
                 'This test has not been implemented yet.'
         );
     }
+    
+    
+    public function testIsValidForeignKey(){
+        $this->object = new DataAccess('Fonction');
+        $all = $this->object->GetAll();
+        $this->assertTrue($this->object->isValidForeignKey($all[0]));
+        //fonction non liée à une autre table
+        $this->assertFalse($this->object->isValidForeignKey(end($all)));
+
+    }
+    
+    public function testXXX(){
+        $ct=new b();
+        $this->assertEquals('toto', $ct->t);
+        $this->assertEquals('titi', $ct->u);
+    }
 
 }
+
+class a{
+    public $t='toto';
+}
+
+class b extends a{
+    public $u='titi';
+    
+    
+}
+

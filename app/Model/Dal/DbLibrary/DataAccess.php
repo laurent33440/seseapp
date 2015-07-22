@@ -3,7 +3,8 @@
 namespace Model\Dal\DbLibrary;
 
 use Model\Persistant\PdoCrud;
-//use Bootstrap;
+use ReflectionClass;
+use ReflectionProperty;
 
         
 /**
@@ -81,13 +82,23 @@ class DataAccess{
         $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item) );
     }
 
+    /**
+     * Delete Row
+     * @param type $item object table
+     * @return boolean TRUE if DELETED, FALSE else if foreign key not null
+     */
     public function Delete($item){
-        //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
-        //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::DeleteQuery"));
-        //Exécution de la query
-        $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowDelete",$item));
+        if($this->isValidForeignKey($item)){
+            return FALSE;
+        }else{
+            //Ouverture de connexion  
+            $dbh = $this::GetDbAccess();
+            //Préparation de la query
+            $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::DeleteQuery"));
+            //Exécution de la query
+            $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowDelete",$item));
+            return TRUE;
+        }
     }
 
     public function GetAll(){
@@ -201,6 +212,22 @@ class DataAccess{
         }
         // empty array if not found
         return $retval; 
+    }
+    
+    /**
+     * Check if foreign key is used in table given
+     * @param type $obj
+     * @return boolean
+     */
+    public function isValidForeignKey($obj){
+        $list = $obj->foreignKeyList;
+        foreach($list as $table=>$key){
+            $c=new DataAccess($table);
+            if($c->GetByColumnValue($key, $obj->$key) != null){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

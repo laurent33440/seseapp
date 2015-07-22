@@ -24,5 +24,6 @@ class Activite_et_visiteObject {
     public $id_enseignant;
     public $id_stagiaire;
     
+    public $foreignKeyList = array('Stagiaire'=>'id_stagiare', 'Enseignant'=>'id_enseignant');
     
 }

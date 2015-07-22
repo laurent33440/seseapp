@@ -190,6 +190,7 @@
                                         <tr>
                                             <td> 
                                                 $trainee
+                                                    <a href=\"#\"><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span></a>
                                             </td>";
                                     foreach ($infos as $period=>$teacher){
                                         echo"
@@ -199,6 +200,7 @@
                                             </td>
                                             <td>
                                                 $teacher
+                                                    <a href=\"tuteur/contact\"><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span></a>
                                             </td>
                                                     
                                         </tr>

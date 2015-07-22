@@ -159,10 +159,10 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">Erreur d'authentification</h4> 
+            <h4 class="modal-title" id="myModalLabel">MODAL_TITLE</h4> 
           </div> 
           <div class="modal-body"> 
-            <h3>Vérifiez votre identifiant et/ou votre mot de passe </h3> 
+            <h3>MODAL_MESSAGE</h3> 
           </div> 
           <div class="modal-footer"> 
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button> 
@@ -185,7 +185,7 @@
     <script src="<?php echo'/bootstrap-3.2.0-dist/js/bootstrap.min.js'; ?>"></script>
     
      <!-- trigg modal -->
-        <?php if ( true ) echo'
+        <?php if ( false ) echo'
             <script> $(\'#basicModal\').modal({\'show\' : true, \'backdrop\' : false}); </script>
         '; ?>
         
@@ -197,7 +197,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -220,7 +220,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

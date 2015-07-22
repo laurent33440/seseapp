@@ -16,4 +16,6 @@ namespace Model\Dal\ModelDb\Page;
 class PageObject {
     public $id_page;
     public $pge_nom_page;
+    
+    public $foreignKeyList = array('Page'=>'id_page');
 }

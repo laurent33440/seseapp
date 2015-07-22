@@ -16,8 +16,11 @@ class Stage_definiObject {
     public $id_stage_defini;
     public $stgdef_est_ouvrable;
     public $stgdef_status_stage;
+    public $stgdef_est_evalue;
     public $stgdef_commentaire_tuteur;
     public $id_collaborateur;
     public $id_stage;
     public $id_enseignant;
+    
+    
 }

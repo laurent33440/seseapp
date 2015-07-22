@@ -17,6 +17,9 @@ class TutorEvaluateSkillTraineeModelTest extends \PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
+        $user = \UserConnected::getInstance();
+        $user->setUserName('t@t');
+        $user->setUserGroup('t@t');
         $this->object = new TutorEvaluateSkillTraineeModel;
     }
 
@@ -66,12 +69,22 @@ class TutorEvaluateSkillTraineeModelTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testAppend().
      */
     public function testAppend() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->buildTraineeList();
+        $al=$this->object->get_traineeList();
+        $this->object->set_traineeName(reset($al));
+        $this->object->append();
+        
     }
 
+    public function testisTraineeEvaluated(){
+        $this->assertTrue($this->object->isTraineeEvaluated(5));
+    }
+    
+    public function testgetReorderedList(){
+        $l = array(0=>'b','c','d','a');
+        $this->assertEquals(array('a', 'b','c','d'), $this->object->getReorderedList(3, $l));
+    }
+    
     /**
      * @covers Model\TutorEvaluateSkillTraineeModel::deleteFromId
      * @todo   Implement testDeleteFromId().
@@ -100,7 +113,7 @@ class TutorEvaluateSkillTraineeModelTest extends \PHPUnit_Framework_TestCase {
      */
     public function testGetAll() {
         $this->object->getAll();
-        var_dump($this->object->get_functionList());
+        //var_dump($this->object->get_functionList());
     }
 
     /**
@@ -130,10 +143,8 @@ class TutorEvaluateSkillTraineeModelTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testBuildFunctionlist().
      */
     public function testBuildFunctionlist() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->buildFunctionlist(5);
+       var_dump($this->object->get_functionList());
     }
 
     /**

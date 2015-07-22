@@ -21,10 +21,11 @@ class Attitude_professionnelle_evalueeMappingProvider implements IMappingProvide
         $item->id_attitude_professionnelle_evaluee= $row['id_attitude_professionnelle_evaluee'];
         $item->aproeva_critere= $row['aproeva_critere'];
         $item->aproeva_choix= $row['aproeva_choix'];
+        $item->id_stagiaire = $row['id_stagiaire'];
     }
 
     static function MapToRowGetByID( $id ){
-        $retval [':id_attitude_professionnelle_evaluee_evaluee']=$id;
+        $retval [':id_attitude_professionnelle_evaluee']=$id;
         return $retval;
     }
     
@@ -36,6 +37,7 @@ class Attitude_professionnelle_evalueeMappingProvider implements IMappingProvide
     Static function MapToRowInsert($item){
         $retval[':aproeva_critere']=$item->aproeva_critere;
         $retval[':aproeva_choix']=$item->aproeva_choix;
+        $retval[':id_stagiaire']=$item->id_stagiaire;
         return $retval;
     }
 
@@ -43,6 +45,7 @@ class Attitude_professionnelle_evalueeMappingProvider implements IMappingProvide
         $retval[':id_attitude_professionnelle_evaluee']=$item->id_attitude_professionnelle_evaluee;
         $retval[':aproeva_critere']=$item->aproeva_critere;
         $retval[':aproeva_choix']=$item->aproeva_choix;
+        $retval[':id_stagiaire']=$item->id_stagiaire;
         return $retval;
     }
 

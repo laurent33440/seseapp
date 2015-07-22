@@ -16,4 +16,6 @@ namespace Model\Dal\ModelDb\Groupe;
 class GroupeObject {
     public $id_groupe;
     public $grp_nom_groupe;
+    
+    public $foreignKeyList = array('Utilisateurs'=>'id_groupe', 'Autoriser'=>'id_groupe');
 }
