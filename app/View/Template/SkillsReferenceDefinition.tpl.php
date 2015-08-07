@@ -31,7 +31,7 @@
                                         <td>
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
-                                              id=\"skillReference#$idSkill\"
+                                              id=\"_skillsReferencesList#$idSkill\"
                                               name=\"form_skillsReferencesList##$idSkill\"
                                               placeholder=\"Entrez la référence de la compétence\"
                                               value=\"".form_val_skillsReferencesList[$idSkill]."\"
@@ -41,7 +41,7 @@
                                         <td>
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
-                                                id=\"skillDescription#$idSkill\"
+                                                id=\"_skillsDescriptionsList#$idSkill\"
                                                 name=\"form_skillsDescriptionsList##$idSkill\"
                                                 placeholder=\"Entrez le descriptif de la compétence\"
                                                 value = \"$skill\"
@@ -83,7 +83,7 @@
                                                                     <tr>
                                                                         <td>
                                                                             <div class=\"input-group\">
-                                                                              <select class=\"form-control\" name=\"form_bindedActivitiesLists##$idSkill#$idSkill\" id=\"activityChoosenForSkill#$idSkill\">
+                                                                              <select class=\"form-control\" name=\"form_bindedActivitiesLists##$idSkill#$idSkill\" id=\"activityChoosenForSkill#$idSkill#$activityId\">
                                                                                 ";
                                                                                 foreach (form_val_activitiesList as $selectedActivityId => $activity) { //list all activities available
                                                                                     if($selectedActivityId===$activityId){// find binded activity in list

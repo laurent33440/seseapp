@@ -66,10 +66,6 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
         $teacher->ens_mel_enseignant = 'laurent@moi.org';
         $teacher->ens_discipline = 'programmation';
         $this->object->Insert($teacher);
-        // Remove the following lines when you implement this test.
-//        $this->markTestIncomplete(
-//                'This test has not been implemented yet.'
-//        );
     }
 
     /**
@@ -78,18 +74,48 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
      */
     public function testUpdate() {
         $this->object = new DataAccess('Enseignant');
-        $all = $this->object->GetAll();
-        $teacher = end($all);
-        //var_dump($teacher);
-        $teacher->ens_prenom_enseignant = 'super laurent';
-        $teacher->ens_nom_enseignant = 'super authier';
+        //$teacher = $this->object->GetAll();
+        //$teacher = end($all);
+        $teacher = $this->object->GetByColumnValue('ens_nom_enseignant', 'authier');
+        $id = $teacher->id_enseignant;
+        $teacher->ens_prenom_enseignant = 'super laurent 2015';
+        $teacher->ens_nom_enseignant = 'mon nom';
         $teacher->ens_mel_enseignant = 'superlaurent@moi.org';
-        $teacher->ens_discipline = 'super programmation';
+        $teacher->ens_discipline = 'xxxxxxxxx';
         $this->object->Update($teacher);
+        $t = $this->object->GetByID($id);
+        $this->assertEquals('super laurent 2015',$t->ens_prenom_enseignant );
+    }
+    
+    
+    /**
+     * Update table avec clés composites
+     * @covers Model\Dal\DbLibrary\DataAccess::Update
+     * @depends testInsert
+     */
+    public function testUpdateWithSelector() {
+        $this->object = new DataAccess('Constituer');
+        $link= $this->object->GetByCompositeKeys(array('id_competence'=>910, 'id_activite'=>419));
+        $this->assertNotFalse($link);
+        $selector= array('id_competence_old'=>910,'id_activite_old'=>419);
+        $link->id_activite = 418;
+        $this->assertNotFalse($this->object->UpdateWithSelector($link,$selector));
+        $this->assertNotFalse($link= $this->object->GetByCompositeKeys((array('id_competence'=>910, 'id_activite'=>418))));
+    }
+    
+    /**
+     * @covers Model\Dal\DbLibrary\DataAccess::Update
+     * @depends testInsert
+     */
+    public function testUpdate4() {
+        $this->object = new DataAccess('Promotion');
+        $item = $this->object->GetByID(3);
+        //var_dump($item);
+        $item->pro_reference_promotion= 'SUPER SEN';
+//        
+      
+        $this->object->Update($item);
 
-//        $this->markTestIncomplete(
-//                'This test has not been implemented yet.'
-//        );
     }
 
     /**
@@ -97,10 +123,10 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testDelete().
      */
     public function testDelete() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object = new DataAccess('Enseignant');
+        $all=$teacher = $this->object->GetAll();
+        $teacher = end($all);
+        $this->object->Delete($teacher);
     }
 
     /**
@@ -141,7 +167,7 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
      * @depends testUpdate
      */
     public function testGetByColumnValue() {
-        $this->object = new DataAccess('Enseignant');
+        $this->object = new DataAccess('Enseignant'); 
         $var = 'superlaurent@moi.org';
         $r = $this->object->GetByColumnValue('ens_mel_enseignant', $var);
         //var_dump($r);

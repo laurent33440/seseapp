@@ -98,21 +98,21 @@ class PromotionModel extends AModel implements IModel{
     }
 
     public function update($property, $val, $id) {
-        //
+        $collection = new DataAccess('Promotion');
+        $promotion=$collection->GetByID($id);
+        switch ($property){
+            case '_references':
+                $promotion->pro_reference_promotion = $val;
+                $collection->Update($promotion);
+                break;
+            case '_descriptions':
+                $promotion->pro_nom_promotion = $val;
+                $collection->Update($promotion);
+                break;
+            default:
+                \Logger::getInstance()->logError(__CLASS__.'::'.__METHOD__.'::'.__LINE__.' property unknown : '.$property.' with val : '.$val);
+                return;
+        }
     }
-    
-    /**
-     * UNUSED
-     * Update promotion in data base
-     * @param type $ref
-     * @param type $description
-     */
-//    public function updatePromotion($ref, $description){
-//        $collection = new DataAccess('Promotion');
-//        $promotion=$collection->GetByColumnValue('pro_reference_promotion',$ref);
-//        $promotion->pro_reference_promotion = $ref;
-//        $promotion->pro_nom_promotion = $description;
-//        $collection->Update($promotion);
-//    }
     
 }

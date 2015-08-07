@@ -56,7 +56,7 @@ class StageQueryProvider implements IQueryProvider{
                                         stg_date_debut=:stg_date_debut,
                                         stg_date_fin=:stg_date_fin,
                                         stg_annee=:stg_annee,
-                                        id_referentiel_de_formation=:id_referentiel_de_formation,
+                                        id_referentiel_de_formation=:id_referentiel_de_formation
                                     where id_stage=:id_stage";
     }
 

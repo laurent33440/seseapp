@@ -163,25 +163,25 @@
                             <div class="form-group">
                                 <label for="inputTxt1" class="control-label col-xs-2">Nom de la formation</label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminName" 
+                                    <input type="text" required class="form-control" id="<?php echo'_trainingName'; ?>" 
                                            name="<?php echo'_trainingName'; ?>" 
                                            placeholder=""
-                                           value="<?php echo'Bac Pro SEN'; ?>">
+                                           value="<?php echo'Systèmes électroniques numériques'; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputTxt2" class="control-label col-xs-2">Domaine de formation</label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass" 
+                                    <input type="text" required class="form-control" id="<?php echo'_trainingDomain'; ?>" 
                                            name="<?php echo'_trainingDomain'; ?>" 
                                            placeholder=""
-                                           value="<?php echo'système electronique'; ?>">
+                                           value="<?php echo'Electronique, réseaux informatiques'; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputTxt3" class="control-label col-xs-2"> Référence du référentiel </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="<?php echo'_referentialReference'; ?>" 
                                            name="<?php echo'_referentialReference'; ?>" 
                                            placeholder=""
                                            value="<?php echo'SEN'; ?>">
@@ -190,34 +190,34 @@
                             <div class="form-group">
                                 <label for="inputTxt4" class="control-label col-xs-2">Nom du référentiel </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="<?php echo'_referencialName'; ?>" 
                                            name="<?php echo'_referencialName'; ?>" 
                                            placeholder=""
-                                           value="<?php echo'SEN'; ?>">
+                                           value="<?php echo'Systèmes électroniques numériques'; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputTxt5" class="control-label col-xs-2">Descriptif sommaire du référentiel </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="<?php echo'_referentialSpecification'; ?>" 
                                            name="<?php echo'_referentialSpecification'; ?>" 
                                            placeholder=""
-                                           value="<?php echo'SEN ....'; ?>">
+                                           value="<?php echo'Electronique, réseaux informatiques'; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputTxt6" class="control-label col-xs-2">Durée de la formation en mois </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="<?php echo'_trainingTime'; ?>" 
                                            name="<?php echo'_trainingTime'; ?>" 
                                            placeholder=""
-                                           value="<?php echo'3'; ?>">
+                                           value="<?php echo'27'; ?>">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputTxt7" class="control-label col-xs-2">Durée totale des stages en jour(s) </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="<?php echo'_internshipDuration'; ?>" 
                                            name="<?php echo'_internshipDuration'; ?>" 
                                            placeholder=""
                                            value="<?php echo'110'; ?>">
@@ -266,7 +266,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -301,23 +301,25 @@
         
  <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'blur',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/referentiel',
+                   data:{       
+                           AJAX_UPDATE:'texte_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
@@ -325,12 +327,14 @@
     <!-- Script for select input(s) changes -->
     <script type="text/javascript">
         $("select").change(function(){
-               console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
+               console.log(id);
+               console.log(val);
                $.ajax({
-                   url:'/index.php/administrateur',
-                   data:{       AJAX_UPDATE:'document_change',
+                   url:'/index.php/administrateur/referentiel',
+                   data:{       
+                           AJAX_UPDATE:'document_change',
                            AJAX_ID:id,
                            AJAX_VAL:val
                    },
@@ -346,6 +350,31 @@
                });
        });       
        
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/referentiel',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
+       });       
               
     </script>
     

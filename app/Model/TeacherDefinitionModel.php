@@ -229,6 +229,14 @@ class TeacherDefinitionModel extends AModel implements IModel{
      * @param type $id : optionnal 
      */
     public function update($property, $val, $id=null) {
+        if($property === '_teachersList'){
+            
+        }
+        $this->{'set'.$property}($val);//set a property of model
+        $this->selectTeacher($this->_teacherId);//select teacher from current id 
+    }
+    
+    public function update_old($property, $val, $id=null) {
         $this->{'set'.$property}($val);//set a property of model
         $this->selectTeacher($this->_teacherId);//select teacher from current id 
     }

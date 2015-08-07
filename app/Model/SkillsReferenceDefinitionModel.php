@@ -139,10 +139,34 @@ class SkillsReferenceDefinitionModel extends AModel implements IModel{
     }
 
     public function update($property, $val, $id) {
-        
+//        \Logger::getInstance()->logDebug(__CLASS__.' AJAX datas -> property : '.$property.' val : '.$val);
+        switch($property){
+            case '_skillsReferencesList':
+                $c = new DataAccess('Competence');
+                $item = $c->GetByID($id);
+                $item->comp_ref_competence = $val;
+                $c->Update($item);
+                break;
+            case '_skillsDescriptionsList':
+                $c = new DataAccess('Competence');
+                $item = $c->GetByID($id);
+                $item->comp_descriptif_competence =$val;
+                $c->Update($item);
+                break;
+            case 'activityChoosenForSkill':
+                $collection = new DataAccess('Constituer');
+                $link= $collection->GetByCompositeKeys(array('id_competence'=>$id['skillId'], 'id_activite'=>$id['idActivityToUpdate']));
+//                \Logger::getInstance()->logDebug(__CLASS__.' LINKS AVANT: '.  print_r($link,true));
+                $link->id_activite = $val;
+                $collection->Update($link);
+//                \Logger::getInstance()->logDebug(__CLASS__.' LINKS APRES: '.  print_r($link,true));
+                break;
+            default :
+                \Logger::getInstance()->logError(__CLASS__.'::'.__METHOD__.'-'.__LINE__.' property unknown : '.$property.' with val : '.$val);
+                return;
+        }
     }
 
-    
     /**
      * return list of activities description available to view part
      */

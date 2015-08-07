@@ -19,9 +19,9 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Dénomination du stage</th>
-                                    <th class="active">Date de début de stage</th>
-                                    <th class="active">Date de fin de stage</th>
+                                    <th style="width:40%" class="active">Dénomination du stage</th>
+                                    <th style="width:20%" class="active">Date de début de stage</th>
+                                    <th style="width:20%" class="active">Date de fin de stage</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,7 +31,7 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"workDateName#$work\"
+                                                  id=\"_workDateName#$idWork\"
                                                   name=\"form_workDateName##$idWork\"
                                                   placeholder=\"Entrez la dénomination de la période de stage\"
                                                   value = \"$work\">
@@ -40,7 +40,7 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
-                                                  id=\"dateOn#$work\"
+                                                  id=\"_dateOn#$idWork\"
                                                   name=\"form_dateOn##$idWork\"
                                                   placeholder=\"Entrez la date de début de stage\"
                                                   value = \"".form_val_dateOn[$idWork]."\">
@@ -49,7 +49,7 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
-                                                  id=\"dateOff#$work\"
+                                                  id=\"_dateOff#$idWork\"
                                                   name=\"form_dateOff##$idWork\"
                                                   placeholder=\"Entrez la date de fin de stage\"
                                                   value = \"".form_val_dateOff[$idWork]."\">

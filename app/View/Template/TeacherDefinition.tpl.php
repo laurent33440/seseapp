@@ -19,7 +19,7 @@
                 <div class="panel-body">
                     <?php 
                     echo"
-                    <select class=\"form-control\" name=\"form_teachersList\" id=\"teacherChoosenForUpdate\">";
+                    <select class=\"form-control\" name=\"form_teachersList\" id=\"_teachersList\">";
                         foreach (form_val_teachersList as $idTeacher => $teacher) {
                             if(form_val_teacherId === $idTeacher){//select current teacher
                                 $select= 'selected="selected"';
@@ -88,7 +88,7 @@
                             </div>
                             <div class=\"panel-body\">
 
-                                <select class=\"form-control\" name=\"form_promotionsList\" id=\"promotionChoosenForUpdate\">";
+                                <select class=\"form-control\" name=\"form_promotionsList\" id=\"_promotionsList\">";
                                     foreach (form_val_promotionsList as $idPromotion => $promotion) {
                                         echo"
                                             <option value=\"$idPromotion\">$promotion </option>
@@ -103,7 +103,7 @@
                         <div class=\"form-group\">
                             <label for=\"inputAdminName\" class=\"control-label col-xs-2\">Nom de l'enseignant</label>
                             <div class=\"col-xs-10\">
-                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminName\" 
+                                <input type=\"text\" required class=\"form-control\" id=\"_teacherLastName\" 
                                        name=\"form_teacherLastName\" 
                                        placeholder=\"Nom de l'enseignant\"
                                        value=\"form_val_teacherLastName\">
@@ -112,7 +112,7 @@
                         <div class=\"form-group\">
                             <label for=\"inputAdminPass\" class=\"control-label col-xs-2\">Prénom de l'enseignant</label>
                             <div class=\"col-xs-10\">
-                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass\" 
+                                <input type=\"text\" required class=\"form-control\" id=\"_teacherFirstName\" 
                                        name=\"form_teacherFirstName\"
                                        placeholder=\"Prénom de l'enseignant\"
                                        value=\"form_val_teacherFirstName\">
@@ -121,7 +121,7 @@
                         <div class=\"form-group\">
                             <label for=\"inputAdminPass2\" class=\"control-label col-xs-2\">Mél de l'enseignant </label>
                             <div class=\"col-xs-10\">
-                                <input type=\"mail\" required class=\"form-control\" id=\"inputAdminPass2\" 
+                                <input type=\"mail\" required class=\"form-control\" id=\"_teacherMail\" 
                                        name=\"form_teacherMail\" 
                                        placeholder=\"\"
                                        value=\"form_val_teacherMail\">
@@ -130,7 +130,7 @@
                         <div class=\"form-group\">
                             <label for=\"inputAdminPass2\" class=\"control-label col-xs-2\">Discipline de l'enseignant </label>
                             <div class=\"col-xs-10\">
-                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass2\" 
+                                <input type=\"text\" required class=\"form-control\" id=\"_teacherSkill\" 
                                        name=\"form_teacherSkill\" 
                                        placeholder=\"Discipline de l'enseignant\"
                                        value=\"form_val_teacherSkill\">
@@ -167,7 +167,7 @@
                             </div>
                             <div class=\"panel-body\">
 
-                                <select class=\"form-control\" name=\"form_formatImportList\" id=\"formatImportList\">";
+                                <select class=\"form-control\" name=\"form_formatImportList\" id=\"_formatImportList\">";
                                     foreach (form_val_formatImportList as  $format) {
                                         echo"
                                             <option value=\"$format\">$format </option>
@@ -180,7 +180,7 @@
                         </div>
 
                         <div class=\"col-md-12\">
-                            <button class=\"btn btn-success btn-block\" name=\"BUTTON_CHOOSE_IMPORT_TEACHER\" id=\"addFunction\" type=\"submit\">
+                            <button class=\"btn btn-success btn-block\" name=\"BUTTON_CHOOSE_IMPORT_TEACHER\" id=\"addFunction\" type=\"file\">
                                 <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                 Choisir le fichier à importer
                             </button>

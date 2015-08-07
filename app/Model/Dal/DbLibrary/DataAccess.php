@@ -3,8 +3,6 @@
 namespace Model\Dal\DbLibrary;
 
 use Model\Persistant\PdoCrud;
-use ReflectionClass;
-use ReflectionProperty;
 
         
 /**
@@ -22,6 +20,8 @@ class DataAccess{
     private $MappingProvider;	//la classe MappingProvider
     private $ModelName;		//le nom du modèle
     private $NameSpaceObjectDb; //l'espace de nom de la classe objet
+    
+//    private $savedObject=null;  //l'objet recherché est sauvé - cas ou le champ modifié (UPDATE) est dans la clause WHERE 
 
     public function __construct($modelName){       
         $this->ModelName=$modelName;
@@ -32,7 +32,6 @@ class DataAccess{
     }
 
     function __destruct(){
-        \Logger::getInstance()->logDebug( __CLASS__.' data base closed');
     }
 
     /**
@@ -45,11 +44,11 @@ class DataAccess{
             $srv= \Bootstrap::$_dbSrv;
             $user = \Bootstrap::$_dbUser;
             $pass= \Bootstrap::$_dbPass;
-            $dataBaseHandler = new PdoCrud($srv,$user ,$pass );
+            $dataBaseHandler = PdoCrud::getInstance($srv,$user ,$pass );
             $dbhPdo = $dataBaseHandler->connect(\Bootstrap::$_dbName);
             //save data base parameters
 //            $this->saveClassVarsValuesInSession('data_base'); // TODO : better handling needed
-            \Logger::getInstance()->logDebug( __CLASS__.' data base open');
+            //\Logger::getInstance()->logDebug( __CLASS__.' data base access');
             return $dbhPdo;
         }catch (Exception $e){
             \Logger::getInstance()->logFatal( __CLASS__.' exception');
@@ -77,10 +76,30 @@ class DataAccess{
         //Ouverture de connexion  
         $dbh = $this::GetDbAccess();
         //Préparation de la query
+        //var_dump(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQuery"));
         $sth = $dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQuery") );
         //Exécution de la query
-        $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item) );
+        //var_dump(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item));
+        return $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item) );
     }
+    
+    /**
+     * 
+     * @param type $item
+     * @param array $selector
+     * @return type
+     */
+    public function UpdateWithSelector($item, array $selector){
+        //Ouverture de connexion  
+        $dbh = $this::GetDbAccess();
+        //Préparation de la query
+        //var_dump(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQuery"));
+        $sth = $dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQueryWithSelector") );
+        //Exécution de la query
+        //var_dump(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item));
+        return $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdateWithSelector", $item, $selector) );
+    }
+
 
     /**
      * Delete Row
@@ -160,6 +179,8 @@ class DataAccess{
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
             call_user_func( $this->NameSpaceObjectDb.$this->MappingProvider . "::MapFromRow", $result[0], $objectItem );
+            //on sauve l'objet d'origine
+            $this->savedObject = $objectItem;
             //on retourne l’objet
             return $objectItem;
         }
@@ -215,7 +236,7 @@ class DataAccess{
     }
     
     /**
-     * Check if foreign key is used in table given
+     * Check if foreign key is used in object table given
      * @param type $obj
      * @return boolean
      */

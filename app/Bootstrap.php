@@ -61,12 +61,13 @@ class Bootstrap {
       }
       
       //log
-      $log = Logger::getInstance();
+      $log = \Logger::getInstance();
       $log->setLogFile('log_sese_'.$session->getId().'_.txt', true); //append logs
-      //$log->setLogFile("log_sese.txt", !self::DEBUG_SESE); //erase log each run
-      //$log->setLogFile("log_sese.txt");
-      $log->setPriority(Logger::DEBUG);
+      $log->setPriority(Logger::INFO);
       $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");
+//      var_dump($log->getFile_handler());
+//      $log->logInfo( 'tests');
+//      die();
       
       // Route
       $mainRouter = new MainRouter();

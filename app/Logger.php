@@ -47,7 +47,7 @@ class Logger {
         private $log_file='UnameLogFile.txt';
         private $priority = Logger::INFO;
 
-        private $file_handle;
+        private $fileHandler=null;
 
         final private function __construct(){
             $this->MessageQueue = array();
@@ -62,13 +62,18 @@ class Logger {
         }
 
         final public function __destruct(){
-                if ( $this->file_handle )
-                        fclose( $this->file_handle );
-                if ($this->Log_Status === Logger::OPEN_FAILED && count($this->MessageQueue)>0)
-                    foreach ($this->MessageQueue as $msg)
-                        echo '</br>'.$msg;
+                if ( $this->fileHandler )
+                        fclose( $this->fileHandler );
+//                if ($this->Log_Status === Logger::OPEN_FAILED && count($this->MessageQueue)>0)
+//                    foreach ($this->MessageQueue as $msg)
+//                        echo '</br>'.$msg;
+        }
+        
+        public function getFile_handler() {
+            return $this->fileHandler;
         }
 
+        
         public function setLogFile($log_file, $append=true) {
             $this->log_file = $log_file;
             if ( file_exists( $this->log_file ) ){
@@ -83,7 +88,8 @@ class Logger {
                         }
                     }
             }
-            if ( $this->file_handle = fopen( $this->log_file , "a" ) ){
+            $this->fileHandler = fopen( $this->log_file , "a" );
+            if ($this->fileHandler != false ){
                     $this->Log_Status = Logger::LOG_OPEN;
                     $this->MessageQueue[] = "The log file was opened successfully.";
             }
@@ -126,7 +132,8 @@ class Logger {
 
         public function WriteFreeFormLine( $line ){
                 if ( $this->Log_Status == Logger::LOG_OPEN && $this->priority != Logger::OFF ){
-                    if (fwrite( $this->file_handle , $line ) === false) {
+                    //var_dump($this->fileHandler);
+                    if (fwrite( $this->fileHandler , $line ) === false) {
                         $this->Log_Status = Logger::OPEN_FAILED;
                         $this->MessageQueue[] = "The file could not be written to. Check that appropriate permissions have been set.";
                     }

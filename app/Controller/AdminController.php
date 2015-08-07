@@ -86,20 +86,28 @@ class AdminController extends AControllerState{
             $this->_model=new GeneralReferenceDefinitionModel();
             switch ($this->_state){ 
                 case self::IDLE :
+                    $this->_model->getAll();
                     $this->buildSendView();
                     $this->_state = self::RUNNING;
                     break;
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
-                        $this->computeGeneralReferentialDefinition($this->_request->request->all());
-                        $this->_state = self::STOPPED;
-                        //redirect to welcome admin page
-                        $this->redirectTo($this->_index);
+                        $this->_model->getAll();
+                        if(!$this->_request->isXmlHttpRequest()){ 
+                            $this->computeGeneralReferentialDefinition($this->_request->request->all());
+                            $this->_state = self::STOPPED;
+                            //redirect to welcome admin page
+                            $this->redirectTo($this->_index);
+                        }else{
+                            $this->computeXmlGeneralReferentialDefinition($this->_request->request->all());
+                        }
                     }else{//direct url access
+                        $this->_model->getAll();
                         $this->buildSendView();
                     }
                     break;
                 case self::STOPPED: 
+                    $this->_model->getAll();
                     $this->buildSendView();
                     $this->_state = self::RUNNING;
                     break;
@@ -123,14 +131,20 @@ class AdminController extends AControllerState{
     }
     
     public function buildSendView(){
-        //get values from model
-        $this->_model->getAll();
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
         $formArray['INDEX'] = $this->_index.'/referentiel';
         //var_dump($formArray);
         $this->buildBodyView($formArray);
+        $this->buildGeneralReferentialDefinitionFooterView();
         $this->sendModelView('GeneralReferenceDefinition');  
+    }
+    
+    public function buildGeneralReferentialDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/referentiel';
+        $this->_modelView['footer'] = $footer;
     }
     
     public function computeGeneralReferentialDefinition(array $datas){
@@ -139,7 +153,13 @@ class AdminController extends AControllerState{
         $this->_model->setClassVarsValues($params);
         $this->_model->append();
     }
-
+    
+    public function computeXmlGeneralReferentialDefinition(array $datas){
+        Logger::getInstance()->logDebug(__CLASS__.' AJAX : '.print_r($datas,true));
+        if(in_array('texte_change', $datas)){
+            $this->_model->update($datas['AJAX_ID'], $datas['AJAX_VAL']);
+        }
+    }
 
     ///////////// functions definitions methods
     
@@ -206,7 +226,15 @@ class AdminController extends AControllerState{
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildFonctionDefinitionFooterView();
         $this->sendModelView('FunctionReferentialDefinition');
+    }
+    
+    public function buildFonctionDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/fonction';
+        $this->_modelView['footer'] = $footer;
     }
     
     /**
@@ -233,7 +261,9 @@ class AdminController extends AControllerState{
         }else{
             if(array_key_exists($this->_BUTTONS_FUNCTIONS['BUTTON_DEL_FUNCTION'], $datas)){ //del button
                 $id = $datas[$this->_BUTTONS_FUNCTIONS['BUTTON_DEL_FUNCTION']];
-                $this->_model->deleteFromId($id); 
+                if(!$this->_model->deleteFromId($id)){
+                    $this->modalParameters = new ModalParameters('Impossible de supprimer cette fonction', 'Cette fonction est utilisé par une ou des activités déjà définies  ');
+                }
                 return true;
             }else{ //main submit all done
                 return false;
@@ -249,15 +279,10 @@ class AdminController extends AControllerState{
      * @return boolean
      */
     public function computeXmlHttpRequestFunctionDefinition(array $datas){
-        if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
-            $params = $datas['AJAX_ID'];
-            $val = $datas['AJAX_VAL'];
-            $params = explode('#',$params);
-            $property=$params[0];
-            $id= $params[1];
-            Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> property : '.$property.' val : '.$val.'  id : '.$id);
-            $this->_model->update($property, $val, $id);
-            return true;
+        Logger::getInstance()->logDebug(__CLASS__.' AJAX : '.print_r($datas,true));
+        if(in_array('texte_change', $datas)){
+            $params = explode('#', $datas['AJAX_ID']);
+            $this->_model->update($params[0], $datas['AJAX_VAL'], $params[1]);
         }
     }
     
@@ -335,6 +360,14 @@ class AdminController extends AControllerState{
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildActivityDefinitionFooterView();
+    }
+    
+    public function buildActivityDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/activite';
+        $this->_modelView['footer'] = $footer;
     }
     
     /**
@@ -367,7 +400,9 @@ class AdminController extends AControllerState{
                 $this->_model->getAll();//restore model
                 $id = $datas[$this->_BUTTONS_ACTIVITIES['BUTTON_DEL_ACTIVITY']];
                 \Logger::getInstance()->logDebug(__CLASS__.' DEL to model ->  id : '.  $id);
-                $this->_model->deleteFromId($id);
+                if(!$this->_model->deleteFromId($id)){
+                    $this->modalParameters = new ModalParameters('Impossible de supprimer cette activité', 'Cette activité est utilisé par une ou des compétences déjà définies  ');
+                }
                 return true;
             }else{//main submit all done
                 return false;
@@ -390,19 +425,7 @@ class AdminController extends AControllerState{
             $nameAndId = explode('#',$nameAndId);
             $name=$nameAndId[0];
             $id= $nameAndId[1];
-            switch ($name){
-                case 'activityDescription':
-                    $this->_model-> updateActivityDescription($val, $id); // FIXME update have to be generic see model
-                    break;
-                case 'activityReference':
-                    $this->_model-> updateActivityReference($val, $id);
-                    break;
-                case 'functionChoosenForActivity' :
-                    $this->_model->updateActivityFunction($val, $id);
-                    break;
-                default:
-                    break;
-            }
+            $this->_model->update($name, $val, $id);
             return true;
         }
         return false;
@@ -440,7 +463,7 @@ class AdminController extends AControllerState{
                                 $this->_redirect->send();
                             }
                         }else {//if AJAX, don't response to client -- controller still running
-                            $this->computeXmlHttpRequest($this->_request->request->all());
+                            $this->computeXmlHttpRequestSkillDefinition($this->_request->request->all());
                         }     
                     }else{// direct url access
                         $this->_model->getAll();//restore model
@@ -483,6 +506,14 @@ class AdminController extends AControllerState{
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildSkillDefinitionFooterView();
+    }
+    
+    public function buildSkillDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/competence';
+        $this->_modelView['footer'] = $footer;
     }
     
     /**
@@ -548,11 +579,29 @@ class AdminController extends AControllerState{
      * @param array $datas (id, value) based on xHTML element from template
      * @return boolean true if events was handled, false else 
      */
-    public function computeXmlHttpRequest($datas){
-        // FIXME  : TO BE DONE
+    public function computeXmlHttpRequestSkillDefinition($datas){
+        if(array_key_exists('AJAX_UPDATE', $datas)){
+            \Logger::getInstance()->logDebug(__CLASS__.'-- RAW POST -- '.print_r($datas, true));
+            $this->_model->getAll();//restore model
+            $nameAndId = $datas['AJAX_ID'];
+            $val = $datas['AJAX_VAL'];
+            \Logger::getInstance()->logDebug(__CLASS__.' AJAX datas -> id : '.$nameAndId.' val : '.$val);
+            $nameAndId = explode('#',$nameAndId);
+            $name=$nameAndId[0];
+            if($name==='activityChoosenForSkill'){//activity update for a given skill 
+                $skillId = $nameAndId[1];
+                $oldIdActivity = $nameAndId[2];
+                $this->_model->update($name, $val, array('skillId'=>$skillId, 'idActivityToUpdate'=>$oldIdActivity));
+            }else{//skill update
+                $id= $nameAndId[1];
+                $this->_model->update($name, $val, $id);
+            }
+            return true;
+        }
+        return false;
     }
     
-    ///////////// functions definitions methods
+    ///////////// professionnal skill definitions methods
     
     public function professionalSkillDefinition(){
         try{
@@ -617,7 +666,15 @@ class AdminController extends AControllerState{
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildProfessionalSkillDefinitionFooterView();
         $this->sendModelView('ProfessionalSkillDefinition');
+    }
+    
+    public function buildProfessionalSkillDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/attitude_professionnelle';
+        $this->_modelView['footer'] = $footer;
     }
     
     /**
@@ -687,19 +744,23 @@ class AdminController extends AControllerState{
                     break;
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
-                        if($this->computePromotionDefinition($this->_request->request->all()) === true){
-                            $this->_model->getAll();
-                            $this->_model->addBlank();//add new input on form
-                            $this->buildViewPromotionDefinition();
-                            $this->sendModelView('PromotionDefinition');
+                        if(!$this->_request->isXmlHttpRequest()){ 
+                            if($this->computePromotionDefinition($this->_request->request->all()) === true){
+                                $this->_model->getAll();
+                                $this->_model->addBlank();//add new input on form
+                                $this->buildViewPromotionDefinition();
+                                $this->sendModelView('PromotionDefinition');
+                            }else{
+                                $this->_state = self::STOPPED;
+                                //redirect to welcome admin page
+                                $this->_redirect = new RedirectResponse($this->getRootPath().'/administrateur');
+                                // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
+                                $this->_redirect->prepare($this->_request);  
+                                Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
+                                $this->_redirect->send();
+                            }
                         }else{
-                            $this->_state = self::STOPPED;
-                            //redirect to welcome admin page
-                            $this->_redirect = new RedirectResponse($this->getRootPath().'/administrateur');
-                            // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
-                            $this->_redirect->prepare($this->_request);  
-                            Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
-                            $this->_redirect->send();
+                            $this->computeXmlHttpRequestPromotionDefinition($this->_request->request->all());
                         }
                     }else{//direct url access
                         $this->_model->getAll();
@@ -742,6 +803,14 @@ class AdminController extends AControllerState{
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildPromotionDefinitionFooterView();
+    }
+    
+    public function buildPromotionDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/promotion';
+        $this->_modelView['footer'] = $footer;
     }
     
     public function computePromotionDefinition($datas){
@@ -754,10 +823,6 @@ class AdminController extends AControllerState{
             $id = $datas[$this->_BUTTONS_PROMOTIONS['BUTTON_ADD_PROMOTION']];//get id to append
             $this->_model->setClassVarsValues($params[$id]);
             Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($params[$id], true));
-//            foreach($params as $model){
-//                $this->_model->setClassVarsValues($model);
-//                Logger::getInstance()->logInfo(__CLASS__.' ADD to model ->  val : '.  print_r($model, true));
-//            }
             $this->_model->append();
             return true;
         }else{
@@ -766,19 +831,25 @@ class AdminController extends AControllerState{
                 $this->_model->deleteFromId($id);
                 return true;
             }else{ 
-//                if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
-//                        $id = $datas['AJAX_ID'];
-//                        $val = $datas['AJAX_VAL'];
-//                        Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> id : '.$id.' val : '.$val);
-//                        $id = explode('#',$id);
-//                        $id= $id[1];
-//                        $this->_model->updateFunctionInDataBase(array('id'=>--$id, 'value'=>$val) );
-//                        return true;
-//                }
-//            else{//main submit all done
-                    return false;
+                return false;
             }
         }
+    }
+    
+    public function computeXmlHttpRequestPromotionDefinition($datas){
+        if(array_key_exists('AJAX_UPDATE', $datas)){
+            \Logger::getInstance()->logDebug(__CLASS__.'-- RAW POST -- '.print_r($datas, true));
+            $this->_model->getAll();//restore model
+            $nameAndId = $datas['AJAX_ID'];
+            $val = $datas['AJAX_VAL'];
+            \Logger::getInstance()->logDebug(__CLASS__.' AJAX datas -> id : '.$nameAndId.' val : '.$val);
+            $nameAndId = explode('#',$nameAndId);
+            $name=$nameAndId[0];
+            $id= $nameAndId[1];
+            $this->_model->update($name, $val, $id);
+            return true;
+        }
+        return false;
     }
     
     ///////////// teachers definitions methods
@@ -854,6 +925,14 @@ class AdminController extends AControllerState{
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildTeacherDefinitionFooterView();
+    }
+    
+    public function buildTeacherDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/enseignant';
+        $this->_modelView['footer'] = $footer;
     }
     
     public function computeTeacherDefinition($datas){
@@ -878,13 +957,10 @@ class AdminController extends AControllerState{
                 $this->_model->update('_teacherId',$teacherId[0]);
                 return true;
             case $this->_BUTTONS_TEACHERS['BUTTON_ADD_TEACHER']:
-                Logger::getInstance()->logDebug(__CLASS__.' button add trigged');
-                //$varsModel = $this->_model->getClassVars();
-                Logger::getInstance()->logDebug(__CLASS__.' model vars : '.print_r($varsModel, true));
-                //$params = $this->findAllParamsFromForm($datas, $varsModel);
-                Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
-                //$this->_model->setClassVarsValues($params);
-                Logger::getInstance()->logDebug(__CLASS__.' teacherId : '.print_r($this->_model->get_teachersList(), true));
+//                Logger::getInstance()->logDebug(__CLASS__.' button add trigged');
+//                Logger::getInstance()->logDebug(__CLASS__.' model vars : '.print_r($varsModel, true));
+//                Logger::getInstance()->logDebug(__CLASS__.' params : '.print_r($params, true));
+//                Logger::getInstance()->logDebug(__CLASS__.' teacherId : '.print_r($this->_model->get_teachersList(), true));
                 $this->_model->append();
                 $this->_model->set_editFormVisible(0);
                 return true;
@@ -910,7 +986,7 @@ class AdminController extends AControllerState{
             $nameId = $datas['AJAX_ID'];
             $val = $datas['AJAX_VAL'];
             Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> name id : '.$nameId.' ::: val : '.$val);
-            if($nameId==='teacherChoosenForUpdate'){
+            if($nameId==='_teachersList'){
                 $this->_model->selectTeacher($val);
             }
             return true;//update view
@@ -1043,19 +1119,23 @@ class AdminController extends AControllerState{
                     break;
                 case self::RUNNING:
                     if($this->_request->isMethod('POST')){
-                        if($this->computeWorkDateDefinition($this->_request->request->all()) === true){
-                            $this->_model->getAll();
-                            $this->_model->addBlank();//add new input on form
-                            $this->buildViewWorkdateDefinition();
-                            $this->sendModelView('WorkDateDefinition');
+                        if(!$this->_request->isXmlHttpRequest()){ 
+                            if($this->computeWorkDateDefinition($this->_request->request->all()) === true){
+                                $this->_model->getAll();
+                                $this->_model->addBlank();//add new input on form
+                                $this->buildViewWorkdateDefinition();
+                                $this->sendModelView('WorkDateDefinition');
+                            }else{
+                                $this->_state = self::STOPPED;
+                                //redirect to welcome admin page
+                                $this->_redirect = new RedirectResponse($this->_index);
+                                // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
+                                $this->_redirect->prepare($this->_request);  
+                                Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
+                                $this->_redirect->send();
+                            }
                         }else{
-                            $this->_state = self::STOPPED;
-                            //redirect to welcome admin page
-                            $this->_redirect = new RedirectResponse($this->_index);
-                            // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
-                            $this->_redirect->prepare($this->_request);  
-                            Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirection vers l\'accueil administrateur');
-                            $this->_redirect->send();
+                            $this->computeXmlHttpRequestWorkDateDefinition($this->_request->request->all());
                         }
                     }else{//direct url access
                         $this->_model->getAll();
@@ -1093,11 +1173,18 @@ class AdminController extends AControllerState{
         $formArray = $this->buildCompleteFormArray();
         $formArray = array_merge($formArray, $this->getValuesFromModelToForm());
         $formArray['INDEX'] = $this->_index.'/stage';
-        //$formArray['INDEX'] = $this->getRootPath().$this->_request->getPathInfo();
         foreach ($this->_BUTTONS_PROMOTIONS as $bCtrl => $bForm){
             $formArray[$bCtrl] = $bForm;
         }
         $this->buildBodyView($formArray);
+        $this->buildWorkDateDefinitionFooterView();
+    }
+    
+    public function buildWorkDateDefinitionFooterView(array $void=null){
+        parent::buildFooterView();
+        $footer = $this->_modelView['footer'];
+        $footer['INDEX'] = $this->_index.'/stage';
+        $this->_modelView['footer'] = $footer;
     }
     
     public function computeWorkDateDefinition($datas){
@@ -1121,19 +1208,33 @@ class AdminController extends AControllerState{
                 return true;
             }else{ 
                 if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
-//                        $id = $datas['AJAX_ID'];
-//                        $val = $datas['AJAX_VAL'];
-//                        Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> id : '.$id.' val : '.$val);
-//                        $id = explode('#',$id);
-//                        $id= $id[1];
-//                        $this->_model->updateFunctionInDataBase(array('id'=>--$id, 'value'=>$val) );
                         return true;
                 }
-//            else{//main submit all done
                     return false;
             }
         }
     }
+    
+    /**
+     * -update value from AJAX event
+     * @param array $datas
+     *      AJAX_ID = propertyName#Id_Or_Key_for_this_property
+     *      AJAX_VAL = value to be updated
+     * @return boolean
+     */
+    public function computeXmlHttpRequestWorkDateDefinition(array $datas){
+        if(array_key_exists('AJAX_UPDATE', $datas)){ // client's javascript event
+            $params = $datas['AJAX_ID'];
+            $val = $datas['AJAX_VAL'];
+            $params = explode('#',$params);
+            $property=$params[0];
+            $id= $params[1];
+            Logger::getInstance()->logInfo(__CLASS__.' AJAX datas -> property : '.$property.' val : '.$val.'  id : '.$id);
+            $this->_model->update($property, $val, $id);
+            return true;
+        }
+    }
+    
     
     ///////////// admin password definitions methods
    
@@ -1295,6 +1396,7 @@ class AdminController extends AControllerState{
         $this->buildBodyView($formArray);
         $this->buildDocumentDefinitionFooterView();
     }
+        
     
     public function buildDocumentDefinitionFooterView(array $void=null){
         parent::buildFooterView();
@@ -1322,6 +1424,8 @@ class AdminController extends AControllerState{
         if(in_array('document_change', $datas)){
             $this->_model->update('_docName', $datas['AJAX_VAL']);
             $send = json_encode(array('title'=> $this->_model->get_documentSubject(),'doc'=>  $this->_model->get_documentContent()));
+//            Logger::getInstance()->logDebug(__CLASS__.' SEND : '.print_r($send,true));
+//            $send = json_encode(array('title'=> 'titre test tests tests ','doc'=>  'kjqsghdqsjkhdgqskdjhqsgsdkj'));
             echo $send;
         }
     }

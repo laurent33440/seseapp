@@ -98,7 +98,19 @@ class GeneralReferenceDefinitionModel extends AModel implements IModel{
     }
 
     public function update($property, $val, $id) {
-        
+        $this->$property = $val;
+        \Logger::getInstance()->logDebug(__CLASS__.'UPDATE properties model : '.print_r(array($property,$val), true));
+        $collection = new DataAccess('Referentiel_de_formation');
+        $item = $collection->GetByID(1);
+        $item->rdf_nom_formation=  $this->_trainingName; 
+        $item->rdf_domaine_formation=  $this->_trainingDomain;
+        $item->rdf_reference=  $this->_referentialReference;
+        $item->rdf_intitule= $this->_referencialName;
+        $item->rdf_descriptif= $this->_referentialSpecification;
+        $item->rdf_duree_formation=  $this->_trainingTime;
+        $item->rdf_nombre_jours_stage= $this->_internshipDuration;
+        \Logger::getInstance()->logDebug(__CLASS__.'properties model : '.print_r($item, true));
+        $collection->Update($item);
     }
 
     
@@ -109,7 +121,7 @@ class GeneralReferenceDefinitionModel extends AModel implements IModel{
         $collection = new DataAccess('Referentiel_de_formation');
         $item = $collection->GetByID(1);
         if($item === FALSE){
-            $item = new Referentiel_de_formationObject;
+            $item = new Referentiel_de_formationObject();
             $item->rdf_nom_formation=  $this->_trainingName; 
             $item->rdf_domaine_formation=  $this->_trainingDomain;
             $item->rdf_reference=  $this->_referentialReference;
@@ -126,6 +138,7 @@ class GeneralReferenceDefinitionModel extends AModel implements IModel{
             $item->rdf_descriptif= $this->_referentialSpecification;
             $item->rdf_duree_formation=  $this->_trainingTime;
             $item->rdf_nombre_jours_stage= $this->_internshipDuration;
+            \Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.'properties model : '.print_r($item, true));
             $collection->Update($item);
         }       
     }

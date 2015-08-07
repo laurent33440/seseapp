@@ -160,9 +160,9 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Dénomination du stage</th>
-                                    <th class="active">Date de début de stage</th>
-                                    <th class="active">Date de fin de stage</th>
+                                    <th style="width:40%" class="active">Dénomination du stage</th>
+                                    <th style="width:20%" class="active">Date de début de stage</th>
+                                    <th style="width:20%" class="active">Date de fin de stage</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -172,7 +172,7 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"workDateName#$work\"
+                                                  id=\"_workDateName#$idWork\"
                                                   name=\"_workDateName##$idWork\"
                                                   placeholder=\"Entrez la dénomination de la période de stage\"
                                                   value = \"$work\">
@@ -181,7 +181,7 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
-                                                  id=\"dateOn#$work\"
+                                                  id=\"_dateOn#$idWork\"
                                                   name=\"_dateOn##$idWork\"
                                                   placeholder=\"Entrez la date de début de stage\"
                                                   value = \"".$this->_arrayParamslist[1][$idWork]."\">
@@ -190,7 +190,7 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
-                                                  id=\"dateOff#$work\"
+                                                  id=\"_dateOff#$idWork\"
                                                   name=\"_dateOff##$idWork\"
                                                   placeholder=\"Entrez la date de fin de stage\"
                                                   value = \"".$this->_arrayParamslist[2][$idWork]."\">
@@ -251,7 +251,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -286,23 +286,25 @@
         
  <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'blur',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/stage',
+                   data:{       
+                           AJAX_UPDATE:'texte_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
@@ -310,12 +312,14 @@
     <!-- Script for select input(s) changes -->
     <script type="text/javascript">
         $("select").change(function(){
-               console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
+               console.log(id);
+               console.log(val);
                $.ajax({
-                   url:'/index.php/administrateur',
-                   data:{       AJAX_UPDATE:'document_change',
+                   url:'/index.php/administrateur/stage',
+                   data:{       
+                           AJAX_UPDATE:'document_change',
                            AJAX_ID:id,
                            AJAX_VAL:val
                    },
@@ -331,6 +335,31 @@
                });
        });       
        
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/stage',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
+       });       
               
     </script>
     

@@ -162,7 +162,7 @@ class ActivitiesReferenceDefinitionModel extends AModel implements IModel{
     public function deleteFromId($id) {
         $collection= new DataAccess('Activite');
         $item = $collection->GetById($id);
-        $collection->Delete($item);
+        return $collection->Delete($item);
     }
 
     public function deleteFromProperty($property, $val) {

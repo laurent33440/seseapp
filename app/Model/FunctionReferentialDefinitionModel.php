@@ -87,7 +87,7 @@ class FunctionReferentialDefinitionModel extends AModel implements IModel{
     public function deleteFromId($id){
         $collection= new DataAccess('Fonction');
         $f =$collection->GetByID($id);
-        $collection->Delete($f);
+        return $collection->Delete($f);
     }
     
     

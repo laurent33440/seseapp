@@ -119,13 +119,13 @@ class DocumentDefinitionModel extends AModel implements IModel{
             $this->getDocList();// update list
             \Logger::getInstance()->logDebug(__CLASS__.'  AJAX VAL: '.print_r($val,true));
             $this->_docName = $val;
-            \Logger::getInstance()->logDebug(__CLASS__.'  AJAX LIST DOC: '.print_r($this->_docList,true));
+            //\Logger::getInstance()->logDebug(__CLASS__.'  AJAX LIST DOC: '.print_r($this->_docList,true));
             $id = array_search($val, $this->_docList);
-            \Logger::getInstance()->logDebug(__CLASS__.'  AJAX ID: '.print_r($id,true));
+            //\Logger::getInstance()->logDebug(__CLASS__.'  AJAX ID: '.print_r($id,true));
             $collection = new DataAccess('Documents_reference');
             $doc = $collection->GetByID($id);
             $this->_documentContent = $doc->drf_description_doc;
-             \Logger::getInstance()->logDebug(__CLASS__.' TEST TEST : '.print_r($this->_documentContent,true));
+             //\Logger::getInstance()->logDebug(__CLASS__.' TEST TEST : '.print_r($this->_documentContent,true));
         }
         
     }

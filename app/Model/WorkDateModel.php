@@ -96,7 +96,26 @@ class WorkDateModel extends AModel implements IModel{
     }
 
     public function update($property, $val, $id) {
-        //
+        \Logger::getInstance()->logInfo(__CLASS__.'::'.__METHOD__.'::'.$property.'::'.$val);
+        $collection = new DataAccess('Stage');
+        $work=$collection->GetByID($id);
+        switch ($property){
+            case '_workDateName':
+                $work->stg_denomination_periode = $val;
+                $collection->Update($work);
+                break;
+            case '_dateOn':
+                $work->stg_date_debut = $val;
+                $collection->Update($work);
+                break;
+            case '_dateOff':
+                $work->stg_date_fin = $val;
+                $collection->Update($work);
+                break;
+            default:
+                \Logger::getInstance()->logError(__CLASS__.'::'.__METHOD__.'::'.__LINE__.' property unknown : '.$property.' with val : '.$val);
+                return;
+        }
     }
 
     

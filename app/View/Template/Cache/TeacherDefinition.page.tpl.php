@@ -160,9 +160,9 @@
                 <div class="panel-body">
                     <?php 
                     echo"
-                    <select class=\"form-control\" name=\"_teachersList\" id=\"teacherChoosenForUpdate\">";
+                    <select class=\"form-control\" name=\"_teachersList\" id=\"_teachersList\">";
                         foreach ($this->_arrayParamslist[0] as $idTeacher => $teacher) {
-                            if(23 === $idTeacher){//select current teacher
+                            if(21 === $idTeacher){//select current teacher
                                 $select= 'selected="selected"';
                             }else{
                                 $select= '';
@@ -216,7 +216,7 @@
             
             <!-- optionnal form panel creating/updating teacher.  -->
             <?php 
-            if(1==true){
+            if(0==true){
                 echo"
                 <div class=\"panel panel-default\">
                     <div class=\"panel-heading\">
@@ -229,7 +229,7 @@
                             </div>
                             <div class=\"panel-body\">
 
-                                <select class=\"form-control\" name=\"_promotionsList\" id=\"promotionChoosenForUpdate\">";
+                                <select class=\"form-control\" name=\"_promotionsList\" id=\"_promotionsList\">";
                                     foreach ($this->_arrayParamslist[1] as $idPromotion => $promotion) {
                                         echo"
                                             <option value=\"$idPromotion\">$promotion </option>
@@ -244,37 +244,37 @@
                         <div class=\"form-group\">
                             <label for=\"inputAdminName\" class=\"control-label col-xs-2\">Nom de l'enseignant</label>
                             <div class=\"col-xs-10\">
-                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminName\" 
+                                <input type=\"text\" required class=\"form-control\" id=\"_teacherLastName\" 
                                        name=\"_teacherLastName\" 
                                        placeholder=\"Nom de l'enseignant\"
-                                       value=\"authier\">
+                                       value=\"zola\">
                             </div>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"inputAdminPass\" class=\"control-label col-xs-2\">Prénom de l'enseignant</label>
                             <div class=\"col-xs-10\">
-                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass\" 
+                                <input type=\"text\" required class=\"form-control\" id=\"_teacherFirstName\" 
                                        name=\"_teacherFirstName\"
                                        placeholder=\"Prénom de l'enseignant\"
-                                       value=\"laurent\">
+                                       value=\"emile\">
                             </div>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"inputAdminPass2\" class=\"control-label col-xs-2\">Mél de l'enseignant </label>
                             <div class=\"col-xs-10\">
-                                <input type=\"mail\" required class=\"form-control\" id=\"inputAdminPass2\" 
+                                <input type=\"mail\" required class=\"form-control\" id=\"_teacherMail\" 
                                        name=\"_teacherMail\" 
                                        placeholder=\"\"
-                                       value=\"lolo@ici.fr\">
+                                       value=\"laurentauthier@voila.fr\">
                             </div>
                         </div>
                         <div class=\"form-group\">
                             <label for=\"inputAdminPass2\" class=\"control-label col-xs-2\">Discipline de l'enseignant </label>
                             <div class=\"col-xs-10\">
-                                <input type=\"text\" required class=\"form-control\" id=\"inputAdminPass2\" 
+                                <input type=\"text\" required class=\"form-control\" id=\"_teacherSkill\" 
                                        name=\"_teacherSkill\" 
                                        placeholder=\"Discipline de l'enseignant\"
-                                       value=\"electronique\">
+                                       value=\"français\">
                             </div>
                         </div>
 
@@ -308,7 +308,7 @@
                             </div>
                             <div class=\"panel-body\">
 
-                                <select class=\"form-control\" name=\"_formatImportList\" id=\"formatImportList\">";
+                                <select class=\"form-control\" name=\"_formatImportList\" id=\"_formatImportList\">";
                                     foreach ($this->_arrayParamslist[2] as  $format) {
                                         echo"
                                             <option value=\"$format\">$format </option>
@@ -321,7 +321,7 @@
                         </div>
 
                         <div class=\"col-md-12\">
-                            <button class=\"btn btn-success btn-block\" name=\"ButtonSubmitChooseImportTeacher\" id=\"addFunction\" type=\"submit\">
+                            <button class=\"btn btn-success btn-block\" name=\"ButtonSubmitChooseImportTeacher\" id=\"addFunction\" type=\"file\">
                                 <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                 Choisir le fichier à importer
                             </button>
@@ -372,7 +372,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -407,23 +407,25 @@
         
  <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'blur',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/enseignant',
+                   data:{       
+                           AJAX_UPDATE:'texte_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
@@ -431,12 +433,14 @@
     <!-- Script for select input(s) changes -->
     <script type="text/javascript">
         $("select").change(function(){
-               console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
+               console.log(id);
+               console.log(val);
                $.ajax({
-                   url:'/index.php/administrateur',
-                   data:{       AJAX_UPDATE:'document_change',
+                   url:'/index.php/administrateur/enseignant',
+                   data:{       
+                           AJAX_UPDATE:'document_change',
                            AJAX_ID:id,
                            AJAX_VAL:val
                    },
@@ -452,6 +456,31 @@
                });
        });       
        
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/enseignant',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
+       });       
               
     </script>
     

@@ -12,8 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse; 
 use View\ViewHandler;
 use Logger;
-use Bootstrap;
-use Version;
+//use Bootstrap;
+//use Version;
 
 /**
  * FIXME : fat class must be split...

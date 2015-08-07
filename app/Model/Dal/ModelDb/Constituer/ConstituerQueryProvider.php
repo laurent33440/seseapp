@@ -45,10 +45,18 @@ class ConstituerQueryProvider implements IQueryProvider{
         return "Select max(id_activite) from Constituer";
     }
 
+    static function UpdateQueryWithSelector(){
+        return "update Constituer set    
+                                    id_activite=:id_activite,
+                                    id_competence=:id_competence
+                                    where id_activite=:id_activite_old AND id_competence=:id_competence_old";
+    }
+    
+    //bug race condition
     static function UpdateQuery(){
         return "update Constituer set    
-                                        id_activite=:id_activite,
-                                        id_competence=:id_competence
+                                    id_activite=:id_activite,
+                                    id_competence=:id_competence
                                     where id_activite=:id_activite AND id_competence=:id_competence";
     }
 

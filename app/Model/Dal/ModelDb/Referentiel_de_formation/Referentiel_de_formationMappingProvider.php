@@ -34,25 +34,25 @@ class Referentiel_de_formationMappingProvider implements IMappingProvider{
     }
 
     Static function MapToRowInsert($item){
-        $retval['rdf_nom_formation']=$item->rdf_nom_formation;
-        $retval['rdf_domaine_formation']=$item->rdf_domaine_formation;
-        $retval['rdf_reference']=$item->rdf_reference;
-        $retval['rdf_intitule']=$item->rdf_intitule;
-        $retval['rdf_descriptif']=$item->rdf_descriptif;
-        $retval['rdf_duree_formation']=$item->rdf_duree_formation;
-        $retval['rdf_nombre_jours_stage']=$item->rdf_nombre_jours_stage;
+        $retval[':rdf_nom_formation']=$item->rdf_nom_formation;
+        $retval[':rdf_domaine_formation']=$item->rdf_domaine_formation;
+        $retval[':rdf_reference']=$item->rdf_reference;
+        $retval[':rdf_intitule']=$item->rdf_intitule;
+        $retval[':rdf_descriptif']=$item->rdf_descriptif;
+        $retval[':rdf_duree_formation']=$item->rdf_duree_formation;
+        $retval[':rdf_nombre_jours_stage']=$item->rdf_nombre_jours_stage;
         return $retval;
     }
 
     static function MapToRowUpdate($item){
-        $retval['id_referentiel_de_formation']=$item->id_referentiel_de_formation;
-        $retval['rdf_nom_formation']=$item->rdf_nom_formation;
-        $retval['rdf_domaine_formation']=$item->rdf_domaine_formation;
-        $retval['rdf_reference']=$item->rdf_reference;
-        $retval['rdf_intitule']=$item->rdf_intitule;
-        $retval['rdf_descriptif']=$item->rdf_descriptif;
-        $retval['rdf_duree_formation']=$item->rdf_duree_formation;
-        $retval['rdf_nombre_jours_stage']=$item->rdf_nombre_jours_stage;
+        $retval[':id_referentiel_de_formation']=$item->id_referentiel_de_formation;
+        $retval[':rdf_nom_formation']=$item->rdf_nom_formation;
+        $retval[':rdf_domaine_formation']=$item->rdf_domaine_formation;
+        $retval[':rdf_reference']=$item->rdf_reference;
+        $retval[':rdf_intitule']=$item->rdf_intitule;
+        $retval[':rdf_descriptif']=$item->rdf_descriptif;
+        $retval[':rdf_duree_formation']=$item->rdf_duree_formation;
+        $retval[':rdf_nombre_jours_stage']=$item->rdf_nombre_jours_stage;
         return $retval;
     }
 

@@ -13,7 +13,7 @@
                                 <div class="form-inline">
                                     <div class="form-group">
                                         <label >Documents disponibles</label>
-                                        <select  class="form-control" name="_docName" >
+                                        <select  id="document_name" class="form-control" name="_docName" >
                                             <?php
                                             foreach (form_val_docList as $doc) {
                                                 echo"

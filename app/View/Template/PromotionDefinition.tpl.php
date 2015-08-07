@@ -21,8 +21,8 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Référence de la promotion</th>
-                                    <th class="active">Descriptif de la promotion</th>
+                                    <th style="width:15%" class="active">Référence de la promotion </th>
+                                    <th style="width:85%" class="active">Descriptif de la promotion</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,7 +32,7 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"promoRef#$idPromotion\"
+                                                  id=\"_references#$idPromotion\"
                                                   name=\"form_references##$idPromotion\"
                                                   placeholder=\"Entrez la référence de la promotion\"
                                                   value = \"$ref\">
@@ -41,7 +41,7 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"promotionDescription#$idPromotion\"
+                                                  id=\"_descriptions#$idPromotion\"
                                                   name=\"form_descriptions##$idPromotion\"
                                                   placeholder=\"Entrez le descriptif de la promotion\"
                                                   value = \"".form_val_descriptions[$idPromotion]."\">

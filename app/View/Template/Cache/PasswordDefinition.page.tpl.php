@@ -67,7 +67,8 @@
     
     
   </head>
- <body>
+
+    <body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -89,7 +90,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        t@t : tuteur<span class="caret"></span>
+                        lolo : administrateur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -99,75 +100,45 @@
                 </div>
             </div>
         </nav>
-     
-
-    
-
-
-    <!-- Generic
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
- <div class="section-colored-menu"> <!--see "app_sese.css" -->
-     
-    <div class="container">
-        
-        <div class="jumbotron">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-10">
-                    <h2> Espace tuteur de stage</h2>
-                    <p>Veuillez choisir une action</p>
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li role="presentation" class="dropdown"> 
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Définition du référentiel pédagogique<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                
+                                <li><a href="/index.php/administrateur/referentiel"><span class="glyphicon glyphicon-book " aria-hidden="true"></span>Référentiel de formation</a></li>
+                                <li><a href="/index.php/administrateur/fonction"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Fonctions</a></li>
+                                <li><a href="/index.php/administrateur/activite"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Activités</a></li>
+                                <li><a href="/index.php/administrateur/competence"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Compétences</a></li>
+                            </ul>
+                        </li>
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
+                        <li><a href="/index.php/administrateur/enseignant"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/stagiaire"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
+                        <li><a href="/index.php/administrateur/stage"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/acces"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Archiver la base de données</a></li>
+                        
+                    </ul>
                 </div>
-                <div class="col-lg-2 ">
-                      <a class="btn btn-default" href="/index.php/tuteur/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
-                          <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
-                      </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Menu -->
-        <div class="row">
-            <div class="col-lg-2 col-lg-offset-1">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
-                      <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2 ">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/liste_stagiaire" data-toggle="tooltip" data-placement="left" title="Stagiaires en responsabilité" role="button">
-                      <img class="img-rounded" src="/app_img/users.png" alt="Stagiaires en responsabilité">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
-                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/liste_activites" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
-                      <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/evaluation_stagiaire" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
-                      <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        <!-- end Menu -->
-      
-    </div><!-- /.container -->
-      
-</div> <!-- section colored-->
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                    <h1 class="page-header">Interface d'administration de SESE</h1>
+
 
 
 
@@ -175,16 +146,16 @@
     
     <div class="jumbotron">
       <div class="container">
-        <h3>Modification de votre mot de passe</h3>
-        <p>Dans ce formulaire vous allez pouvoir modifier le mot de passe</p>
+        <h3>Modification du mot de passe administrateur</h3>
+        <p>Dans ce formulaire vous allez pouvoir modifier le mot de passe administrateur</p>
       </div>
     </div>
     
-    <form  method="post" action="<?php echo' /index.php/tuteur/ '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/acces '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Informations relatives à votre mot de passe dans l'application SESE
+                    Informations relatives au mot de passe de l'administrateur de l'application SESE
                 </div>
                 <div class="panel-body">
                      
@@ -226,11 +197,13 @@
     </form>
 
 </div>
+            </div><!-- Center page -->
+        </div><!-- Row menu left -->
+    </div> <!-- Main container -->
 
 <footer>
     <div class="section-colored">
           <div class="container">
-           <!-- Example row of columns -->
               <div class="row">
                 <div class="col-md-4">
                     <a href="<?php echo' www.avalone-fr.com '; ?>" target='_blank'>
@@ -254,7 +227,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -277,10 +250,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"> </script>
-    <script src="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!--<script src="bootstrap_dev/dist/js/bootstrap.min.js"></script>-->
     <script src="<?php echo'/bootstrap-3.2.0-dist/js/bootstrap.min.js'; ?>"></script>
     
@@ -289,25 +259,28 @@
             <script> $(\'#basicModal\').modal({\'show\' : true, \'backdrop\' : false}); </script>
         '; ?>
         
-    <!-- Script for text inputs changes -->   
+        
+ <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/tuteur',
-                    {       AJAX_UPDATE:'blur',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur',
+                   data:{       
+                           AJAX_UPDATE:'texte_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
@@ -315,40 +288,79 @@
     <!-- Script for select input(s) changes -->
     <script type="text/javascript">
         $("select").change(function(){
-               console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/tuteur',
-                    {       AJAX_UPDATE:'change',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur',
+                   data:{       
+                           AJAX_UPDATE:'document_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                       var ed = tinyMCE.activeEditor;
+                       ed.setContent(json.doc);
+                       setTitle(json.title);
+                   }
+               });
+       });       
+       
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
     
-    <!------- JQUERY WIDGET -------->
-    <script>
-      $(function() {
-        $( "#datePicker" ).datepicker();
-      });
+    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substituée dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
+    <script type="text/javascript">
+        function getDoc(){
+            $("#nom_document_en_edition").text('TITLE');
+            return 'DOC';
+        };
     </script>
     
-<!--    <script type="text/javascript">
-        $(document).ready(function(){
-            alert('Page chargée');
-        });
-       
-   </script>-->
+    <!-- m a j titre doc en edition -->
+    <script type="text/javascript">
+        function setTitle(title){
+            $("#nom_document_en_edition").text(title);
+        };
+    </script>
+    
+    <!-- agit sur bouton de validation de création/edition documents -->
+    <script type="text/javascript">
+        function highLightElement(){
+            $("#valide_document").css("background-color", "green");
+        };
+    </script>
+    
     
   </body>
 </html>
-

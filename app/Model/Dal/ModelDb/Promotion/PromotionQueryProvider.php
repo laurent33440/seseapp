@@ -39,7 +39,7 @@ class PromotionQueryProvider implements IQueryProvider{
 
 	static function UpdateQuery(){
             return "update Promotion set    pro_reference_promotion = :pro_reference_promotion,
-                                            pro_nom_promotion = :pro_nom_promotion, 
+                                            pro_nom_promotion = :pro_nom_promotion
                                         where id_promotion=:id_promotion";
 	}
 
