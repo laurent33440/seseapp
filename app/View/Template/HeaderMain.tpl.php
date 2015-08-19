@@ -14,9 +14,16 @@
                     <a class="navbar-brand" href="#">
                         <img alt="SCHOOL_NAME" src="/app_img/logo_lppdg40.png">SCHOOL_NAME
                     </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="COURSE_NAME" src="/app_img/logo_lppdg40.png">COURSE_NAME
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="STUDY_YEAR" src="/app_img/logo_lppdg40.png">STUDY_YEAR
+                    </a>
                 </div>
+                <!--
                 <div id="navbar" class="navbar-collapse collapse">
-                    <!-- Single button --> 
+                    
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -28,5 +35,6 @@
                       </ul>
                     </div>
                 </div>
+                -->
             </div>
         </nav>

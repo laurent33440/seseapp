@@ -44,7 +44,7 @@ class ConstituerMappingProvider implements IMappingProvider{
         return $retval;
     }
     
-    static function MapToRowUpdateWithSelector($item, array $selector){
+    static function MapToRowInnerSelfUpdate($item, array $selector){
         $retval[':id_competence']=$item->id_competence;
         $retval[':id_activite']=$item->id_activite;
         foreach ($selector as $key => $value) {

@@ -50,6 +50,7 @@
                     </ul><ul class="nav nav-sidebar">
                         <li><a href="PROFESSIONAL"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
                     </ul>    
+                    <hr>
                     </ul><ul class="nav nav-sidebar">
                         <li><a href="DOCUMENT"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
@@ -57,10 +58,12 @@
                         <li><a href="PROMOTION"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
                         <li><a href="TEACHER"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="TRAINEE"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
                         <li><a href="WORK_DATE"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="PASSWORD"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
                         <li><a href=""><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Archiver la base de données</a></li>

@@ -85,13 +85,10 @@ class LoginController extends AControllerState{
         if($this->_model->isUserKnown()){
             //get groupe name
             $grpName = $this->_model->get_groupNameOfUser();
-            //if(in_array($grpName, array('administrateur','enseignant','tuteur','stagiaire'))){
             if($grpName != false){
                 //save user known
                 $this->_model->saveUserConnected();
-                //$this->_response = new RedirectResponse('/'.$grpName);
                 $this->_response = new RedirectResponse(\Bootstrap::ENTRY_SCRIPT.'/'.$grpName);
-                //$response->headers->setCookie(new Cookie('Groupe' , $grpName));
                 // see symfony: Avant d'envoyer la réponse, vous devez vous assurer qu'elle est conforme avec les les spécifications HTTP en appelant la méthode prepare(): 
                 $this->_response->prepare($this->_request);  
                 Logger::getInstance()->logInfo('Class '.__CLASS__. ' -- Redirect to '.$grpName.' for user :'.$this->_model->get_userName());

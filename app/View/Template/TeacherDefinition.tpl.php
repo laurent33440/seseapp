@@ -90,8 +90,9 @@
 
                                 <select class=\"form-control\" name=\"form_promotionsList\" id=\"_promotionsList\">";
                                     foreach (form_val_promotionsList as $idPromotion => $promotion) {
+                                        $selected='';
                                         echo"
-                                            <option value=\"$idPromotion\">$promotion </option>
+                                            <option value=\"$idPromotion\" $selected>$promotion </option>
                                         ";
                                     }
                                 echo "

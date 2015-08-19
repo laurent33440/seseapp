@@ -12,11 +12,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse; 
 use View\ViewHandler;
 use Logger;
-//use Bootstrap;
-//use Version;
 
 /**
- * FIXME : fat class must be split...
+ * FIXME : fat class must be split... REFACTOR
  * @author laurent
  */
 
@@ -30,6 +28,7 @@ abstract class AControllerState {
     const ON_INPUT_ERROR = 'onInputError';
     const ON_CRITICAL_ERROR = 'onCriticalError';
     
+    // @var use Symfony\Component\HttpFoundation\Request
     protected $_request;
     
     protected $_rootName;// controller name
@@ -62,7 +61,6 @@ abstract class AControllerState {
         if(!$this->_state = $this->getSavedSequenceState()){
             $this->_state = self::IDLE;
         }
-        //OLD - $this->_index=$this->getRootPath().$this->_request->getPathInfo();
         $this->_index=  '/'.\Bootstrap::ENTRY_SCRIPT.'/'.  \UserConnected::getInstance()->getUserGroup();
         \Logger::getInstance()->logInfo( get_class($this).' restoring state controller : '.$this->_rootName.'::'.$this->_action. '-->'.$this->_state);
     }
@@ -260,46 +258,46 @@ abstract class AControllerState {
         }
     }
     
-    protected function buildHeaderView_old(array $headerParams=null){
-        if(!$headerParams){
-            $model = new \Model\HeaderModel();
-            $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
-                                                'COURSE_NAME'=>$model->get_courseName(),
-                                                'STUDY_YEAR'=>$model->get_studyYear(),
-                                                'USER_NAME'=>$model->get_userName(),
-                                                'USER_GROUP'=>$model->get_userRole(),
-//                                                'INDEX'=>  \Bootstrap::APP_URL,
-                                                'INDEX'=>  '/',
-                //FIXME : REFACTOR THIS - BUG! BUG! ALL KEYS MUST HAVE DIFFERENTS STRUCTURE
-                //admin space  
-                'REFERENTIAL'=>  $this->_index.'/referentiel',
-                'FUNCTION'=>  $this->_index.'/fonction',
-                'ACTIVITY'=>  $this->_index.'/activite',
-                'SKILL'=>  $this->_index.'/competence',
-                'DOCUMENT'=>  $this->_index.'/document',
-                'PROMOTION'=>  $this->_index.'/promotion',
-                'TEACHER'=>  $this->_index.'/enseignant',
-                'TRAINEE'=> $this->_index.'/stagiaire',
-                'WORK_DATE'=>  $this->_index.'/stage',
-                'PASSWORD'=>  $this->_index.'/acces',
-                //teacher space
-                'WORK_DEFINITION'=> $this->_index.'/stage',
-                'WORK_VISIT_DEFINITION'=> $this->_index.'/visite',
-                'WORK_COMMENT_DEFINITION'=> $this->_index.'/commentaire',
-                'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
-                //tutor space
-                'TUTORDOCUMENT'=> $this->_index.'/document',
-                'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
-                'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
-                'EVALUATE' => $this->_index.'/evaluation_stagiaire',
-                'TUTORPASS' => $this->_index.'/mot_de_passe'
-
-                );
-                                                
-        }else{
-            $this->_modelView['header'] = $headerParams;
-        }
-    }
+//    protected function buildHeaderView_old(array $headerParams=null){
+//        if(!$headerParams){
+//            $model = new \Model\HeaderModel();
+//            $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
+//                                                'COURSE_NAME'=>$model->get_courseName(),
+//                                                'STUDY_YEAR'=>$model->get_studyYear(),
+//                                                'USER_NAME'=>$model->get_userName(),
+//                                                'USER_GROUP'=>$model->get_userRole(),
+////                                                'INDEX'=>  \Bootstrap::APP_URL,
+//                                                'INDEX'=>  '/',
+//                //FIXME : REFACTOR THIS - BUG! BUG! ALL KEYS MUST HAVE DIFFERENTS STRUCTURE
+//                //admin space  
+//                'REFERENTIAL'=>  $this->_index.'/referentiel',
+//                'FUNCTION'=>  $this->_index.'/fonction',
+//                'ACTIVITY'=>  $this->_index.'/activite',
+//                'SKILL'=>  $this->_index.'/competence',
+//                'DOCUMENT'=>  $this->_index.'/document',
+//                'PROMOTION'=>  $this->_index.'/promotion',
+//                'TEACHER'=>  $this->_index.'/enseignant',
+//                'TRAINEE'=> $this->_index.'/stagiaire',
+//                'WORK_DATE'=>  $this->_index.'/stage',
+//                'PASSWORD'=>  $this->_index.'/acces',
+//                //teacher space
+//                'WORK_DEFINITION'=> $this->_index.'/stage',
+//                'WORK_VISIT_DEFINITION'=> $this->_index.'/visite',
+//                'WORK_COMMENT_DEFINITION'=> $this->_index.'/commentaire',
+//                'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
+//                //tutor space
+//                'TUTORDOCUMENT'=> $this->_index.'/document',
+//                'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
+//                'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
+//                'EVALUATE' => $this->_index.'/evaluation_stagiaire',
+//                'TUTORPASS' => $this->_index.'/mot_de_passe'
+//
+//                );
+//                                                
+//        }else{
+//            $this->_modelView['header'] = $headerParams;
+//        }
+//    }
     
     /**
      * 

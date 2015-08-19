@@ -45,11 +45,11 @@ class ConstituerQueryProvider implements IQueryProvider{
         return "Select max(id_activite) from Constituer";
     }
 
-    static function UpdateQueryWithSelector(){
+    static function InnerSelfUpdateQuery(){
         return "update Constituer set    
                                     id_activite=:id_activite,
                                     id_competence=:id_competence
-                                    where id_activite=:id_activite_old AND id_competence=:id_competence_old";
+                                    where id_activite=:id_activite_SELF AND id_competence=:id_competence_SELF";
     }
     
     //bug race condition

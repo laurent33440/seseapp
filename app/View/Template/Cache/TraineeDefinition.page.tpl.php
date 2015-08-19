@@ -119,6 +119,7 @@
                     </ul><ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
                     </ul>    
+                    <hr>
                     </ul><ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
@@ -126,10 +127,12 @@
                         <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
                         <li><a href="/index.php/administrateur/enseignant"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/stagiaire"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
                         <li><a href="/index.php/administrateur/stage"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/acces"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
                         <li><a href=""><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Archiver la base de données</a></li>
@@ -285,7 +288,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -320,11 +323,11 @@
         
  <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
-               console.log($(this).attr('val'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
+               console.log(id);
+               console.log(val);
                $.ajax({
                    url:'/index.php/administrateur',
                    data:{       
@@ -359,7 +362,7 @@
                    },
                    type:"POST",
                    dataType : "json",
-                   async:"true", //synchrone
+                   async:"false", //synchrone
                    success: function(json){
                        console.log('recu du serveur : '+json.doc);
                        var ed = tinyMCE.activeEditor;
@@ -369,6 +372,31 @@
                });
        });       
        
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
+       });       
               
     </script>
     

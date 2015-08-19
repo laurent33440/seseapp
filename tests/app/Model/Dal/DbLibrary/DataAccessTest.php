@@ -97,9 +97,9 @@ class DataAccessTest extends \PHPUnit_Framework_TestCase {
         $this->object = new DataAccess('Constituer');
         $link= $this->object->GetByCompositeKeys(array('id_competence'=>910, 'id_activite'=>419));
         $this->assertNotFalse($link);
-        $selector= array('id_competence_old'=>910,'id_activite_old'=>419);
+        $self= array('id_competence_SELF'=>910,'id_activite_SELF'=>419);
         $link->id_activite = 418;
-        $this->assertNotFalse($this->object->UpdateWithSelector($link,$selector));
+        $this->assertNotFalse($this->object->InnerSelfUpdate($link,$self));
         $this->assertNotFalse($link= $this->object->GetByCompositeKeys((array('id_competence'=>910, 'id_activite'=>418))));
     }
     

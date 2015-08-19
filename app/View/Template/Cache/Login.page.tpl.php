@@ -83,9 +83,16 @@
                     <a class="navbar-brand" href="#">
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
                     </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="" src="/app_img/logo_lppdg40.png">
+                    </a>
                 </div>
+                <!--
                 <div id="navbar" class="navbar-collapse collapse">
-                    <!-- Single button --> 
+                    
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -97,6 +104,7 @@
                       </ul>
                     </div>
                 </div>
+                -->
             </div>
         </nav>
 
