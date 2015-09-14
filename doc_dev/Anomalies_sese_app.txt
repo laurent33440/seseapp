@@ -10,6 +10,8 @@ KO :
 ========
 Url = http://localhost/seseapp/index.php/
 
+
+
 Infos paths SESE : Path info : / || base url : /seseapp/index.php || array(3) { ["_controller"]=> string(5) "Login" ["_action"]=> string(3) "run" ["_route"]=> string(11) "login_route" }
 
 Entete REQUETTE  : GET URL requette : http://localhost/seseapp/index.php/bootstrap3.2.0-dist/css/bootstrap.css
