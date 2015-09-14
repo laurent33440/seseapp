@@ -1,5 +1,0 @@
-19-08-2015 11:25:53 - INFO  --> 
-======== Log SESE Start ========
---------------------------------- 
-19-08-2015 11:25:53 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
-19-08-2015 11:25:53 - INFO  --> Class MainRouter - controller trigged : Login::check 

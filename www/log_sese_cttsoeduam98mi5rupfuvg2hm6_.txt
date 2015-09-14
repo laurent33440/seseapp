@@ -1,0 +1,40 @@
+13-09-2015 11:07:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:07:22 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+13-09-2015 11:07:22 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:07:22 - INFO  --> end Class MainRouter 
+13-09-2015 11:07:22 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:07:22 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:07:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:07:26 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:07:26 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:07:26 - INFO  --> end Class MainRouter 
+13-09-2015 11:07:26 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:07:26 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:07:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:07:26 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:07:26 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:07:26 - INFO  --> end Class MainRouter 
+13-09-2015 11:07:26 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:07:26 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:08:15 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:08:15 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:08:15 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:08:15 - INFO  --> end Class MainRouter 
+13-09-2015 11:08:15 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:08:15 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:08:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:08:22 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:08:22 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:08:22 - INFO  --> end Class MainRouter 
+13-09-2015 11:08:22 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:08:22 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 

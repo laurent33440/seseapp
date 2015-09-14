@@ -14,7 +14,7 @@ use UserConnected;
 /**
  * Description of HeaderModel
  * Class used by AControllerState to get generals infos for header
- * Fill in properties according to user connected or not
+ * Fill in properties according to user connected 
  * @author laurent
  */
 class HeaderModel {
@@ -25,7 +25,6 @@ class HeaderModel {
     private $_studyYear;
     private $_userName='';
     private $_userRole='';
-    
     
     public function get_schoolName() {
         return $this->_schoolName;
@@ -56,7 +55,7 @@ class HeaderModel {
         $this->_courseName=$ref[0]->rdf_nom_formation;
         $collection = new DataAccess('Annee');
         $year = $collection->GetAll();
-        $this->_courseName=$year[0]->annee_scolaire;
+        $this->_studyYear=$year[0]->annee_scolaire;
         if(UserConnected::getInstance()->isUserConnected()){
             $this->_userName= \UserConnected::getInstance()->getUserName();
             $this->_userRole= \UserConnected::getInstance()->getUserGroup();

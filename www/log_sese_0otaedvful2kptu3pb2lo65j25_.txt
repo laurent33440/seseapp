@@ -1,0 +1,1118 @@
+22-08-2015 14:54:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 14:54:41 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+22-08-2015 14:54:41 - INFO  --> Class MainRouter - controller trigged : Login::check 
+22-08-2015 14:54:41 - INFO  --> end Class MainRouter 
+22-08-2015 14:54:41 - INFO  --> destruct : Controller\LoginController 
+22-08-2015 14:54:41 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+22-08-2015 14:54:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 14:54:51 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+22-08-2015 14:54:51 - INFO  --> Class MainRouter - controller trigged : Login::check 
+22-08-2015 14:54:51 - INFO  --> end Class MainRouter 
+22-08-2015 14:54:51 - INFO  --> destruct : Controller\LoginController 
+22-08-2015 14:54:51 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+22-08-2015 14:54:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 14:54:51 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+22-08-2015 14:54:51 - INFO  --> Class MainRouter - controller trigged : Login::check 
+22-08-2015 14:54:51 - INFO  --> Class Controller\LoginController -- Redirect to administrateur for user :lolo 
+22-08-2015 14:54:51 - INFO  --> end Class MainRouter 
+22-08-2015 14:54:51 - INFO  --> destruct : Controller\LoginController 
+22-08-2015 14:54:51 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+22-08-2015 14:54:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 14:54:51 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+22-08-2015 14:54:51 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+22-08-2015 14:54:51 - INFO  --> end Class MainRouter 
+22-08-2015 14:54:51 - INFO  --> destruct : Controller\AdminController 
+22-08-2015 14:54:51 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+22-08-2015 14:55:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 14:55:07 - INFO  --> Controller\AdminController restoring state controller : Admin::professionalSkillDefinition-->idle 
+22-08-2015 14:55:07 - INFO  --> Class MainRouter - controller trigged : Admin::professionalSkillDefinition 
+22-08-2015 14:55:07 - INFO  --> end Class MainRouter 
+22-08-2015 14:55:07 - INFO  --> destruct : Controller\AdminController 
+22-08-2015 14:55:07 - INFO  --> Controller\AdminController saving state controller : Admin::professionalSkillDefinition-->running 
+22-08-2015 14:57:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 14:57:39 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->idle 
+22-08-2015 14:57:39 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+22-08-2015 14:57:39 - INFO  --> end Class MainRouter 
+22-08-2015 14:57:39 - INFO  --> destruct : Controller\AdminController 
+22-08-2015 14:57:39 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+22-08-2015 15:05:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 15:05:46 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+22-08-2015 15:05:46 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+22-08-2015 15:05:46 - INFO  --> end Class MainRouter 
+22-08-2015 15:05:46 - INFO  --> destruct : Controller\AdminController 
+22-08-2015 15:05:46 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+22-08-2015 15:05:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 15:05:58 - INFO  --> Controller\AdminController restoring state controller : Admin::professionalSkillDefinition-->running 
+22-08-2015 15:05:58 - INFO  --> Class MainRouter - controller trigged : Admin::professionalSkillDefinition 
+22-08-2015 15:05:58 - INFO  --> end Class MainRouter 
+22-08-2015 15:05:58 - INFO  --> destruct : Controller\AdminController 
+22-08-2015 15:05:58 - INFO  --> Controller\AdminController saving state controller : Admin::professionalSkillDefinition-->running 
+22-08-2015 15:06:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+22-08-2015 15:06:00 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+22-08-2015 15:06:00 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+22-08-2015 15:06:00 - INFO  --> end Class MainRouter 
+22-08-2015 15:06:00 - INFO  --> destruct : Controller\AdminController 
+22-08-2015 15:06:00 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+23-08-2015 19:02:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+23-08-2015 19:02:41 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+23-08-2015 19:02:41 - INFO  --> Class MainRouter - controller trigged : Login::check 
+23-08-2015 19:02:41 - INFO  --> end Class MainRouter 
+23-08-2015 19:02:41 - INFO  --> destruct : Controller\LoginController 
+23-08-2015 19:02:41 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+23-08-2015 19:03:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+23-08-2015 19:03:00 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+23-08-2015 19:03:00 - INFO  --> Class MainRouter - controller trigged : Login::check 
+23-08-2015 19:03:00 - INFO  --> Class Controller\LoginController -- Redirect to administrateur for user :lolo 
+23-08-2015 19:03:00 - INFO  --> end Class MainRouter 
+23-08-2015 19:03:00 - INFO  --> destruct : Controller\LoginController 
+23-08-2015 19:03:00 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+23-08-2015 19:03:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+23-08-2015 19:03:00 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+23-08-2015 19:03:00 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+23-08-2015 19:03:00 - INFO  --> end Class MainRouter 
+23-08-2015 19:03:00 - INFO  --> destruct : Controller\AdminController 
+23-08-2015 19:03:00 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+23-08-2015 19:04:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+23-08-2015 19:04:13 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+23-08-2015 19:04:13 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+23-08-2015 19:04:13 - INFO  --> end Class MainRouter 
+23-08-2015 19:04:13 - INFO  --> destruct : Controller\AdminController 
+23-08-2015 19:04:13 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+31-08-2015 19:09:05 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:05 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+31-08-2015 19:09:05 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 19:09:08 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:08 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 19:09:08 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 19:09:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:13 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 19:09:13 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 19:09:14 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:14 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 19:09:14 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 19:09:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:14 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 19:09:14 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 19:09:15 - INFO  --> Class Controller\LoginController -- Redirect to administrateur for user :lolo 
+31-08-2015 19:09:15 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:15 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 19:09:15 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+31-08-2015 19:09:15 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:16 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+31-08-2015 19:09:16 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+31-08-2015 19:09:16 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:16 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:09:16 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+31-08-2015 19:09:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:29 - INFO  --> Controller\AdminController restoring state controller : Admin::activityDefinition-->idle 
+31-08-2015 19:09:29 - INFO  --> Class MainRouter - controller trigged : Admin::activityDefinition 
+31-08-2015 19:09:29 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:29 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:09:29 - INFO  --> Controller\AdminController saving state controller : Admin::activityDefinition-->running 
+31-08-2015 19:09:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:36 - INFO  --> Controller\AdminController restoring state controller : Admin::professionalSkillDefinition-->idle 
+31-08-2015 19:09:36 - INFO  --> Class MainRouter - controller trigged : Admin::professionalSkillDefinition 
+31-08-2015 19:09:37 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:37 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:09:37 - INFO  --> Controller\AdminController saving state controller : Admin::professionalSkillDefinition-->running 
+31-08-2015 19:09:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:09:42 - INFO  --> Controller\AdminController restoring state controller : Admin::skillDefinition-->idle 
+31-08-2015 19:09:42 - INFO  --> Class MainRouter - controller trigged : Admin::skillDefinition 
+31-08-2015 19:09:42 - INFO  --> end Class MainRouter 
+31-08-2015 19:09:42 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:09:42 - INFO  --> Controller\AdminController saving state controller : Admin::skillDefinition-->running 
+31-08-2015 19:10:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:01 - INFO  --> Controller\AdminController restoring state controller : Admin::activityDefinition-->running 
+31-08-2015 19:10:01 - INFO  --> Class MainRouter - controller trigged : Admin::activityDefinition 
+31-08-2015 19:10:01 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:01 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:01 - INFO  --> Controller\AdminController saving state controller : Admin::activityDefinition-->running 
+31-08-2015 19:10:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:03 - INFO  --> Controller\AdminController restoring state controller : Admin::professionalSkillDefinition-->running 
+31-08-2015 19:10:03 - INFO  --> Class MainRouter - controller trigged : Admin::professionalSkillDefinition 
+31-08-2015 19:10:03 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:03 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:03 - INFO  --> Controller\AdminController saving state controller : Admin::professionalSkillDefinition-->running 
+31-08-2015 19:10:05 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:05 - INFO  --> Controller\AdminController restoring state controller : Admin::functionDefinition-->idle 
+31-08-2015 19:10:05 - INFO  --> Class MainRouter - controller trigged : Admin::functionDefinition 
+31-08-2015 19:10:05 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:05 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:05 - INFO  --> Controller\AdminController saving state controller : Admin::functionDefinition-->running 
+31-08-2015 19:10:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:11 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->idle 
+31-08-2015 19:10:11 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+31-08-2015 19:10:11 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:11 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:11 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+31-08-2015 19:10:15 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:15 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+31-08-2015 19:10:15 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+31-08-2015 19:10:15 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:15 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:15 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+31-08-2015 19:10:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:27 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+31-08-2015 19:10:27 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+31-08-2015 19:10:29 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:29 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:29 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+31-08-2015 19:10:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 19:10:38 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+31-08-2015 19:10:38 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+31-08-2015 19:10:38 - INFO  --> end Class MainRouter 
+31-08-2015 19:10:38 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 19:10:38 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+31-08-2015 21:13:08 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:13:08 - INFO  --> Controller\AdminController restoring state controller : Admin::promotionDefinition-->idle 
+31-08-2015 21:13:08 - INFO  --> Class MainRouter - controller trigged : Admin::promotionDefinition 
+31-08-2015 21:13:09 - INFO  --> end Class MainRouter 
+31-08-2015 21:13:09 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:13:09 - INFO  --> Controller\AdminController saving state controller : Admin::promotionDefinition-->running 
+31-08-2015 21:13:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:13:16 - INFO  --> Controller\AdminController restoring state controller : Admin::teacherDefinition-->idle 
+31-08-2015 21:13:16 - INFO  --> Class MainRouter - controller trigged : Admin::teacherDefinition 
+31-08-2015 21:13:17 - INFO  --> end Class MainRouter 
+31-08-2015 21:13:17 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:13:17 - INFO  --> Controller\AdminController saving state controller : Admin::teacherDefinition-->running 
+31-08-2015 21:15:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:15:44 - INFO  --> Controller\AdminController restoring state controller : Admin::workDateDefinition-->idle 
+31-08-2015 21:15:44 - INFO  --> Class MainRouter - controller trigged : Admin::workDateDefinition 
+31-08-2015 21:15:44 - INFO  --> end Class MainRouter 
+31-08-2015 21:15:44 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:15:44 - INFO  --> Controller\AdminController saving state controller : Admin::workDateDefinition-->running 
+31-08-2015 21:15:48 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:15:48 - INFO  --> Controller\AdminController restoring state controller : Admin::traineeDefinition-->idle 
+31-08-2015 21:15:48 - INFO  --> Class MainRouter - controller trigged : Admin::traineeDefinition 
+31-08-2015 21:15:48 - INFO  --> end Class MainRouter 
+31-08-2015 21:15:48 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:15:48 - INFO  --> Controller\AdminController saving state controller : Admin::traineeDefinition-->running 
+31-08-2015 21:15:50 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:15:50 - INFO  --> Controller\AdminController restoring state controller : Admin::adminPasswordDefinition-->idle 
+31-08-2015 21:15:50 - INFO  --> Class MainRouter - controller trigged : Admin::adminPasswordDefinition 
+31-08-2015 21:15:50 - INFO  --> end Class MainRouter 
+31-08-2015 21:15:50 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:15:50 - INFO  --> Controller\AdminController saving state controller : Admin::adminPasswordDefinition-->running 
+31-08-2015 21:16:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:16:00 - INFO  --> Controller\AdminController restoring state controller : Admin::adminPasswordDefinition-->running 
+31-08-2015 21:16:00 - INFO  --> Class MainRouter - controller trigged : Admin::adminPasswordDefinition 
+31-08-2015 21:16:00 - INFO  --> end Class MainRouter 
+31-08-2015 21:16:00 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:16:00 - INFO  --> Controller\AdminController saving state controller : Admin::adminPasswordDefinition-->running 
+31-08-2015 21:18:15 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:15 - INFO  --> Controller\AdminController restoring state controller : Admin::documentDefinition-->running 
+31-08-2015 21:18:15 - INFO  --> Class MainRouter - controller trigged : Admin::documentDefinition 
+31-08-2015 21:18:15 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:15 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:18:15 - INFO  --> Controller\AdminController saving state controller : Admin::documentDefinition-->running 
+31-08-2015 21:18:18 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:18 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+31-08-2015 21:18:18 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:18:18 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:18 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:18:18 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 21:18:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:19 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+31-08-2015 21:18:19 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+31-08-2015 21:18:19 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:19 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:18:19 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+31-08-2015 21:18:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:19 - INFO  --> Controller\AboutController restoring state controller : About::run-->idle 
+31-08-2015 21:18:19 - INFO  --> Class MainRouter - controller trigged : About::run 
+31-08-2015 21:18:19 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:19 - INFO  --> destruct : Controller\AboutController 
+31-08-2015 21:18:19 - INFO  --> Controller\AboutController saving state controller : About::run-->running 
+31-08-2015 21:18:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:25 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 21:18:25 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:18:25 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:25 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:18:25 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 21:18:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:36 - INFO  --> Controller\AdminController restoring state controller : Admin::welcome-->idle 
+31-08-2015 21:18:36 - INFO  --> Class MainRouter - controller trigged : Admin::welcome 
+31-08-2015 21:18:36 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:36 - INFO  --> destruct : Controller\AdminController 
+31-08-2015 21:18:36 - INFO  --> Controller\AdminController saving state controller : Admin::welcome-->idle 
+31-08-2015 21:18:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:36 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 21:18:36 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:18:37 - INFO  --> Class Controller\LoginController -- Redirect to tuteur for user :t@t 
+31-08-2015 21:18:37 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:37 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:18:37 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+31-08-2015 21:18:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:37 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:18:37 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:18:38 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:38 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:18:38 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:18:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:18:40 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:18:40 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorDocumentList 
+31-08-2015 21:18:42 - INFO  --> end Class MainRouter 
+31-08-2015 21:18:42 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:18:42 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:19:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:11 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeList-->idle 
+31-08-2015 21:19:11 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeList 
+31-08-2015 21:19:13 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:13 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:13 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeList-->idle 
+31-08-2015 21:19:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:25 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorContact-->idle 
+31-08-2015 21:19:25 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorContact 
+31-08-2015 21:19:25 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:25 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:25 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorContact-->running 
+31-08-2015 21:19:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:27 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:19:27 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeActivityList 
+31-08-2015 21:19:27 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:27 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:27 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:19:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:32 - INFO  --> Controller\TutorController restoring state controller : Tutor::evaluateTrainee-->idle 
+31-08-2015 21:19:32 - INFO  --> Class MainRouter - controller trigged : Tutor::evaluateTrainee 
+31-08-2015 21:19:34 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:34 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:34 - INFO  --> Controller\TutorController saving state controller : Tutor::evaluateTrainee-->running 
+31-08-2015 21:19:48 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:48 - INFO  --> Controller\TutorController restoring state controller : Tutor::passwordDefinition-->idle 
+31-08-2015 21:19:48 - INFO  --> Class MainRouter - controller trigged : Tutor::passwordDefinition 
+31-08-2015 21:19:48 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:48 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:48 - INFO  --> Controller\TutorController saving state controller : Tutor::passwordDefinition-->running 
+31-08-2015 21:19:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:57 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:19:57 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorDocumentList 
+31-08-2015 21:19:57 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:57 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:57 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:19:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:58 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeList-->idle 
+31-08-2015 21:19:58 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeList 
+31-08-2015 21:19:58 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:58 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:58 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeList-->idle 
+31-08-2015 21:19:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:19:59 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorContact-->running 
+31-08-2015 21:19:59 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorContact 
+31-08-2015 21:19:59 - INFO  --> end Class MainRouter 
+31-08-2015 21:19:59 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:19:59 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorContact-->running 
+31-08-2015 21:20:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:20:01 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:20:01 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeActivityList 
+31-08-2015 21:20:01 - INFO  --> end Class MainRouter 
+31-08-2015 21:20:01 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:20:01 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:20:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:20:02 - INFO  --> Controller\TutorController restoring state controller : Tutor::evaluateTrainee-->running 
+31-08-2015 21:20:02 - INFO  --> Class MainRouter - controller trigged : Tutor::evaluateTrainee 
+31-08-2015 21:20:02 - INFO  --> end Class MainRouter 
+31-08-2015 21:20:02 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:20:02 - INFO  --> Controller\TutorController saving state controller : Tutor::evaluateTrainee-->running 
+31-08-2015 21:20:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:20:03 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:20:03 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeActivityList 
+31-08-2015 21:20:03 - INFO  --> end Class MainRouter 
+31-08-2015 21:20:03 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:20:03 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:20:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:20:12 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:20:12 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorDocumentList 
+31-08-2015 21:20:12 - INFO  --> end Class MainRouter 
+31-08-2015 21:20:12 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:20:12 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:23:10 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:23:10 - INFO  --> Controller\TutorController restoring state controller : Tutor::passwordDefinition-->running 
+31-08-2015 21:23:10 - INFO  --> Class MainRouter - controller trigged : Tutor::passwordDefinition 
+31-08-2015 21:23:10 - INFO  --> end Class MainRouter 
+31-08-2015 21:23:10 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:23:10 - INFO  --> Controller\TutorController saving state controller : Tutor::passwordDefinition-->running 
+31-08-2015 21:23:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:23:12 - INFO  --> Controller\TutorController restoring state controller : Tutor::evaluateTrainee-->running 
+31-08-2015 21:23:12 - INFO  --> Class MainRouter - controller trigged : Tutor::evaluateTrainee 
+31-08-2015 21:23:12 - INFO  --> end Class MainRouter 
+31-08-2015 21:23:12 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:23:12 - INFO  --> Controller\TutorController saving state controller : Tutor::evaluateTrainee-->running 
+31-08-2015 21:23:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:23:43 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:23:43 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeActivityList 
+31-08-2015 21:23:43 - INFO  --> end Class MainRouter 
+31-08-2015 21:23:43 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:23:43 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeActivityList-->idle 
+31-08-2015 21:23:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:23:46 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorContact-->running 
+31-08-2015 21:23:46 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorContact 
+31-08-2015 21:23:46 - INFO  --> end Class MainRouter 
+31-08-2015 21:23:46 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:23:46 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorContact-->running 
+31-08-2015 21:23:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:23:52 - INFO  --> Controller\TutorController restoring state controller : Tutor::traineeList-->idle 
+31-08-2015 21:23:52 - INFO  --> Class MainRouter - controller trigged : Tutor::traineeList 
+31-08-2015 21:23:52 - INFO  --> end Class MainRouter 
+31-08-2015 21:23:52 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:23:52 - INFO  --> Controller\TutorController saving state controller : Tutor::traineeList-->idle 
+31-08-2015 21:23:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:23:59 - INFO  --> Controller\TutorController restoring state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:23:59 - INFO  --> Class MainRouter - controller trigged : Tutor::tutorDocumentList 
+31-08-2015 21:23:59 - INFO  --> end Class MainRouter 
+31-08-2015 21:23:59 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:23:59 - INFO  --> Controller\TutorController saving state controller : Tutor::tutorDocumentList-->idle 
+31-08-2015 21:24:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:06 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+31-08-2015 21:24:06 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:24:06 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:06 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:24:06 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 21:24:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:12 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:12 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:24:12 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:12 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:24:12 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:12 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 21:24:12 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:24:12 - INFO  --> Class Controller\LoginController -- Redirect to tuteur for user :t@t 
+31-08-2015 21:24:12 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:12 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:24:12 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+31-08-2015 21:24:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:12 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:12 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:24:12 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:12 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:24:12 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:38 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+31-08-2015 21:24:38 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:24:38 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:38 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:24:38 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 21:24:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:39 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:39 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:24:39 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:39 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:24:39 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:24:57 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:24:57 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:24:57 - INFO  --> end Class MainRouter 
+31-08-2015 21:24:57 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:24:57 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:25:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:25:36 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:25:36 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:25:36 - INFO  --> end Class MainRouter 
+31-08-2015 21:25:36 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:25:36 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:25:50 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:25:50 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:25:50 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:25:50 - INFO  --> end Class MainRouter 
+31-08-2015 21:25:50 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:25:50 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:25:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:25:53 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:25:53 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:25:53 - INFO  --> end Class MainRouter 
+31-08-2015 21:25:53 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:25:53 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:26:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:26:02 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 21:26:02 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:26:02 - INFO  --> end Class MainRouter 
+31-08-2015 21:26:02 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:26:02 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 21:30:10 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:10 - INFO  --> Controller\TutorController restoring state controller : Tutor::welcome-->idle 
+31-08-2015 21:30:10 - INFO  --> Class MainRouter - controller trigged : Tutor::welcome 
+31-08-2015 21:30:10 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:10 - INFO  --> destruct : Controller\TutorController 
+31-08-2015 21:30:10 - INFO  --> Controller\TutorController saving state controller : Tutor::welcome-->idle 
+31-08-2015 21:30:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:11 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 21:30:11 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:30:11 - INFO  --> Class Controller\LoginController -- Redirect to enseignant for user :l 
+31-08-2015 21:30:11 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:11 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:30:11 - INFO  --> Controller\LoginController saving state controller : Login::check-->idle 
+31-08-2015 21:30:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:11 - INFO  --> Controller\TeacherController restoring state controller : Teacher::welcome-->idle 
+31-08-2015 21:30:11 - INFO  --> Class MainRouter - controller trigged : Teacher::welcome 
+31-08-2015 21:30:11 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:11 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:30:11 - INFO  --> Controller\TeacherController saving state controller : Teacher::welcome-->idle 
+31-08-2015 21:30:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:14 - INFO  --> Controller\TeacherController restoring state controller : Teacher::passwordDefinition-->idle 
+31-08-2015 21:30:14 - INFO  --> Class MainRouter - controller trigged : Teacher::passwordDefinition 
+31-08-2015 21:30:14 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:14 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:30:14 - INFO  --> Controller\TeacherController saving state controller : Teacher::passwordDefinition-->running 
+31-08-2015 21:30:17 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:17 - INFO  --> Controller\TeacherController restoring state controller : Teacher::documentList-->idle 
+31-08-2015 21:30:17 - INFO  --> Class MainRouter - controller trigged : Teacher::documentList 
+31-08-2015 21:30:17 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:17 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:30:17 - INFO  --> Controller\TeacherController saving state controller : Teacher::documentList-->idle 
+31-08-2015 21:30:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:29 - INFO  --> Controller\TeacherController restoring state controller : Teacher::workDefinition-->idle 
+31-08-2015 21:30:29 - INFO  --> Class MainRouter - controller trigged : Teacher::workDefinition 
+31-08-2015 21:30:30 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:30 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:30:30 - INFO  --> Controller\TeacherController saving state controller : Teacher::workDefinition-->running 
+31-08-2015 21:30:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:43 - INFO  --> Controller\TeacherController restoring state controller : Teacher::teacherContact-->idle 
+31-08-2015 21:30:43 - INFO  --> Class MainRouter - controller trigged : Teacher::teacherContact 
+31-08-2015 21:30:43 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:43 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:30:43 - INFO  --> Controller\TeacherController saving state controller : Teacher::teacherContact-->running 
+31-08-2015 21:30:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:30:44 - INFO  --> Controller\TeacherController restoring state controller : Teacher::workVisitDefinition-->idle 
+31-08-2015 21:30:44 - INFO  --> Class MainRouter - controller trigged : Teacher::workVisitDefinition 
+31-08-2015 21:30:44 - INFO  --> end Class MainRouter 
+31-08-2015 21:30:44 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:30:44 - INFO  --> Controller\TeacherController saving state controller : Teacher::workVisitDefinition-->running 
+31-08-2015 21:31:05 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:31:05 - INFO  --> Controller\TeacherController restoring state controller : Teacher::workTeacherCommentDefinition-->idle 
+31-08-2015 21:31:05 - INFO  --> Class MainRouter - controller trigged : Teacher::workTeacherCommentDefinition 
+31-08-2015 21:31:05 - INFO  --> end Class MainRouter 
+31-08-2015 21:31:05 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:31:05 - INFO  --> Controller\TeacherController saving state controller : Teacher::workTeacherCommentDefinition-->running 
+31-08-2015 21:43:10 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:43:10 - INFO  --> Controller\TeacherController restoring state controller : Teacher::passwordDefinition-->running 
+31-08-2015 21:43:10 - INFO  --> Class MainRouter - controller trigged : Teacher::passwordDefinition 
+31-08-2015 21:43:10 - INFO  --> end Class MainRouter 
+31-08-2015 21:43:10 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:43:10 - INFO  --> Controller\TeacherController saving state controller : Teacher::passwordDefinition-->running 
+31-08-2015 21:43:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:43:14 - INFO  --> Controller\TeacherController restoring state controller : Teacher::workDefinition-->running 
+31-08-2015 21:43:14 - INFO  --> Class MainRouter - controller trigged : Teacher::workDefinition 
+31-08-2015 21:43:14 - INFO  --> end Class MainRouter 
+31-08-2015 21:43:14 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:43:14 - INFO  --> Controller\TeacherController saving state controller : Teacher::workDefinition-->running 
+31-08-2015 21:43:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:43:16 - INFO  --> Controller\TeacherController restoring state controller : Teacher::documentList-->idle 
+31-08-2015 21:43:16 - INFO  --> Class MainRouter - controller trigged : Teacher::documentList 
+31-08-2015 21:43:16 - INFO  --> end Class MainRouter 
+31-08-2015 21:43:16 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:43:16 - INFO  --> Controller\TeacherController saving state controller : Teacher::documentList-->idle 
+31-08-2015 21:43:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:43:35 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+31-08-2015 21:43:35 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 21:43:35 - INFO  --> end Class MainRouter 
+31-08-2015 21:43:35 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 21:43:35 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 21:43:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:43:41 - INFO  --> Controller\TeacherController restoring state controller : Teacher::welcome-->idle 
+31-08-2015 21:43:41 - INFO  --> Class MainRouter - controller trigged : Teacher::welcome 
+31-08-2015 21:43:41 - INFO  --> end Class MainRouter 
+31-08-2015 21:43:41 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:43:41 - INFO  --> Controller\TeacherController saving state controller : Teacher::welcome-->idle 
+31-08-2015 21:44:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 21:44:14 - INFO  --> Controller\TeacherController restoring state controller : Teacher::welcome-->idle 
+31-08-2015 21:44:14 - INFO  --> Class MainRouter - controller trigged : Teacher::welcome 
+31-08-2015 21:44:14 - INFO  --> end Class MainRouter 
+31-08-2015 21:44:14 - INFO  --> destruct : Controller\TeacherController 
+31-08-2015 21:44:14 - INFO  --> Controller\TeacherController saving state controller : Teacher::welcome-->idle 
+31-08-2015 22:18:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:18:34 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+31-08-2015 22:18:34 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:18:34 - INFO  --> end Class MainRouter 
+31-08-2015 22:18:34 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:18:34 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:25:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:25:13 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:25:13 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:25:16 - INFO  --> end Class MainRouter 
+31-08-2015 22:25:16 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:25:16 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:25:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:25:23 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:25:23 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:25:23 - INFO  --> end Class MainRouter 
+31-08-2015 22:25:23 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:25:23 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:32:28 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:32:28 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:32:28 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:32:28 - INFO  --> end Class MainRouter 
+31-08-2015 22:32:28 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:32:28 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:34:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:34:27 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:34:27 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:34:27 - INFO  --> end Class MainRouter 
+31-08-2015 22:34:27 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:34:27 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:34:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:34:35 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:34:35 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:34:35 - INFO  --> end Class MainRouter 
+31-08-2015 22:34:35 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:34:35 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:56:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:56:42 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:56:42 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:56:42 - INFO  --> end Class MainRouter 
+31-08-2015 22:56:42 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:56:42 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:57:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:57:04 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:57:04 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:57:04 - INFO  --> end Class MainRouter 
+31-08-2015 22:57:04 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:57:04 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:57:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:57:12 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:57:12 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:57:12 - INFO  --> end Class MainRouter 
+31-08-2015 22:57:12 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:57:12 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+31-08-2015 22:57:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+31-08-2015 22:57:12 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+31-08-2015 22:57:12 - INFO  --> Class MainRouter - controller trigged : Login::check 
+31-08-2015 22:57:13 - INFO  --> end Class MainRouter 
+31-08-2015 22:57:13 - INFO  --> destruct : Controller\LoginController 
+31-08-2015 22:57:13 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+01-09-2015 19:13:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+01-09-2015 19:13:45 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+01-09-2015 19:13:45 - INFO  --> Class MainRouter - controller trigged : Login::check 
+01-09-2015 19:13:48 - INFO  --> end Class MainRouter 
+01-09-2015 19:13:48 - INFO  --> destruct : Controller\LoginController 
+01-09-2015 19:13:48 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+06-09-2015 19:04:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+06-09-2015 19:04:10 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+06-09-2015 19:04:10 - INFO  --> Class MainRouter - controller trigged : Login::check 
+06-09-2015 19:04:13 - INFO  --> end Class MainRouter 
+06-09-2015 19:04:13 - INFO  --> destruct : Controller\LoginController 
+06-09-2015 19:04:13 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+07-09-2015 9:49:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+07-09-2015 9:50:00 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+07-09-2015 9:50:00 - INFO  --> Class MainRouter - controller trigged : Login::check 
+07-09-2015 9:50:01 - INFO  --> end Class MainRouter 
+07-09-2015 9:50:01 - INFO  --> destruct : Controller\LoginController 
+07-09-2015 9:50:01 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+07-09-2015 9:50:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+07-09-2015 9:50:04 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+07-09-2015 9:50:04 - INFO  --> Class MainRouter - controller trigged : Login::check 
+07-09-2015 9:50:04 - INFO  --> end Class MainRouter 
+07-09-2015 9:50:04 - INFO  --> destruct : Controller\LoginController 
+07-09-2015 9:50:04 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+07-09-2015 21:49:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+07-09-2015 21:49:59 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+07-09-2015 21:49:59 - INFO  --> Class MainRouter - controller trigged : Login::check 
+07-09-2015 21:50:02 - INFO  --> end Class MainRouter 
+07-09-2015 21:50:02 - INFO  --> destruct : Controller\LoginController 
+07-09-2015 21:50:02 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+07-09-2015 22:25:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+07-09-2015 22:25:37 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+07-09-2015 22:25:37 - INFO  --> Class MainRouter - controller trigged : Login::check 
+07-09-2015 22:25:37 - INFO  --> end Class MainRouter 
+07-09-2015 22:25:37 - INFO  --> destruct : Controller\LoginController 
+07-09-2015 22:25:37 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 11:41:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 11:41:37 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+09-09-2015 11:41:37 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 11:41:41 - INFO  --> end Class MainRouter 
+09-09-2015 11:41:41 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 11:41:41 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 16:56:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 16:56:24 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+09-09-2015 16:56:24 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 16:56:24 - INFO  --> end Class MainRouter 
+09-09-2015 16:56:24 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 16:56:24 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 16:56:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 16:56:27 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 16:56:27 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 16:56:27 - INFO  --> end Class MainRouter 
+09-09-2015 16:56:27 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 16:56:27 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 16:56:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 16:56:38 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 16:56:38 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 16:56:38 - INFO  --> end Class MainRouter 
+09-09-2015 16:56:38 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 16:56:38 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:02:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:02:51 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:02:51 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:02:51 - INFO  --> end Class MainRouter 
+09-09-2015 17:02:51 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:02:51 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:02:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:02:51 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:02:51 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:02:51 - INFO  --> end Class MainRouter 
+09-09-2015 17:02:51 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:02:51 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:07:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:07:51 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:07:51 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:07:51 - INFO  --> end Class MainRouter 
+09-09-2015 17:07:51 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:07:51 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:08:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:08:02 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:08:02 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:08:02 - INFO  --> end Class MainRouter 
+09-09-2015 17:08:02 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:08:02 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:13:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:13:33 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:13:33 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:13:33 - INFO  --> end Class MainRouter 
+09-09-2015 17:13:33 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:13:33 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:16:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:16:52 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:16:52 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:16:52 - INFO  --> end Class MainRouter 
+09-09-2015 17:16:52 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:16:52 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:17:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:17:39 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:17:39 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:17:39 - INFO  --> end Class MainRouter 
+09-09-2015 17:17:39 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:17:39 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:17:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:17:53 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:17:53 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:17:53 - INFO  --> end Class MainRouter 
+09-09-2015 17:17:53 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:17:53 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+09-09-2015 17:18:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+09-09-2015 17:18:27 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+09-09-2015 17:18:27 - INFO  --> Class MainRouter - controller trigged : Login::check 
+09-09-2015 17:18:27 - INFO  --> end Class MainRouter 
+09-09-2015 17:18:27 - INFO  --> destruct : Controller\LoginController 
+09-09-2015 17:18:27 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+10-09-2015 21:33:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+10-09-2015 21:33:02 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+10-09-2015 21:33:02 - INFO  --> Class MainRouter - controller trigged : Login::check 
+10-09-2015 21:33:05 - INFO  --> end Class MainRouter 
+10-09-2015 21:33:05 - INFO  --> destruct : Controller\LoginController 
+10-09-2015 21:33:05 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+11-09-2015 7:25:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+11-09-2015 7:25:13 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+11-09-2015 7:25:13 - INFO  --> Class MainRouter - controller trigged : Login::check 
+11-09-2015 7:25:23 - INFO  --> end Class MainRouter 
+11-09-2015 7:25:23 - INFO  --> destruct : Controller\LoginController 
+11-09-2015 7:25:23 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+11-09-2015 7:44:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+11-09-2015 7:44:33 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+11-09-2015 7:44:33 - INFO  --> Class MainRouter - controller trigged : Login::check 
+11-09-2015 7:44:33 - INFO  --> end Class MainRouter 
+11-09-2015 7:44:33 - INFO  --> destruct : Controller\LoginController 
+11-09-2015 7:44:33 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+11-09-2015 7:44:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+11-09-2015 7:44:35 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+11-09-2015 7:44:35 - INFO  --> Class MainRouter - controller trigged : Login::check 
+11-09-2015 7:44:35 - INFO  --> end Class MainRouter 
+11-09-2015 7:44:35 - INFO  --> destruct : Controller\LoginController 
+11-09-2015 7:44:35 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:02:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:02:25 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+13-09-2015 11:02:25 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:02:28 - INFO  --> end Class MainRouter 
+13-09-2015 11:02:28 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:02:28 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:02:30 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:02:30 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:02:30 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:02:30 - INFO  --> end Class MainRouter 
+13-09-2015 11:02:30 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:02:30 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:02:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:02:42 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:02:42 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:02:42 - INFO  --> end Class MainRouter 
+13-09-2015 11:02:42 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:02:42 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:08:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:08:19 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:08:19 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:08:19 - INFO  --> end Class MainRouter 
+13-09-2015 11:08:19 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:08:19 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:09:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:09:36 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:09:36 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:09:36 - INFO  --> end Class MainRouter 
+13-09-2015 11:09:36 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:09:36 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:14:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:14:55 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:14:55 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:14:55 - INFO  --> end Class MainRouter 
+13-09-2015 11:14:55 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:14:55 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:14:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:14:56 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:14:56 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:14:56 - INFO  --> end Class MainRouter 
+13-09-2015 11:14:56 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:14:56 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:15:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:15:23 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:15:23 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:15:23 - INFO  --> end Class MainRouter 
+13-09-2015 11:15:23 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:15:23 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:15:28 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:15:28 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:15:28 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:15:28 - INFO  --> end Class MainRouter 
+13-09-2015 11:15:28 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:15:28 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:15:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:15:29 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:15:29 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:15:29 - INFO  --> end Class MainRouter 
+13-09-2015 11:15:29 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:15:29 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:19:07 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:19:07 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:19:07 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:19:07 - INFO  --> end Class MainRouter 
+13-09-2015 11:19:07 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:19:07 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:19:08 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:19:08 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:19:08 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:19:08 - INFO  --> end Class MainRouter 
+13-09-2015 11:19:08 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:19:08 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:25:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:25:24 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:25:24 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:25:24 - INFO  --> end Class MainRouter 
+13-09-2015 11:25:24 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:25:24 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+13-09-2015 11:28:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+13-09-2015 11:28:43 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+13-09-2015 11:28:43 - INFO  --> Class MainRouter - controller trigged : Login::check 
+13-09-2015 11:28:43 - INFO  --> end Class MainRouter 
+13-09-2015 11:28:43 - INFO  --> destruct : Controller\LoginController 
+13-09-2015 11:28:43 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+14-09-2015 21:34:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+14-09-2015 21:34:44 - INFO  --> Controller\LoginController restoring state controller : Login::check-->idle 
+14-09-2015 21:34:44 - INFO  --> Class MainRouter - controller trigged : Login::check 
+14-09-2015 21:34:45 - INFO  --> end Class MainRouter 
+14-09-2015 21:34:45 - INFO  --> destruct : Controller\LoginController 
+14-09-2015 21:34:45 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+14-09-2015 21:39:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+14-09-2015 21:39:09 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+14-09-2015 21:39:09 - INFO  --> Class MainRouter - controller trigged : Login::check 
+14-09-2015 21:39:09 - INFO  --> end Class MainRouter 
+14-09-2015 21:39:09 - INFO  --> destruct : Controller\LoginController 
+14-09-2015 21:39:09 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+14-09-2015 21:39:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+14-09-2015 21:39:09 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+14-09-2015 21:39:09 - INFO  --> Class MainRouter - controller trigged : Login::check 
+14-09-2015 21:39:09 - INFO  --> end Class MainRouter 
+14-09-2015 21:39:09 - INFO  --> destruct : Controller\LoginController 
+14-09-2015 21:39:09 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+14-09-2015 21:39:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+14-09-2015 21:39:13 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+14-09-2015 21:39:13 - INFO  --> Class MainRouter - controller trigged : Login::check 
+14-09-2015 21:39:13 - INFO  --> end Class MainRouter 
+14-09-2015 21:39:13 - INFO  --> destruct : Controller\LoginController 
+14-09-2015 21:39:13 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+14-09-2015 21:46:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+14-09-2015 21:46:01 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+14-09-2015 21:46:01 - INFO  --> Class MainRouter - controller trigged : Login::check 
+14-09-2015 21:46:01 - INFO  --> end Class MainRouter 
+14-09-2015 21:46:01 - INFO  --> destruct : Controller\LoginController 
+14-09-2015 21:46:01 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 
+14-09-2015 21:51:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+14-09-2015 21:51:03 - INFO  --> Controller\LoginController restoring state controller : Login::check-->running 
+14-09-2015 21:51:03 - INFO  --> Class MainRouter - controller trigged : Login::check 
+14-09-2015 21:51:03 - INFO  --> end Class MainRouter 
+14-09-2015 21:51:03 - INFO  --> destruct : Controller\LoginController 
+14-09-2015 21:51:03 - INFO  --> Controller\LoginController saving state controller : Login::check-->running 

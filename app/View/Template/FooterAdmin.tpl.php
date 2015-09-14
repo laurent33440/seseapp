@@ -140,7 +140,7 @@
               
     </script>
     
-    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substituée dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substitué dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
     <script type="text/javascript">
         function getDoc(){
             $("#nom_document_en_edition").text('TITLE');

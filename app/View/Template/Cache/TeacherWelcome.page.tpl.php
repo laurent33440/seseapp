@@ -182,7 +182,7 @@
             <h3 class="panel-title">Informations générales</h3>
         </div>
         <div class="panel-body">
-            dimanche 19 juillet 2015 
+            lundi 31 août 2015 
         </div>
     </div>
 </div>

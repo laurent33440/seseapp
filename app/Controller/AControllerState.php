@@ -10,6 +10,7 @@ namespace Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse; 
+use Model\HeaderModel;
 use View\ViewHandler;
 use Logger;
 
@@ -240,7 +241,7 @@ abstract class AControllerState {
      */
     protected function buildHeaderView(array $headerParams=null){
         if(!$headerParams){
-            $model = new \Model\HeaderModel();
+            $model = new HeaderModel();
             $header = array('SCHOOL_NAME'=>$model->get_schoolName(),
                             'COURSE_NAME'=>$model->get_courseName(),
                             'STUDY_YEAR'=>$model->get_studyYear(),

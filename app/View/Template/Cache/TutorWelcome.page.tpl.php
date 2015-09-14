@@ -172,7 +172,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Informations générales - visites programmées -  mercredi 22 juillet 2015 </h3>
+            <h3 class="panel-title">Informations générales - visites programmées -  lundi 31 août 2015 </h3>
         </div>
         <div class="panel-body">
             <div class="table-responsive" id="visit_table">

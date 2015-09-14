@@ -200,7 +200,7 @@
                                             </td>
                                             <td>
                                                 $teacher
-                                                    <a href=\"tuteur/contact\"><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span></a>
+                                                    <a href=\"/contact\"><span class=\"glyphicon glyphicon-envelope\" aria-hidden=\"true\"></span></a>
                                             </td>
                                                     
                                         </tr>

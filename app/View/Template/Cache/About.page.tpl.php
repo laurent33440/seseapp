@@ -83,19 +83,12 @@
                     <a class="navbar-brand" href="#">
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
                     </a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <!-- Single button --> 
-                    <div class="btn-group nav navbar-nav navbar-right">
-                      <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        lolo : administrateur<span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu" >
-                        <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
-                        <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
-                      </ul>
-                    </div>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                    </a>
                 </div>
             </div>
         </nav>    

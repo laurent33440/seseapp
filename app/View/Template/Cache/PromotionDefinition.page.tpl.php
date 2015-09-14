@@ -84,6 +84,12 @@
                     <a class="navbar-brand" href="#">
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
                     </a>
+                     <a class="navbar-brand" href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                    </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <!-- Single button --> 
@@ -359,7 +365,7 @@
               
     </script>
     
-    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substituée dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substitué dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
     <script type="text/javascript">
         function getDoc(){
             $("#nom_document_en_edition").text('TITLE');

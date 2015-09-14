@@ -10,9 +10,6 @@ namespace Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-//use Symfony\Component\HttpFoundation\Cookie;
-//use Version;
-//use Bootstrap;
 use Exception\InternalException;
 use Model\LoginModel;
 use Logger;
@@ -41,30 +38,29 @@ class LoginController extends AControllerState{
         if($this->_request->isMethod('POST')){
             if($this->compute($this->_request->request->all()) === true){ //continue processing : wrong parameters
                 $this->modalParameters = new ModalParameters('Erreur d\'authentification', 'Vérifiez votre identifiant et/ou votre mot de passe ');
-                $this->sendModelView();
                 $this->_state=self::RUNNING;
+                $this->sendModelView();
             }else{ //authentication done
                 $this->_state=self::IDLE;
                 //fire good controller
                 $this->_response->send();
             }   
         }else{ //first view
-            $this->sendModelView();
             $this->_state=self::RUNNING;
+            $this->sendModelView();
         }
     }
     
-    protected function buildHeaderView(array $a=null){
-        $model = new \Model\HeaderModel();
-        $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
-                                            'COURSE_NAME'=>$model->get_courseName(),
-                                            'STUDY_YEAR'=>$model->get_studyYear(),
-                                            );
-    }
+//    protected function buildHeaderView(array $a=null){
+//        $model = new \Model\HeaderModel();
+//        $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
+//                                            'COURSE_NAME'=>$model->get_courseName(),
+//                                            'STUDY_YEAR'=>$model->get_studyYear(),
+//                                            );
+//    }
     
     public function buildBodyView(array $a=null){
         $formArray = $this->buildCompleteFormArray();
-        //$formArray['INDEX'] = $this->getRootPath();
         $formArray['INDEX'] = '/';
         $formArray['ABOUT'] = \Bootstrap::ENTRY_SCRIPT.'/apropos';
         $this->_modelView['body'] = $formArray;
