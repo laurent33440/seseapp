@@ -37,8 +37,18 @@ class LoginModelTest extends \PHPUnit_Framework_TestCase {
         $this->object->set_userPass('paradis');
         $this->assertFalse($this->object->isUserKnown());
         $this->object->set_userName('lolo');
-        $this->object->set_userPass('lolo');
+        $this->object->set_userPass('laurent');
         $this->assertTrue($this->object->isUserKnown());
+    }
+    
+    public function testHashPassword(){
+        //ok
+        $hash= password_hash('laurent', PASSWORD_BCRYPT);
+        echo $hash;
+        $this->assertTrue(password_verify('laurent', $hash));
+        //ko
+        $this->assertFalse(password_verify('martin', $hash));
+
     }
 
 }

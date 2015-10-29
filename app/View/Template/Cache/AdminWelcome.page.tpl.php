@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
-    
     <link href="<?php echo'/bootstrap-3.2.0-dist/css/bootstrap.css'; ?>" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo'/app_css/welcome.css'; ?>" rel="stylesheet">
@@ -99,8 +98,7 @@
                         lolo : administrateur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
-                        <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
-                        <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
+                        <li><a href="logout"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
                       </ul>
                     </div>
                 </div>
@@ -159,7 +157,7 @@
                             <h3 class="panel-title">Informations générales</h3>
                         </div>
                         <div class="panel-body">
-                            lundi 31 août 2015 
+                            samedi 24 octobre 2015 
                         </div>
                     </div>
                 </div>

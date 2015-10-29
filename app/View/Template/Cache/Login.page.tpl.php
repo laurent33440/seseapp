@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
-    
     <link href="<?php echo'/bootstrap-3.2.0-dist/css/bootstrap.css'; ?>" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo'/app_css/welcome.css'; ?>" rel="stylesheet">
@@ -71,7 +70,7 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -80,15 +79,27 @@
                     <a class="navbar-brand" href="#">
                         <img alt="SESE" src="/app_img/logo_sese40.png">SESE
                     </a>
-                    <a class="navbar-brand" href="#">
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li><a  href="" >
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
-                    </a>
-                    <a class="navbar-brand" href="#">
+                        </a></li>
+                        <li><a  href="" >
                         <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
-                    </a>
-                    <a class="navbar-brand" href="#">
+                        </a></li>
+                        <li><a  href="" >
                         <img alt="2015" src="/app_img/logo_lppdg40.png">2015
-                    </a>
+                        </a></li>
+                    </ul>
+<!--                    <ul class="nav navbar-nav navbar-right">
+                         <li><a  href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        </a></li>
+                        <li><a  href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                        </a></li>
+                    </ul>-->
                 </div>
             </div>
         </nav>
@@ -99,7 +110,7 @@
   <div class="container">
     <h2 class="text-center">Suivi et évaluation des stagiaires en entreprise (SESE)</h2>
     <p class="text-center">Bienvenue sur l'application SESE.</p> <p class="text-center"> Vous devez vous identifiez pour accéder à votre espace personnel</p>
-    <p class="text-center"><a class="btn btn-info "role="button" href="<?php echo' index.php/apropos '; ?>"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>
+    <p class="text-center"><a class="btn btn-info "role="button" href="<?php echo' /index.php/apropos '; ?>"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>
   </div>
 </div>
 
@@ -115,7 +126,7 @@
                name="<?php echo'_userPass'; ?>">
         </p>
         <p>
-            <a href="#"> Mot de passe oublié?</a>
+            <a href="<?php echo' /index.php/identification '; ?>"> Mot de passe oublié?</a>
         </p>
         <button class="btn btn-lg btn-success btn-block" type="submit"> <span class="glyphicon glyphicon-check"></span> Valider</button>
       </form>
@@ -152,10 +163,10 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">Erreur d'authentification</h4> 
+            <h4 class="modal-title" id="myModalLabel">MODAL_TITLE</h4> 
           </div> 
           <div class="modal-body"> 
-            <h3>Vérifiez votre identifiant et/ou votre mot de passe </h3> 
+            <h3>MODAL_MESSAGE</h3> 
           </div> 
           <div class="modal-footer"> 
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button> 
@@ -178,7 +189,7 @@
     <script src="<?php echo'/bootstrap-3.2.0-dist/js/bootstrap.min.js'; ?>"></script>
     
      <!-- trigg modal -->
-        <?php if ( true ) echo'
+        <?php if ( false ) echo'
             <script> $(\'#basicModal\').modal({\'show\' : true, \'backdrop\' : false}); </script>
         '; ?>
         

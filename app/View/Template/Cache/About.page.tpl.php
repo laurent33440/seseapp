@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
-    
     <link href="<?php echo'/bootstrap-3.2.0-dist/css/bootstrap.css'; ?>" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo'/app_css/welcome.css'; ?>" rel="stylesheet">
@@ -71,7 +70,7 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -80,15 +79,27 @@
                     <a class="navbar-brand" href="#">
                         <img alt="SESE" src="/app_img/logo_sese40.png">SESE
                     </a>
-                    <a class="navbar-brand" href="#">
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li><a  href="" >
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
-                    </a>
-                    <a class="navbar-brand" href="#">
+                        </a></li>
+                        <li><a  href="" >
                         <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
-                    </a>
-                    <a class="navbar-brand" href="#">
+                        </a></li>
+                        <li><a  href="" >
                         <img alt="2015" src="/app_img/logo_lppdg40.png">2015
-                    </a>
+                        </a></li>
+                    </ul>
+<!--                    <ul class="nav navbar-nav navbar-right">
+                         <li><a  href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        </a></li>
+                        <li><a  href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                        </a></li>
+                    </ul>-->
                 </div>
             </div>
         </nav>    
@@ -500,7 +511,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/administrateur',
+                   '/index.php/',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -523,7 +534,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/administrateur',
+                   '/index.php/',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

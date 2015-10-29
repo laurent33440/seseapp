@@ -1,15 +1,27 @@
 # routes.yml : main routes for SESE application 
-login_route:
+#login_route:
+#    path:     /
+#    defaults: { _controller : 'Login',_action : 'login', _public : 'all' }
+    
+test_ajax_route:
     path:     /
-    defaults: { _controller : 'Login',_action : 'check' }
-
+    defaults: { _controller : 'TestAjax',_action : 'run', _public : 'all' }
+    
 about_route:
     path:     /apropos
-    defaults: { _controller : 'About',_action : 'run' }
-
+    defaults: { _controller : 'Login',_action : 'about' , _public : 'all'}
+    
+lost_password_route:
+    path:     /identification
+    defaults: { _controller : 'Login',_action : 'lostPassword', _public : 'all' }
+    
+logout_route:
+    path:   /logout
+    defaults: { _controller : 'Logout', _action : 'run' }
+    
 admin_route:
     path:     /administrateur
-    defaults: { _controller : 'Admin', _action : 'welcome' }
+    defaults: { _controller : 'Admin', _action : 'welcome'}
     
 admin_referential_route:
     path:     /administrateur/referentiel

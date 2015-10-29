@@ -25,20 +25,20 @@ class MainRouter {
     
     public function run() {
         try{
-            if(UserConnected::getInstance()->isUserConnected()){
-                $locator = new FileLocator(array(CONFIG));
-                $loader = new YamlFileLoader($locator);
-                $routesCollection = $loader->load('routes.yml');
-                $context = new RequestContext();
-                $context->fromRequest(Request::createFromGlobals());//init context
-    //            echo 'Path info : '.$context->getPathInfo().' || ';
-    //            echo 'base url : '.$context->getBaseUrl().' || ';
-                $matcher = new UrlMatcher($routesCollection, $context);
-                $parameters = $matcher->match($context->getPathInfo());
-    //            var_dump($parameters);
-                //$controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
-            }else{
-                $parameters = array('_controller'=>'Login', '_action'=>'check');
+            $locator = new FileLocator(array(CONFIG));
+            $loader = new YamlFileLoader($locator);
+            $routesCollection = $loader->load('routes.yml');
+            $context = new RequestContext();
+            $context->fromRequest(Request::createFromGlobals());//init context
+//            echo 'Path info : '.$context->getPathInfo().' || ';
+//            echo 'base url : '.$context->getBaseUrl().' || ';
+            $matcher = new UrlMatcher($routesCollection, $context);
+            $parameters = $matcher->match($context->getPathInfo());
+            //            var_dump($parameters);
+            if(!array_key_exists('_public', $parameters)){
+                if(!UserConnected::getInstance()->isUserConnected()){
+                    $parameters = array('_controller'=>'Login', '_action'=>'run');
+                }   
             }
             $controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
             if (is_file($controllerQualified)){

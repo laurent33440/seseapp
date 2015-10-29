@@ -59,6 +59,11 @@ class DataAccess{
         }
     }
 
+    /**
+     * Insert a row object in table 
+     * @param type $item, $autoIncrement : true for auto id
+     * @param type $autoIncrement
+     */
     public function Insert($item, $autoIncrement = self::AUTO_INCREMENT){       
         //Ouverture de connexion  
         //$this->dbh = $this::GetDbAccess();
@@ -74,9 +79,12 @@ class DataAccess{
         }
     }
 
+    /**
+     * Update a row object in data base
+     * @param type $item
+     * @return type
+     */
     public function Update($item){
-        //Ouverture de connexion  
-        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
         $sth = $this->dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQuery") );
         //Exécution de la query
@@ -90,8 +98,6 @@ class DataAccess{
      * @return type
      */
     public function InnerSelfUpdate($item, array $self){
-        //Ouverture de connexion  
-        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
         $sth = $this->dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::InnerSelfUpdateQuery") );
         //Exécution de la query
@@ -118,6 +124,10 @@ class DataAccess{
         }
     }
 
+    /**
+     * Get all rows of table
+     * @return \Model\Dal\DbLibrary\obj
+     */
     public function GetAll(){
         $retval = array();
         $cpt = 0;
@@ -140,6 +150,11 @@ class DataAccess{
         return $retval;
     }
 
+    /**
+     * Get a row object by column id
+     * @param type $id
+     * @return \Model\Dal\DbLibrary\obj|boolean
+     */
     public function GetByID($id){
         //Ouverture de connexion  
         //$this->dbh = $this::GetDbAccess();
@@ -162,6 +177,11 @@ class DataAccess{
         return FALSE;
     }
     
+    /**
+     * 
+     * @param array $keys
+     * @return \Model\Dal\DbLibrary\obj|boolean
+     */
     public function GetByCompositeKeys(array $keys){
         //Ouverture de connexion  
         //$this->dbh = $this::GetDbAccess();
@@ -186,6 +206,12 @@ class DataAccess{
         return FALSE;
     }
     
+    /**
+     * Get a row object for a given set (column = value)
+     * @param type $column
+     * @param type $val
+     * @return \Model\Dal\DbLibrary\obj|boolean
+     */
     public function GetByColumnValue($column,$val){
         //Ouverture de connexion  
         //$this->dbh = $this::GetDbAccess();
@@ -208,6 +234,12 @@ class DataAccess{
         return FALSE;
     }
     
+    /**
+     * Get all rows objects for a given set (column = value)
+     * @param type $column
+     * @param type $val
+     * @return array of row objects
+     */
     public function GetAllByColumnValue($column,$val){
         $retval = array();
         $cpt = 0;

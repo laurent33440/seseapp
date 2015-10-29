@@ -53,6 +53,11 @@ abstract class AControllerState {
     protected $_model;
     protected $modalParameters = null;
     
+    /**
+     * Initiate properties of controller and restore his state
+     * @param Request $request : request from client
+     * @param type $action : method to use in controller
+     */
     public function __construct(Request $request, $action) {
         $this->_request = $request;
         $this->_action=$action;
@@ -71,16 +76,6 @@ abstract class AControllerState {
         \Logger::getInstance()->logInfo( get_class($this).' saving state controller : '.$this->_rootName.'::'.$this->_action. '-->'.  $this->_state);
         $this->saveControllerState($this->_state);
     }
-    
-    /**
-     * FIXME remove this  !
-     * @param type $class
-     */
-//    protected function setRootControllerName($class) {
-//        $tab=  explode('\\',$class); //avoid namespace
-//        $rootName =  explode("Controller",$tab[count($tab)-1]);
-//        $this->_rootName = $rootName[0];
-//    }
     
     /**
      * 
@@ -116,7 +111,7 @@ abstract class AControllerState {
     }
     
     /**
-     * 
+     * RedirectResponse represents an HTTP response doing a redirect (HTTP 302)
      * @param type $url
      */
     protected function redirectTo($url){
@@ -236,7 +231,10 @@ abstract class AControllerState {
     
     ////////////////////// MODEL VIEWS METHODS //////////////////////////////////
     
+    // TODO: refectoring build header body footer view to respect LSP
+    
     /**
+     * headerParams overwrite default parameters
      * 
      */
     protected function buildHeaderView(array $headerParams=null){
@@ -248,6 +246,7 @@ abstract class AControllerState {
                             'USER_NAME'=>$model->get_userName(),
                             'USER_GROUP'=>$model->get_userRole(),
                             'INDEX'=>  '/',
+                            'LOGOUT' => 'logout'
             );
             if(!empty($this->_modelView['header'])){
                 $header = $this->_modelView['header']+$header; //replace all keys'value of 'header' with 'modelView['header']''s values and add ones that doesn't exist 
@@ -259,49 +258,8 @@ abstract class AControllerState {
         }
     }
     
-//    protected function buildHeaderView_old(array $headerParams=null){
-//        if(!$headerParams){
-//            $model = new \Model\HeaderModel();
-//            $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
-//                                                'COURSE_NAME'=>$model->get_courseName(),
-//                                                'STUDY_YEAR'=>$model->get_studyYear(),
-//                                                'USER_NAME'=>$model->get_userName(),
-//                                                'USER_GROUP'=>$model->get_userRole(),
-////                                                'INDEX'=>  \Bootstrap::APP_URL,
-//                                                'INDEX'=>  '/',
-//                //FIXME : REFACTOR THIS - BUG! BUG! ALL KEYS MUST HAVE DIFFERENTS STRUCTURE
-//                //admin space  
-//                'REFERENTIAL'=>  $this->_index.'/referentiel',
-//                'FUNCTION'=>  $this->_index.'/fonction',
-//                'ACTIVITY'=>  $this->_index.'/activite',
-//                'SKILL'=>  $this->_index.'/competence',
-//                'DOCUMENT'=>  $this->_index.'/document',
-//                'PROMOTION'=>  $this->_index.'/promotion',
-//                'TEACHER'=>  $this->_index.'/enseignant',
-//                'TRAINEE'=> $this->_index.'/stagiaire',
-//                'WORK_DATE'=>  $this->_index.'/stage',
-//                'PASSWORD'=>  $this->_index.'/acces',
-//                //teacher space
-//                'WORK_DEFINITION'=> $this->_index.'/stage',
-//                'WORK_VISIT_DEFINITION'=> $this->_index.'/visite',
-//                'WORK_COMMENT_DEFINITION'=> $this->_index.'/commentaire',
-//                'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
-//                //tutor space
-//                'TUTORDOCUMENT'=> $this->_index.'/document',
-//                'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
-//                'ACTIVITIES_LIST' => $this->_index.'/liste_activites',
-//                'EVALUATE' => $this->_index.'/evaluation_stagiaire',
-//                'TUTORPASS' => $this->_index.'/mot_de_passe'
-//
-//                );
-//                                                
-//        }else{
-//            $this->_modelView['header'] = $headerParams;
-//        }
-//    }
-    
     /**
-     * 
+     * bodyParams overwrite default parameters
      */
     protected function buildBodyView(array $bodyParams=null){
         if(!$bodyParams){
@@ -312,7 +270,7 @@ abstract class AControllerState {
     }
 
     /**
-     * 
+     * footerParams overwrite default parameters
      */
     public function buildFooterView(array $footerParams=null){
         if(!$footerParams){
@@ -358,29 +316,28 @@ abstract class AControllerState {
         
     }
 
-    /**
-     * Get Model View send to form builder !!USED ONLY FOR TESTING PURPOSE!!
-     * @return array key => value for form structure 
-     */
+    
+    //!!USED ONLY FOR TESTING PURPOSE!!
     public function getModelView(){
         return $this->_modelView;
     }
+    
     //!!USED ONLY FOR TESTING PURPOSE!!
     public function setModelView(array $view){
         $this->_modelView=$view;
     }
 
-    /**
-     * Get Model 
-     * @return type
-     */
+    //!!USED ONLY FOR TESTING PURPOSE!!
     public function getModel(){
         return $this->_model;
     }
     
+    //!!USED ONLY FOR TESTING PURPOSE!!
     public function setModel($model) {
         $this->_model = $model;
     }
+    
+    ///////////////////////// FORM DATAS HANDLING METHODS //////////////////////
 
     /**
      * Build a one to one set of 'form name' => 'model property name'
@@ -423,7 +380,7 @@ abstract class AControllerState {
     
     /**
      * Extract datas from form datas (raw post) towards model properties and format of datas
-     * @param array $formDatas : datas from form construct as set of : 
+     * @param array $formDatas : datas from form construct are set of : 
      * 1){<property_name-model> => value},
      * 2){<property_name-model>#param1#param2... => value},
      * 3){<property_name-model>##key => value}, 

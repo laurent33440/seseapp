@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
-    
     <link href="{{!/bootstrap-3.2.0-dist/css/bootstrap.css!}}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{!/app_css/welcome.css!}}" rel="stylesheet">

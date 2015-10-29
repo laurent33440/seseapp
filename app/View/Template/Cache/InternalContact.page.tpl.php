@@ -89,7 +89,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        l : enseignant<span class="caret"></span>
+                        t@t : tuteur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -104,7 +104,7 @@
     
 
 
-    <!-- Menu
+    <!-- Generic
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
  <div class="section-colored-menu"> <!--see "app_sese.css" -->
@@ -112,65 +112,58 @@
     <div class="container">
         
         <div class="jumbotron">
-          <div class="row">
-            <div class="col-lg-10">
-                <h2> Espace enseignant</h2>
-                <p>Veuillez choisir une action</p>
+            <div class="row">
+                <div class="col-lg-10">
+                    <h2> Espace tuteur de stage</h2>
+                    <p>Veuillez choisir une action</p>
+                </div>
+                <div class="col-lg-2 ">
+                      <a class="btn btn-default" href="/index.php/tuteur/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                          <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
+                      </a>
+                </div>
             </div>
-            <div class="col-lg-2 ">
-                  <a class="btn btn-default" href="/index.php/enseignant/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
-                      <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
-                  </a>
-            </div>
-          </div>
         </div>
         
         <!-- Menu -->
         <div class="row">
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-lg-offset-1">
               <p>
-                  <a class="btn btn-default" href="/index.php/enseignant/document" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
-                      <img class="img-rounded" src="/app_img/information.png" alt="Informations pédagogiques">
+                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                      <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
+                  </a>
+              </p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-2 ">
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/liste_stagiaire" data-toggle="tooltip" data-placement="left" title="Stagiaires en responsabilité" role="button">
+                      <img class="img-rounded" src="/app_img/users.png" alt="Stagiaires en responsabilité">
                   </a>
               </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="/index.php/enseignant/stage" data-toggle="tooltip" data-placement="left" title="Creation d'un stage" role="button">
-                      <img class="img-rounded" src="/app_img/create_doc.png" alt="Creation d'un stage">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/enseignant/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
+                  <a class="btn btn-default" href="/index.php/tuteur/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
                       <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
                   </a>
               </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="/index.php/enseignant/visite" data-toggle="tooltip" data-placement="left" title="Définir les visites" role="button">
-                      <img class="img-rounded" src="/app_img/appointment.png" alt="Définir les visites">
+                  <a class="btn btn-default" href="/index.php/tuteur/liste_activites" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
+                      <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
                   </a>
               </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
               <p>
-                  <a class="btn btn-default" href="/index.php/enseignant/commentaire" data-toggle="tooltip" data-placement="left" title="Commenter une visite" role="button">
-                      <img class="img-rounded" src="/app_img/write.png" alt="Commenter une visite">
+                  <a class="btn btn-default" href="/index.php/tuteur/evaluation_stagiaire" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
+                      <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
                   </a>
               </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Résultats et attestations de stages" role="button">
-                      <img class="img-rounded" src="/app_img/check.png" alt="Résultats et attestations de stages">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            
         </div><!-- /.row -->
+        <!-- end Menu -->
       
     </div><!-- /.container -->
       
@@ -184,7 +177,7 @@
         </div>
     </div>
 <div class="container">
-    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/enseignant/contact_interne'; ?>">
+    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/tuteur/contact_interne'; ?>">
         
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Contact</label>
@@ -295,7 +288,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -318,7 +311,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

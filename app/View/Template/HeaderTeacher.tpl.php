@@ -24,7 +24,7 @@
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="INDEX"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
-                        <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
+                        <li><a href="LOGOUT"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
                       </ul>
                     </div>
                 </div>

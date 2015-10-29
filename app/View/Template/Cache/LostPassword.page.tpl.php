@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
-    
     <link href="<?php echo'/bootstrap-3.2.0-dist/css/bootstrap.css'; ?>" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo'/app_css/welcome.css'; ?>" rel="stylesheet">
@@ -67,11 +66,11 @@
     
     
   </head>
- <body>
+<body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -80,137 +79,60 @@
                     <a class="navbar-brand" href="#">
                         <img alt="SESE" src="/app_img/logo_sese40.png">SESE
                     </a>
-                    <a class="navbar-brand" href="#">
-                        <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
-                    </a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <!-- Single button --> 
-                    <div class="btn-group nav navbar-nav navbar-right">
-                      <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        t@t : tuteur<span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu" >
-                        <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
-                        <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
-                      </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li><a  href="" >
+                        <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
+                        </a></li>
+                        <li><a  href="" >
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        </a></li>
+                        <li><a  href="" >
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                        </a></li>
+                    </ul>
+<!--                    <ul class="nav navbar-nav navbar-right">
+                         <li><a  href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        </a></li>
+                        <li><a  href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                        </a></li>
+                    </ul>-->
                 </div>
             </div>
         </nav>
-     
-
-    
 
 
-    <!-- Generic
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
- <div class="section-colored-menu"> <!--see "app_sese.css" -->
-     
-    <div class="container">
-        
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-lg-10">
-                    <h2> Espace tuteur de stage</h2>
-                    <p>Veuillez choisir une action</p>
-                </div>
-                <div class="col-lg-2 ">
-                      <a class="btn btn-default" href="/index.php/tuteur/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
-                          <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
-                      </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Menu -->
-        <div class="row">
-            <div class="col-lg-2 col-lg-offset-1">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
-                      <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2 ">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/liste_stagiaire" data-toggle="tooltip" data-placement="left" title="Stagiaires en responsabilité" role="button">
-                      <img class="img-rounded" src="/app_img/users.png" alt="Stagiaires en responsabilité">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
-                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/liste_activites" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
-                      <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <p>
-                  <a class="btn btn-default" href="/index.php/tuteur/evaluation_stagiaire" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
-                      <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
-                  </a>
-              </p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-        <!-- end Menu -->
-      
-    </div><!-- /.container -->
-      
-</div> <!-- section colored-->
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h2 class="text-center">Suivi et évaluation des stagiaires en entreprise (SESE)</h2>
+    <p class="text-center">Vous avez oublié votre mot de passe...</p> 
+    <p class="text-center">Vous devez fournir l'adresse mél déclarée dans l'application SESE</p>
+    <p class="text-center">En retour, un mot de passe vous sera envoyé pour accéder à votre espace personnel</p>
+  </div>
+</div>
 
 <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Informations générales - visites programmées -  mercredi 21 octobre 2015 </h3>
+    <form method="post" class="form-horizontal" action="<?php echo' /index.php/identification '; ?>" role="form">
+        <div class="form-group">
+            <label  class="col-sm-2 control-label" for="exampleInputEmail2">Votre mél</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control"  name="<?php echo'_userMail'; ?>" id="exampleInputEmail2" placeholder="martin.durand@exemple.com">
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-success">Valider votre mél </button>
+            </div>
         </div>
-        <div class="panel-body">
-            <div class="table-responsive" id="visit_table">
-                        <table class="table table-hover table-striped table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="active">Date de visite</th>
-                                    <th class="active">Stagiaire en responsabilité</th>
-                                    <th class="active">Enseignant visiteur</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($this->_arrayParamslist[0] as $date => $infos) {
-                                    echo"
-                                        <tr>
-                                            <td> 
-                                                $date
-                                            </td>";
-                                    foreach ($infos as $trainee=>$teacher){
-                                        echo"
-                                    
-                                            <td>
-                                                $trainee
-                                            </td>
-                                            <td>
-                                                $teacher
-                                            </td>
-                                                    
-                                        </tr>
-                                    ";
-                                    }
-                                } ?>
-                            </tbody>
-                        </table>
-                    </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-primary" href=" <?php echo' / '; ?>">Revenir à l'accueil</a>
+            </div>
         </div>
-    </div>
-</div>
+    </form>
+ </div> <!-- /container -->
 <footer>
     <div class="section-colored">
           <div class="container">
@@ -243,10 +165,10 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">MODAL_TITLE</h4> 
+            <h4 class="modal-title" id="myModalLabel">Mél envoyé</h4> 
           </div> 
           <div class="modal-body"> 
-            <h3>MODAL_MESSAGE</h3> 
+            <h3>Consultez votre boite mél. Un nouveau mot de passe vous a été fourni</h3> 
           </div> 
           <div class="modal-footer"> 
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button> 
@@ -269,7 +191,7 @@
     <script src="<?php echo'/bootstrap-3.2.0-dist/js/bootstrap.min.js'; ?>"></script>
     
      <!-- trigg modal -->
-        <?php if ( false ) echo'
+        <?php if ( true ) echo'
             <script> $(\'#basicModal\').modal({\'show\' : true, \'backdrop\' : false}); </script>
         '; ?>
         
@@ -281,7 +203,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/tuteur',
+                   '/index.php/',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -304,7 +226,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/tuteur',
+                   '/index.php/',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

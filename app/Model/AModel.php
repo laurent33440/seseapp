@@ -49,7 +49,7 @@ abstract class AModel {
     }
     
     /**
-     * Set members values of model
+     * Set properties values of model
      * @param list keys of member name and value : property_name => value OR array(id=>array(property_name => array(main_value, arg1, arg2, ...),...)
      * @return boolean true if all members are matched 
      */
@@ -86,23 +86,6 @@ abstract class AModel {
         }
         return true;
     }
-   
-   
-/**
-     * 
-     * FIXME : USE REFLECTION
-     * Retrieve members values of model
-     * @return set of member's name => value
-     */
-//    public function getClassVarsValues_old(){
-//        $varsValues = array();
-//        $vars = $this->getClassVars();
-//        foreach ($vars as $var) {
-//            $val = $this->{'get'.$var}();
-//            $varsValues[$var] = $val;
-//        }
-//        return $varsValues;
-//    }  
     
     /**
      * Retrieve properties values of model with getter

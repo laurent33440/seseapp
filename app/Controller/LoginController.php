@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Exception\InternalException;
 use Model\LoginModel;
+use Model\LostPasswordModel;
 use Logger;
 
 
@@ -32,45 +33,57 @@ class LoginController extends AControllerState{
         parent::__construct($request, $action);
     }
     
-    public function check(){
+    ///////////////////// Login handling methods ///////////////////////////////
+    /**
+     * Login page Handling
+     */
+    public function login(){
         $this->_model=new LoginModel();
-        //$this->_model->eraseUserInSession();
-        if($this->_request->isMethod('POST')){
-            if($this->compute($this->_request->request->all()) === true){ //continue processing : wrong parameters
-                $this->modalParameters = new ModalParameters('Erreur d\'authentification', 'Vérifiez votre identifiant et/ou votre mot de passe ');
-                $this->_state=self::RUNNING;
-                $this->sendModelView();
-            }else{ //authentication done
-                $this->_state=self::IDLE;
-                //fire good controller
-                $this->_response->send();
-            }   
-        }else{ //first view
-            $this->_state=self::RUNNING;
-            $this->sendModelView();
+        try{
+            switch ($this->_state){ 
+                case self::IDLE :
+                    $this->_state = self::RUNNING;
+                    $this->buildSendViewLogin(); 
+                    break;
+                case self::RUNNING:
+                    if($this->_request->isMethod('POST')){
+                        if($this->compute($this->_request->request->all()) === true){ //continue processing : wrong parameters
+                            $this->modalParameters = new ModalParameters('Erreur d\'authentification', 'Vérifiez votre identifiant et/ou votre mot de passe ');
+                        }else{ //authentication done
+                            $this->_state=self::IDLE;
+                            //fire good controller
+                            $this->_response->send();
+                        }   
+                    }
+                    $this->buildSendViewLogin();
+                    break;
+                case self::STOPPED:
+                    break;
+                case self::TERMINATED:
+                    break;
+                case self::ON_INPUT_ERROR:
+                    break;
+                default :
+                    throw new InternalException('Unknom state in '.__CLASS__. ' State Unknown :  '.$this->_state);
+            }
+        }catch (Exception $e){
+            $this->_state = self::ON_CRITICAL_ERROR;
+            $this->_error = $e;
+            throw $e;
         }
     }
     
-//    protected function buildHeaderView(array $a=null){
-//        $model = new \Model\HeaderModel();
-//        $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
-//                                            'COURSE_NAME'=>$model->get_courseName(),
-//                                            'STUDY_YEAR'=>$model->get_studyYear(),
-//                                            );
-//    }
-    
-    public function buildBodyView(array $a=null){
+    public function buildSendViewLogin(){
         $formArray = $this->buildCompleteFormArray();
         $formArray['INDEX'] = '/';
-        $formArray['ABOUT'] = \Bootstrap::ENTRY_SCRIPT.'/apropos';
-        $this->_modelView['body'] = $formArray;
+        $formArray['ABOUT'] = $this->_index.'apropos';
+        $formArray['LOSTPASSWORD'] = $this->_index.'identification';
+        $this->buildBodyView($formArray);
+        $this->sendModelView('Login');  
     }
     
     /**
-     * Acts toward events from form :
-     * -Add new value to model
-     * -Del value from model
-     * -valide submit form
+     * Compute datas from form
      * @param array $datas : posted datas from form 
      * @return boolean true if controller must run for further inputs , false if submit form
      */
@@ -96,5 +109,79 @@ class LoginController extends AControllerState{
             return true; //continue running
         }
     }
+    
+    ///////////////////// About handling methods ///////////////////////////////
+    /**
+     * About page information
+     */
+    public function about() {
+        $formArray['INDEX'] = '/';
+        $this->buildBodyView($formArray);
+        $this->sendModelView('About');  
+    }
+    
+    ///////////////////// Lost password handling methods ///////////////////////
+    /**
+     * Lost password page handling
+     */
+    public function lostPassword(){
+        $this->_model= new LostPasswordModel();
+        try{
+            switch ($this->_state){ 
+                case self::IDLE :
+                    $this->_state = self::RUNNING;
+                    $this->buildSendViewLostPassword();  
+                    break;
+                case self::RUNNING:
+                    if($this->_request->isMethod('POST')){
+                        if($this->checkMail($this->_request->request->all()) === false){ //continue processing : wrong parameters
+                            $this->modalParameters = new ModalParameters('Erreur d\'adresse mél', 'Vérifiez la justesse du mél renseigné ');
+                        }else{// email seems ok
+                            //send email with new password
+                            if(!$this->_model->sendNewPassword()){
+                                $this->modalParameters = new ModalParameters('Erreur sur l\'envoie du mél ...', 'Le service de messagerie ne peut accéder à votre mél. Contactez votre administrateur si nécessaire');
+                            }else{
+                                $this->modalParameters = new ModalParameters('Mél envoyé', 'Consultez votre boite mél. Un nouveau mot de passe vous a été fourni');
+                            }
+                        }   
+                    }
+                    $this->buildSendViewLostPassword();
+                    break;
+                case self::STOPPED:
+                    break;
+                case self::TERMINATED:
+                    break;
+                case self::ON_INPUT_ERROR:
+                    break;
+                default :
+                    throw new InternalException('Unknom state in '.__CLASS__. ' State Unknown :  '.$this->_state);
+            }
+        }catch (Exception $e){
+            $this->_state = self::ON_CRITICAL_ERROR;
+            $this->_error = $e;
+            throw $e;
+        }
+    }
+    
+    public function buildSendViewLostPassword(){
+        $formArray = $this->buildCompleteFormArray();
+        $formArray['INDEX'] = '/';
+        $formArray['CHECK'] = $this->_index.'identification';
+        $this->buildBodyView($formArray);
+        $this->sendModelView('LostPassword');  
+    }
+    
+    public function checkMail(array $datas){
+        $varsModel = $this->_model->getClassVars();
+        $params = $this->findAllParamsFromForm($datas, $varsModel);
+        $this->_model->setClassVarsValues($params);
+        return $this->_model->isMailKnown(); 
+    }
+    
+    
+    
+    
+    
+    
     
 }
