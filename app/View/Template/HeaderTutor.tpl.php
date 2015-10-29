@@ -23,7 +23,7 @@
                         USER_NAME : USER_GROUP<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
-                        <li><a href="INDEX"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
+                        <li><a href="LOGOUT"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
                         <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
                       </ul>
                     </div>
@@ -35,7 +35,7 @@
     
 
 
-    <!-- Menu
+    <!-- Generic
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
  <div class="section-colored-menu"> <!--see "app_sese.css" -->
@@ -43,33 +43,58 @@
     <div class="container">
         
         <div class="jumbotron">
-          <h2> Espace du tuteur</h2>
-          <p>Veuillez choisir une action</p>
+            <div class="row">
+                <div class="col-lg-10">
+                    <h2> Espace tuteur de stage</h2>
+                    <p>Veuillez choisir une action</p>
+                </div>
+                <div class="col-lg-2 ">
+                      <a class="btn btn-default" href="TUTORPASS" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                          <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
+                      </a>
+                </div>
+            </div>
         </div>
         
         <!-- Menu -->
         <div class="row">
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Stagiaire(s) en responsabilité</h2>
-              <p><a class="btn btn-default" href="TUTOR_LIST" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2 col-lg-offset-1">
+              <p>
+                  <a class="btn btn-default" href="TUTORDOCUMENT" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                      <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Contacts</h2>
-              <p><a class="btn btn-default" href="INTERNAL_CONTACT" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2 ">
+              <p>
+                  <a class="btn btn-default" href="TUTOR_LIST" data-toggle="tooltip" data-placement="left" title="Stagiaires en responsabilité" role="button">
+                      <img class="img-rounded" src="/app_img/users.png" alt="Stagiaires en responsabilité">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Liste des activités possibles pour le stagiaire</h2>
-              <p><a class="btn btn-default" href="WORK_VISIT_DEFINITION" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="INTERNAL_CONTACT" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
+                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-3 ">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Evaluer un stagiare</h2>
-              <p><a class="btn btn-default" href="WORK_COMMENT_DEFINITION" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="ACTIVITIES_LIST" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
+                      <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
+                  </a>
+              </p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="EVALUATE" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
+                      <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
+        <!-- end Menu -->
       
     </div><!-- /.container -->
       

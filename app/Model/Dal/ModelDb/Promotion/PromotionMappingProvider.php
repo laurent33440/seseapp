@@ -34,15 +34,15 @@ class PromotionMappingProvider implements IMappingProvider{
     }
 
     Static function MapToRowInsert($item){
-        $retval['pro_reference_promotion']=$item->pro_reference_promotion;
-        $retval['pro_nom_promotion']=$item->pro_nom_promotion;
+        $retval[':pro_reference_promotion']=$item->pro_reference_promotion;
+        $retval[':pro_nom_promotion']=$item->pro_nom_promotion;
         return $retval;
     }
 
     static function MapToRowUpdate($item){
-        $retval['id_promotion']=$item->id_promotion;
-        $retval['pro_reference_promotion']=$item->pro_reference_promotion;
-        $retval['pro_nom_promotion']=$item->pro_nom_promotion;
+        $retval[':id_promotion']=$item->id_promotion;
+        $retval[':pro_reference_promotion']=$item->pro_reference_promotion;
+        $retval[':pro_nom_promotion']=$item->pro_nom_promotion;
         return $retval;
     }
 

@@ -17,13 +17,15 @@ use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
  * @author laurent
  */
 class SeseSession {
+    const DEBUG_FILE_NAME='SESE_DEV_MOCKSESSION';
     private $session;
     
     private static $_instance;
     
     public function __construct($debug=false){
+      //$debug = Bootstrap::DEBUG_SESE;//comment it for test with browser
       if($debug){
-          $this->session = new Session(new MockFileSessionStorage(ROOT.'/tests', 'SESE_DEV_MOCKSESSION')); //dev, debug
+          $this->session = new Session(new MockFileSessionStorage(ROOT.'/tests', self::DEBUG_FILE_NAME)); //dev, debug
       }else{
           $storage = new NativeSessionStorage(array(), new NativeFileSessionHandler());
           $this->session = new Session($storage);

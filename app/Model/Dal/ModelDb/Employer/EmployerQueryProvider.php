@@ -17,10 +17,7 @@ use Model\Dal\DbLibrary\IQueryProvider;
 class EmployerQueryProvider implements IQueryProvider{
     
     static function InsertQuery(){
-        return "Insert into Employer (id_entreprise,
-                                        id_collaborateur,) "
-                              . "values(:id_entreprise,
-                                        :id_collaborateur,) ";
+        return "Insert into Employer (id_entreprise, id_collaborateur) values(:id_entreprise, :id_collaborateur) ";
     }
 
     static function SelectByIDQuery(){
@@ -36,7 +33,8 @@ class EmployerQueryProvider implements IQueryProvider{
     }
 
     static function SelectIDQuery(){
-        return "Select max(id_entreprise,id_collaborateur) from Employer";
+        //return "Select max(id_entreprise,id_collaborateur) from Employer"; FIXME : max id of composite key?
+        return "Select max(id_entreprise) from Employer";
     }
 
     static function UpdateQuery(){

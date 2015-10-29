@@ -30,5 +30,7 @@ class EntrepriseObject {
     public $ent_pays_entreprise;
     public $ent_url_entreprise;
     public $ent_telephone_entreprise;
+    
+    public $foreignKeyList = array('Employer'=>'id_entreprise');
             
 }

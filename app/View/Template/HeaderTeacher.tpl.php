@@ -24,7 +24,7 @@
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="INDEX"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
-                        <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
+                        <li><a href="LOGOUT"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
                       </ul>
                     </div>
                 </div>
@@ -43,37 +43,64 @@
     <div class="container">
         
         <div class="jumbotron">
-          <h2> Espace enseignant</h2>
-          <p>Veuillez choisir une action</p>
+          <div class="row">
+            <div class="col-lg-10">
+                <h2> Espace enseignant</h2>
+                <p>Veuillez choisir une action</p>
+            </div>
+            <div class="col-lg-2 ">
+                  <a class="btn btn-default" href="TEACHERPASS" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                      <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
+                  </a>
+            </div>
+          </div>
         </div>
         
         <!-- Menu -->
         <div class="row">
-            <div class="col-lg-2 col-lg-offset-1">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Création d'un stage</h2>
-              <p><a class="btn btn-default" href="WORK_DEFINITION" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="TEACHERDOCUMENT" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
+                      <img class="img-rounded" src="/app_img/information.png" alt="Informations pédagogiques">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Contacts</h2>
-              <p><a class="btn btn-default" href="INTERNAL_CONTACT" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="WORK_DEFINITION" data-toggle="tooltip" data-placement="left" title="Creation d'un stage" role="button">
+                      <img class="img-rounded" src="/app_img/create_doc.png" alt="Creation d'un stage">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Visites de stage</h2>
-              <p><a class="btn btn-default" href="WORK_VISIT_DEFINITION" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="INTERNAL_CONTACT" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
+                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Journal des visites</h2>
-              <p><a class="btn btn-default" href="WORK_COMMENT_DEFINITION" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="WORK_VISIT_DEFINITION" data-toggle="tooltip" data-placement="left" title="Définir les visites" role="button">
+                      <img class="img-rounded" src="/app_img/appointment.png" alt="Définir les visites">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Valider un stage</h2>
-              <p><a class="btn btn-default" href="#" role="button">Valider un stage &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="WORK_COMMENT_DEFINITION" data-toggle="tooltip" data-placement="left" title="Commenter une visite" role="button">
+                      <img class="img-rounded" src="/app_img/write.png" alt="Commenter une visite">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Résultats et attestations de stages" role="button">
+                      <img class="img-rounded" src="/app_img/check.png" alt="Résultats et attestations de stages">
+                  </a>
+              </p>
+            </div><!-- /.col-lg-4 -->
+            
         </div><!-- /.row -->
       
     </div><!-- /.container -->

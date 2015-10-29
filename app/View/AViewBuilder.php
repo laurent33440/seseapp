@@ -20,7 +20,7 @@ use View\Template\TemplateHandler;
  * @author laurent
  */
 abstract class AViewBuilder {
-    protected  $_page;
+    protected $_page;
     protected $_name;
     
 

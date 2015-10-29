@@ -11,36 +11,13 @@
     <title>SESE</title>
 
     <!-- Bootstrap core CSS -->
-    <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
     <link href="<?php echo'bootstrap-3.2.0-dist/css/bootstrap.css'; ?>" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo'app_css/welcome.css'; ?>" rel="stylesheet">
     
     <!--TINY MCE TESTS--> 
     <script type="text/javascript" src="app_js/tinymce/4.1.3/tinymce.min.js"></script>
-    
-    <script type="text/javascript">
-        
-//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
-//        $(document).on('focusin', function(e) {
-//            if ($(event.target).closest(".mce-window").length) {
-//                        e.stopImmediatePropagation();
-//                }
-//        });
-        
-        tinymce.init({
-            selector: "textarea#textarea1",
-            language : 'fr_FR',
-            plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table contextmenu paste "
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-        });
-
-    </script>
-
+    <script type="text/javascript" src="app_js/test/test_tinymce_init.js?params=/index.php/"></script>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -58,12 +35,12 @@
       <div class="container">
         <div class="navbar-header">
       <!--    <a class="navbar-brand" href="#"> <img src="logo_philadelphe_bleu_h100.png" alt="logo"> </a> -->
-          <h1 class="navbar-text  "> test AJAX - version : <?php echo' 010614 '; ?> </h1>
+          <h1 class="navbar-text  "> test AJAX - version : <?php echo' VERSION '; ?> </h1>
         </div>
       </div>
     </div>    
     <div class="container">
-        <form  method="post" action="<?php echo'/sese/index.php'; ?>" class="form-horizontal" >
+        <form  method="post" action="<?php echo'INDEX'; ?>" class="form-horizontal" >
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -81,7 +58,15 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td> 2 </td>
+                                        <td>
+                                            <p>Selection test</p>
+                                            <select id="selection_test" name="select_test">
+                                              <option value="lundi">Lundi</option>
+                                              <option value="mardi">Mardi</option>
+                                              <option value="mercredi">Mercredi</option>
+                                              <option value="jeudi">Jeudi</option>
+                                            </select> 
+                                        </td>
                                         <td>
                                             <div class="input-group">
                                                 <div id="inputText">
@@ -109,7 +94,16 @@
                                         
                                     </tr>
                                     <tr>
-                                        <td> 4 </td>
+                                        <td>
+                                            <div class="input-group">
+                                              <p>Un champ date</p>
+                                              <input type="date" class="form-control"
+                                              id="input_date"
+                                              name="test_date"
+                                              placeholder="Entrez une date sous la forme jj/mm/aaaa (exemple : 28/10/2014) "
+                                              >
+                                            </div><!-- /input-group -->
+                                        </td>
                                         <td>
                                             <div class="input-group">
                                               <input type="text" class="form-control" value="" id="foncDesc4" placeholder="Entrez le descriptif de la fonction">
@@ -120,6 +114,19 @@
                                             </div><!-- /input-group -->
                                         </td>
                                         
+                                    </tr>
+                                    <tr>
+                                        <td> 
+                                            <p>Selection qui met à jour la partie doc de TINYMCE</p>
+                                            <select id="marque_voiture" name="select_car">
+                                              <option value="volvo">Volvo</option>
+                                              <option value="saab">Saab</option>
+                                              <option value="mercedes">Mercedes</option>
+                                              <option value="audi">Audi</option>
+                                            </select> 
+                                        </td>
+                                        <td><input type="text" class="form-control" id="foncDesc" placeholder="Entrez le descriptif de la fonction">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td> <input type="number" class="form-control" id="foncId" placeholder="Entrez le n° de la fonction">
@@ -138,7 +145,7 @@
                             </button>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
-                            <button class="btn btn-primary btn-block btn btn-danger" type="submit"> 
+                            <button class="btn btn-primary btn-block btn btn-danger"  type="submit"> 
                                 <span class="glyphicon glyphicon-check"></span> 
                                 Supprimer la fonction 
                             </button>
@@ -152,7 +159,7 @@
             
             <div class="row">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" id="nom_document_en_edition">
                         Tests avec Tiny MCE - les scripts sont placés dans le 'head' de la page  
                         <a href="http://www.tinymce.com/wiki.php/Installation" target="_blank">voir sur le site officiel</a>
                     </div>
@@ -174,7 +181,7 @@
 
 
             <div class="row">
-                 <button class="btn btn-lg btn-primary btn-block" type="submit"> <span class="glyphicon glyphicon-check"></span> Valider les informations</button>
+                 <button class="btn btn-lg btn-primary btn-block"  id ="enregistrer_texte" type="submit"> <span class="glyphicon glyphicon-check"></span> Enregistrer le texte</button>
             </div> 
         </form>
     </div> <!-- /container --><footer>
@@ -183,7 +190,7 @@
            <!-- Example row of columns -->
               <div class="row">
                 <div class="col-md-4">
-                    <a href="<?php echo' www.avalone-fr.com '; ?>" target='_blank' id="link_id">
+                    <a href="<?php echo' www.avalone-fr.com '; ?>" target='_blank' id="link_id" class="sese_mouse_over" >
                         <h5>Test AJAX -- survole moi</h5>
                     </a>
                   <p> </p>
@@ -196,7 +203,7 @@
                   <p> </p>
                 </div >
                   <div  class="col-md-4" >
-                    <a  id="link_id2" href="#" target='_blank'>
+                    <a  id="link_id2" href="#" target='_blank'class="sese_mouse_over" >
                         <h5  class="text-right">&copy; Test AJAX 2014 -- survole moi<h5>
                     </a>
                   <p> </p>
@@ -241,10 +248,18 @@
     
     
     <!-- AJAX TESTS -->
-    <script type="text/javascript">
+    <script src="app_js/test/test_text_change.js?params=/index.php/"></script>
+    <script src="app_js/test/test_mouse_over.js?params=/index.php/&sese_mouse_over"></script>
+<!--    <script src="app_js/test/test_mouse_over.js?params=/index.php/&link_id2"></script>-->
+    <script src="app_js/test/test_select_change.js?params=/index.php/&selection_test"></script>
+    <script src="app_js/test/test_update_tinymce_document_from_select.js?params=/index.php/&marque_voiture&nom_document_en_edition"></script>
+    <script src="app_js/test/test_date_change.js?params=/index.php/&input_date"></script>
+    
+    
+<!--    <script type="text/javascript">
            $( "#link_id" ).mouseover(function(){
                $.post(
-                   '/sese/index.php',
+                   '/index.php/',
                     {    ajax:'ok'
                     },
                     function(data){
@@ -257,7 +272,7 @@
            });
            $( "#link_id2" ).mouseover(function(){
                $.post(
-                   '/sese/index.php',
+                   '/index.php/',
                     {    ajax:'ok'
                     },
                     function(data){
@@ -268,16 +283,16 @@
                     'json'
                );
            });        
-    </script>
+    </script>-->
     
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
            $(":text").blur(function(){
                console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
                alert('Input id :'+id+' '+'Input val :'+val);
 //               $.post(
-//                   '/sese/index.php',
+//                   '/index.php/',
 //                    {    ajax:'ok'
 //                    },
 //                    function(data){
@@ -293,7 +308,7 @@
 ////        $("#func_table").blur(function{
 ////               alert('blur');
 ////               $.post(
-////                   '/sese/index.php',
+////                   '/index.php/',
 ////                    {    AJAX_UPDATE:'ok'
 ////                    },
 ////                    function(data){
@@ -305,16 +320,16 @@
 ////               );
 ////           });       
 //    });
-    </script>
+    </script>-->
     
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
            $("#textarea1").mouseover(function(){
                console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
                alert('Input id :'+id+' '+'Input val :'+val);
 //               $.post(
-//                   '/sese/index.php',
+//                   '/index.php/',
 //                    {    ajax:'ok'
 //                    },
 //                    function(data){
@@ -326,7 +341,7 @@
 //               );
            });
 
-    </script>
+    </script>-->
 <!--    <script type="text/javascript">
            $( "#link_id" ).mouseover(function(){
                

@@ -111,7 +111,7 @@
       </div>
     </div>
     
-    <form  method="post" action="<?php echo' /index.php/administrateur '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/acces '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputdbUser" class="control-label col-xs-2">Nouveau mot de passe administrateur</label>
+                            <label for="inputdbUser" class="control-label col-xs-2">Nouveau mot de passe </label>
                             <div class="col-xs-10">
                                 <input type="password" class="form-control" id="adminNewPassword" 
                                        placeholder="Nouveau mot de passe administrateur"
@@ -138,7 +138,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputdbPassword" class="control-label col-xs-2">Confirmez le nouveau mot de passe administrateur</label>
+                            <label for="inputdbPassword" class="control-label col-xs-2">Confirmez le nouveau mot de passe </label>
                             <div class="col-xs-10">
                                 <input type="password" class="form-control" id="adminConfirmPassword" 
                                        placeholder="Confirmez le nouveau mot de passe administrateur"

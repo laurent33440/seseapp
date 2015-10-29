@@ -30,6 +30,41 @@
     <!-- css jQuery -->
     <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
     
+    <!--TINY MCE TESTS--> 
+    <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+        
+//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
+//        $(document).on('focusin', function(e) {
+//            if ($(event.target).closest(".mce-window").length) {
+//                        e.stopImmediatePropagation();
+//                }
+//        });
+        
+        tinymce.init({
+            selector: "#textarea1",
+            language : 'fr_FR',
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
+        });
+
+    </script>
+    
     
   </head>
 
@@ -49,6 +84,12 @@
                     <a class="navbar-brand" href="#">
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
                     </a>
+                     <a class="navbar-brand" href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                    </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <!-- Single button --> 
@@ -58,7 +99,7 @@
                         lolo : administrateur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
-                        <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
+                        <li><a href="/index.php/administrateur/logout"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
                         <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
                       </ul>
                     </div>
@@ -81,15 +122,23 @@
                                 <li><a href="/index.php/administrateur/competence"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Compétences</a></li>
                             </ul>
                         </li>
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    <hr>
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
                         <li><a href="/index.php/administrateur/enseignant"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/stagiaire"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
                         <li><a href="/index.php/administrateur/stage"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/acces"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
                         <li><a href=""><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Archiver la base de données</a></li>
@@ -109,7 +158,7 @@
       </div>
     </div>
 
-    <form  method="post" action="<?php echo' /seseapp/index.php/administrateur/stage '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/stage '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -120,9 +169,9 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Dénomination du stage</th>
-                                    <th class="active">Date de début de stage</th>
-                                    <th class="active">Date de fin de stage</th>
+                                    <th style="width:40%" class="active">Dénomination du stage</th>
+                                    <th style="width:20%" class="active">Date de début de stage</th>
+                                    <th style="width:20%" class="active">Date de fin de stage</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -132,8 +181,8 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"workDateName#$work\"
-                                                  name=\"_workDateName#$work\"
+                                                  id=\"_workDateName#$idWork\"
+                                                  name=\"_workDateName##$idWork\"
                                                   placeholder=\"Entrez la dénomination de la période de stage\"
                                                   value = \"$work\">
                                                </div><!-- /input-group -->
@@ -141,8 +190,8 @@
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
-                                                  id=\"dateOn#$work\"
-                                                  name=\"_dateOn#$work\"
+                                                  id=\"_dateOn#$idWork\"
+                                                  name=\"_dateOn##$idWork\"
                                                   placeholder=\"Entrez la date de début de stage\"
                                                   value = \"".$this->_arrayParamslist[1][$idWork]."\">
                                                </div><!-- /input-group -->
@@ -150,16 +199,16 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"date\" class=\"form-control\"
-                                                  id=\"dateOff#$work\"
-                                                  name=\"_dateOff#$work\"
+                                                  id=\"_dateOff#$idWork\"
+                                                  name=\"_dateOff##$idWork\"
                                                   placeholder=\"Entrez la date de fin de stage\"
                                                   value = \"".$this->_arrayParamslist[2][$idWork]."\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" id=\"addWorkdate#$work\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAddPromotion\" value=\"$idWork\" id=\"addWorkdate#$work\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$work\" id=\"delWorkdate#$work\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"ButtonSubmitDelPromotion\" value=\"$idWork\" id=\"delWorkdate#$idWork\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>
@@ -211,7 +260,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -246,23 +295,25 @@
         
  <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'blur',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/stage',
+                   data:{       
+                           AJAX_UPDATE:'texte_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
@@ -270,32 +321,79 @@
     <!-- Script for select input(s) changes -->
     <script type="text/javascript">
         $("select").change(function(){
-               console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'change',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/stage',
+                   data:{       
+                           AJAX_UPDATE:'document_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                       var ed = tinyMCE.activeEditor;
+                       ed.setContent(json.doc);
+                       setTitle(json.title);
+                   }
+               });
+       });       
+       
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/stage',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
     
-<!--    <script type="text/javascript">
-        $(document).ready(function(){
-            alert('Page chargée');
-        });
-       
-   </script>-->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substitué dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
+    <script type="text/javascript">
+        function getDoc(){
+            $("#nom_document_en_edition").text('TITLE');
+            return 'DOC';
+        };
+    </script>
+    
+    <!-- m a j titre doc en edition -->
+    <script type="text/javascript">
+        function setTitle(title){
+            $("#nom_document_en_edition").text(title);
+        };
+    </script>
+    
+    <!-- agit sur bouton de validation de création/edition documents -->
+    <script type="text/javascript">
+        function highLightElement(){
+            $("#valide_document").css("background-color", "green");
+        };
+    </script>
+    
     
   </body>
 </html>

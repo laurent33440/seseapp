@@ -3,7 +3,6 @@
 namespace Model\Dal\DbLibrary;
 
 use Model\Persistant\PdoCrud;
-use Bootstrap;
 
         
 /**
@@ -21,6 +20,8 @@ class DataAccess{
     private $MappingProvider;	//la classe MappingProvider
     private $ModelName;		//le nom du modèle
     private $NameSpaceObjectDb; //l'espace de nom de la classe objet
+    
+    private $dbh=null;          // data base handler
 
     public function __construct($modelName){       
         $this->ModelName=$modelName;
@@ -28,10 +29,11 @@ class DataAccess{
         $this->QueryProvider=$modelName . "QueryProvider";
         $this->MappingProvider=$modelName . "MappingProvider";
         $this->NameSpaceObjectDb='\Model\Dal\ModelDb\\'.$this->ModelName.'\\';
+        //Ouverture de connexion 
+        $this->dbh = $this::GetDbAccess();
     }
 
     function __destruct(){
-        \Logger::getInstance()->logDebug( __CLASS__.' data base closed');
     }
 
     /**
@@ -44,11 +46,11 @@ class DataAccess{
             $srv= \Bootstrap::$_dbSrv;
             $user = \Bootstrap::$_dbUser;
             $pass= \Bootstrap::$_dbPass;
-            $dataBaseHandler = new PdoCrud($srv,$user ,$pass );
+            $dataBaseHandler = PdoCrud::getInstance($srv,$user ,$pass );
             $dbhPdo = $dataBaseHandler->connect(\Bootstrap::$_dbName);
             //save data base parameters
 //            $this->saveClassVarsValuesInSession('data_base'); // TODO : better handling needed
-            \Logger::getInstance()->logDebug( __CLASS__.' data base open');
+            //\Logger::getInstance()->logDebug( __CLASS__.' data base access');
             return $dbhPdo;
         }catch (Exception $e){
             \Logger::getInstance()->logFatal( __CLASS__.' exception');
@@ -57,53 +59,88 @@ class DataAccess{
         }
     }
 
+    /**
+     * Insert a row object in table 
+     * @param type $item, $autoIncrement : true for auto id
+     * @param type $autoIncrement
+     */
     public function Insert($item, $autoIncrement = self::AUTO_INCREMENT){       
         //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
+        //$this->dbh = $this::GetDbAccess();
         //Préparation et exécution
-        $sth = $dbh->prepare( call_user_func( $this->NameSpaceObjectDb.$this->QueryProvider . "::InsertQuery" ) );
+        $sth = $this->dbh->prepare( call_user_func( $this->NameSpaceObjectDb.$this->QueryProvider . "::InsertQuery" ) );
         $sth->execute( call_user_func( $this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowInsert" , $item ) );
         if($autoIncrement){
             //Récupération de l'id auto incrémenté
-            $sth = $dbh->prepare( call_user_func( $this->NameSpaceObjectDb.$this->QueryProvider . "::SelectIDQuery") );
+            $sth = $this->dbh->prepare( call_user_func( $this->NameSpaceObjectDb.$this->QueryProvider . "::SelectIDQuery") );
             $sth->execute();              
             //Assigner l'id à l'objet inséré
             call_user_func( $this->NameSpaceObjectDb.$this->MappingProvider . "::SetID", $item, $sth->fetchColumn() );
         }
     }
 
+    /**
+     * Update a row object in data base
+     * @param type $item
+     * @return type
+     */
     public function Update($item){
-        //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
         //Préparation de la query
-        $sth = $dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQuery") );
+        $sth = $this->dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::UpdateQuery") );
         //Exécution de la query
-        $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item) );
+        return $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowUpdate", $item) );
+    }
+    
+    /**
+     * Inner Update of object thus self update of properties
+     * @param type $item : object to update
+     * @param array $self : keys values of properties to be updated and used in conditional update
+     * @return type
+     */
+    public function InnerSelfUpdate($item, array $self){
+        //Préparation de la query
+        $sth = $this->dbh->prepare( call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::InnerSelfUpdateQuery") );
+        //Exécution de la query
+        return $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowInnerSelfUpdate", $item, $self) );
     }
 
+
+    /**
+     * Delete Row
+     * @param type $item object table
+     * @return boolean TRUE if DELETED, FALSE else if foreign key not null
+     */
     public function Delete($item){
-        //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
-        //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::DeleteQuery"));
-        //Exécution de la query
-        $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowDelete",$item));
+        if($this->isValidForeignKey($item)){
+            return FALSE;
+        }else{
+            //Ouverture de connexion  
+            //$this->dbh = $this::GetDbAccess();
+            //Préparation de la query
+            $sth = $this->dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::DeleteQuery"));
+            //Exécution de la query
+            $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider . "::MapToRowDelete",$item));
+            return TRUE;
+        }
     }
 
+    /**
+     * Get all rows of table
+     * @return \Model\Dal\DbLibrary\obj
+     */
     public function GetAll(){
         $retval = array();
         $cpt = 0;
 
         //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
+        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider."::SelectAllQuery") );
+        $sth = $this->dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider."::SelectAllQuery") );
         //Exécution de la query
         $sth->execute();
         //Récupération des lignes
         $result = $sth->fetchAll();
-        foreach($result as $row)
-        { 
+        foreach($result as $row){ 
             //Ajout à la collection après le mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
@@ -113,18 +150,22 @@ class DataAccess{
         return $retval;
     }
 
+    /**
+     * Get a row object by column id
+     * @param type $id
+     * @return \Model\Dal\DbLibrary\obj|boolean
+     */
     public function GetByID($id){
         //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
+        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByIDQuery" ));
+        $sth = $this->dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByIDQuery" ));
         //Exécution de la query
         $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider."::MapToRowGetByID", $id ));
         //On récupère le résultat
         $result = $sth->fetchAll();
         //S’il ya quelque chose
-        if (isset($result[0]))
-        {
+        if (isset($result[0])){
             //Création de l’objet et mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
@@ -136,22 +177,28 @@ class DataAccess{
         return FALSE;
     }
     
+    /**
+     * 
+     * @param array $keys
+     * @return \Model\Dal\DbLibrary\obj|boolean
+     */
     public function GetByCompositeKeys(array $keys){
         //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
+        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByIDQuery" ));
+        $sth = $this->dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByIDQuery" ));
         //Exécution de la query
         $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider."::MapToRowGetByCompositeKeys", $keys ));
         //On récupère le résultat
         $result = $sth->fetchAll();
         //S’il ya quelque chose
-        if (isset($result[0]))
-        {
+        if (isset($result[0])){
             //Création de l’objet et mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
             call_user_func( $this->NameSpaceObjectDb.$this->MappingProvider . "::MapFromRow", $result[0], $objectItem );
+            //on sauve l'objet d'origine
+            $this->savedObject = $objectItem;
             //on retourne l’objet
             return $objectItem;
         }
@@ -159,18 +206,23 @@ class DataAccess{
         return FALSE;
     }
     
+    /**
+     * Get a row object for a given set (column = value)
+     * @param type $column
+     * @param type $val
+     * @return \Model\Dal\DbLibrary\obj|boolean
+     */
     public function GetByColumnValue($column,$val){
         //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
+        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByValueQuery",$column ));
+        $sth = $this->dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByValueQuery",$column ));
         //Exécution de la query
         $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider."::MapToRowGetByValue",$column, $val ));
         //On récupère le résultat
         $result = $sth->fetchAll();
         //S’il ya quelque chose
-        if (isset($result[0]))
-        {
+        if (isset($result[0])){
             //Création de l’objet et mapping
             $obj = $this->NameSpaceObjectDb.$this->ObjectType;
             $objectItem = new $obj;
@@ -182,13 +234,19 @@ class DataAccess{
         return FALSE;
     }
     
+    /**
+     * Get all rows objects for a given set (column = value)
+     * @param type $column
+     * @param type $val
+     * @return array of row objects
+     */
     public function GetAllByColumnValue($column,$val){
         $retval = array();
         $cpt = 0;
         //Ouverture de connexion  
-        $dbh = $this::GetDbAccess();
+        //$this->dbh = $this::GetDbAccess();
         //Préparation de la query
-        $sth = $dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByValueQuery",$column ));
+        $sth = $this->dbh->prepare(call_user_func($this->NameSpaceObjectDb.$this->QueryProvider . "::SelectByValueQuery",$column ));
         //Exécution de la query
         $sth->execute(call_user_func($this->NameSpaceObjectDb.$this->MappingProvider."::MapToRowGetByValue",$column, $val ));
         //On récupère le résultat
@@ -202,10 +260,25 @@ class DataAccess{
                 call_user_func($this->NameSpaceObjectDb.$this->MappingProvider."::MapFromRow",$row,$objectItem);		
                 $retval[$cpt++]=$objectItem;
             }
-        return $retval;
         }
-        //on retourne false si on n'a rien trouvé
-        return FALSE;
+        // empty array if not found
+        return $retval; 
+    }
+    
+    /**
+     * Check if foreign key is used in object table given
+     * @param type $obj
+     * @return boolean
+     */
+    private function isValidForeignKey($obj){
+        $list = $obj->foreignKeyList;
+        foreach($list as $table=>$key){
+            $c=new DataAccess($table);
+            if($c->GetByColumnValue($key, $obj->$key) != null){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

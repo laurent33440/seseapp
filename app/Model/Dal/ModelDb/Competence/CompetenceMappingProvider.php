@@ -19,9 +19,9 @@ class CompetenceMappingProvider implements IMappingProvider{
     
     static function MapFromRow( $row , $item ){
         $item->id_competence= $row['id_competence'];
-        $item->comp_ref_comptetence=$row['comp_ref_comptetence'];
+        $item->comp_ref_competence=$row['comp_ref_competence'];
         $item->comp_intitule_competence=$row['comp_intitule_competence'];
-        $item->descriptif_competence=$row['descriptif_competence'];
+        $item->comp_descriptif_competence=$row['comp_descriptif_competence'];
         $item->comp_est_evaluable= $row['comp_est_evaluable'];
         $item->comp_est_evaluee=$row['comp_est_evaluee'];
         $item->comp_niveau_competence= $row['comp_niveau_competence'];
@@ -39,9 +39,9 @@ class CompetenceMappingProvider implements IMappingProvider{
     }
 
     Static function MapToRowInsert($item){
-        $retval['comp_ref_comptetence']=$item->comp_ref_comptetence;
+        $retval['comp_ref_competence']=$item->comp_ref_competence;
         $retval['comp_intitule_competence']=$item->comp_intitule_competence;
-        $retval['descriptif_competence']=$item->descriptif_competence;
+        $retval['comp_descriptif_competence']=$item->comp_descriptif_competence;
         $retval['comp_est_evaluable']= $item->comp_est_evaluable;
         $retval['comp_est_evaluee']=$item->comp_est_evaluee;
         $retval['comp_niveau_competence']=$item->comp_niveau_competence;
@@ -51,9 +51,9 @@ class CompetenceMappingProvider implements IMappingProvider{
 
     static function MapToRowUpdate($item){
         $retval['id_competence']=$item->id_competence;
-        $retval['comp_ref_comptetence']=$item->comp_ref_comptetence;
+        $retval['comp_ref_competence']=$item->comp_ref_competence;
         $retval['comp_intitule_competence']=$item->comp_intitule_competence;
-        $retval['descriptif_competence']=$item->descriptif_competence;
+        $retval['comp_descriptif_competence']=$item->comp_descriptif_competence;
         $retval['comp_est_evaluable']= $item->comp_est_evaluable;
         $retval['comp_est_evaluee']=$item->comp_est_evaluee;
         $retval['comp_niveau_competence']=$item->comp_niveau_competence;

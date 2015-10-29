@@ -10,13 +10,12 @@ namespace Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse; 
+use Model\HeaderModel;
 use View\ViewHandler;
 use Logger;
-use Bootstrap;
-use Version;
 
 /**
- * FIXME : fat class must be split...
+ * FIXME : fat class must be split... REFACTOR
  * @author laurent
  */
 
@@ -30,6 +29,7 @@ abstract class AControllerState {
     const ON_INPUT_ERROR = 'onInputError';
     const ON_CRITICAL_ERROR = 'onCriticalError';
     
+    // @var use Symfony\Component\HttpFoundation\Request
     protected $_request;
     
     protected $_rootName;// controller name
@@ -53,6 +53,11 @@ abstract class AControllerState {
     protected $_model;
     protected $modalParameters = null;
     
+    /**
+     * Initiate properties of controller and restore his state
+     * @param Request $request : request from client
+     * @param type $action : method to use in controller
+     */
     public function __construct(Request $request, $action) {
         $this->_request = $request;
         $this->_action=$action;
@@ -62,8 +67,7 @@ abstract class AControllerState {
         if(!$this->_state = $this->getSavedSequenceState()){
             $this->_state = self::IDLE;
         }
-        //$this->_index=$this->getRootPath().$this->_request->getPathInfo();
-        $this->_index=  '/'.\Bootstrap::ENTRY_SCRIPT.'/'.\SeseSession::getInstance()->get('user_connected/group').
+        $this->_index=  '/'.\Bootstrap::ENTRY_SCRIPT.'/'.  \UserConnected::getInstance()->getUserGroup();
         \Logger::getInstance()->logInfo( get_class($this).' restoring state controller : '.$this->_rootName.'::'.$this->_action. '-->'.$this->_state);
     }
 
@@ -71,16 +75,6 @@ abstract class AControllerState {
         \Logger::getInstance()->logInfo('destruct : ' .get_class($this));
         \Logger::getInstance()->logInfo( get_class($this).' saving state controller : '.$this->_rootName.'::'.$this->_action. '-->'.  $this->_state);
         $this->saveControllerState($this->_state);
-    }
-    
-    /**
-     * FIXME remove this  !
-     * @param type $class
-     */
-    protected function setRootControllerName($class) {
-        $tab=  explode('\\',$class); //avoid namespace
-        $rootName =  explode("Controller",$tab[count($tab)-1]);
-        $this->_rootName = $rootName[0];
     }
     
     /**
@@ -99,6 +93,10 @@ abstract class AControllerState {
         $this->_request=$request;
     }
     
+    public function getIndex(){
+        return $this->_index;
+    }
+    
     /**
      * 
      * @return type
@@ -113,7 +111,7 @@ abstract class AControllerState {
     }
     
     /**
-     * 
+     * RedirectResponse represents an HTTP response doing a redirect (HTTP 302)
      * @param type $url
      */
     protected function redirectTo($url){
@@ -233,38 +231,27 @@ abstract class AControllerState {
     
     ////////////////////// MODEL VIEWS METHODS //////////////////////////////////
     
+    // TODO: refectoring build header body footer view to respect LSP
+    
     /**
+     * headerParams overwrite default parameters
      * 
      */
     protected function buildHeaderView(array $headerParams=null){
         if(!$headerParams){
-            $model = new \Model\HeaderModel();
-            $this->_modelView['header'] = array('SCHOOL_NAME'=>$model->get_schoolName(),
-                                                'COURSE_NAME'=>$model->get_courseName(),
-                                                'STUDY_YEAR'=>$model->get_studyYear(),
-                                                'USER_NAME'=>$model->get_userName(),
-                                                'USER_GROUP'=>$model->get_userRole(),
-//                                                'INDEX'=>  \Bootstrap::APP_URL,
-                                                'INDEX'=>  '/',
-                //admin space
-                'REFERENTIAL'=>  $this->_index.'/referentiel',
-                'FUNCTION'=>  $this->_index.'/fonction',
-                'ACTIVITY'=>  $this->_index.'/activite',
-                'SKILL'=>  $this->_index.'/competence',
-                'PROMOTION'=>  $this->_index.'/promotion',
-                'TEACHER'=>  $this->_index.'/enseignant',
-                'TRAINEE'=> $this->_index.'/stagiaire',
-                'WORK_DATE'=>  $this->_index.'/stage',
-                'PASSWORD'=>  $this->_index.'/acces',
-                //teacher space
-                'WORK_DEFINITION'=> $this->_index.'/stage',
-                'WORK_VISIT_DEFINITION'=> $this->_index.'/visite',
-                'WORK_COMMENT_DEFINITION'=> $this->_index.'/commentaire',
-                'INTERNAL_CONTACT'=> $this->_index.'/contact_interne',
-                //tutor space
-                'TUTOR_LIST'=> $this->_index.'/liste_stagiaire',
-
-                );
+            $model = new HeaderModel();
+            $header = array('SCHOOL_NAME'=>$model->get_schoolName(),
+                            'COURSE_NAME'=>$model->get_courseName(),
+                            'STUDY_YEAR'=>$model->get_studyYear(),
+                            'USER_NAME'=>$model->get_userName(),
+                            'USER_GROUP'=>$model->get_userRole(),
+                            'INDEX'=>  '/',
+                            'LOGOUT' => 'logout'
+            );
+            if(!empty($this->_modelView['header'])){
+                $header = $this->_modelView['header']+$header; //replace all keys'value of 'header' with 'modelView['header']''s values and add ones that doesn't exist 
+            }
+            $this->_modelView['header'] = $header;
                                                 
         }else{
             $this->_modelView['header'] = $headerParams;
@@ -272,7 +259,7 @@ abstract class AControllerState {
     }
     
     /**
-     * 
+     * bodyParams overwrite default parameters
      */
     protected function buildBodyView(array $bodyParams=null){
         if(!$bodyParams){
@@ -283,14 +270,17 @@ abstract class AControllerState {
     }
 
     /**
-     * 
+     * footerParams overwrite default parameters
      */
-    protected function buildFooterView(array $footerParams=null){
+    public function buildFooterView(array $footerParams=null){
         if(!$footerParams){
             if($this->modalParameters){
                 $footer =  array('INDEX'=>  $this->_index,'URI_COMPANY'=> \Bootstrap::COMPANY_URI, 'SHOW_MODAL'=>'true', 'MODAL_TITLE' => $this->modalParameters->getTitle(), 'MODAL_MESSAGE' => $this->modalParameters->getMessage());
             }else{
                 $footer = array('INDEX'=> $this->_index,'URI_COMPANY'=> \Bootstrap::COMPANY_URI, 'SHOW_MODAL' => 'false' );
+            }
+            if(!empty($this->_modelView['footer'])){
+                $footer = $this->_modelView['footer']+$footer; //replace all keys'value of 'footer' with 'modelView['footer']''s values and add ones that doesn't exist 
             }
             $this->_modelView['footer'] = $footer;
         }else{
@@ -326,29 +316,32 @@ abstract class AControllerState {
         
     }
 
-    /**
-     * Get Model View send to form builder !!USED ONLY FOR TESTING PURPOSE!!
-     * @return array key => value for form structure 
-     */
+    
+    //!!USED ONLY FOR TESTING PURPOSE!!
     public function getModelView(){
         return $this->_modelView;
     }
+    
+    //!!USED ONLY FOR TESTING PURPOSE!!
+    public function setModelView(array $view){
+        $this->_modelView=$view;
+    }
 
-    /**
-     * Get Model 
-     * @return type
-     */
+    //!!USED ONLY FOR TESTING PURPOSE!!
     public function getModel(){
         return $this->_model;
     }
     
+    //!!USED ONLY FOR TESTING PURPOSE!!
     public function setModel($model) {
         $this->_model = $model;
     }
+    
+    ///////////////////////// FORM DATAS HANDLING METHODS //////////////////////
 
     /**
-     * Build a one to one set of 'form name' => 'model attribute name'
-     * and 'form place holder name' => 'default values model attribute'
+     * Build a one to one set of 'form name' => 'model property name'
+     * and 'form place holder name' => 'default values model property'
      * 
      * @return array : set of keys => values
      */
@@ -384,56 +377,61 @@ abstract class AControllerState {
         }
         return $formValues;
     }
-
-    /**
-     * FIXME : remove this 
-     * Retrieve all values of model attributes from posted datas
-     * @param array $modelVars :  names of model's attributes
-     * @param array $postedDatas : set of all posted 'form name var' => value
-     * @return an array : set of 'model var name' => value
-     */
-    protected function getPostedDataModel($modelVars, $postedDatas){
-        $datas = array();
-        foreach ($modelVars as $value) {
-            $datas[$value]= $postedDatas[$value];
-        }
-        return $datas;
-    }
     
     /**
-     * Find all values from form towards member's model
-     * @param array $formDatas : datas from form construct as set of : {<member_name-model>#param1 => value},{<member_name-model>#param1#param2 => value}, mixed datas(keys => values), ...
-     * @param array $varsModel : members of model
-     * @return two dimensionnals array : ordered dictionnary (member's name => member's values)  
+     * Extract datas from form datas (raw post) towards model properties and format of datas
+     * @param array $formDatas : datas from form construct are set of : 
+     * 1){<property_name-model> => value},
+     * 2){<property_name-model>#param1#param2... => value},
+     * 3){<property_name-model>##key => value}, 
+     * 4){<property_name-model>##key#param1#param2... => value}, 
+     * @param array $varsModel : properties of model
+     * @return array : 
+     * 1)array(<property_name-model> => value, ...)
+     * 2)array(<property_name-model> => array(value, param1, param2, ...), ...)
+     * 3)array(key => array(<property_name-model> => value), ...)
+     * 4)array(key => array(<property_name-model> => array(value, param1, param2,...)), ...)
      */
     public function findAllParamsFromForm(array $formDatas, array $varsModel){
         $keysForm = array_keys($formDatas);
         $result = array();
         $matches = array();
         foreach($keysForm as $keyForm) {
-            if(!empty($formDatas[$keyForm])){
-                if(preg_match('/(?P<param>\w+)#/', $keyForm, $matches) === 1){ //matches complex <form_name-model>#param1 => value,<form_name-model>#param1#param2 => value
+            //if(!empty($formDatas[$keyForm])){  !!!!! empty (null or 0 ) values are ALLOWED for a property
+                if(preg_match('/(?P<param>\w+)##/', $keyForm, $matches) === 1){ //matches complex <form_name-model>##key => value OR <form_name-model>##key#param1#param2#... => value
                     if(in_array($matches['param'], $varsModel)){
-                        $vals=explode('#',$keyForm);
-                        if(count($vals)>2){
+                        $parts =explode('##',$keyForm);
+                        $args=explode('#',$parts[1]);
+                        if(count($args)>1){
                             $t=array();
-                            for($i=2; $i<count($vals);$i++){
-                                $t[] = $vals[$i];
+                            for($i=1; $i<count($args);$i++){
+                                $t[] = $args[$i];
                             }
-                            $result[$vals[1]][] = array($matches['param']=> array_merge(array($formDatas[$keyForm]),$t));
+                            $result[$args[0]][] = array($matches['param']=> array_merge(array($formDatas[$keyForm]),$t));
                         }else{
-                            $result[$vals[1]][$matches['param']] = $formDatas[$keyForm];
+                            $result[$parts[1]][$matches['param']] = $formDatas[$keyForm];
                         }
                     }
-                }else{ // matches simple form_param => value_param
-                    if(preg_match('/(?P<param>\w+)/', $keyForm, $matches) === 1){
-                        if(in_array($matches['param'], $varsModel)){
-                            $result[$matches['param']] = $formDatas[$keyForm];
+                }else{ 
+                    if(preg_match('/(?P<param>\w+)#/', $keyForm, $matches) === 1){ // matches <form_name-model>#param1#param2#... => value
+                            if(in_array($matches['param'], $varsModel)){
+                                $parts =explode('#',$keyForm);
+                                $t=array();
+                                for($i=1; $i<count($parts);$i++){
+                                    $t[] = $parts[$i];
+                                }
+                                $result[$matches['param']] = array_merge(array($formDatas[$keyForm]),$t);
+                            }
+                    }else{
+                        if(preg_match('/(?P<param>\w+)/', $keyForm, $matches) === 1){// matches simple form_param => value_param
+                            if(in_array($matches['param'], $varsModel)){
+                                $result[$matches['param']] = $formDatas[$keyForm];
+                            }   
                         }
                         
                     }
                 }
-            }
+            //}
         }
         return $result;
     }

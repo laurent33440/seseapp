@@ -22,6 +22,7 @@ class Documents_referenceQueryProvider implements IQueryProvider{
                                         
                                         drf_sujet,
                                         drf_description_doc,
+                                        drf_type,
                                         id_referentiel_de_formation
                                          )
                                       
@@ -29,6 +30,7 @@ class Documents_referenceQueryProvider implements IQueryProvider{
                                         
                                         :drf_sujet,
                                         :drf_description_doc,
+                                        :drf_type,
                                         :id_referentiel_de_formation
                                         
                 )";
@@ -54,6 +56,7 @@ class Documents_referenceQueryProvider implements IQueryProvider{
         return "update Documents_reference set    
                                         
                                         drf_sujet=:drf_sujet,
+                                        drf_type=:drf_type,
                                         drf_description_doc=:drf_description_doc,
                                         id_referentiel_de_formation=:id_referentiel_de_formation
                                     where id_documents_reference=:id_documents_reference ";

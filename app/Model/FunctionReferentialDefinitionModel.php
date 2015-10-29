@@ -16,94 +16,79 @@ use Model\Dal\ModelDb\Fonction\FonctionObject;
  *
  * @author prog
  */
-class FunctionReferentialDefinitionModel extends AModel{
-    //view
-    private $_descriptions=array();
+class FunctionReferentialDefinitionModel extends AModel implements IModel{
+    /**
+     * DATA STRUCTURE
+     * array(idFunction => functionDescription)
+     */
+    private $_descriptionList=array();
     
-    public function get_descriptions() {
-        return $this->_descriptions;
+    public function get_descriptionList() {
+        return $this->_descriptionList;
     }
     
     // for setter view
-    public function set_descriptions($_description) {
-        $this->_descriptions[] = $_description;
+    public function set_descriptionList($_description, $id=null) {
+        $this->_descriptionList[$id] = $_description;
     }
     
+    public function addBlank() {
+        $this->_descriptionList['new'] ='';
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function resetModel() {
+        $this->_descriptionList=array();
+    }
+
     /**
      * Add last value of model view to 'Fonction' table
      */
-    public function addFunctionToDataBase(){
+    public function append(){
         $collection= new DataAccess('Fonction');
         $f= new FonctionObject();
-        $f->f_description = $this->_descriptions[count($this->_descriptions)-1];
+        $f->f_description = end($this->_descriptionList);
         $collection->Insert($f);
-    }
-    
-    /**
-     * 
-     */
-    public function delFunctionFromDataBase($id){
-        $collection= new DataAccess('Fonction');
-        $f =$collection->GetByID($id);
-        $collection->Delete($f);
     }
     
     /**
      * Get members's values of model from data base
      * 
      */
-    public function getFunctionsFromDataBase(){
-        $this->_descriptions=array();
+    public function getAll(){
+        $this->resetModel();
         $collection= new DataAccess('Fonction');
         $funcs = $collection->GetAll();
         foreach($funcs as $func){
-            $this->_descriptions[$func->id_fonction] = $func->f_description;
+            $this->_descriptionList[$func->id_fonction] = $func->f_description;
         }    
     }
     
     /**
      * 
-     * @param num $id data base of an existing function
-     * @return string function description if exists null else
-     */
-    public function getFunctionDescriptionFromIdDb($id){
-        $collection = new DataAccess('Fonction');
-        $f=$collection->GetByColumnValue('id_fonction', $id);
-        return $f->f_description;
-    }
-    
-    /**
-     * 
-     * @param string $description data base of an existing function
-     * @return num id function if exists null else
-     */
-    public function getFunctionIdDbFromDescription($description){
-        $collection = new DataAccess('Fonction');
-        $f=$collection->GetByColumnValue('f_description', $description);
-        return $f->id_fonction;
-    }
-
-    /**
-     * 
      * @param array $func
      */
-    public function updateFunctionInDataBase(array $func){
-        $collection = new DataAccess('Fonction');
-        $f = $collection->GetByID($func['id']);
-        $f->f_description = $func['value'];
-        $collection->Update($f);
+    public function update($property, $val, $id){
+        if($property==='_descriptionList'){
+            $collection = new DataAccess('Fonction');
+            $f = $collection->GetByID($id);
+            $f->f_description = $val;
+            $collection->Update($f);
+            $this->_descriptionList[$id]=$val;
+        }
     }
     
     /**
-     * Erase empty and blank values from array - keep ordering key 
-     * @param array $a : array to clean
-     * @return array 
+     * 
      */
-    public function delBlankEmptyValues(array $a){
-        $a = array_map('trim', $a); //suppress blanks at begining and at end of values in array
-        return array_values(array_filter($a));
-    }       
-
-
+    public function deleteFromId($id){
+        $collection= new DataAccess('Fonction');
+        $f =$collection->GetByID($id);
+        return $collection->Delete($f);
+    }
+    
     
 }

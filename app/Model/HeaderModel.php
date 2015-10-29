@@ -8,18 +8,13 @@
 
 namespace Model;
 
-use Model\Dal\ModelDb\Utilisateurs\UtilisateursObject;
-use Model\Dal\ModelDb\Etablissement\EtablissementObject;
-use Model\Dal\ModelDb\Annee\AnneeObject;
-use Model\Dal\ModelDb\Referentiel_de_formation\Referentiel_de_formationObject;
-//use Model\Dal\ModelDb\Groupe\GroupeObject;
-use Model\Dal\ModelDb\Parametres\ParametresObject;
 use Model\Dal\DbLibrary\DataAccess;
-use Model\AModel;
+use UserConnected;
 
 /**
  * Description of HeaderModel
- *
+ * Class used by AControllerState to get generals infos for header
+ * Fill in properties according to user connected 
  * @author laurent
  */
 class HeaderModel {
@@ -28,9 +23,8 @@ class HeaderModel {
     private $_schoolName;
     private $_courseName;
     private $_studyYear;
-    private $_userName='unknown user';
-    private $_userRole='unknown user role';
-    
+    private $_userName='';
+    private $_userRole='';
     
     public function get_schoolName() {
         return $this->_schoolName;
@@ -55,30 +49,16 @@ class HeaderModel {
     public function __construct() {
         $collection = new DataAccess('Etablissement');
         $school = $collection->GetAll();
-        if(count($school)!=1){
-            // error multiple schools! 
-        }else{//ok
-            $this->_schoolName=$school[0]->eta_nom_etablissement;
-        }
+        $this->_schoolName=$school[0]->eta_nom_etablissement;
         $collection = new DataAccess('Referentiel_de_formation');
         $ref = $collection->GetAll();
-        if(count($ref)!=1){
-            // error multiple Referentiel_de_formation! 
-        }else{//ok
-            $this->_courseName=$ref[0]->rdf_nom_formation;
-        }
+        $this->_courseName=$ref[0]->rdf_nom_formation;
         $collection = new DataAccess('Annee');
         $year = $collection->GetAll();
-        if(count($year)!=1){
-            // error multiple Annee! 
-        }else{//ok
-            $this->_courseName=$year[0]->annee_scolaire;
-        }
-        if(\SeseSession::getInstance()->has('user_connected/name')){
-            $this->_userName= \SeseSession::getInstance()->get('user_connected/name');
-        }
-        if(\SeseSession::getInstance()->has('user_connected/group')){
-            $this->_userRole= \SeseSession::getInstance()->get('user_connected/group');
+        $this->_studyYear=$year[0]->annee_scolaire;
+        if(UserConnected::getInstance()->isUserConnected()){
+            $this->_userName= \UserConnected::getInstance()->getUserName();
+            $this->_userRole= \UserConnected::getInstance()->getUserGroup();
         }
     }
 }

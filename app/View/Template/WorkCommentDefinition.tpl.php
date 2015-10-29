@@ -1,10 +1,9 @@
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Main jumbotron for a call to action -->
 <div class="jumbotron">
   <div class="container">
     <h3>Commentaires des visites de stage</h3>
     <p>Commentez les visites de stage réalisées. </p>
-    <!--<p><a class="btn btn-primary btn-lg" role="button"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>-->
   </div>
 </div>
 
@@ -36,7 +35,7 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                     <textarea rows=\"4\" cols=\"80\" id=\"comment\"
-                                                      name=\"form_comment#$trainee\"
+                                                      name=\"form_comments#$trainee\"
                                                       placeholder=\"Entrez le commentaire de la visite du stagiaire\" />
                                                       $comment
                                                     </textarea>
@@ -45,9 +44,9 @@
                                             </td>
                                             <td>
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD\" id=\"add#$trainee\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD\" value=\"$trainee\" id=\"add#$trainee\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
-                                                        Valider
+                                                        Valider le commentaire
                                                     </button>
                                                   </span>
                                                 

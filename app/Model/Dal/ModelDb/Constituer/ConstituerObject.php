@@ -16,4 +16,7 @@ namespace Model\Dal\ModelDb\Constituer;
 class ConstituerObject {
     public $id_activite;
     public $id_competence;
+    
+    public $foreignKeyList = array('Activite'=>'id_activite');
+    
 }

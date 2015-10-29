@@ -9,6 +9,7 @@ namespace Model;
 
 use ReflectionClass;
 use ReflectionProperty;
+use Model\Dal\DbLibrary\DataAccess;
 
 /**
  * Description of Model
@@ -16,17 +17,8 @@ use ReflectionProperty;
  * @author laurent
  */
 abstract class AModel {
+    const __BY_VALUE_TO_TEMPLATE__='__BY_VALUE_TO_TEMPLATE__';//pass property of model by value to template to be evaluated in template -- see generator in template engine
     const ERR_DUPLICATE='!!valeur dupliquée!!';
-    
-    protected $_dataBaseHandler = null; //hold instance of data base handler
-    
-    /**
-     * get data base handler
-     * @return Object : data base handler
-     */
-    public function getDataBaseHandler(){
-        return $this->_dataBaseHandler;
-    }
 
     /**
      * Retrieve private members of child model
@@ -57,80 +49,71 @@ abstract class AModel {
     }
     
     /**
-     * Set members values of model
-     * @param list keys of member name and value : property_name => value OR id=>array(property_name => array(main_value, arg1, arg2, ...)
+     * Set properties values of model
+     * @param list keys of member name and value : property_name => value OR array(id=>array(property_name => array(main_value, arg1, arg2, ...),...)
      * @return boolean true if all members are matched 
      */
     public function setClassVarsValues($keysVarsValues){
-        $allMatched = $this->isArrayInclude($keysVarsValues,$this->getClassVars());
-        if($allMatched){
-            foreach ($keysVarsValues as $var => $value) {
-                //if $value is an array this is the property name associated with arguments of the setting method
-                if(is_array($value)){
-                    $k = array_keys($value);
-                    //var_dump($value);
-                    //var_dump($value[$k[0]]);
-                    call_user_func_array(array($this, 'set'.$k[0]),$value[$k[0]]);
-                }else{
-                    $this->{'set'.$var}($value);
+        foreach ($keysVarsValues as $var => $value) {
+            if(is_array($value)){//if $value is an array 2 cases :
+            //1)$var is the property name associated with arguments of the setting method (main value and arguments)
+            //2)$var is a key and not an property name. Then First key of $value MUST be a valid property name.
+            //3)$value is an enumeration of properties => args   
+                if($this->isPropertyModel($var)){//case 1
+                    call_user_func_array(array($this, 'set'.$var),$value);
+                }else{//case 2 & 3
+                    foreach ($value as $key => $valProperty) {//loop
+                        if($this->isPropertyModel($key)){ //2
+                            if(!is_array($valProperty)){ //single value
+                                call_user_func_array(array($this, 'set'.$key),array($valProperty));
+                            }else{// list of arguments : array(main_value, arg1, arg2, ...)
+                                call_user_func_array(array($this, 'set'.$key),$valProperty); 
+                            }
+                        }else{// case 3 get property and args from key
+                            $k = array_keys($valProperty);
+                            $prop = $k[0];
+                            call_user_func_array(array($this, 'set'.$prop),$valProperty[$prop]); 
+                        }    
+                    }
                 }
-            }
-        }
-        return $allMatched;
-    }
-    
-    /**
-     * Retrieve members values of model
-     * @return set of member's name => value
-     */
-    public function getClassVarsValues(){
-        $varsValues = array();
-        $vars = $this->getClassVars();
-        foreach ($vars as $var) {
-            $val = $this->{'get'.$var}();
-            $varsValues[$var] = $val;
-        }
-        return $varsValues;
-    }
-
-
-    /**
-     * OBSOLETE
-     * 
-     * Check matching keys in dictionary
-     * @param type $array : testing array's keys
-     * @param type $keys : keys references
-     * @return boolean : true all keys matched
-     */
-//    protected function array_keys_exists($array,$keys) {
-//        foreach($keys as $k) {
-//            if(!isset($array[$k])) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-    
-    /**
-     * Check if keys in an associative array is include in another
-     * @param type $tstArray : testing array's keys
-     * @param type $refArray : keys references
-     * @return boolean : true, all testing array keys are in array reference
-     */
-    public function isArrayInclude($tstArray,$refArray) {
-        $tk = array_keys($tstArray);
-        foreach($tk as $k) {
-            if(is_numeric($k)){
-                $t = $tstArray[$k];
-                $kt = array_keys($t);
-                $k = $kt[0];
-            }
-            if(!in_array($k, $refArray)) {
-                return false;
+            }else{
+                if($this->isPropertyModel($var)){
+                    $this->{'set'.$var}($value);
+                }else{
+                    return false;
+                }
             }
         }
         return true;
     }
+    
+    /**
+     * Retrieve properties values of model with getter
+     * @return set of member's name => value
+     */
+    public function getClassVarsValues(){
+        $reflection = new ReflectionClass($this);
+        $varsValues = array();
+        $vars = $this->getClassVars();
+        foreach ($vars as $var) {
+            if($reflection->hasMethod('get'.$var)){
+                $val = $this->{'get'.$var}();
+                $varsValues[$var] = $val;
+            }
+        }
+        return $varsValues;
+    }
+    
+    /**
+     * 
+     * @param type $var
+     */
+    public function isPropertyModel($var){
+        return (in_array($var, $this->getClassVars(),true));//strict checking (type)
+    }
+
+
+    
     
     /**
      * Save all members in SESSION
@@ -168,6 +151,22 @@ abstract class AModel {
      */
     public function getClassVarsPlaceHolder(){
         return array_fill(0, count($this->getClassVars()), '');
+    }
+    
+    
+    /**
+     * get all ref_code=>ref_libelle for a given ref_type
+     * @param type $typeRef : key to access all references for this 
+     * @return array ref_code=>ref_libelle
+     */
+    protected function getReferenceDb($typeRef){
+        $coll = new DataAccess('Reference');
+        $all=$coll->GetAllByColumnValue('ref_type', $typeRef);
+        $l=array();
+        foreach ($all as $ref) {
+            $l[$ref->ref_code]= $ref->ref_libelle;
+        }
+        return $l;
     }
     
     /**

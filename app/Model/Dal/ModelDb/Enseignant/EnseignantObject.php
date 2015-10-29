@@ -27,4 +27,6 @@ class EnseignantObject {
     public $ens_role;
     public $ens_est_referant;
     public $ens_compte_enseignant;
+    
+    public $foreignKeyList=array();
 }

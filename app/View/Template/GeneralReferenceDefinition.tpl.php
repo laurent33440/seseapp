@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <label for="inputTxt1" class="control-label col-xs-2">Nom de la formation</label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminName" 
+                                    <input type="text" required class="form-control" id="{{!form_trainingName!}}" 
                                            name="{{!form_trainingName!}}" 
                                            placeholder=""
                                            value="{{!form_val_trainingName!}}">
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label for="inputTxt2" class="control-label col-xs-2">Domaine de formation</label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass" 
+                                    <input type="text" required class="form-control" id="{{!form_trainingDomain!}}" 
                                            name="{{!form_trainingDomain!}}" 
                                            placeholder="form_ph_trainingDomain"
                                            value="{{!form_val_trainingDomain!}}">
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label for="inputTxt3" class="control-label col-xs-2"> Référence du référentiel </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="{{!form_referentialReference!}}" 
                                            name="{{!form_referentialReference!}}" 
                                            placeholder=""
                                            value="{{!form_val_referentialReference!}}">
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <label for="inputTxt4" class="control-label col-xs-2">Nom du référentiel </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="{{!form_referencialName!}}" 
                                            name="{{!form_referencialName!}}" 
                                            placeholder=""
                                            value="{{!form_val_referencialName!}}">
@@ -58,7 +58,7 @@
                             <div class="form-group">
                                 <label for="inputTxt5" class="control-label col-xs-2">Descriptif sommaire du référentiel </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="{{!form_referentialSpecification!}}" 
                                            name="{{!form_referentialSpecification!}}" 
                                            placeholder=""
                                            value="{{!form_val_referentialSpecification!}}">
@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label for="inputTxt6" class="control-label col-xs-2">Durée de la formation en mois </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="{{!form_trainingTime!}}" 
                                            name="{{!form_trainingTime!}}" 
                                            placeholder=""
                                            value="{{!form_val_trainingTime!}}">
@@ -76,7 +76,7 @@
                             <div class="form-group">
                                 <label for="inputTxt7" class="control-label col-xs-2">Durée totale des stages en jour(s) </label>
                                 <div class="col-xs-10">
-                                    <input type="text" required class="form-control" id="inputAdminPass2" 
+                                    <input type="text" required class="form-control" id="{{!form_internshipDuration!}}" 
                                            name="{{!form_internshipDuration!}}" 
                                            placeholder=""
                                            value="{{!form_val_internshipDuration!}}">

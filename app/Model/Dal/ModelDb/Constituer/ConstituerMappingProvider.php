@@ -33,20 +33,36 @@ class ConstituerMappingProvider implements IMappingProvider{
     }
 
     Static function MapToRowInsert($item){
-        $retval['id_competence']=$item->id_competence;
-        $retval['id_activite']=$item->id_activite;
+        $retval[':id_competence']=$item->id_competence;
+        $retval[':id_activite']=$item->id_activite;
         return $retval;
     }
 
     static function MapToRowUpdate($item){
-        $retval['id_competence']=$item->id_competence;
-        $retval['id_activite']=$item->id_activite;
+        $retval[':id_competence']=$item->id_competence;
+        $retval[':id_activite']=$item->id_activite;
+        return $retval;
+    }
+    
+    static function MapToRowInnerSelfUpdate($item, array $selector){
+        $retval[':id_competence']=$item->id_competence;
+        $retval[':id_activite']=$item->id_activite;
+        foreach ($selector as $key => $value) {
+            $retval [":$key"]=$value;
+        }
         return $retval;
     }
 
     static function MapToRowDelete($item){
         $retval[':id_competence'] = $item->id_competence;
         $retval[':id_activite'] = $item->id_activite;
+        return $retval;
+    }
+    
+    static function MapToRowGetByCompositeKeys($keys){
+        foreach ($keys as $key => $value) {
+            $retval [":$key"]=$value;
+        }
         return $retval;
     }
 

@@ -10,12 +10,12 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
-use Symfony\Component\Routing\RouteCollection;
-use Symfony\Component\Routing\Route;
+//use Symfony\Component\Routing\RouteCollection;
+//use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 use \Exception\InternalException;
-//use \Controller\ActivitiesReferenceDefinitionController;
+
 /**
  * Description of MainSetupRouter
  *
@@ -34,7 +34,12 @@ class MainRouter {
 //            echo 'base url : '.$context->getBaseUrl().' || ';
             $matcher = new UrlMatcher($routesCollection, $context);
             $parameters = $matcher->match($context->getPathInfo());
-//            var_dump($parameters);
+            //            var_dump($parameters);
+            if(!array_key_exists('_public', $parameters)){
+                if(!UserConnected::getInstance()->isUserConnected()){
+                    $parameters = array('_controller'=>'Login', '_action'=>'run');
+                }   
+            }
             $controllerQualified = APP.'Controller/'.$parameters['_controller'].'Controller.php';
             if (is_file($controllerQualified)){
                 $controllerClass = 'Controller\\'.$parameters['_controller'].'Controller';
@@ -64,7 +69,7 @@ class MainRouter {
         catch (ResourceNotFoundException $re){ // If the resource could not be found
             new InternalException($re->getMessage());
         }   
-        catch (MethodNotAllowedException $me){ // If the resource was found but the request method is not allowed
+        catch (MethodNotAllowedException $me){ // If the resource was found but the requested method is not allowed
             new InternalException($me->getMessage()); 
         }
     }

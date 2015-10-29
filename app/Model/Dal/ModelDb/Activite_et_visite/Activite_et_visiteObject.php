@@ -19,10 +19,11 @@ class Activite_et_visiteObject {
     public $aev_description_activite;
     public $aev_type_acteur;
     public $aev_id_type_acteur;
-    public $aev_date_viste;
-    public $aev_commentaire_viste;
+    public $aev_date_visite;
+    public $aev_commentaire_visite;
     public $id_enseignant;
     public $id_stagiaire;
     
+    public $foreignKeyList = array('Stagiaire'=>'id_stagiare', 'Enseignant'=>'id_enseignant');
     
 }

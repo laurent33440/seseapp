@@ -21,19 +21,19 @@
                         <table class="table table-hover table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th class="active">Référence de la promotion</th>
-                                    <th class="active">Descriptif de la promotion</th>
+                                    <th style="width:15%" class="active">Référence de la promotion </th>
+                                    <th style="width:85%" class="active">Descriptif de la promotion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (form_val_references as $idWork=>$ref ) {
+                                <?php foreach (form_val_references as $idPromotion=>$ref ) {
                                     echo"
                                         <tr>
                                             <td> 
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"promoRef#$ref\"
-                                                  name=\"form_references#$ref\"
+                                                  id=\"_references#$idPromotion\"
+                                                  name=\"form_references##$idPromotion\"
                                                   placeholder=\"Entrez la référence de la promotion\"
                                                   value = \"$ref\">
                                                </div><!-- /input-group -->
@@ -41,16 +41,16 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                   <input type=\"text\" class=\"form-control\"
-                                                  id=\"promotionDescription#$ref\"
-                                                  name=\"form_descriptions#$ref\"
+                                                  id=\"_descriptions#$idPromotion\"
+                                                  name=\"form_descriptions##$idPromotion\"
                                                   placeholder=\"Entrez le descriptif de la promotion\"
-                                                  value = \"".form_val_descriptions[$idWork]."\">
+                                                  value = \"".form_val_descriptions[$idPromotion]."\">
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD_PROMOTION\" id=\"addPromotion#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"BUTTON_ADD_PROMOTION\" value=\"$idPromotion\" id=\"addPromotion#$ref\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
                                                         Ajouter
                                                     </button>
-                                                    <button class=\"btn btn-danger\" name=\"BUTTON_DEL_PROMOTION\" value=\"$ref\" id=\"delPromotion#$ref\" type=\"submit\">
+                                                    <button class=\"btn btn-danger\" name=\"BUTTON_DEL_PROMOTION\" value=\"$idPromotion\" id=\"delPromotion#$ref\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-minus-sign\"></span>
                                                         Supprimer
                                                     </button>

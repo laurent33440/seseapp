@@ -15,7 +15,10 @@ use Exception\DataBaseException;
  *
  * @author laurent
  */
-class PdoCrud implements IPersistantModel {
+class PdoCrud {
+    
+    //singleton
+    private static $_instance=null;
 
     const MODE_FETCH_ALL = 1;
     const MODE_FETCH_SIMPLE = 2;
@@ -35,10 +38,18 @@ class PdoCrud implements IPersistantModel {
      * @param type $dbUser
      * @param type $dbPass
      */
-    public function __construct($dbSrv, $dbUser, $dbPass) {
+    final private function __construct($dbSrv, $dbUser, $dbPass) {
         $this->pdo_dbSrv = $dbSrv;
         $this->pdo_dbUser = $dbUser;
         $this->pdo_dbPass = $dbPass;
+        \Logger::getInstance()->logDebug( __CLASS__.' DATA BASE OPEN');
+    }
+    
+    final public static function getInstance ($dbSrv, $dbUser, $dbPass) {
+            if (!(self::$_instance instanceof self)){
+                self::$_instance = new self($dbSrv, $dbUser, $dbPass);
+            }
+            return self::$_instance;
     }
 
     /**
@@ -78,6 +89,7 @@ class PdoCrud implements IPersistantModel {
 //	    //$this->dbpdo->commit(); TODO Exception rising 'no transaction to commit'
 //	}
         $this->dbpdo = null;
+        \Logger::getInstance()->logDebug( __CLASS__.' DATA BASE CLOSED');
     }
 
     public function __destruct() {
@@ -142,99 +154,99 @@ class PdoCrud implements IPersistantModel {
      * @param type $table
      * @return int : last id of insertion
      */
-    public function dbQI($datas, $table) {
-        try {
-            $d = "INSERT INTO " . $table . " (";
-            foreach ($datas as $k => $v) {
-                $d .= $k . ',';
-            }
-            $d = substr($d, 0, -1);
-            $d .= ") VALUES (";
-            foreach ($datas as $k => $v) {
-                $d .= '\'' . $v . '\',';
-            }
-            $d = substr($d, 0, -1);
-            $d .= ")";
-            $this->dbpdo->query($d);
-            $id = $this->dbpdo->lastInsertId();
-            return $id;
-        } catch (\PDOException $e) {
-            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString().'</br>'; //.' REQUETTES : </br>'.var_dump($actions);
-            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
-            throw new DataBaseException($msg);
-        }
-    }
-
-    /**
-     * Update data base
-     * @param string $table : table name
-     * @param array $datas : keys values updates
-     * @param string $filter : expression that validates update
-     * @param string $other : other options
-     * @return int : number of row updated
-     */
-    public function dbQU($table, $datas, $filter, $other = ' LIMIT 1 ') {
-        try{
-            $d = "UPDATE " . $table . " SET ";
-            foreach ($datas as $k => $v) {
-                $d .= $k . " = '" . $v . "', ";
-            }
-            $d = substr($d, 0, -2);
-            $d .= " WHERE " . $filter . " $other ;";
-        return $this->dbpdo->exec($d);
-        } catch (\PDOException $e) {
-            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString(). '</br>'; //.' REQUETTES : </br>'.var_dump($actions);
-            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
-            throw new DataBaseException($msg);
-        }
-    }
-
-    /**
-     * Select datas from one table. Fetch all rows.
-     * @param string $table
-     * @param array $fields : column names
-     * @param string $filter : conditionnal selection
-     * @param int mode fetch : all or simple
-     * @return array of arrays (column's name => value)
-     */
-    public function dbQS($table, $fields = array('*'), $filter = 'true', $modeFetch = self::MODE_FETCH_ALL) {
-        try{
-            $d = "SELECT ";
-            foreach ($fields as $field) {
-                $d .= $field . ',';
-            }
-            $d = substr($d, 0, -1);
-            $d .= ' FROM ' . $table . ' WHERE ' . $filter;
-            $stmt = $this->dbpdo->query($d);
-            if ($modeFetch === self::MODE_FETCH_ALL) {
-                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                return $result;
-            } else
-                $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            return $stmt;
-        } catch (\PDOException $e) {
-            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString(). '</br>'; //.' REQUETTES : </br>'.var_dump($actions);
-            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
-            throw new DataBaseException($msg);
-        }
-    }
-
-    /**
-     * Delete row(s) from given table 
-     * @param string $table
-     * @param string $filter : conditionnal delete
-     * @return int : number of row(s) deleted
-     */
-    public function dbQD($table, $filter = 'true') {
-        try{
-            $d = "DELETE FROM " . $table . " WHERE " . $filter;
-            return $this->dbpdo->exec($d);
-        } catch (\PDOException $e) {
-            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString(). '</br>'; //.' REQUETTES : </br>'.var_dump($actions);
-            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
-            throw new DataBaseException($msg);
-        }
-    }
+//    public function dbQI($datas, $table) {
+//        try {
+//            $d = "INSERT INTO " . $table . " (";
+//            foreach ($datas as $k => $v) {
+//                $d .= $k . ',';
+//            }
+//            $d = substr($d, 0, -1);
+//            $d .= ") VALUES (";
+//            foreach ($datas as $k => $v) {
+//                $d .= '\'' . $v . '\',';
+//            }
+//            $d = substr($d, 0, -1);
+//            $d .= ")";
+//            $this->dbpdo->query($d);
+//            $id = $this->dbpdo->lastInsertId();
+//            return $id;
+//        } catch (\PDOException $e) {
+//            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString().'</br>'; //.' REQUETTES : </br>'.var_dump($actions);
+//            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
+//            throw new DataBaseException($msg);
+//        }
+//    }
+//
+//    /**
+//     * Update data base
+//     * @param string $table : table name
+//     * @param array $datas : keys values updates
+//     * @param string $filter : expression that validates update
+//     * @param string $other : other options
+//     * @return int : number of row updated
+//     */
+//    public function dbQU($table, $datas, $filter, $other = ' LIMIT 1 ') {
+//        try{
+//            $d = "UPDATE " . $table . " SET ";
+//            foreach ($datas as $k => $v) {
+//                $d .= $k . " = '" . $v . "', ";
+//            }
+//            $d = substr($d, 0, -2);
+//            $d .= " WHERE " . $filter . " $other ;";
+//        return $this->dbpdo->exec($d);
+//        } catch (\PDOException $e) {
+//            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString(). '</br>'; //.' REQUETTES : </br>'.var_dump($actions);
+//            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
+//            throw new DataBaseException($msg);
+//        }
+//    }
+//
+//    /**
+//     * Select datas from one table. Fetch all rows.
+//     * @param string $table
+//     * @param array $fields : column names
+//     * @param string $filter : conditionnal selection
+//     * @param int mode fetch : all or simple
+//     * @return array of arrays (column's name => value)
+//     */
+//    public function dbQS($table, $fields = array('*'), $filter = 'true', $modeFetch = self::MODE_FETCH_ALL) {
+//        try{
+//            $d = "SELECT ";
+//            foreach ($fields as $field) {
+//                $d .= $field . ',';
+//            }
+//            $d = substr($d, 0, -1);
+//            $d .= ' FROM ' . $table . ' WHERE ' . $filter;
+//            $stmt = $this->dbpdo->query($d);
+//            if ($modeFetch === self::MODE_FETCH_ALL) {
+//                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//                return $result;
+//            } else
+//                $stmt->setFetchMode(PDO::FETCH_ASSOC);
+//            return $stmt;
+//        } catch (\PDOException $e) {
+//            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString(). '</br>'; //.' REQUETTES : </br>'.var_dump($actions);
+//            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
+//            throw new DataBaseException($msg);
+//        }
+//    }
+//
+//    /**
+//     * Delete row(s) from given table 
+//     * @param string $table
+//     * @param string $filter : conditionnal delete
+//     * @return int : number of row(s) deleted
+//     */
+//    public function dbQD($table, $filter = 'true') {
+//        try{
+//            $d = "DELETE FROM " . $table . " WHERE " . $filter;
+//            return $this->dbpdo->exec($d);
+//        } catch (\PDOException $e) {
+//            $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage() .' backtrace : '.$e->getTraceAsString(). '</br>'; //.' REQUETTES : </br>'.var_dump($actions);
+//            \Logger::getInstance()->logFatal(__CLASS__ . $msg);
+//            throw new DataBaseException($msg);
+//        }
+//    }
 
     //////////////////////////////////////////////////////////////////////////
     /**

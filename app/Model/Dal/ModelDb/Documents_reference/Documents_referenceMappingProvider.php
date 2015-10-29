@@ -20,6 +20,7 @@ class Documents_referenceMappingProvider implements IMappingProvider{
     static function MapFromRow( $row , $item ){
         $item->id_documents_reference= $row['id_documents_reference'];
         $item->drf_sujet= $row['drf_sujet'];
+        $item->drf_type= $row['drf_type'];
         $item->drf_description_doc= $row['drf_description_doc'];
         $item->id_referentiel_de_formation= $row['id_referentiel_de_formation'];
     }
@@ -35,23 +36,26 @@ class Documents_referenceMappingProvider implements IMappingProvider{
     }
 
     Static function MapToRowInsert($item){
-        $retval['drf_sujet']=$item->drf_sujet;
-        $retval['drf_description_doc'] = $item->drf_description_doc;
-        $retval['id_referentiel_de_formation']=$item->id_referentiel_de_formation;
+        $retval[':drf_sujet']=$item->drf_sujet;
+        $retval[':drf_type']=$item->drf_type;
+        $retval[':drf_description_doc'] = $item->drf_description_doc;
+        $retval[':id_referentiel_de_formation']=$item->id_referentiel_de_formation;
         return $retval;
     }
 
     static function MapToRowUpdate($item){
-        $retval['id_documents_reference']=$item->id_documents_reference;
-        $retval['drf_sujet']=$item->drf_sujet;
-        $retval['drf_description_doc'] = $item->drf_description_doc;
-        $retval['id_referentiel_de_formation']=$item->id_referentiel_de_formation;
+        $retval[':id_documents_reference']=$item->id_documents_reference;
+        $retval[':drf_sujet']=$item->drf_sujet;
+        $retval[':drf_type']=$item->drf_type;
+        $retval[':drf_description_doc'] = $item->drf_description_doc;
+        $retval[':id_referentiel_de_formation']=$item->id_referentiel_de_formation;
         return $retval;
     }
 
     static function MapToRowDelete($item){
         $retval[':id_documents_reference'] = $item->id_documents_reference;
         $retval[':drf_sujet'] = $item->drf_sujet;
+        $retval[':drf_type']=$item->drf_type;
         $retval[':drf_description_doc'] = $item->drf_description_doc;
         $retval[':id_referentiel_de_formation']=$item->id_referentiel_de_formation;
         return $retval;

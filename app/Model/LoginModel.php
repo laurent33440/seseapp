@@ -12,21 +12,23 @@ use Model\Dal\ModelDb\Utilisateurs\UtilisateursObject;
 //use Model\Dal\ModelDb\Groupe\GroupeObject;
 //use Model\Dal\ModelDb\Parametres\ParametresObject;
 use Model\Dal\DbLibrary\DataAccess;
-use Model\AModel;
-use Bootstrap;
+use UserConnected;
 
 /**
  * Description of LoginModel
  *
  * @author laurent
  */
-class LoginModel extends AModel{
+class LoginModel extends AModel implements IModel{
     /**
      * View model
      */
     private $_userName='unknown';
     private $_userPass='secret';
 
+    // TODO : extract this from data base
+    protected $GROUPS=array('administrateur','enseignant','tuteur','stagiaire');
+    
     /**
      * Db object
      * @var UtilisateursObject
@@ -59,19 +61,47 @@ class LoginModel extends AModel{
     }
 
     function get_groupNameOfUser() {
-        return $this->_groupNameOfUser;
+        if(in_array($this->_groupNameOfUser, $this->GROUPS)){
+            return $this->_groupNameOfUser;
+        }else{
+            return false;
+        }
+    }
+    
+    public function addBlank() {
+        //
     }
 
-    
+    public function append() {
+        
+    }
+
+    public function deleteFromId($id) {
+        
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function getAll() {
+        
+    }
+
+    public function resetModel() {
+        
+    }
+
+    public function update($property, $val, $id) {
+        
+    }
+
+        
     public function isUserKnown(){
         $collection = new DataAccess('Utilisateurs');
         $users = $collection->GetAll();
         foreach ($users as $this->_user) {
-//            echo $this->_user->id_utilisateur;
-//            echo $this->_user->uti_identifiant;
-//            echo $this->_user->uti_mel;
-//            echo '--';
-            if(($this->_user->uti_identifiant===$this->_userName)&&($this->_user->uti_mot_de_passe===$this->_userPass)){
+            if(($this->_user->uti_identifiant===$this->_userName)&&($this->checkPassword(false))){
                 //get groupe
                 $groups = new DataAccess('Groupe');
                 $groupeObject = $groups->GetByID($this->_user->id_groupe);
@@ -90,21 +120,22 @@ class LoginModel extends AModel{
     }
     
     /**
-     * save user infos in session
+     * save known user to app
      */
-    public function saveUserInSession(){
-        \SeseSession::getInstance()->set('user_connected/name', $this->_userName);
-        \SeseSession::getInstance()->set('user_connected/group', $this->_groupNameOfUser);
+    public function saveUserConnected(){
+        $user = UserConnected::getInstance();
+        $user->setUserName($this->_userName);
+        $user->setUserGroup($this->_groupNameOfUser);
     }
     
-    /**
-     * erase user saved in session
-     */
-    public function eraseUserInSession(){
-        if(\SeseSession::getInstance()->has('user_connected/name')){
-            \SeseSession::getInstance()->remove('user_connected/name');
-            \SeseSession::getInstance()->remove('user_connected/group');
+    public function checkPassword( $crypt=true){
+        if(!$crypt){
+            return ($this->_user->uti_mot_de_passe===$this->_userPass);
+        }else{
+            //génération password : $hash= password_hash('un_mot_de_passe_en_clair', PASSWORD_BCRYPT)
+            return password_verify($this->_userPass, $this->_user->uti_mot_de_passe);
         }
     }
+    
     
 }

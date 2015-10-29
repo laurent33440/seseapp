@@ -10,6 +10,7 @@ namespace Model;
 
 use Model\Dal\DbLibrary\DataAccess;
 use Model\Dal\ModelDb\Entreprise\EntrepriseObject;
+use Model\Dal\ModelDb\Employer\EmployerObject;
 use Model\Dal\ModelDb\Collaborateur\CollaborateurObject;
 use Model\Dal\ModelDb\Stage\StageObject;
 use Model\Dal\ModelDb\Stage_defini\Stage_definiObject;
@@ -20,7 +21,7 @@ use Model\Dal\ModelDb\Stage_defini\Stage_definiObject;
  *
  * @author laurent
  */
-class WorkDefinitionModel extends AModel{
+class WorkDefinitionModel extends AModel implements IModel{
     const WORK_CREATED = 'cree';
     
     //view
@@ -51,10 +52,7 @@ class WorkDefinitionModel extends AModel{
     protected $id_company;
     
     public function __construct() {
-        $this->getAllWorkName();
-        $this->getAllTrainees();
-        $this->getAllTeachers();
-        $this->getAllCompanies();
+       
     }
     
     public function get_workNameList() {
@@ -181,7 +179,7 @@ class WorkDefinitionModel extends AModel{
     $this->_companyEmail = $_Email;
     }
 
-    public function set_employeeList($id, $_employee) {
+    public function set_employeeList($id, $_employee=null) {
     $this->_employeeList[$id] = $_employee;
     }
 
@@ -205,6 +203,61 @@ class WorkDefinitionModel extends AModel{
     $this->_employeeRole = $_employeeRole;
     }
     
+    public function setId_trainee($id_trainee) {
+        $this->id_trainee = $id_trainee;
+    }
+    
+    public function addBlank() {
+        //
+    }
+
+    public function append() {
+        $collection = new DataAccess('Stage_defini');
+        $work = new Stage_definiObject;
+        $work->stgdef_status = self::WORK_CREATED;
+        $work->id_stage=$this->id_workName;
+        $work->id_collaborateur=$this->addEmployee();
+        $work->id_enseignant=$this->id_teacher;
+        $collection->Insert($work);
+    }
+
+    public function deleteFromId($id) {
+        //
+    }
+
+    /**
+     * Delete work in progress from trainee id
+     * @param type $property : trainee_id
+     * @param type $val: unused
+     */
+    public function deleteFromProperty($property='id_trainee', $val=null) {
+        $collection = new DataAccess('Realiser');
+        $link = $collection->GetByColumnValue('id_stagiaire', $this->id_trainee);
+        $collection->Delete($link);
+        $collection = new DataAccess('Stage_defini');
+        var_dump($link);
+        $work = $collection->GetByID($link->id_stage_defini);
+        var_dump($work);
+        $collection->Delete($work);
+    }
+
+    public function getAll() {
+        $this->getAllWorkName();
+        $this->getAllTrainees();
+        $this->getAllTeachers();
+        $this->getAllCompanies();
+    }
+
+    public function resetModel() {
+        //
+    }
+
+    public function update($property, $val, $id) {
+        
+    }
+
+    
+    //PRIVATE
     public function getAllWorkName(){
         $collection = new DataAccess('Stage');
         $rows = $collection->GetAll();
@@ -218,6 +271,7 @@ class WorkDefinitionModel extends AModel{
         }
     }
     
+    //PRIVATE
     public function getAllTrainees(){
         $collection = new DataAccess('Stagiaire');
         $rows = $collection->GetAll();
@@ -231,6 +285,7 @@ class WorkDefinitionModel extends AModel{
         }
     }
     
+    //PRIVATE
     public function getAllTeachers(){
         $collection = new DataAccess('Enseignant');
         $rows = $collection->GetAll();
@@ -243,7 +298,7 @@ class WorkDefinitionModel extends AModel{
         }
     }
     
-    
+    //PRIVATE
     public function getAllCompanies(){
         $collection = new DataAccess('Entreprise');
         $rows = $collection->GetAll();
@@ -267,25 +322,27 @@ class WorkDefinitionModel extends AModel{
         }
     }
     
+    //PRIVATE
     public function getAllEmployees($id_company=null){
         if($id_company===null){
             $this->set_employeeList(0,'-----------------------');
         }else{
             $links = new Dal\DbLibrary\DataAccess('Employer');
-            $idEmployeeList = $links->GetAllByColumnValue('id_entreprise', $id_company);
-            if ($idEmployeeList!=false){
+            $employeeLinkList = $links->GetAllByColumnValue('id_entreprise', $id_company);
+            if (count($employeeLinkList)!=0){
                 $collection = new DataAccess('Collaborateur');
-                foreach ($idEmployeeList as $id) {
-                    $row = $collection->GetById($id);
-                    $this->set_employeeList($id,$row->col_nom.''.$row->col_prenom);
+                foreach ($employeeLinkList as $employeeLink) {
+                    $row = $collection->GetById($employeeLink->id_collaborateur);
+                    $this->set_employeeList($employeeLink->id_collaborateur,$row->col_nom.' '.$row->col_prenom);
                 }
-                $row = $collection->GetById($idEmployeeList[0]);
+                $employeeLink = $employeeLinkList[0];//get first
+                $row = $collection->GetById($employeeLink->id_collaborateur);
                 $this->_employeeLastName=$row->col_nom;
                 $this->_employeeFirstName=$row->col_prenom;
-                $this->_employeePhone=$row->col_telephone;
+                $this->_employeePhone=$row->col_tel;
                 $this->_employeeEmail=$row->col_mel;
                 $this->_employeeRole=$row->col_role_entreprise;
-                $this->id_employee = $row->id_collaborateurs;
+                $this->id_employee = $row->id_collaborateur;
             }else{
                 $this->set_employeeList(0,'-----------------------');
             }
@@ -293,65 +350,25 @@ class WorkDefinitionModel extends AModel{
     }
     
     /**
-     * Add trainee to data base
-     */
-    public function addWork(){
-        $collection = new DataAccess('Stage_defini');
-        $work = new Stage_definiObject;
-        $work->stgdef_status = self::WORK_CREATED;
-        $work->id_stage=$this->id_workName;
-        $work->id_collaborateur=$this->addEmployee();
-        $work->id_enseignant=$this->id_teacher;
-        $collection->Insert($work);
-    }
-    
-    /**
+     * UNUSED 
      * Update teacher in data base
      */
-    public function updateWork(){
-        $collection = new DataAccess('Stage');
-        $teacher=$collection->GetByID($this->_traineeId);
-        $teacher->sta_prenom_stagiaire = $this->_traineeFirstName;
-        $teacher->sta_nom_stagiaire = $this->_traineeLastName;
-        $teacher->sta_mel_stagiaire = $this->_traineeEmail;
-        $teacher->sta_url_stagiaire = $this->_traineePhone;
-        $collection->Update($teacher);
-        //update Utilisateurs...
-    }
-    
-    /**
-     * Delete teacher from data base
-     */
-    public function delWork(){
-        $collection = new DataAccess('Stage');
-        $trainee=$collection->GetByID($this->_traineeId);
-        $collection->Delete($trainee);
-        //delete from Utilisateurs with email value
-        $collection = new DataAccess('Utilisateurs');
-        $user = $collection->GetByColumnValue('uti_mel', $trainee->sta_mel_stagiaire);
-        $collection->Delete($user);
-    }
-    
-    
-    /**
-     * Add to given table 
-     * @param type $tableName table name 
-     * @param array $rowValue  row name => row value
-     */
-    public function addToTable($tableName, array $rowValue){
-        $collection = new DataAccess($tableName);
-        $tableClass = __NAMESPACE__.'\Dal\ModelDb\\'.$tableName.'\\'.$tableName.'Object';
-        $table= new $tableClass;
-        foreach ($rowValue as $row => $value){
-            $table->$row=$value;
-        }
-        $collection->Insert($table);
-    }
-        
+//    public function updateWork(){
+//        $collection = new DataAccess('Stage');
+//        $teacher=$collection->GetByID($this->_traineeId);
+//        $teacher->sta_prenom_stagiaire = $this->_traineeFirstName;
+//        $teacher->sta_nom_stagiaire = $this->_traineeLastName;
+//        $teacher->sta_mel_stagiaire = $this->_traineeEmail;
+//        $teacher->sta_url_stagiaire = $this->_traineePhone;
+//        $collection->Update($teacher);
+//        //update Utilisateurs...
+//    }
+      
+    //PRIVATE
     public function addCompany(){
         $collection = new Dal\DbLibrary\DataAccess('Entreprise');
         $company=$collection->GetByColumnValue('ent_nom_entreprise', $this->_companyName);
-        if($company===false){//add to db
+        if($company===false){//new -> add to db
             $company = new Dal\ModelDb\Entreprise\EntrepriseObject;
             $company->ent_nom_entreprise=  $this->_companyName;
             $company->ent_activite = $this->_companyActivity;
@@ -367,11 +384,12 @@ class WorkDefinitionModel extends AModel{
         return $company->id_entreprise;
     }
     
+    // PRIVATE
     // we suppose that an employee only work in ONE company
     public function addEmployee(){
         $collection = new Dal\DbLibrary\DataAccess('Collaborateur');
         $employee = $collection->GetByColumnValue('col_mel', $this->_employeeEmail);
-        if($employee===false){
+        if($employee===false){//new -> add to db
             $employee = new Dal\ModelDb\Collaborateur\CollaborateurObject;
             $employee->col_nom = $this->_employeeLastName;
             $employee->col_prenom = $this->_employeeFirstName;
@@ -395,6 +413,22 @@ class WorkDefinitionModel extends AModel{
                                                  'id_groupe'=>$groupe->id_groupe));
         }
         return $employee->id_collaborateur;
+    }
+    
+    /**
+     * PRIVATE
+     * Add to given table 
+     * @param type $tableName table name 
+     * @param array $rowValue  row name => row value
+     */
+    public function addToTable($tableName, array $rowValue){
+        $collection = new DataAccess($tableName);
+        $tableClass = __NAMESPACE__.'\Dal\ModelDb\\'.$tableName.'\\'.$tableName.'Object';
+        $table= new $tableClass;
+        foreach ($rowValue as $row => $value){
+            $table->$row=$value;
+        }
+        $collection->Insert($table);
     }
     
     

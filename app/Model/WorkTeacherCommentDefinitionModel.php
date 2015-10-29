@@ -15,15 +15,14 @@ use Model\Dal\DbLibrary\DataAccess;
  *
  * @author laurent
  */
-class WorkTeacherCommentDefinitionModel extends AModel{
+class WorkTeacherCommentDefinitionModel extends AModel implements IModel{
     //view
     private $_comments=array();//trainee=>comment
     
-    //current id
-    protected $idTeacher;
+    //
+    protected $updateTrainee;
     
     public function __construct() {
-        $this->getAllComments();
     }
 
     public function get_comments() {
@@ -31,11 +30,70 @@ class WorkTeacherCommentDefinitionModel extends AModel{
     }
 
     //second parameter is optional for setter in view model
-    public function set_comments($trainee, $_comment=null) {
-        $this->_comments[$trainee] = $_comment;
+    public function set_comments($comment,$trainee) {
+        $this->_comments[$trainee] = $comment;
+    }
+    
+    public function addBlank() {
+        
     }
 
-    /**
+    public function append() {
+        
+    }
+
+    public function deleteFromId($id) {
+        
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function getAll() {
+        $this->_comments=array();//reset
+        $collection = new DataAccess('Enseignant');
+        $teacher = $collection->GetByColumnValue('ens_mel_enseignant', \UserConnected::getInstance()->getUserName());
+        $collection = new DataAccess('Stagiaire');
+        $trainees = $collection->GetAllByColumnValue('id_enseignant', $teacher->id_enseignant);
+        $collection = new DataAccess('Activite_et_visite');
+        foreach ($trainees as $trainee) {
+            $visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire);
+            if($visit !=false){
+                $this->set_comments( $visit->aev_commentaire_visite, $trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire);
+            }else{
+                $this->set_comments( 'Non défini', $trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire);
+            }
+        }
+    }
+
+    public function resetModel() {
+        
+    }
+
+    public function update($property, $val, $id=null) {
+        if($property == "updateTrainee"){
+            //$val is fisrt name+' '+ last name of trainee
+            $names=  explode(' ', $val);
+            //var_dump($this->_comments);
+            $comment = $this->_comments[$names[0].'_'.$names[1]];//blank are replaced by _ in array
+            
+            //get id trainee
+            $collection = new DataAccess('Stagiaire');
+            $trainee = $collection->GetByColumnValue('sta_nom_stagiaire', $names[1]);
+            //var_dump($trainee);
+            //get good Activite_et_visite
+            $collection = new DataAccess('Activite_et_visite');
+            $visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire);
+            var_dump($visit);
+            var_dump($comment);
+            $visit->aev_commentaire_visite = $comment;
+            var_dump($visit);
+            $collection->Update($visit);
+        }
+    }
+
+        /**
      * 
      * 
      */
@@ -46,22 +104,22 @@ class WorkTeacherCommentDefinitionModel extends AModel{
     /**
      * Get all work date from data base - reset view model
      */
-    public function getAllComments(){
-        $this->_comments=array();//reset
-        $collection = new DataAccess('Enseignant');
-        $teacher = $collection->GetByColumnValue('ens_mel_enseignant', \SeseSession::getInstance()->get('user_connected/name'));
-        $this->idTeacher= $teacher->id_enseignant;
-        $collection = new DataAccess('Stagiaire');
-        $trainees = $collection->GetAllByColumnValue('id_enseignant', $this->idTeacher);
-        $collection = new DataAccess('Activite_et_visite');
-        foreach ($trainees as $trainee) {
-            if($visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire)!=false){
-                $this->set_comments($trainee->sta_prenom_stagiare.' '.$trainee->sta_nom_stagiare, $visit->aev_commentaire_visite);
-            }else{
-                $this->set_comments($trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire, 'Non défini');
-            }
-        }
-    }
+//    public function getAllComments(){
+//        $this->_comments=array();//reset
+//        $collection = new DataAccess('Enseignant');
+//        $teacher = $collection->GetByColumnValue('ens_mel_enseignant', \UserConnected::getInstance()->getUserName());
+//        $this->idTeacher= $teacher->id_enseignant;
+//        $collection = new DataAccess('Stagiaire');
+//        $trainees = $collection->GetAllByColumnValue('id_enseignant', $this->idTeacher);
+//        $collection = new DataAccess('Activite_et_visite');
+//        foreach ($trainees as $trainee) {
+//            if($visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire)!=false){
+//                $this->set_comments($trainee->sta_prenom_stagiare.' '.$trainee->sta_nom_stagiare, $visit->aev_commentaire_visite);
+//            }else{
+//                $this->set_comments($trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire, 'Non défini');
+//            }
+//        }
+//    }
     
     /**
      * Append last model view to data base

@@ -1,0 +1,2702 @@
+25-10-2015 10:44:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:44:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+25-10-2015 10:44:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:44:35 - INFO  --> end Class MainRouter 
+25-10-2015 10:44:35 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 10:44:35 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 10:44:49 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:44:49 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:44:49 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:44:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:44:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:44:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:44:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:44:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:44:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:44:54 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:44:54 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:44:54 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:44:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:44:56 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:44:56 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:46:17 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:46:17 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:46:17 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:46:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:46:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:46:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 10:46:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 10:46:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 10:46:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:31:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:31:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:31:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:31:08 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:31:08 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:31:08 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:37:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:37:55 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:37:55 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:37:55 - INFO  --> end Class MainRouter 
+25-10-2015 15:37:55 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 15:37:55 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 15:37:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:37:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:37:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:03 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:03 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:27 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:27 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:41 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:41 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:38:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:38:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:38:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:39:45 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:39:45 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:39:45 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:39:45 - INFO  --> end Class MainRouter 
+25-10-2015 15:39:45 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 15:39:45 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 15:39:47 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:39:47 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:39:47 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:39:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:39:59 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:39:59 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:39:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:39:59 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:39:59 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:00 - INFO  --> end Class MainRouter 
+25-10-2015 15:40:00 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 15:40:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 15:40:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:03 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:03 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:03 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:03 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:03 - INFO  --> end Class MainRouter 
+25-10-2015 15:40:03 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 15:40:03 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 15:40:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:07 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:07 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:07 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:19 - INFO  --> end Class MainRouter 
+25-10-2015 15:40:19 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 15:40:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 15:40:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:40:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:40:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:40:32 - INFO  --> end Class MainRouter 
+25-10-2015 15:40:32 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 15:40:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 15:41:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:41:41 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:41:41 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:43 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:43 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:43 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:43 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:45 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:45 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:45 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:57 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:57 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:57 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:57 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:57 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:57 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:49:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:49:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:49:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:50:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:50:41 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:50:41 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:50:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:50:43 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:50:43 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:51:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:51:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:51:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:51:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:51:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:51:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:51:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:51:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:51:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 15:51:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 15:51:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 15:51:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 16:01:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 16:01:13 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 16:01:13 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 16:01:13 - INFO  --> end Class MainRouter 
+25-10-2015 16:01:13 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 16:01:13 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:41:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:41:33 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+25-10-2015 18:41:33 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:41:33 - INFO  --> end Class MainRouter 
+25-10-2015 18:41:33 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:41:33 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:42:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:42:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:42:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:42:02 - INFO  --> end Class MainRouter 
+25-10-2015 18:42:02 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:42:02 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:50:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:50:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:50:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:50:01 - INFO  --> end Class MainRouter 
+25-10-2015 18:50:01 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:50:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:50:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:50:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:50:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:50:40 - INFO  --> end Class MainRouter 
+25-10-2015 18:50:40 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:50:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:52:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:52:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:52:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:52:02 - INFO  --> end Class MainRouter 
+25-10-2015 18:52:02 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:52:02 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:52:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:52:29 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:52:29 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:52:29 - INFO  --> end Class MainRouter 
+25-10-2015 18:52:29 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:52:29 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:53:17 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:53:17 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:53:17 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:53:17 - INFO  --> end Class MainRouter 
+25-10-2015 18:53:17 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:53:17 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 18:54:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 18:54:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 18:54:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 18:54:46 - INFO  --> end Class MainRouter 
+25-10-2015 18:54:46 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 18:54:46 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 21:17:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 21:17:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 21:17:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 21:17:40 - INFO  --> end Class MainRouter 
+25-10-2015 21:17:40 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 21:17:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 23:14:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:14:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+25-10-2015 23:14:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:14:40 - INFO  --> end Class MainRouter 
+25-10-2015 23:14:40 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 23:14:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 23:17:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:17:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:17:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:17:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:17:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:17:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:19:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:19:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:19:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:19:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:19:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:19:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:19:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:19:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:19:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:19:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:19:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:19:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:19:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:19:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:19:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:19:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:19:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:19:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:20:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:20:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:20:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:25:45 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:25:45 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:25:45 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:25:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:25:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:25:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:25:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:25:55 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:25:55 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:45:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:45:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:45:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:45:25 - INFO  --> end Class MainRouter 
+25-10-2015 23:45:25 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 23:45:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 23:45:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:45:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:45:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:45:49 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:45:49 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:45:49 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:46:17 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:46:17 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:46:17 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:46:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:46:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:46:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:46:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:46:22 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:46:22 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:46:22 - INFO  --> end Class MainRouter 
+25-10-2015 23:46:22 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 23:46:22 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 23:48:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:48:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:48:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:48:26 - INFO  --> end Class MainRouter 
+25-10-2015 23:48:26 - INFO  --> destruct : Controller\TestAjaxController 
+25-10-2015 23:48:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+25-10-2015 23:48:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:48:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:48:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:48:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:48:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:48:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:48:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:48:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:48:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:48:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:48:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:48:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:48:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:48:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:48:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:49:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:49:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:49:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+25-10-2015 23:49:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+25-10-2015 23:49:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+25-10-2015 23:49:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:04 - INFO  --> end Class MainRouter 
+26-10-2015 0:03:04 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 0:03:04 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 0:03:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:27 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:27 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:30 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:30 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:30 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:31 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:31 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:31 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:31 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:33 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:33 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:33 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:33 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:03:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:03:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:03:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:04:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:04:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:04:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:04:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:04:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:04:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:07:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:07:51 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:07:51 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:09:07 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:09:07 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:09:07 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:09:07 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:09:07 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:09:07 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:09:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:09:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:09:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:11:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:11:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:11:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:11:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:11:23 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:11:23 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:11:23 - INFO  --> end Class MainRouter 
+26-10-2015 0:11:23 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 0:11:23 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 0:11:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:11:23 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:11:23 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:11:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:11:29 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:11:29 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:11:48 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:11:48 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:11:48 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:13:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:13:56 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:13:56 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 0:13:56 - INFO  --> end Class MainRouter 
+26-10-2015 0:13:56 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 0:13:56 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 0:14:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 0:14:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 0:14:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 15:55:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 15:55:13 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+26-10-2015 15:55:13 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 15:55:13 - INFO  --> end Class MainRouter 
+26-10-2015 15:55:13 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 15:55:13 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 15:55:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 15:55:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 15:55:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 15:55:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 15:55:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 15:55:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 15:55:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 15:55:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 15:55:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 15:55:18 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 15:55:18 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 15:55:18 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:09:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:09:51 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:09:51 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:09:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:09:51 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:09:51 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:00 - INFO  --> end Class MainRouter 
+26-10-2015 16:10:00 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:10:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:10:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:23 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:23 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:33 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:33 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:37 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:37 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:37 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:37 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:37 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:37 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:45 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:45 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:45 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:51 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:51 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:10:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:10:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:10:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:22:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:22:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:22:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:22:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:22:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:22:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:28:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:28:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:28:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:28:39 - INFO  --> end Class MainRouter 
+26-10-2015 16:28:39 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:28:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:28:50 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:28:50 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:28:50 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:28:50 - INFO  --> end Class MainRouter 
+26-10-2015 16:28:50 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:28:50 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:28:50 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:28:50 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:28:50 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:28:50 - INFO  --> end Class MainRouter 
+26-10-2015 16:28:50 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:28:50 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:29:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:29:03 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:29:03 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:29:03 - INFO  --> end Class MainRouter 
+26-10-2015 16:29:03 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:29:03 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:31:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:31:22 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:31:22 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:31:22 - INFO  --> end Class MainRouter 
+26-10-2015 16:31:22 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:31:22 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:31:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:31:27 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:31:27 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:31:27 - INFO  --> end Class MainRouter 
+26-10-2015 16:31:27 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:31:27 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:35:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:35:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:35:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:35:21 - INFO  --> end Class MainRouter 
+26-10-2015 16:35:21 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:35:21 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:35:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:35:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:35:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:35:36 - INFO  --> end Class MainRouter 
+26-10-2015 16:35:36 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:35:36 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:36:05 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:36:05 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:36:05 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:36:05 - INFO  --> end Class MainRouter 
+26-10-2015 16:36:05 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:36:05 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:36:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:36:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:36:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:36:09 - INFO  --> end Class MainRouter 
+26-10-2015 16:36:09 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:36:09 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:37:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:37:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:37:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:37:25 - INFO  --> end Class MainRouter 
+26-10-2015 16:37:25 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:37:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:37:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:37:29 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:37:29 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:37:29 - INFO  --> end Class MainRouter 
+26-10-2015 16:37:29 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:37:29 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:40:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:40:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:40:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:40:06 - INFO  --> end Class MainRouter 
+26-10-2015 16:40:06 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:40:06 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:40:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:40:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:40:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:40:14 - INFO  --> end Class MainRouter 
+26-10-2015 16:40:14 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:40:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:40:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:40:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:40:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:40:14 - INFO  --> end Class MainRouter 
+26-10-2015 16:40:14 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:40:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:40:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:40:56 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:40:56 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:40:56 - INFO  --> end Class MainRouter 
+26-10-2015 16:40:56 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:40:56 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:12 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:12 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:12 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:12 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:22 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:22 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:22 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:22 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:22 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:30 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:30 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:30 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:30 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:30 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:30 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:30 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:30 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:30 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:30 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:30 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:30 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:36 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:36 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:36 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:38 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:38 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:38 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:41:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:41:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:41:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:41:38 - INFO  --> end Class MainRouter 
+26-10-2015 16:41:38 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:41:38 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:42:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:42:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:42:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:42:14 - INFO  --> end Class MainRouter 
+26-10-2015 16:42:14 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:42:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:42:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:42:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:42:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:42:16 - INFO  --> end Class MainRouter 
+26-10-2015 16:42:16 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:42:16 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 16:42:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 16:42:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 16:42:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 16:42:25 - INFO  --> end Class MainRouter 
+26-10-2015 16:42:25 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 16:42:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:08:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:08:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+26-10-2015 19:08:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:08:02 - INFO  --> end Class MainRouter 
+26-10-2015 19:08:02 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:08:02 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:09:10 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:09:10 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:09:10 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:09:10 - INFO  --> end Class MainRouter 
+26-10-2015 19:09:10 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:09:10 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:10:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:10:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:10:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:10:34 - INFO  --> end Class MainRouter 
+26-10-2015 19:10:34 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:10:34 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:11:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:11:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:11:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:11:46 - INFO  --> end Class MainRouter 
+26-10-2015 19:11:46 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:11:46 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:11:48 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:11:48 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:11:48 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:11:48 - INFO  --> end Class MainRouter 
+26-10-2015 19:11:48 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:11:48 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:13:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:13:13 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:13:13 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:13:13 - INFO  --> end Class MainRouter 
+26-10-2015 19:13:13 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:13:13 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:13:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:13:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:13:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:13:14 - INFO  --> end Class MainRouter 
+26-10-2015 19:13:14 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:13:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:15:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:15:31 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:15:31 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:15:31 - INFO  --> end Class MainRouter 
+26-10-2015 19:15:31 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:15:31 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:15:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:15:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:15:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:15:32 - INFO  --> end Class MainRouter 
+26-10-2015 19:15:32 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:15:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:15:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:15:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:15:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:15:40 - INFO  --> end Class MainRouter 
+26-10-2015 19:15:40 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:15:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:18:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:18:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:18:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:18:00 - INFO  --> end Class MainRouter 
+26-10-2015 19:18:00 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:18:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:18:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:18:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:18:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:18:01 - INFO  --> end Class MainRouter 
+26-10-2015 19:18:01 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:18:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:18:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:18:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:18:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:18:01 - INFO  --> end Class MainRouter 
+26-10-2015 19:18:01 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:18:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:18:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:18:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:18:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:18:19 - INFO  --> end Class MainRouter 
+26-10-2015 19:18:19 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:18:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:18:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:18:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:18:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:18:20 - INFO  --> end Class MainRouter 
+26-10-2015 19:18:20 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:18:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:18:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:18:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:18:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:18:20 - INFO  --> end Class MainRouter 
+26-10-2015 19:18:20 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:18:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:19:54 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:19:54 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:19:54 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:19:54 - INFO  --> end Class MainRouter 
+26-10-2015 19:19:54 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:19:54 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:19:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:19:55 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:19:55 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:19:55 - INFO  --> end Class MainRouter 
+26-10-2015 19:19:55 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:19:55 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:19:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:19:56 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:19:56 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:19:56 - INFO  --> end Class MainRouter 
+26-10-2015 19:19:56 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:19:56 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:20:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:20:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:20:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:20:52 - INFO  --> end Class MainRouter 
+26-10-2015 19:20:52 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:20:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:20:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:20:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:20:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:20:53 - INFO  --> end Class MainRouter 
+26-10-2015 19:20:53 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:20:53 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:20:54 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:20:54 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:20:54 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:20:54 - INFO  --> end Class MainRouter 
+26-10-2015 19:20:54 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:20:54 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:25:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:25:37 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:25:37 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:25:37 - INFO  --> end Class MainRouter 
+26-10-2015 19:25:37 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:25:37 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:25:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:25:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:25:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:25:39 - INFO  --> end Class MainRouter 
+26-10-2015 19:25:39 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:25:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:25:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:25:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:25:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:25:39 - INFO  --> end Class MainRouter 
+26-10-2015 19:25:39 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:25:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:25:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:25:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:25:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:25:52 - INFO  --> end Class MainRouter 
+26-10-2015 19:25:52 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:25:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:25:54 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:25:54 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:25:54 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:25:54 - INFO  --> end Class MainRouter 
+26-10-2015 19:25:54 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:25:54 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:25:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:25:55 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:25:55 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:25:55 - INFO  --> end Class MainRouter 
+26-10-2015 19:25:55 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:25:55 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 19:27:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 19:27:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+26-10-2015 19:27:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 19:27:21 - INFO  --> end Class MainRouter 
+26-10-2015 19:27:21 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 19:27:21 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+26-10-2015 22:29:38 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+26-10-2015 22:29:38 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+26-10-2015 22:29:38 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+26-10-2015 22:29:38 - INFO  --> end Class MainRouter 
+26-10-2015 22:29:38 - INFO  --> destruct : Controller\TestAjaxController 
+26-10-2015 22:29:38 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:27:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:27:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+27-10-2015 10:27:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:27:53 - INFO  --> end Class MainRouter 
+27-10-2015 10:27:53 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:27:53 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:27:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:27:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:27:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:27:58 - INFO  --> end Class MainRouter 
+27-10-2015 10:27:58 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:27:58 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:28:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:28:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:28:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:28:14 - INFO  --> end Class MainRouter 
+27-10-2015 10:28:14 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:28:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:29:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:29:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:29:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:29:26 - INFO  --> end Class MainRouter 
+27-10-2015 10:29:26 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:29:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:29:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:29:27 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:29:27 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:29:27 - INFO  --> end Class MainRouter 
+27-10-2015 10:29:27 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:29:27 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:29:28 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:29:28 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:29:28 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:29:28 - INFO  --> end Class MainRouter 
+27-10-2015 10:29:28 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:29:28 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:30:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:30:37 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:30:37 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:30:37 - INFO  --> end Class MainRouter 
+27-10-2015 10:30:37 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:30:37 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:30:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:30:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:30:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:30:39 - INFO  --> end Class MainRouter 
+27-10-2015 10:30:39 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:30:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:30:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:30:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:30:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:30:39 - INFO  --> end Class MainRouter 
+27-10-2015 10:30:39 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:30:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:32:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:32:23 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:32:23 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:32:23 - INFO  --> end Class MainRouter 
+27-10-2015 10:32:23 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:32:23 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:32:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:32:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:32:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:32:24 - INFO  --> end Class MainRouter 
+27-10-2015 10:32:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:32:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:32:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:32:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:32:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:32:25 - INFO  --> end Class MainRouter 
+27-10-2015 10:32:25 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:32:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:33:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:33:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:33:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:33:52 - INFO  --> end Class MainRouter 
+27-10-2015 10:33:52 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:33:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:33:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:33:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:33:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:33:53 - INFO  --> end Class MainRouter 
+27-10-2015 10:33:53 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:33:53 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:33:54 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:33:54 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:33:54 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:33:54 - INFO  --> end Class MainRouter 
+27-10-2015 10:33:54 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:33:54 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:36:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:36:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:36:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:36:16 - INFO  --> end Class MainRouter 
+27-10-2015 10:36:16 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:36:16 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:36:17 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:36:17 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:36:17 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:36:17 - INFO  --> end Class MainRouter 
+27-10-2015 10:36:17 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:36:17 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:36:18 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:36:18 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:36:18 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:36:18 - INFO  --> end Class MainRouter 
+27-10-2015 10:36:18 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:36:18 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:49:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:49:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:49:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:49:44 - INFO  --> end Class MainRouter 
+27-10-2015 10:49:44 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:49:44 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:49:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:49:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:49:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:49:46 - INFO  --> end Class MainRouter 
+27-10-2015 10:49:46 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:49:46 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:49:47 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:49:47 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:49:47 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:49:47 - INFO  --> end Class MainRouter 
+27-10-2015 10:49:47 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:49:47 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:50:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:50:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:50:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:50:12 - INFO  --> end Class MainRouter 
+27-10-2015 10:50:12 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:50:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:50:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:50:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:50:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:50:24 - INFO  --> end Class MainRouter 
+27-10-2015 10:50:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:50:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:54:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:54:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:54:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:54:12 - INFO  --> end Class MainRouter 
+27-10-2015 10:54:12 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:54:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:54:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:54:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:54:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:54:19 - INFO  --> end Class MainRouter 
+27-10-2015 10:54:19 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:54:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:54:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:54:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:54:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:54:19 - INFO  --> end Class MainRouter 
+27-10-2015 10:54:19 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:54:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:54:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:54:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:54:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:54:20 - INFO  --> end Class MainRouter 
+27-10-2015 10:54:20 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:54:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 10:54:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 10:54:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 10:54:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 10:54:21 - INFO  --> end Class MainRouter 
+27-10-2015 10:54:21 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 10:54:21 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+27-10-2015 11:52:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:13 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:13 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:13 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:19 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:19 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:22 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:22 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:22 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:22 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:22 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:32 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:32 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:32 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:32 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:41 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:41 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:41 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:41 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:41 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:42 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:42 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:52 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:52 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:52:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:52:59 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:52:59 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:52:59 - INFO  --> end Class MainRouter 
+27-10-2015 11:52:59 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:52:59 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:53:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:53:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:53:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:53:19 - INFO  --> end Class MainRouter 
+27-10-2015 11:53:19 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:53:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:53:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:53:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:53:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:53:25 - INFO  --> end Class MainRouter 
+27-10-2015 11:53:25 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:53:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:53:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:53:29 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:53:29 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:53:29 - INFO  --> end Class MainRouter 
+27-10-2015 11:53:29 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:53:29 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:53:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:53:29 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:53:29 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:53:29 - INFO  --> end Class MainRouter 
+27-10-2015 11:53:29 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:53:29 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:53:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:53:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:53:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:53:52 - INFO  --> end Class MainRouter 
+27-10-2015 11:53:52 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:53:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:54:17 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:54:17 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:54:17 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:54:17 - INFO  --> end Class MainRouter 
+27-10-2015 11:54:17 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:54:17 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 11:54:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 11:54:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 11:54:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 11:54:19 - INFO  --> end Class MainRouter 
+27-10-2015 11:54:19 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 11:54:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:12:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:12:31 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+27-10-2015 14:12:31 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:12:31 - INFO  --> end Class MainRouter 
+27-10-2015 14:12:31 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:12:31 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:12:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:12:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 14:12:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:12:32 - INFO  --> end Class MainRouter 
+27-10-2015 14:12:32 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:12:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:12:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:12:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 14:12:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:12:36 - INFO  --> end Class MainRouter 
+27-10-2015 14:12:36 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:12:36 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:12:37 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:12:37 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 14:12:37 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:12:37 - INFO  --> end Class MainRouter 
+27-10-2015 14:12:37 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:12:37 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:12:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:12:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 14:12:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:12:42 - INFO  --> end Class MainRouter 
+27-10-2015 14:12:42 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:12:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:59:51 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:59:51 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+27-10-2015 14:59:51 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:59:51 - INFO  --> end Class MainRouter 
+27-10-2015 14:59:51 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:59:51 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 14:59:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 14:59:56 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 14:59:56 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 14:59:56 - INFO  --> end Class MainRouter 
+27-10-2015 14:59:56 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 14:59:56 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:01:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:01:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:01:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:01:40 - INFO  --> end Class MainRouter 
+27-10-2015 15:01:40 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:01:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:03:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:03:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:03:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:03:32 - INFO  --> end Class MainRouter 
+27-10-2015 15:03:32 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:03:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:03:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:03:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:03:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:03:34 - INFO  --> end Class MainRouter 
+27-10-2015 15:03:34 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:03:34 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:08:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:08:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:08:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:08:09 - INFO  --> end Class MainRouter 
+27-10-2015 15:08:09 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:08:09 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:08:10 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:08:10 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:08:10 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:08:10 - INFO  --> end Class MainRouter 
+27-10-2015 15:08:10 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:08:10 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:10:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:10:03 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:10:03 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:10:03 - INFO  --> end Class MainRouter 
+27-10-2015 15:10:03 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:10:03 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:10:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:10:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:10:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:10:04 - INFO  --> end Class MainRouter 
+27-10-2015 15:10:04 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:10:04 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:14:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:14:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:14:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:14:24 - INFO  --> end Class MainRouter 
+27-10-2015 15:14:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:14:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:14:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:14:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:14:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:14:26 - INFO  --> end Class MainRouter 
+27-10-2015 15:14:26 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:14:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:15:30 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:15:30 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:15:30 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:15:30 - INFO  --> end Class MainRouter 
+27-10-2015 15:15:30 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:15:30 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:15:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:15:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:15:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:15:40 - INFO  --> end Class MainRouter 
+27-10-2015 15:15:40 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:15:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:24:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:24:31 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:24:31 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:24:31 - INFO  --> end Class MainRouter 
+27-10-2015 15:24:31 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:24:31 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:24:36 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:24:36 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:24:36 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:24:36 - INFO  --> end Class MainRouter 
+27-10-2015 15:24:36 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:24:36 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:25:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:25:55 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:25:55 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:25:55 - INFO  --> end Class MainRouter 
+27-10-2015 15:25:55 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:25:55 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:25:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:25:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:25:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:25:58 - INFO  --> end Class MainRouter 
+27-10-2015 15:25:58 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:25:58 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:26:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:26:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:26:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:26:52 - INFO  --> end Class MainRouter 
+27-10-2015 15:26:52 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:26:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:26:54 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:26:54 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:26:54 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:26:54 - INFO  --> end Class MainRouter 
+27-10-2015 15:26:54 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:26:54 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:29:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:29:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:29:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:29:24 - INFO  --> end Class MainRouter 
+27-10-2015 15:29:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:29:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:29:28 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:29:28 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:29:28 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:29:28 - INFO  --> end Class MainRouter 
+27-10-2015 15:29:28 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:29:28 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:32:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:32:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:32:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:32:00 - INFO  --> end Class MainRouter 
+27-10-2015 15:32:00 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:32:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 15:32:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 15:32:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 15:32:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 15:32:06 - INFO  --> end Class MainRouter 
+27-10-2015 15:32:06 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 15:32:06 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:16:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:16:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+27-10-2015 16:16:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:16:40 - INFO  --> end Class MainRouter 
+27-10-2015 16:16:40 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:16:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:16:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:16:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:16:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:16:42 - INFO  --> end Class MainRouter 
+27-10-2015 16:16:42 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:16:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:16:56 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:16:56 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:16:56 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:16:56 - INFO  --> end Class MainRouter 
+27-10-2015 16:16:56 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:16:56 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:17:03 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:17:03 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:17:03 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:17:03 - INFO  --> end Class MainRouter 
+27-10-2015 16:17:03 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:17:03 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:17:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:17:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:17:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:17:26 - INFO  --> end Class MainRouter 
+27-10-2015 16:17:26 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:17:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:17:30 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:17:30 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:17:30 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:17:30 - INFO  --> end Class MainRouter 
+27-10-2015 16:17:30 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:17:30 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:19:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:19:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:19:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:19:32 - INFO  --> end Class MainRouter 
+27-10-2015 16:19:32 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:19:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:19:33 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:19:33 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:19:33 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:19:33 - INFO  --> end Class MainRouter 
+27-10-2015 16:19:33 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:19:33 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:19:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:19:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:19:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:19:42 - INFO  --> end Class MainRouter 
+27-10-2015 16:19:42 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:19:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:19:46 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:19:46 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:19:46 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:19:46 - INFO  --> end Class MainRouter 
+27-10-2015 16:19:46 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:19:46 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:28:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:28:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:28:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:28:01 - INFO  --> end Class MainRouter 
+27-10-2015 16:28:01 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:28:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:28:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:28:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:28:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:28:02 - INFO  --> end Class MainRouter 
+27-10-2015 16:28:02 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:28:02 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:28:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:28:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:28:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:28:16 - INFO  --> end Class MainRouter 
+27-10-2015 16:28:16 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:28:16 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:28:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:28:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:28:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:28:35 - INFO  --> end Class MainRouter 
+27-10-2015 16:28:35 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:28:35 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:28:41 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:28:41 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:28:41 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:28:41 - INFO  --> end Class MainRouter 
+27-10-2015 16:28:41 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:28:41 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:29:05 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:29:05 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:29:05 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:29:05 - INFO  --> end Class MainRouter 
+27-10-2015 16:29:05 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:29:05 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:29:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:29:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:29:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:29:14 - INFO  --> end Class MainRouter 
+27-10-2015 16:29:14 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:29:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:29:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:29:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:29:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:29:20 - INFO  --> end Class MainRouter 
+27-10-2015 16:29:20 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:29:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:29:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:29:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:29:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:29:24 - INFO  --> end Class MainRouter 
+27-10-2015 16:29:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:29:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:29:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:29:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:29:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:29:24 - INFO  --> end Class MainRouter 
+27-10-2015 16:29:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:29:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:29:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:29:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:29:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:29:58 - INFO  --> end Class MainRouter 
+27-10-2015 16:29:58 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:29:58 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:30:28 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:30:28 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:30:28 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:30:28 - INFO  --> end Class MainRouter 
+27-10-2015 16:30:28 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:30:28 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:30:31 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:30:31 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:30:31 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:30:31 - INFO  --> end Class MainRouter 
+27-10-2015 16:30:31 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:30:31 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:30:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:30:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:30:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:30:34 - INFO  --> end Class MainRouter 
+27-10-2015 16:30:34 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:30:34 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:34:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:34:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:34:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:34:58 - INFO  --> end Class MainRouter 
+27-10-2015 16:34:58 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:34:58 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:35:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:35:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:35:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:35:00 - INFO  --> end Class MainRouter 
+27-10-2015 16:35:00 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:35:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:35:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:35:11 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:35:11 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:36:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:36:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:36:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:36:24 - INFO  --> end Class MainRouter 
+27-10-2015 16:36:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:36:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:36:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:36:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:36:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:36:26 - INFO  --> end Class MainRouter 
+27-10-2015 16:36:26 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:36:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:36:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:36:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:36:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:36:35 - INFO  --> end Class MainRouter 
+27-10-2015 16:36:35 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:36:35 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:36:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:37:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:37:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:37:00 - INFO  --> end Class MainRouter 
+27-10-2015 16:37:00 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:37:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:58:22 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:58:22 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:58:22 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:58:22 - INFO  --> end Class MainRouter 
+27-10-2015 16:58:22 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:58:22 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:58:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:58:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:58:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:58:24 - INFO  --> end Class MainRouter 
+27-10-2015 16:58:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:58:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:58:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:58:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:58:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:58:34 - INFO  --> end Class MainRouter 
+27-10-2015 16:58:34 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:58:34 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:58:40 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:58:40 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:58:40 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:58:40 - INFO  --> end Class MainRouter 
+27-10-2015 16:58:40 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:58:40 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:58:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:58:43 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:58:43 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:58:43 - INFO  --> end Class MainRouter 
+27-10-2015 16:58:43 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:58:43 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:58:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:58:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:58:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:58:58 - INFO  --> end Class MainRouter 
+27-10-2015 16:58:58 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:58:58 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:59:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:59:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:59:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:59:21 - INFO  --> end Class MainRouter 
+27-10-2015 16:59:21 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:59:21 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 16:59:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 16:59:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 16:59:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 16:59:25 - INFO  --> end Class MainRouter 
+27-10-2015 16:59:25 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 16:59:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:04:24 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:04:24 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:04:24 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:04:24 - INFO  --> end Class MainRouter 
+27-10-2015 17:04:24 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:04:24 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:04:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:04:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:04:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:04:26 - INFO  --> end Class MainRouter 
+27-10-2015 17:04:26 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:04:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:04:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:04:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:04:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:04:35 - INFO  --> end Class MainRouter 
+27-10-2015 17:04:35 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:04:35 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:04:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:04:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:04:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:04:39 - INFO  --> end Class MainRouter 
+27-10-2015 17:04:39 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:04:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:05:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:05:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:05:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:05:09 - INFO  --> end Class MainRouter 
+27-10-2015 17:05:09 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:05:09 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:05:10 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:05:10 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:05:10 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:05:10 - INFO  --> end Class MainRouter 
+27-10-2015 17:05:10 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:05:10 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 17:05:19 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 17:05:19 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 17:05:19 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 17:05:19 - INFO  --> end Class MainRouter 
+27-10-2015 17:05:19 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 17:05:19 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 18:57:57 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 18:57:57 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 18:57:57 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 18:57:57 - INFO  --> end Class MainRouter 
+27-10-2015 18:57:57 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 18:57:57 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 18:58:06 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 18:58:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 18:58:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 18:58:06 - INFO  --> end Class MainRouter 
+27-10-2015 18:58:06 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 18:58:06 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 18:58:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 18:58:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 18:58:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 18:58:12 - INFO  --> end Class MainRouter 
+27-10-2015 18:58:12 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 18:58:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 18:58:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 18:58:27 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 18:58:27 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 18:58:27 - INFO  --> end Class MainRouter 
+27-10-2015 18:58:27 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 18:58:27 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:01:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:01:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:01:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:01:12 - INFO  --> end Class MainRouter 
+27-10-2015 19:01:12 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:01:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:01:14 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:01:14 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:01:14 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:01:14 - INFO  --> end Class MainRouter 
+27-10-2015 19:01:14 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:01:14 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:01:27 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:01:27 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:01:27 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:01:27 - INFO  --> end Class MainRouter 
+27-10-2015 19:01:27 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:01:27 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:01:43 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:01:43 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:01:43 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:01:43 - INFO  --> end Class MainRouter 
+27-10-2015 19:01:43 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:01:43 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:02:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:02:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:02:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:02:20 - INFO  --> end Class MainRouter 
+27-10-2015 19:02:20 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:02:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:02:29 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:02:29 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:02:29 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:02:29 - INFO  --> end Class MainRouter 
+27-10-2015 19:02:29 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:02:29 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:10:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:10:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:10:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:10:01 - INFO  --> end Class MainRouter 
+27-10-2015 19:10:01 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:10:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:15:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:15:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:15:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:15:20 - INFO  --> end Class MainRouter 
+27-10-2015 19:15:20 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:15:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:15:21 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:15:21 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:15:21 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:15:21 - INFO  --> end Class MainRouter 
+27-10-2015 19:15:21 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:15:21 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:15:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:15:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:15:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:15:34 - INFO  --> end Class MainRouter 
+27-10-2015 19:15:34 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:15:34 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:15:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:15:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:15:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:15:44 - INFO  --> end Class MainRouter 
+27-10-2015 19:15:44 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:15:44 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:18:20 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:18:20 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:18:20 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:18:20 - INFO  --> end Class MainRouter 
+27-10-2015 19:18:20 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:18:20 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:19:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:19:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:19:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:19:04 - INFO  --> end Class MainRouter 
+27-10-2015 19:19:04 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:19:04 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:19:05 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:19:05 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:19:05 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:19:05 - INFO  --> end Class MainRouter 
+27-10-2015 19:19:05 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:19:05 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:19:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:19:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:19:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:19:12 - INFO  --> end Class MainRouter 
+27-10-2015 19:19:12 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:19:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:22:55 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:22:55 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:22:55 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:22:55 - INFO  --> end Class MainRouter 
+27-10-2015 19:22:55 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:22:55 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:23:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:23:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:23:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:23:01 - INFO  --> end Class MainRouter 
+27-10-2015 19:23:01 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:23:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:23:11 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:23:11 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:23:11 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:23:11 - INFO  --> end Class MainRouter 
+27-10-2015 19:23:11 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:23:11 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:24:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:24:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:24:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:24:04 - INFO  --> end Class MainRouter 
+27-10-2015 19:24:04 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:24:04 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:24:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:24:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:24:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:24:16 - INFO  --> end Class MainRouter 
+27-10-2015 19:24:16 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:24:16 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:24:25 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:24:25 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:24:25 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:24:25 - INFO  --> end Class MainRouter 
+27-10-2015 19:24:25 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:24:25 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:24:47 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:24:47 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:24:47 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:24:47 - INFO  --> end Class MainRouter 
+27-10-2015 19:24:47 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:24:47 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+27-10-2015 19:24:52 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+27-10-2015 19:24:52 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+27-10-2015 19:24:52 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+27-10-2015 19:24:52 - INFO  --> end Class MainRouter 
+27-10-2015 19:24:52 - INFO  --> destruct : Controller\TestAjaxController 
+27-10-2015 19:24:52 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 9:51:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 9:51:06 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+28-10-2015 9:51:06 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 9:51:07 - INFO  --> end Class MainRouter 
+28-10-2015 9:51:07 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 9:51:07 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 9:51:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 9:51:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 9:51:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 9:51:09 - INFO  --> end Class MainRouter 
+28-10-2015 9:51:09 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 9:51:09 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 9:51:09 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 9:51:09 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 9:51:09 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 9:51:09 - INFO  --> end Class MainRouter 
+28-10-2015 9:51:09 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 9:51:09 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:05:45 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:05:45 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+28-10-2015 14:05:45 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:05:45 - INFO  --> end Class MainRouter 
+28-10-2015 14:05:45 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:05:45 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:05:53 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:05:53 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:05:53 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:05:53 - INFO  --> end Class MainRouter 
+28-10-2015 14:05:53 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:05:53 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:44:26 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:44:26 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+28-10-2015 14:44:26 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:44:26 - INFO  --> end Class MainRouter 
+28-10-2015 14:44:26 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:44:26 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:44:28 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:44:28 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:44:28 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:44:28 - INFO  --> end Class MainRouter 
+28-10-2015 14:44:28 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:44:28 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:47:02 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:47:02 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:47:02 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:47:02 - INFO  --> end Class MainRouter 
+28-10-2015 14:47:02 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:47:02 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:47:04 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:47:04 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:47:04 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:47:04 - INFO  --> end Class MainRouter 
+28-10-2015 14:47:04 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:47:04 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:48:00 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:48:00 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:48:00 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:48:00 - INFO  --> end Class MainRouter 
+28-10-2015 14:48:00 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:48:00 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:48:13 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:48:13 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:48:13 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:48:13 - INFO  --> end Class MainRouter 
+28-10-2015 14:48:13 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:48:13 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:48:18 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:48:18 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:48:18 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:48:18 - INFO  --> end Class MainRouter 
+28-10-2015 14:48:18 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:48:18 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:48:23 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:48:23 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:48:23 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:48:23 - INFO  --> end Class MainRouter 
+28-10-2015 14:48:23 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:48:23 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:48:32 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:48:32 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:48:32 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:48:32 - INFO  --> end Class MainRouter 
+28-10-2015 14:48:32 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:48:32 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+28-10-2015 14:48:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+28-10-2015 14:48:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+28-10-2015 14:48:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+28-10-2015 14:48:39 - INFO  --> end Class MainRouter 
+28-10-2015 14:48:39 - INFO  --> destruct : Controller\TestAjaxController 
+28-10-2015 14:48:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:35 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:35 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->idle 
+29-10-2015 10:57:35 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:35 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:35 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:35 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:39 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:39 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:57:39 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:39 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:39 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:39 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:57:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:44 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:44 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:44 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:44 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:44 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:57:44 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:44 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:44 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:44 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:49 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:49 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:57:49 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:49 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:49 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:49 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:49 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:49 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:57:49 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:49 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:49 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:49 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:57:58 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:57:58 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:57:58 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:57:58 - INFO  --> end Class MainRouter 
+29-10-2015 10:57:58 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:57:58 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:58:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:58:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:58:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:58:01 - INFO  --> end Class MainRouter 
+29-10-2015 10:58:01 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:58:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:58:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:58:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:58:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:58:42 - INFO  --> end Class MainRouter 
+29-10-2015 10:58:42 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:58:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:58:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:58:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:58:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:58:42 - INFO  --> end Class MainRouter 
+29-10-2015 10:58:42 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:58:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:58:49 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:58:49 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:58:49 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:58:49 - INFO  --> end Class MainRouter 
+29-10-2015 10:58:49 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:58:49 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:58:49 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:58:49 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:58:49 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:58:49 - INFO  --> end Class MainRouter 
+29-10-2015 10:58:49 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:58:49 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:59:15 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:59:15 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:59:15 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:59:15 - INFO  --> end Class MainRouter 
+29-10-2015 10:59:15 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:59:15 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:59:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:59:59 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:59:59 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:59:59 - INFO  --> end Class MainRouter 
+29-10-2015 10:59:59 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:59:59 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 10:59:59 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 10:59:59 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 10:59:59 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 10:59:59 - INFO  --> end Class MainRouter 
+29-10-2015 10:59:59 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 10:59:59 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:01 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:01 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:01 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:01 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:01 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:01 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:08 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:08 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:08 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:08 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:08 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:08 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:08 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:08 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:08 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:08 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:08 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:08 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:12 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:12 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:12 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:12 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:12 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:12 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:16 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:16 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:16 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:16 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:16 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:16 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:34 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:34 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:34 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:34 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:34 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:34 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 
+29-10-2015 11:00:42 - INFO  --> 
+======== Log SESE Start ========
+--------------------------------- 
+29-10-2015 11:00:42 - INFO  --> Controller\TestAjaxController restoring state controller : TestAjax::run-->running 
+29-10-2015 11:00:42 - INFO  --> Class MainRouter - controller trigged : TestAjax::run 
+29-10-2015 11:00:42 - INFO  --> end Class MainRouter 
+29-10-2015 11:00:42 - INFO  --> destruct : Controller\TestAjaxController 
+29-10-2015 11:00:42 - INFO  --> Controller\TestAjaxController saving state controller : TestAjax::run-->running 

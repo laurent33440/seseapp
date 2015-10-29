@@ -19,9 +19,9 @@ class CompetenceQueryProvider implements IQueryProvider{
     
     static function InsertQuery(){
         return "Insert into Competence (
-                                        comp_ref_comptetence,
+                                        comp_ref_competence,
                                         comp_intitule_competence,
-                                        descriptif_competence,
+                                        comp_descriptif_competence,
                                         comp_est_evaluable,
                                         comp_est_evaluee,
                                         comp_niveau_competence,
@@ -29,9 +29,9 @@ class CompetenceQueryProvider implements IQueryProvider{
                                          )
                                       
                           values(
-                                        :comp_ref_comptetence,
+                                        :comp_ref_competence,
                                         :comp_intitule_competence,
-                                        :descriptif_competence,
+                                        :comp_descriptif_competence,
                                         :comp_est_evaluable,
                                         :comp_est_evaluee,
                                         :comp_niveau_competence,
@@ -57,9 +57,9 @@ class CompetenceQueryProvider implements IQueryProvider{
 
     static function UpdateQuery(){
         return "update Competence set    
-                                        comp_ref_comptetence=:comp_ref_comptetence,
+                                        comp_ref_competence=:comp_ref_competence,
                                         comp_intitule_competence=:comp_intitule_competence,
-                                        descriptif_competence=:descriptif_competence,
+                                        comp_descriptif_competence=:comp_descriptif_competence,
                                         comp_est_evaluable=:comp_est_evaluable,
                                         comp_est_evaluee=:comp_est_evaluee,
                                         comp_niveau_competence=:comp_niveau_competence,

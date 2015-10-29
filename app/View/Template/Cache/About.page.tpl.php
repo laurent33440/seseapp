@@ -12,7 +12,6 @@
 
     <!-- Bootstrap core CSS -->
     <!--<link href="bootstrap_dev/dist/css/bootstrap.css" rel="stylesheet">-->
-    
     <link href="<?php echo'/bootstrap-3.2.0-dist/css/bootstrap.css'; ?>" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?php echo'/app_css/welcome.css'; ?>" rel="stylesheet">
@@ -30,13 +29,48 @@
     <!-- css jQuery -->
     <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
     
+    <!--TINY MCE TESTS--> 
+    <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+        
+//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
+//        $(document).on('focusin', function(e) {
+//            if ($(event.target).closest(".mce-window").length) {
+//                        e.stopImmediatePropagation();
+//                }
+//        });
+        
+        tinymce.init({
+            selector: "#textarea1",
+            language : 'fr_FR',
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
+        });
+
+    </script>
+    
     
   </head>
 <body>
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -45,22 +79,27 @@
                     <a class="navbar-brand" href="#">
                         <img alt="SESE" src="/app_img/logo_sese40.png">SESE
                     </a>
-                    <a class="navbar-brand" href="#">
-                        <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
-                    </a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <!-- Single button --> 
-                    <div class="btn-group nav navbar-nav navbar-right">
-                      <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        unknown user : unknown user role<span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" role="menu" >
-                        <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
-                        <li><a href="#"> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Contacter l'administrateur référant</a></li>
-                      </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav ">
+                        <li><a  href="" >
+                        <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
+                        </a></li>
+                        <li><a  href="" >
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        </a></li>
+                        <li><a  href="" >
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                        </a></li>
+                    </ul>
+<!--                    <ul class="nav navbar-nav navbar-right">
+                         <li><a  href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        </a></li>
+                        <li><a  href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
+                        </a></li>
+                    </ul>-->
                 </div>
             </div>
         </nav>    
@@ -69,9 +108,9 @@
           <h3> Informations générales concernant l'application SESE </h3>
           <p>
           <ul>
-              <li><a href = "#">Objet de l'application</a>
-              <li><a href = "#">Droits sur l'information</a>
-              <li><a href = "#">Licence d'utilisation</a>
+              <li><a href = "#about_sese">Objet de l'application</a>
+              <li><a href = "#rights_law">Droits sur l'information</a>
+              <li><a href = "#license">Licence d'utilisation</a>
           </ul>
           </p>
         </div>
@@ -80,7 +119,7 @@
       <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                  <div class="panel-heading" id="about_sese">
                     <h3 class="panel-title">L'application SESE (Suivi et Evaluations des Stafgiaires en Entreprise </h3>
                   </div>
                   <div class="panel-body">
@@ -99,7 +138,7 @@
                 </div>
                 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                  <div class="panel-heading" id="rights_law">
                     <h3 class="panel-title">L'application SESE et le droit</h3>
                   </div>
                   <div class="panel-body">
@@ -373,7 +412,7 @@
                 </div>
                 
                 <div class="panel panel-default">
-                  <div class="panel-heading">
+                  <div class="panel-heading" id="license">
                     <h3 class="panel-title">License GPL version 3</h3>
                   </div>
                   <div class="panel-body">

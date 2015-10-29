@@ -30,6 +30,41 @@
     <!-- css jQuery -->
     <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
     
+    <!--TINY MCE TESTS--> 
+    <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+        
+//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
+//        $(document).on('focusin', function(e) {
+//            if ($(event.target).closest(".mce-window").length) {
+//                        e.stopImmediatePropagation();
+//                }
+//        });
+        
+        tinymce.init({
+            selector: "#textarea1",
+            language : 'fr_FR',
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
+        });
+
+    </script>
+    
     
   </head>
  <body>
@@ -77,55 +112,81 @@
     <div class="container">
         
         <div class="jumbotron">
-          <h2> Espace enseignant</h2>
-          <p>Veuillez choisir une action</p>
+          <div class="row">
+            <div class="col-lg-10">
+                <h2> Espace enseignant</h2>
+                <p>Veuillez choisir une action</p>
+            </div>
+            <div class="col-lg-2 ">
+                  <a class="btn btn-default" href="/index.php/enseignant/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                      <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
+                  </a>
+            </div>
+          </div>
         </div>
         
         <!-- Menu -->
         <div class="row">
-            <div class="col-lg-2 col-lg-offset-1">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Création d'un stage</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/stage" role="button">View details &raquo;</a></p>
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="/index.php/enseignant/document" data-toggle="tooltip" data-placement="left" title="Informations pédagogiques" role="button">
+                      <img class="img-rounded" src="/app_img/information.png" alt="Informations pédagogiques">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Contacts</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/contact_interne" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/enseignant/stage" data-toggle="tooltip" data-placement="left" title="Creation d'un stage" role="button">
+                      <img class="img-rounded" src="/app_img/create_doc.png" alt="Creation d'un stage">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Visites de stage</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/visite" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/enseignant/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
+                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Journal des visites</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/commentaire" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/enseignant/visite" data-toggle="tooltip" data-placement="left" title="Définir les visites" role="button">
+                      <img class="img-rounded" src="/app_img/appointment.png" alt="Définir les visites">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Valider un stage</h2>
-              <p><a class="btn btn-default" href="#" role="button">Valider un stage &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/enseignant/commentaire" data-toggle="tooltip" data-placement="left" title="Commenter une visite" role="button">
+                      <img class="img-rounded" src="/app_img/write.png" alt="Commenter une visite">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
+            <div class="col-lg-2">
+              <p>
+                  <a class="btn btn-default" href="#" data-toggle="tooltip" data-placement="left" title="Résultats et attestations de stages" role="button">
+                      <img class="img-rounded" src="/app_img/check.png" alt="Résultats et attestations de stages">
+                  </a>
+              </p>
+            </div><!-- /.col-lg-4 -->
+            
         </div><!-- /.row -->
       
     </div><!-- /.container -->
       
 </div> <!-- section colored-->
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
+<!-- Main jumbotron for a call to action -->
 <div class="jumbotron">
   <div class="container">
     <h3>Commentaires des visites de stage</h3>
     <p>Commentez les visites de stage réalisées. </p>
-    <!--<p><a class="btn btn-primary btn-lg" role="button"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>-->
   </div>
 </div>
 
 <div class="container-fluid">
 
-    <form  method="post" action="<?php echo' /index.php/enseignant '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/enseignant/commentaire '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -142,7 +203,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach (form_val_comments as $trainee => $comment) {
+                                <?php foreach ($this->_arrayParamslist[0] as $trainee => $comment) {
                                     echo"
                                         <tr>
                                             <td> 
@@ -151,7 +212,7 @@
                                             <td>
                                                 <div class=\"input-group\">
                                                     <textarea rows=\"4\" cols=\"80\" id=\"comment\"
-                                                      name=\"form_comment#$trainee\"
+                                                      name=\"_comments#$trainee\"
                                                       placeholder=\"Entrez le commentaire de la visite du stagiaire\" />
                                                       $comment
                                                     </textarea>
@@ -160,9 +221,9 @@
                                             </td>
                                             <td>
                                                   <span class=\"input-group-btn\">
-                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAdd\" id=\"add#$trainee\" type=\"submit\">
+                                                    <button class=\"btn btn-success\" name=\"ButtonSubmitAdd\" value=\"$trainee\" id=\"add#$trainee\" type=\"submit\">
                                                         <span class=\"glyphicon glyphicon-plus-sign\"></span>
-                                                        Valider
+                                                        Valider le commentaire
                                                     </button>
                                                   </span>
                                                 

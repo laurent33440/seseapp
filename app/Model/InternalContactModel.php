@@ -24,9 +24,12 @@ class InternalContactModel extends AModel{
     private $_message;
     private $_emailChoosen;
     
-    //emailTo
+    //email to
     protected $emailTo;
-    
+    //subject
+    protected $subject;
+
+
     public function __construct(){
         
         $collection = new DataAccess('Enseignant');
@@ -71,33 +74,49 @@ class InternalContactModel extends AModel{
     public function set_emailChoosen($_emailChoosen) {
         $this->_emailChoosen = $_emailChoosen;
     }
+    
+    //direct use without form
+    public function setEmailTo($emailTo) {
+        $this->emailTo = $emailTo;
+    }
+    
+    public function setSubject($subject) {
+        $this->subject = $subject;
+    }
 
         
     public function sendMail(){
         $parts = explode(self::EMAIL_DIVIDER, $this->_emailChoosen);
         $this->emailTo= $parts[1];
-         Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.'  emailto :'.print_r($this->emailTo, true));
+        $this->subject = 'Un utilisateur de l\'application SESE vous contact';
+        Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.'  emailto :'.print_r($this->emailTo, true));
+        $this->sendMailFromProperties();
+    }
+
+        
+    public function sendMailFromProperties(){
+        Logger::getInstance()->logDebug(__CLASS__.'::'.__METHOD__.'  emailto :'.print_r($this->emailTo, true));
         //check mail to : FIXME useless
-        $collection = new DataAccess('Enseignant');
-        if(!$collection->GetAllByColumnValue('ens_mel_enseignant', $this->emailTo)){
-            $collection = new DataAccess('Stagiaire');
-            if(!$collection->GetByColumnValue('sta_mel_stagiaire', $this->emailTo)){
-                $collection = new DataAccess('Collaborateur');
-                if(!$collection->GetByColumnValue('col_mel', $this->emailTo)){
-                    return false;
-                }
-            }
-        }
+//        $collection = new DataAccess('Enseignant');
+//        if(count($collection->GetAllByColumnValue('ens_mel_enseignant', $this->emailTo))==0){
+//            $collection = new DataAccess('Stagiaire');
+//            if(count($collection->GetByColumnValue('sta_mel_stagiaire', $this->emailTo))==0){
+//                $collection = new DataAccess('Collaborateur');
+//                if(count($collection->GetByColumnValue('col_mel', $this->emailTo))==0){
+//                    return false;
+//                }
+//            }
+//        }
         //Create a new PHPMailer instance
         $mail = new \PhpMailer\PhpMailer;
         //Tell PHPMailer to use SMTP
         $mail->isSMTP();
 
-        //Enable SMTP debugging
+        //Enable SMTP debugging -- DEBUGGING OUTPUTS MESSAGES ON STANDART OUTPUT 
         // 0 = off (for production use)
         // 1 = client messages
         // 2 = client and server messages
-        $mail->SMTPDebug = 2;
+        $mail->SMTPDebug = 0;
 
         //Ask for HTML-friendly debug output
         $mail->Debugoutput = 'html';
@@ -114,6 +133,7 @@ class InternalContactModel extends AModel{
         //Whether to use SMTP authentication
         $mail->SMTPAuth = true;
 
+        // TODO : email service hard coded, use config params instead
         //Username to use for SMTP authentication - use full email address for gmail
         //$mail->Username = \Bootstrap::$_userNameMail;
         $mail->Username = 'authier.lppdg@gmail.com';
@@ -123,7 +143,8 @@ class InternalContactModel extends AModel{
         $mail->Password = 'laurent290867';
 
         //Set who the message is to be sent from
-        $mail->setFrom(\Bootstrap::$session->get('/user/name'), 'First Last');
+        $from = \UserConnected::getInstance()->getUserName();
+        $mail->setFrom(\UserConnected::getInstance()->getUserName(), 'Utilisateur de SESE : '.$from);
 
         //Set an alternative reply-to address
 //        $mail->addReplyTo('replyto@example.com', 'First Last');
@@ -132,7 +153,7 @@ class InternalContactModel extends AModel{
         $mail->addAddress($this->emailTo, 'Destination');
 
         //Set the subject line
-        $mail->Subject = 'Test';
+        $mail->Subject = $this->subject;
 
         //Read an HTML message body from an external file, convert referenced images to embedded,
         //convert HTML into a basic plain-text alternative body

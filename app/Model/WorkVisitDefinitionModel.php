@@ -16,7 +16,7 @@ use Model\Dal\ModelDb\Stage\StageObject;
  *
  * @author laurent
  */
-class WorkVisitDefinitionModel extends AModel{
+class WorkVisitDefinitionModel extends AModel implements IModel{
     //view
     private $_visits=array();//trainee=>date
     
@@ -24,7 +24,6 @@ class WorkVisitDefinitionModel extends AModel{
     protected $idTeacher;
     
     public function __construct() {
-        $this->getAllVisits();
     }
 
     public function get_visits() {
@@ -35,8 +34,51 @@ class WorkVisitDefinitionModel extends AModel{
     public function set_visits($trainee, $_date=null) {
         $this->_visits[$trainee] = $_date;
     }
+    
+    
+    public function addBlank() {
+        //
+    }
 
-    /**
+    public function append() {
+        
+    }
+
+    public function deleteFromId($id) {
+        
+    }
+
+    public function deleteFromProperty($property, $val) {
+        
+    }
+
+    public function getAll() {
+        $this->resetModel();
+        $collection = new DataAccess('Enseignant');
+        $teacher = $collection->GetByColumnValue('ens_mel_enseignant', \UserConnected::getInstance()->getUserName());
+        $this->idTeacher= $teacher->id_enseignant;
+        $collection = new DataAccess('Stagiaire');
+        $trainees = $collection->GetAllByColumnValue('id_enseignant', $this->idTeacher);
+        $collection = new DataAccess('Activite_et_visite');
+        foreach ($trainees as $trainee) {
+            $visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire);
+            if($visit !=false){
+                $this->set_visits($trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire, $visit->aev_date_visite);
+            }else{
+                $this->set_visits($trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire, 'Non défini');
+            }
+        }
+    }
+
+    public function resetModel() {
+        $this->_visits=array();//reset
+    }
+
+    public function update($property, $val, $id) {
+        
+    }
+
+        /**
      * 
      * 
      */
@@ -47,22 +89,22 @@ class WorkVisitDefinitionModel extends AModel{
     /**
      * Get all work date from data base - reset view model
      */
-    public function getAllVisits(){
-        $this->_visits=array();//reset
-        $collection = new DataAccess('Enseignant');
-        $teacher = $collection->GetByColumnValue('ens_mel_enseignant', \SeseSession::getInstance()->get('user_connected/name'));
-        $this->idTeacher= $teacher->id_enseignant;
-        $collection = new DataAccess('Stagiaire');
-        $trainees = $collection->GetAllByColumnValue('id_enseignant', $this->idTeacher);
-        $collection = new DataAccess('Activite_et_visite');
-        foreach ($trainees as $trainee) {
-            if($visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire)!=false){
-                $this->set_visits($trainee->sta_prenom_stagiare.' '.$trainee->sta_nom_stagiare, $visit->aev_date_visite);
-            }else{
-                $this->set_visits($trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire, 'Non défini');
-            }
-        }
-    }
+//    public function getAllVisits(){
+//        $this->_visits=array();//reset
+//        $collection = new DataAccess('Enseignant');
+//        $teacher = $collection->GetByColumnValue('ens_mel_enseignant', \SeseSession::getInstance()->get('user_connected/name'));
+//        $this->idTeacher= $teacher->id_enseignant;
+//        $collection = new DataAccess('Stagiaire');
+//        $trainees = $collection->GetAllByColumnValue('id_enseignant', $this->idTeacher);
+//        $collection = new DataAccess('Activite_et_visite');
+//        foreach ($trainees as $trainee) {
+//            if($visit = $collection->GetByColumnValue('id_stagiaire', $trainee->id_stagiaire)!=false){
+//                $this->set_visits($trainee->sta_prenom_stagiare.' '.$trainee->sta_nom_stagiare, $visit->aev_date_visite);
+//            }else{
+//                $this->set_visits($trainee->sta_prenom_stagiaire.' '.$trainee->sta_nom_stagiaire, 'Non défini');
+//            }
+//        }
+//    }
     
     /**
      * Append last model view to data base
@@ -113,9 +155,30 @@ class WorkVisitDefinitionModel extends AModel{
 //        $work->stg_date_fin = $dateOff;
 //        $collection->Update($work);
 //    }
-//    
-
-    
-    
-    
+//
+      
 }
+
+
+// UTILISATION D'UNE CLASSE QUE L'ON POURRAIT PASSER AU TEMPLATE ENGINE POUR PLUS DE FLEXIBILITE -- !! PB import de la dite classe au niveau template !! 
+//class Appointment {
+//    private $date;
+//    private $hour;
+//    
+//    public function getDate() {
+//        return $this->date;
+//    }
+//
+//    public function getHour() {
+//        return $this->hour;
+//    }
+//
+//    public function setDate($date) {
+//        $this->date = $date;
+//    }
+//
+//    public function setHour($hour) {
+//        $this->hour = $hour;
+//    }
+//    
+//}

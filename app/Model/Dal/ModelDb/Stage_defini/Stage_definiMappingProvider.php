@@ -21,6 +21,7 @@ class Stage_definiMappingProvider implements IMappingProvider{
         $item->id_stage_defini=$row['id_stage_defini'];
         $item->stgdef_est_ouvrable= $row['stgdef_est_ouvrable'];
         $item->stgdef_status= $row['stgdef_status'];
+        $item->stgdef_est_evalue=$row['stgdef_est_evalue'];
         $item->stgdef_commentaire_tuteur= $row['stgdef_commentaire_tuteur'];
         $item->id_collaborateur=$row['id_collaborateur'];
         $item->id_stage=$row['id_stage'];
@@ -40,6 +41,7 @@ class Stage_definiMappingProvider implements IMappingProvider{
     Static function MapToRowInsert($item){
         $retval['stgdef_est_ouvrable']=$item->stgdef_est_ouvrable;
         $retval['stgdef_status']=$item->stgdef_status;
+        $retval['stgdef_est_evalue']=$item->stgdef_est_evalue;
         $retval['stgdef_commentaire_tuteur']=$item->stgdef_commentaire_tuteur;
         $retval['id_collaborateur']=$item->id_collaborateur;
         $retval['id_stage']= $item->id_stage;
@@ -51,6 +53,7 @@ class Stage_definiMappingProvider implements IMappingProvider{
         $retval['id_stage_defini']=$item->id_stage_defini;
         $retval['stgdef_est_ouvrable']=$item->stgdef_est_ouvrable;
         $retval['stgdef_status']=$item->stgdef_status;
+        $retval['stgdef_est_evalue']=$item->stgdef_est_evalue;
         $retval['stgdef_commentaire_tuteur']=$item->stgdef_commentaire_tuteur;
         $retval['id_collaborateur']=$item->id_collaborateur;
         $retval['id_stage']= $item->id_stage;

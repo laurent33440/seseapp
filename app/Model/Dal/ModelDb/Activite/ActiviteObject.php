@@ -21,4 +21,6 @@ class ActiviteObject {
     public $act_est_realise;
     public $id_referentiel_de_formation;
     public $id_fonction;
+    
+    public $foreignKeyList = array('Constituer'=>'id_activite');
 }

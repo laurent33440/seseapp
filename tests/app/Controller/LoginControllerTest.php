@@ -48,7 +48,7 @@ class LoginControllerTest extends \PHPUnit_Framework_TestCase {
         $this->_object->setStateController(AControllerState::RUNNING);
         $parameters = array('_userName'=>'dieu', '_userPass'=>'dieu');
         $this->_request = Request::create('http://localhost/sese/index.php', 'POST', $parameters);
-        $this->object->run();
+        $this->object->login();
         //$this->_object->
         //$this->_object->setStateController(AControllerState::TERMINATED);
        

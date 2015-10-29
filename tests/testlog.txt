@@ -1,0 +1,3 @@
+some text to write24-07-2015 11:23:05 - INFO  --> Info line 
+some text to write24-07-2015 11:23:46 - INFO  --> Info line 
+some text to write

@@ -13,7 +13,7 @@
  * @author laurent
  */
 class Bootstrap {
-    //const CONFIG_DIR = ''
+    //const CONFIG_DIR = ROOT.'/app/config';
     const APP_URL='/seseapp';
     const ENTRY_SCRIPT = 'index.php';
     const APPLICATION_NAME = 'SESE';
@@ -50,15 +50,8 @@ class Bootstrap {
       // Autoload
       spl_autoload_register(array(__CLASS__, "autoload"));
 
-      //log
-      $log = Logger::getInstance();
-      //$log->setLogFile("log_sese.txt", !self::DEBUG_SESE); //erase log each run
-      $log->setLogFile("log_sese.txt");
-      $log->setPriority(Logger::DEBUG);
-      $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");
-
       //Session
-      $session = SeseSession::getInstance();
+      $session = SeseSession::getInstance(self::DEBUG_SESE);
       $session->setName(self::APPLICATION_NAME);
       $session->start();
       if(!$session->has(self::APPLICATION_NAME)){
@@ -66,6 +59,15 @@ class Bootstrap {
           $session->set('state_history', '');
           //echo $session->getId();
       }
+      
+      //log
+      $log = \Logger::getInstance();
+      $log->setLogFile('log_sese_'.$session->getId().'_.txt', true); //append logs
+      $log->setPriority(Logger::INFO);
+      $log->logInfo("\n======== Log SESE Start ========\n---------------------------------");
+//      var_dump($log->getFile_handler());
+//      $log->logInfo( 'tests');
+//      die();
       
       // Route
       $mainRouter = new MainRouter();

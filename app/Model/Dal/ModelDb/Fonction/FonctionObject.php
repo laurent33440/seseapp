@@ -16,4 +16,6 @@ namespace Model\Dal\ModelDb\Fonction;
 class FonctionObject {
     public $id_fonction;
     public $f_description;
+    
+    public $foreignKeyList = array('Activite'=>'id_fonction');
 }

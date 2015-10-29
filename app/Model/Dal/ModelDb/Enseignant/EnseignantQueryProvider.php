@@ -73,7 +73,7 @@ class EnseignantQueryProvider implements IQueryProvider{
                                         ens_role=:ens_role,
                                         ens_est_referant=:ens_est_referant,
                                         ens_compte_enseignant=:ens_compte_enseignant"
-            . "where id_enseignant = :id_enseignant";
+            . " where id_enseignant = :id_enseignant";
     }
 
     static function DeleteQuery(){

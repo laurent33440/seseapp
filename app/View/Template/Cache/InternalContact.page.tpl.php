@@ -30,6 +30,41 @@
     <!-- css jQuery -->
     <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
     
+    <!--TINY MCE TESTS--> 
+    <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+        
+//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
+//        $(document).on('focusin', function(e) {
+//            if ($(event.target).closest(".mce-window").length) {
+//                        e.stopImmediatePropagation();
+//                }
+//        });
+        
+        tinymce.init({
+            selector: "#textarea1",
+            language : 'fr_FR',
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
+        });
+
+    </script>
+    
     
   </head>
  <body>
@@ -54,7 +89,7 @@
                     <div class="btn-group nav navbar-nav navbar-right">
                       <button type="button" class="btn btn-primary dropdown-toggle navbar-btn" data-toggle="dropdown" aria-expanded="false">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        l : enseignant<span class="caret"></span>
+                        t@t : tuteur<span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" >
                         <li><a href="/"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deconnexion</a></li>
@@ -69,7 +104,7 @@
     
 
 
-    <!-- Menu
+    <!-- Generic
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
  <div class="section-colored-menu"> <!--see "app_sese.css" -->
@@ -77,38 +112,58 @@
     <div class="container">
         
         <div class="jumbotron">
-          <h2> Espace enseignant</h2>
-          <p>Veuillez choisir une action</p>
+            <div class="row">
+                <div class="col-lg-10">
+                    <h2> Espace tuteur de stage</h2>
+                    <p>Veuillez choisir une action</p>
+                </div>
+                <div class="col-lg-2 ">
+                      <a class="btn btn-default" href="/index.php/tuteur/mot_de_passe" data-toggle="tooltip" data-placement="left" title="Changer de mot de passe" role="button">
+                          <img class="img-rounded" src="/app_img/params.png" alt="Changer de mot de passe">
+                      </a>
+                </div>
+            </div>
         </div>
         
         <!-- Menu -->
         <div class="row">
             <div class="col-lg-2 col-lg-offset-1">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Création d'un stage</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/stage" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/document" data-toggle="tooltip" data-placement="left" title="Informations générales" role="button">
+                      <img class="img-rounded" src="/app_img/information.png" alt="Informations générales">
+                  </a>
+              </p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-2 ">
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/liste_stagiaire" data-toggle="tooltip" data-placement="left" title="Stagiaires en responsabilité" role="button">
+                      <img class="img-rounded" src="/app_img/users.png" alt="Stagiaires en responsabilité">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Contacts</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/contact_interne" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/contact_interne" data-toggle="tooltip" data-placement="left" title="Envoyer un message" role="button">
+                      <img class="img-rounded" src="/app_img/email.png" alt="Envoyer un message">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Visites de stage</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/visite" role="button">View details &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/liste_activites" data-toggle="tooltip" data-placement="left" title="Activités souhaitées pour le stagiaire" role="button">
+                      <img class="img-rounded" src="/app_img/works.png" alt="Activités souhaitées pour le stagiaire">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Journal des visites</h2>
-              <p><a class="btn btn-default" href="/index.php/enseignant/commentaire" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-2">
-              <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-              <h2>Valider un stage</h2>
-              <p><a class="btn btn-default" href="#" role="button">Valider un stage &raquo;</a></p>
+              <p>
+                  <a class="btn btn-default" href="/index.php/tuteur/evaluation_stagiaire" data-toggle="tooltip" data-placement="left" title="Evaluer un stagiare" role="button">
+                      <img class="img-rounded" src="/app_img/check2.png" alt="Evaluer un stagiare">
+                  </a>
+              </p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
+        <!-- end Menu -->
       
     </div><!-- /.container -->
       
@@ -122,7 +177,7 @@
         </div>
     </div>
 <div class="container">
-    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/enseignant/contact_interne'; ?>">
+    <form class="form-horizontal" role="form" method="post" action="<?php echo'/index.php/tuteur/contact_interne'; ?>">
         
         <div class="form-group">
             <label for="email" class="col-sm-2 control-label">Contact</label>
@@ -233,7 +288,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -256,7 +311,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/enseignant',
+                   '/index.php/tuteur',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val

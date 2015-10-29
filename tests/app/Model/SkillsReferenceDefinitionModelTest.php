@@ -6,36 +6,37 @@
  * and open the template in the editor.
  */
 
-use model\SkillsReferenceDefinitionModel;
-use model\ActivitiesReferenceDefinitionModel;
-use model\FunctionReferentialDefinitionModel;
+use Model\SkillsReferenceDefinitionModel;
+use Model\ActivitiesReferenceDefinitionModel;
+
 
 /**
  * Description of SkillsReferenceDefinitionModelTest
  *
  * @author laurent
  */
-class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
+class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase {
+
     /**
      * @var SkillsReferenceDefinitionModel
      */
     protected $object;
     
+    //list for model views tests 
+    private $activitiesList = array(0=>'activity 0 binded',1=>'activity 1 binded', 2=>'activity 2 binded', 3=>'activity 3 binded', 4=>'activity 4 binded');
+
     /**
      * @var ActivitiesReferenceDefinitionModel;
      */
     protected static $activitiesReferences;
-    
-    public static function setUpBeforeClass(){
+
+    public static function setUpBeforeClass() {
         self::$activitiesReferences = new ActivitiesReferenceDefinitionModel();
-        self::ActivitiesProvider();
     }
-    
-    public static function tearDownAfterClass(){
-        self::$activitiesReferences->delActivitiesFromDataBase();
-        self::$activitiesReferences=null;
+
+    public static function tearDownAfterClass() {
     }
-  
+
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -49,461 +50,253 @@ class SkillsReferenceDefinitionModelTest extends PHPUnit_Framework_TestCase{
      * This method is called after a test is executed.
      */
     protected function tearDown() {
-    }
-    
-    //some fixture
-    public static function fonctionsListProvider(){
-        $vals= array('Fonction 0','Fonction 1','Fonction 2', 'Fonction 3', 'Fonction 4');
-        $functionsModel = new FunctionReferentialDefinitionModel();
-        $functionsModel->delFunctionsFromDataBase();
-        foreach ($vals as $val){
-            $functionsModel->set_descriptions($val);
-        }
-        $functionsModel->addFunctionToDataBase();
-        return array(array($vals));
-    }
-    
-    public static function ActivitiesProvider(){
-        self::fonctionsListProvider();
-        self::$activitiesReferences = new ActivitiesReferenceDefinitionModel();
-        for ($n=0 ; $n<5 ; $n++) {
-            self::$activitiesReferences->set_activitiesReferencesList("A$n-$n test");
-            self::$activitiesReferences->set_functionsList("Fonction $n"); 
-            self::$activitiesReferences->set_activitiesDescriptionsList("Mon activit&eacute; test test test -- ligne ($n)");
-            self::$activitiesReferences->addActivityToDataBase();
-        }
-    }
-    
-    public function cleanDb(){
-        $this->object->getDataBaseHandler()->dbQD('Constituer');
-        $this->object->getDataBaseHandler()->dbQD('Competence');
-        //$this->object->getDataBaseHandler()->dbQD('Activite');
-    }
-    
         
-//////////////////////////////////////////////////////////////////////////////// Model view tests 
-    
-//    public function fxxx($t,$a=0, $b=null){
-//        if(!isset($b))
-//            $b=1;
-//        return array($t,$a,$b);
-//    }
-//    
-//    public function testxxx(){
-//        $a=null;
-//        $this->assertFalse(isset($a),'succes');
-//        $a=1;
-//        $this->assertTrue(isset($a),'définie');
-//        $this->assertEquals(array('one',0, 1), $this->fxxx('one'),' 1 arg');
-//        $this->assertEquals(array('two',10, 1), $this->fxxx('two',10),' 2 args ');
-//        $this->assertEquals(array('three',20, 30), $this->fxxx('three',20,30),'all args');
-//    }
-    
-    /**
-     * @depends testGetDefinedActivities
-     */
-    public function testAddBlankToModel(){
-        $a=$this->object->addBlankToModel();
-        $exp=array('Mon activit&eacute; test test test -- ligne (0)',
-                    'Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)',
-                    'Mon activit&eacute; test test test -- ligne (4)'
-            );
-        $this->assertEquals($exp, $this->object->get_activitiesList());
-    }
-    
-    public function testSet_bindedActivitiesLists(){
-        $a11 = 'activity 1 binded to skill 1';
-        $a21 = 'activity 2 binded to skill 1';
-        $a12 = 'activity 1 binded to skill 2';
-        $a22 = 'activity 2 binded to skill 2';
-        $a299 = 'activity 99 binded to skill 2';
-        $exp1 = array(array($a11));
-        $this->object->set_bindedActivitiesLists($a11, 0);
-        $this->assertEquals($exp1, $this->object->get_bindedActivitiesLists());
-        $exp2 = array(array($a11,$a21));
-        $this->object->set_bindedActivitiesLists($a21, 0);
-        $this->assertEquals($exp2, $this->object->get_bindedActivitiesLists());
-        $exp3 = array(array($a11,$a21), array($a12));
-        $this->object->set_bindedActivitiesLists($a12, 1);
-        $this->assertEquals($exp3, $this->object->get_bindedActivitiesLists());
-        $exp4 = array(array($a11,$a21), array($a12, $a22));
-        $this->object->set_bindedActivitiesLists($a22, 1);
-        $this->assertEquals($exp4, $this->object->get_bindedActivitiesLists());
-        $exp4 = array(array($a11,$a21), array(0=>$a12, 1=>$a22, 99=>$a299));
-        $this->object->set_bindedActivitiesLists($a299, 1,99);
-        $this->assertEquals($exp4, $this->object->get_bindedActivitiesLists());
-        $this->object->set_bindedActivitiesLists($a299, 1);//activity already in model, musn't be added
-        $this->assertEquals($exp4, $this->object->get_bindedActivitiesLists()); // no change
-    }
-    
-    public function isArrayIncludeProvider(){
-        $ref1 = array('a','b','c');
-        $tst1 = array('a'=>1,'b'=>2,'c'=>3);
-        $tst2 = array('a'=>1,'c'=>3);
-        $tst3 = array('a'=>1,'b'=>2,'c'=>3, 'd'=>4);
-        $ref2 = array('a','b','c','k1','k2');
-        $tst4 = array('a'=>1,'b'=>2,'c'=>3, 0=>array('k1'=>array('val1')), 1=>array('k2'=>array('val2')));
-        $tst5 = array('a'=>1,'b'=>2, 1=>array('k2'=>array('val2')));
-        $tst6 = array('a'=>1,'b'=>2, 0=>array('k_unknown'=>array('val1')),1=>array('k2'=>array('val2')));
-        return array(
-            array($tst1, $ref1, true),
-            array($tst2, $ref1, true),
-            array($tst3, $ref1, false),
-            array($tst4, $ref2, true),
-            array($tst5, $ref2, true),
-            array($tst6, $ref2, false),   
-        );
     }
 
-    /**
-     * @dataProvider isArrayIncludeProvider
-     */
-    public function testIsArrayInclude(array $tst, array $ref, $result){
-        $this->assertEquals($result,$this->object->isArrayInclude($tst, $ref));
-    }
+
+    //////////////////////// model view tests
     
+    /**
+     * 
+     */
+    public function testSet_bindedActivitiesLists() {
+        $this->object->set_activitiesList($this->activitiesList);
+        
+        $a1 = '1';$a1T = 'activity 1 binded';
+        $a2 = '2';$a2T = 'activity 2 binded';
+        $a3 = '3';$a3T = 'activity 3 binded';
+        $exp1 = array(1=>array(1=>$a1T));
+        $exp2 = array(1=>array(1=>$a1T, 2=>$a2T));
+        $exp3 = array(1=>array(1=>$a1T, 2=>$a2T), 2=>array(1=>$a1T));
+        $exp4 = array(1=>array(1=>$a1T, 2=>$a2T), 2=>array(1=>$a1T, 2=>$a2T));
+        $exp5 = array(1=>array(1=>$a1T, 2=>$a2T), 2=>array(1=>$a1T, 2=>$a2T, 3=>$a3T));
+        
+        $this->object->set_bindedActivitiesLists($a1, 1);//new
+        $this->assertEquals($exp1, $this->object->get_bindedActivitiesLists());
+        $this->object->set_bindedActivitiesLists($a2, 1);//add
+        $this->assertEquals($exp2, $this->object->get_bindedActivitiesLists());
+        $this->object->set_bindedActivitiesLists($a1, 2);//new
+        $this->assertEquals($exp3, $this->object->get_bindedActivitiesLists());
+        $this->object->set_bindedActivitiesLists($a2, 2);//add
+        $this->assertEquals($exp4, $this->object->get_bindedActivitiesLists());
+        $this->object->set_bindedActivitiesLists($a3, 2);//add
+        $this->assertEquals($exp5, $this->object->get_bindedActivitiesLists());
+        $this->object->set_bindedActivitiesLists($a2, 2);//already binded
+        $this->assertEquals($exp5, $this->object->get_bindedActivitiesLists());
+    }
+
+
     /**
      * tests for setters of models
      */
-    public function test_call_user_func_array_PHP(){
+    public function test_call_user_func_array_PHP() {
+        $this->object->set_activitiesList($this->activitiesList);
+        
         $this->object->set_skillsReferencesList('c1');
         $r = $this->object->get_skillsReferencesList(); //array('c1')
         call_user_func_array(array($this->object, 'set_skillsReferencesList'), array('c2'));
         $r = $this->object->get_skillsReferencesList(); //array('c1','c2');
-        $this->assertEquals(array('c1','c2'), $r);
+        $this->assertEquals(array('new'=>'c2'), $r);
         $func = 'set_skillsReferencesList';
         $param = 'c3';
         call_user_func_array(array($this->object, $func), array($param));
         $r = $this->object->get_skillsReferencesList(); //array('c1','c2');
-        $this->assertEquals(array('c1','c2', 'c3'), $r);
+        $this->assertEquals(array('new'=> 'c3'), $r);
         $func = 'set_bindedActivitiesLists';
-        $arrArgs = array('activity 0 skill 0',0);
+        $arrArgs = array('0', 0);
         call_user_func_array(array($this->object, $func), $arrArgs);
         $r = $this->object->get_bindedActivitiesLists();
-        $this->assertEquals(array(array('activity 0 skill 0')), $r);
-        $arrArgs = array('activity 1 skill 0',0);
+        $this->assertEquals(array(array($this->activitiesList[0])), $r);
+        $arrArgs = array('1', 0);
         call_user_func_array(array($this->object, $func), $arrArgs);
         $r = $this->object->get_bindedActivitiesLists();
-        $this->assertEquals(array(array('activity 0 skill 0','activity 1 skill 0')), $r);
-        $arrArgs = array('activity 2 skill 1',1);
+        $this->assertEquals(array(array($this->activitiesList[0], $this->activitiesList[1])), $r);
+        $arrArgs = array('0', 1);
         call_user_func_array(array($this->object, $func), $arrArgs);
         $r = $this->object->get_bindedActivitiesLists();
-        $this->assertEquals(array(array('activity 0 skill 0','activity 1 skill 0'),array('activity 2 skill 1')), $r);
-        $arrArgs = array('activity 3 skill 1',1,10);
+        $this->assertEquals(array(array($this->activitiesList[0], $this->activitiesList[1]), array($this->activitiesList[0])), $r);
+        $arrArgs = array('3', 1);
         call_user_func_array(array($this->object, $func), $arrArgs);
         $r = $this->object->get_bindedActivitiesLists();
-        $this->assertEquals(array(array('activity 0 skill 0','activity 1 skill 0'),array('activity 2 skill 1', 10=>'activity 3 skill 1')), $r);
-        $arrArgs = array('activity 3 skill 2',2,20);
+        $this->assertEquals(array(array($this->activitiesList[0], $this->activitiesList[1]), array($this->activitiesList[0],3=>$this->activitiesList[3])), $r);
+        $arrArgs = array('2', 1);
         call_user_func_array(array($this->object, $func), $arrArgs);
         $r = $this->object->get_bindedActivitiesLists();
-        $this->assertEquals(array(array('activity 0 skill 0','activity 1 skill 0'),array('activity 2 skill 1', 10=>'activity 3 skill 1'), array(20=>'activity 3 skill 2')), $r);
+        $this->assertEquals(array(array($this->activitiesList[0], $this->activitiesList[1]), array($this->activitiesList[0],2=>$this->activitiesList[2],3=>$this->activitiesList[3])), $r);
     }
 
-
-    public function testSetClassVarsValues_multipleArgs(){
-        $params=array(
-                '_skillsReferencesList' => 'c1',
-                0=>array('_bindedActivitiesLists' => array('activity 1 binded to skill 0', 0,0)),//property_name => array(main_value, args...)
-                '_skillsDescriptionsList' => 'my foo skill 1'
-        );// filtered datas model from controller
+    //
+    // view (form) to model setters tests
+    //
+    public function testSetClassVarsValues_multipleArgs() {
+        $this->object->set_activitiesList($this->activitiesList);
+        // filtered data model (form) from controller with id skill - see template
+        $params = array(
+            '_skillsReferencesList' => 'c1',
+            1 => array('_bindedActivitiesLists' => array('0', 0)), //property_name => array(main_value, args...)
+            '_skillsDescriptionsList' => 'my foo skill 1'
+        ); // filtered datas model from controller
         $this->object->setClassVarsValues($params);
-        $this->assertEquals(array('c1'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(array('activity 1 binded to skill 0')), $this->object->get_bindedActivitiesLists());
-        $this->assertEquals(array('my foo skill 1'), $this->object->get_skillsDescriptionsList());
-        $params=array(
-                '_skillsReferencesList' => 'c2',
-                0=>array('_bindedActivitiesLists' => array('activity 2 binded to skill 0', 0,10)),
-                '_skillsDescriptionsList' => 'my foo skill 2'
+        $this->assertEquals(array('new'=>'c1'), $this->object->get_skillsReferencesList());
+        $this->assertEquals(array(array($this->activitiesList[0])), $this->object->get_bindedActivitiesLists());
+        $this->assertEquals(array('new'=>'my foo skill 1'), $this->object->get_skillsDescriptionsList());
+        $params = array(
+            '_skillsReferencesList' => 'c2',
+            1 => array('_bindedActivitiesLists' => array('1', 0)),
+            '_skillsDescriptionsList' => 'my foo skill 2'
         );
         $this->object->setClassVarsValues($params);
-        $this->assertEquals(array('c1','c2'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(array('activity 1 binded to skill 0', 10=>'activity 2 binded to skill 0')), $this->object->get_bindedActivitiesLists());
-        $this->assertEquals(array('my foo skill 1', 'my foo skill 2'), $this->object->get_skillsDescriptionsList());
-        $params=array(
-                '_skillsReferencesList' => 'c3',
-                0=>array('_bindedActivitiesLists' => array('activity 1 binded to skill 1', 1,20)),
-                '_skillsDescriptionsList' => 'my foo skill 3'
+        $this->assertEquals(array('new'=>'c2'), $this->object->get_skillsReferencesList());
+        $this->assertEquals(array(array($this->activitiesList[0], 1 => $this->activitiesList[1])), $this->object->get_bindedActivitiesLists());
+        $this->assertEquals(array('new'=> 'my foo skill 2'), $this->object->get_skillsDescriptionsList());
+        $params = array(
+            '_skillsReferencesList' => 'c3',
+            1 => array('_bindedActivitiesLists' => array('2', 1)),
+            '_skillsDescriptionsList' => 'my foo skill 3'
         );
         $this->object->setClassVarsValues($params);
-        $this->assertEquals(array('c1','c2','c3'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(array('activity 1 binded to skill 0', 10=>'activity 2 binded to skill 0'), array(20=>'activity 1 binded to skill 1')), $this->object->get_bindedActivitiesLists());
-        $this->assertEquals(array('my foo skill 1', 'my foo skill 2', 'my foo skill 3'), $this->object->get_skillsDescriptionsList());
+        $this->assertEquals(array('new'=> 'c3'), $this->object->get_skillsReferencesList());
+        $this->assertEquals(array(array($this->activitiesList[0], 1 => $this->activitiesList[1]), array( 2 => $this->activitiesList[2])), $this->object->get_bindedActivitiesLists());
+        $this->assertEquals(array('new'=> 'my foo skill 3'), $this->object->get_skillsDescriptionsList());
+        $params = array(
+            '_skillsReferencesList' => 'c4',
+            1 => array('_bindedActivitiesLists' => array('2', 1)),
+            2 => array('_bindedActivitiesLists' => array('3', 0)),
+            '_skillsDescriptionsList' => 'my foo skill 4'
+        );
+        $this->object->setClassVarsValues($params);
+        $this->assertEquals(array('new'=> 'c4'), $this->object->get_skillsReferencesList());
+        $this->assertEquals(array(array($this->activitiesList[0], 1 => $this->activitiesList[1], 3 => $this->activitiesList[3]), array( 2 => $this->activitiesList[2])), $this->object->get_bindedActivitiesLists());
+        $this->assertEquals(array('new'=> 'my foo skill 4'), $this->object->get_skillsDescriptionsList());
+        
     }
-    
-    public function testSetClassVarsValues_multipleArgs_listOfSettings(){
-        $params=array(
-                '_skillsReferencesList' => 'c1',
-                0=>array('_bindedActivitiesLists' => array('activity 1 binded to skill 0', '0')),
-                1=>array('_bindedActivitiesLists' => array('activity 3 binded to skill 0', '0','4')),
-                '_skillsDescriptionsList' => 'my foo skill 1'
-        );// filtered data model from controller
-        $this->object->setClassVarsValues($params);
-        $this->assertEquals(array('c1'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(array('activity 1 binded to skill 0',4=>'activity 3 binded to skill 0')), $this->object->get_bindedActivitiesLists());
-        $this->assertEquals(array('my foo skill 1'), $this->object->get_skillsDescriptionsList());
-        $params=array(
-                '_skillsReferencesList' => 'c2',
-                0=>array('_bindedActivitiesLists' => array('activity 2 binded to skill 1', 1,2)),
-                1=>array('_bindedActivitiesLists' => array('activity 3 binded to skill 1', 1,3)),
-                '_skillsDescriptionsList' => 'my foo skill 2'
-        );
-        $this->object->setClassVarsValues($params);
-        $this->assertEquals(array('c1', 'c2'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(array('activity 1 binded to skill 0', 4=>'activity 3 binded to skill 0'),array( 2=>'activity 2 binded to skill 1', 3=>'activity 3 binded to skill 1')), $this->object->get_bindedActivitiesLists());
-        $this->assertEquals(array('my foo skill 1', 'my foo skill 2'), $this->object->get_skillsDescriptionsList());
-        $params=array(
-                '_skillsReferencesList' => 'c3',
-                0=>array('_bindedActivitiesLists' => array('activity 1 binded to skill 2', 2,1)),
-                1=>array('_bindedActivitiesLists' => array('activity 2 binded to skill 2', 2,0)),
-                '_skillsDescriptionsList' => 'my foo skill 3'
-        );
-        $this->object->setClassVarsValues($params);
-        $this->assertEquals(array('c1','c2','c3'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(array('activity 1 binded to skill 0', 4=>'activity 3 binded to skill 0'),array( 2=>'activity 2 binded to skill 1', 3=>'activity 3 binded to skill 1'), array(1=>'activity 1 binded to skill 2', 0=>'activity 2 binded to skill 2')), $this->object->get_bindedActivitiesLists());
-        $this->assertEquals(array('my foo skill 1', 'my foo skill 2', 'my foo skill 3'), $this->object->get_skillsDescriptionsList());
-    }
-
     
     ////////////////////////////////////////////////////////////////////////////CRUD tests 
-    
-    public function testGetDefinedActivities(){
-        $a=$this->object->getDefinedActivities();
-        $exp=array('Mon activit&eacute; test test test -- ligne (0)',
-                    'Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)',
-                    'Mon activit&eacute; test test test -- ligne (4)'
-            );
-        $this->assertEquals($exp, $a);
-    }
-    
-    /**
-     * @param type $cleanDataBase
-     */
-    public function testAddSkillToDataBase($cleanDataBase = false){
-        $params=array(
-                '_skillsReferencesList' => 'c1',
-                0=>array('_bindedActivitiesLists' => array('Mon activit&eacute; test test test -- ligne (1)', 0)),
-                1=>array('_bindedActivitiesLists' => array('Mon activit&eacute; test test test -- ligne (2)', 0)),
-                2=>array('_bindedActivitiesLists' => array('Mon activit&eacute; test test test -- ligne (3)', 0)),
-                '_skillsDescriptionsList' => 'ma competence'
-        );// data model from controller
-        $this->object->setClassVarsValues($params); //see model view tests -- index 0 for skills list
-        $this->object->addSkillToDataBase(); //see db
-        $this->assertTrue(true);
-        if($cleanDataBase){
-            $this->cleanDb();
+
+    public function testgetDefinedActivities() {
+        $a = $this->object->getDefinedActivities();
+        foreach ($a as $key => $val) {
+            $this->assertGreaterThanOrEqual(0, $key);
+            $this->assertStringMatchesFormat('%s', $val);
         }
     }
     
     /**
-     * @depends testAddSkillToDataBase
+     * @depends testgetDefinedActivities
      */
-    public function testGetSkillsFromDataBase(){
-        $this->object->getSkillsFromDataBase();
-        $this->assertEquals(array('c1'), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array('ma competence'), $this->object->get_skillsDescriptionsList());
-        $exp=array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)',
-            ));
-        //this test check difference of content of arrays without using index meaning 
-        $this->assertEquals(array(),array_diff($exp[0], array_values($this->object->get_bindedActivitiesLists()[0] )));// index 0 is skillId
-        $exp=array('Mon activit&eacute; test test test -- ligne (0)',
-                    'Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)',
-                    'Mon activit&eacute; test test test -- ligne (4)'
-            );
-        $this->assertEquals($exp, $this->object->get_activitiesList());
-        //$this->cleanDb();
+    public function testaddBlank(){
+        $this->object->addBlank();
+        $this->assertEquals(array('new'=>''),$this->object->get_skillsReferencesList());
+        $this->assertEquals(array('new'=>''),$this->object->get_skillsDescriptionsList());
+        $list=$this->object->get_bindedActivitiesLists();
+        $activities = $list['new'];
+        $this->assertEquals(reset($this->object->get_activitiesList()),reset($activities));
     }
     
     /**
-     * @depends testAddSkillToDataBase
-     * @depends testGetSkillsFromDataBase
+     * @depends testgetDefinedActivities
      */
-    public function testUpdateSkillsFromDataBase(){
-        $this->object->getSkillsFromDataBase();
-        $skillId=0;
-        $this->object->set_skillsDescriptionsList('ma nouvelle competence',$skillId);
-        $this->object->updateSkill($skillId);// see db
-        $this->assertEquals('ma nouvelle competence', $this->object->get_skillsDescriptionsList()[0]);
-        $this->assertFalse($this->object->updateSkill(99999));//undefined skill
-    }
-    
-    /**
-     * @depends testAddSkillToDataBase
-     */
-    public function testDeleteSkillsFromDataBase(){
-        //$this->markTestIncomplete('This test has not been implemented yet.');
-        $this->object->getSkillsFromDataBase();
-        $skillId=0;
-        $this->object->deleteSkill($skillId);// see db
-        $this->assertEquals(array(), $this->object->get_skillsReferencesList());
-        $this->assertEquals(array(), $this->object->get_skillsDescriptionsList());
-        $this->assertFalse($this->object->deleteSkill(99999));//undefined skill
-    }
-    
-    
-    public function bindActivityToSkillTestsProvider(){
-        $orig = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)'
-                    )
-            );
-        $r1 = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)',
-                    'Mon activit&eacute; test test test -- ligne (0)'
-                    )
-            );
-        $r2 = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)',
-                    'Mon activit&eacute; test test test -- ligne (4)'
-                    )
-            );
-        return array(
-            array(0, '', array(false, $orig)),
-            array(0, 'Mon activit&eacute; test test test -- ligne (99) UNKNOWN', array(false, $orig)),
-            array(9999, 'Mon activit&eacute; test test test -- ligne (0)', array(false, $orig)),//unknown skill id
-            array(0, 'Mon activit&eacute; test test test -- ligne (0)', array(true, $r1)),
-            array(0, 'Mon activit&eacute; test test test -- ligne (4)', array(true, $r2)),
-            array(0, 'Mon activit&eacute; test test test -- ligne (2)', array(false, $orig)) //redondant entry not binded
-        );
-    }
-    
-    /**
-     * @depends testAddSkillToDataBase
-     * @dataProvider bindActivityToSkillTestsProvider
-     * @param type $skillId
-     * @param type $activity
-     * @param array $exp
-     */
-    public function testBindActivityToSkill($skillId, $activity, array $exp){
-        //$this->markTestIncomplete('This test has not been implemented yet.');
-        $this->testAddSkillToDataBase(); //restore data base
-        $r = $this->object->bindActivityToSkill($skillId, $activity);
-        $this->assertEquals($exp[0],$r);
-        //this test check difference of content of arrays without using index meaning 
-        $this->assertEquals(array(),array_diff($exp[1][0], array_values($this->object->get_bindedActivitiesLists()[0] )));// index 0 is skillId
-        //see db
-        $this->cleanDb();
-    }
-    
-    /**
-     * @depends testAddSkillToDataBase
-     */
-    public function testBindMultipleActivitiesToSkill(){
-        $this->testAddSkillToDataBase(); //some fixture
-        $skillId=0;
-        $this->object->set_bindedActivitiesLists('Mon activit&eacute; test test test -- ligne (4)', $skillId);
-        $this->object->set_bindedActivitiesLists('Mon activit&eacute; test test test -- ligne (0)', $skillId);
-        $this->assertTrue($this->object->bindMultipleActivitiesToSkill($skillId));
-        $this->assertEquals(array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                                            'Mon activit&eacute; test test test -- ligne (2)',
-                                            'Mon activit&eacute; test test test -- ligne (3)',
-                                            'Mon activit&eacute; test test test -- ligne (4)',
-                                            'Mon activit&eacute; test test test -- ligne (0)'
-                            )), $this->object->get_bindedActivitiesLists());
-        // see db
-        $this->assertFalse($this->object->bindMultipleActivitiesToSkill(9999)); // wrong skill id 
-        $this->cleanDb();
+    public function testgetAll(){
+        $this->object->getAll();
+        $a1 = $this->object->get_skillsReferencesList();
+        foreach ($a1 as $key => $val) {
+            $this->assertGreaterThanOrEqual(0, $key);
+            $this->assertStringMatchesFormat('%s', $val);
+        }
+        $a2 = $this->object->get_skillsDescriptionsList();
+        foreach ($a2 as $key => $val) {
+            $this->assertGreaterThanOrEqual(0, $key);
+            $this->assertStringMatchesFormat('%s', $val);
+        }
+        $a3 = $this->object->get_bindedActivitiesLists();
+        foreach ($a3 as $keySkill=>$arr) {
+            $this->assertArrayHasKey($keySkill, $a1);
+            $this->assertArrayHasKey($keySkill, $a2);
+            foreach ($arr as $key => $val) {
+                $this->assertGreaterThanOrEqual(0, $key);
+                $this->assertStringMatchesFormat('%s', $val);
+            }
+        }
     }
 
-        public function freeBindedActivityTestsProvider(){
-        $orig = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)'
-                    )
-            );
-        $r1 = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (3)'
-                    )
-            );
-        $r2 = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)'
-                    )
-            );
-        return array(
-            array(0, 'Mon activit&eacute; test test test -- ligne (2)', array(1, $r1)),
-            array(0, 'Mon activit&eacute; test test test -- ligne (3)', array(1, $r2)),
-            array(0, 'Mon activit&eacute; test test test -- ligne (99) UNKNOWN', array(false, $orig)),
-            array(999, 'Mon activit&eacute; test test test -- ligne (1)', array(false, $orig)), //skill id undefined
-        );
+    /**
+     * @depends testgetAll
+     */
+    public function testappend(){
+        $this->object->set_skillsReferencesList('C99');
+        $this->object->set_skillsDescriptionsList('new skill');
+        //bind last(for example) activity to new skill
+        $this->object->set_bindedActivitiesLists(end(array_keys($this->object->get_activitiesList())),'new');//id&activity, id skill
+        $this->object->append();
+        $this->object->getAll();
+        $this->assertEquals('C99', end($this->object->get_skillsReferencesList()));
+        $this->assertEquals('new skill', end($this->object->get_skillsDescriptionsList()));
+        $ba_t =$this->object->get_bindedActivitiesLists();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $k  =$t['C99'];
+        $la_t = $ba_t[$k];
+        $this->assertEquals(1, count($la_t));
+        $this->assertEquals(end($this->object->get_activitiesList()), $la_t[end(array_keys($this->object->get_activitiesList()))]);
     }
     
     /**
-     * @depends testAddSkillToDataBase
-     * @dataProvider freeBindedActivityTestsProvider
-     * @param integer $arg1 : idSkill (0..n)
-     * @param string $arg2 : activity description
-     * @param array $exp
+     * @depends testappend
+     * @depends testgetAll
      */
-    public function testFreeBindedActivity($arg1, $arg2, array $exp){
-        //$this->markTestIncomplete('This test has not been implemented yet.');
-        $this->testAddSkillToDataBase(); //restore data base
-        $r = $this->object->freeBindedActivity($arg1, $arg2);
-        $this->assertEquals($exp[0],$r);
-         //this test check difference of content of arrays without using index meaning 
-        $this->assertEquals(array(),array_diff($exp[1][0], array_values($this->object->get_bindedActivitiesLists()[0] )));// index 0 is skillId
-        //see db
-        $this->cleanDb();
-    }
-    
-    
-    public function updateBindedAtivityTestsProvider(){
-        $orig = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)'
-                    )
-            );
-        $r1 = array(0=>array('Mon activit&eacute; test test test -- ligne (1)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (4)'
-                    )
-            );
-        $r2 = array(0=>array('Mon activit&eacute; test test test -- ligne (0)',
-                    'Mon activit&eacute; test test test -- ligne (2)',
-                    'Mon activit&eacute; test test test -- ligne (3)'
-                    )
-            );
-        return array(
-                array(0, 2, 'Mon activit&eacute; test test test -- ligne (4)',array(1, $r1)),//update skill id 0 and activity id 2
-                array(0, 0, 'Mon activit&eacute; test test test -- ligne (0)',array(1, $r2)),
-                array(99, 0, 'Mon activit&eacute; test test test -- ligne (4)',array(false, $orig)), // skill id undefined
-                array(0, 99, 'Mon activit&eacute; test test test -- ligne (4)',array(false, $orig)), // activity id undefined
-                array(0, 2, 'Mon activit&eacute; test test test -- ligne (99) UNKNOWN',array(false, $orig)) // activity undefined
-        );
+    public function testdeleteFromId(){
+        $this->object->set_skillsReferencesList('C100');
+        $this->object->set_skillsDescriptionsList('new skill to delete');
+        //bind last(for example) activity to new skill
+        $this->object->set_bindedActivitiesLists(end(array_keys($this->object->get_activitiesList())),'new' );//id&activity, id skill
+        $this->object->append();
+        $this->object->getAll();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $k  =$t['C100'];
+        $this->assertTrue($this->object->deleteFromId($k));
+        $this->assertNotEquals('C100', end($this->object->get_skillsReferencesList()));
+        $this->assertNotEquals('new skill to delete', end($this->object->get_skillsDescriptionsList()));
+        $this->assertFalse($this->object->deleteFromId(100000));//unknown id 
     }
     
     /**
-     * @param integer $arg1 : skill id (0..n)
-     * @param integer $arg2 : activity id to update id (0..n)
-     * @param string  $arg3 : new activity description
-     * @depends testAddSkillToDataBase
-     * @dataProvider updateBindedAtivityTestsProvider
+     * @depends testappend
+     * @depends testgetAll
      */
-    public function testUpdateBindedActivity($arg1, $arg2, $arg3, array $exp){
-        //$this->markTestIncomplete('This test has not been implemented yet.');
-        $this->testAddSkillToDataBase();//restore skills and binding
-        $r = $this->object->updateBindedActivity($arg1, $arg2, $arg3);
-        $this->assertEquals($exp[0],$r);
-         //this test check difference of content of arrays without using index meaning 
-        $this->assertEquals(array(),array_diff($exp[1][0], array_values($this->object->get_bindedActivitiesLists()[0] )));// index 0 is skillId
-        //see db...
-        $this->cleanDb();//remove all skills and binding
+    public function testbindActivityToSkill(){
+        $this->object->getAll();
+        //get skill id
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $ks  =$t['C99'];
+        //form bind first activity (example)  -- see setters
+        $this->object->set_bindedActivitiesLists(reset(array_keys($this->object->get_activitiesList())),$ks );//id activity, id skill
+        //test
+        $t = array_flip($this->object->get_activitiesList());
+        $ka = reset($t);//first activity key
+        $this->object->bindActivityToSkill($ks);
+        $this->object->getAll();
+        $bt = $this->object->get_bindedActivitiesLists();
+        $at = $bt[$ks];
+        $this->assertEquals(reset($this->object->get_activitiesList()),$at[$ka]);
+        
     }
     
-    
-    
-    
-    //////////////////////////////////////////////////////////////////////////// cleaning
-    public function testCleanDataBase(){
-        $this->cleanDb();
+    /**
+     * @depends testappend
+     * @depends testgetAll
+     * @depends testbindActivityToSkill
+     */
+    public function testfreeBindedActivity(){
+        $this->object->getAll();
+        $t = array_flip($this->object->get_skillsReferencesList());
+        $ks  =$t['C99'];
+        $t = array_flip($this->object->get_activitiesList());
+        $ka = reset($t);//first activity key
+        $this->object->freeBindedActivity($ks, $ka);//unbind
+        $this->object->getAll();
+        $bt = $this->object->get_bindedActivitiesLists();
+        $at = $bt[$ks];
+        $this->assertNotContains(reset($this->object->get_activitiesList()),$at);
     }
-   
+
+  
 }

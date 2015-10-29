@@ -1,15 +1,27 @@
 # routes.yml : main routes for SESE application 
-login_route:
+#login_route:
+#    path:     /
+#    defaults: { _controller : 'Login',_action : 'login', _public : 'all' }
+    
+test_ajax_route:
     path:     /
-    defaults: { _controller : 'Login',_action : 'check' }
-
+    defaults: { _controller : 'TestAjax',_action : 'run', _public : 'all' }
+    
 about_route:
     path:     /apropos
-    defaults: { _controller : 'About',_action : 'run' }
-
+    defaults: { _controller : 'Login',_action : 'about' , _public : 'all'}
+    
+lost_password_route:
+    path:     /identification
+    defaults: { _controller : 'Login',_action : 'lostPassword', _public : 'all' }
+    
+logout_route:
+    path:   /logout
+    defaults: { _controller : 'Logout', _action : 'run' }
+    
 admin_route:
     path:     /administrateur
-    defaults: { _controller : 'Admin', _action : 'welcome' }
+    defaults: { _controller : 'Admin', _action : 'welcome'}
     
 admin_referential_route:
     path:     /administrateur/referentiel
@@ -26,6 +38,14 @@ admin_activity_route:
 admin_skill_route:
     path:     /administrateur/competence
     defaults: { _controller : 'Admin', _action : 'skillDefinition' }
+    
+admin_professional_skill_route:
+    path:     /administrateur/attitude_professionnelle
+    defaults: { _controller : 'Admin', _action : 'professionalSkillDefinition' }
+    
+admin_document_route:
+    path:     /administrateur/document
+    defaults: { _controller : 'Admin', _action : 'documentDefinition' }
     
 admin_promotion_route:
     path:     /administrateur/promotion
@@ -51,6 +71,14 @@ teacher_route:
     path:     /enseignant
     defaults: { _controller : 'Teacher', _action : 'welcome' }
     
+teacher_password_route:
+    path:     /enseignant/mot_de_passe
+    defaults: { _controller : 'Teacher', _action : 'passwordDefinition' }
+    
+teacher_document_list_route:
+    path:     /enseignant/document
+    defaults: { _controller : 'Teacher', _action : 'documentList' }
+    
 teacher_work_definition_route:
     path:     /enseignant/stage
     defaults: { _controller : 'Teacher', _action : 'workDefinition' }
@@ -71,8 +99,27 @@ tutor_route:
     path:     /tuteur
     defaults: { _controller : 'Tutor', _action : 'welcome' }
     
-tutor_route_trainee_list:
+tutor_document_list_route:
+    path:     /tuteur/document
+    defaults: { _controller : 'Tutor', _action : 'tutorDocumentList' }
+    
+tutor_trainee_list_route:
     path:     /tuteur/liste_stagiaire
     defaults: { _controller : 'Tutor', _action : 'traineeList' }
     
+tutor_contact_definition_route:
+    path:     /tuteur/contact_interne
+    defaults: { _controller : 'Tutor', _action : 'tutorContact' }
+    
+tutor_trainee_activity_list_route:
+    path:     /tuteur/liste_activites
+    defaults: { _controller : 'Tutor', _action : 'traineeActivityList' }
+    
+tutor_evaluate_trainee_route:
+    path:     /tuteur/evaluation_stagiaire
+    defaults: { _controller : 'Tutor', _action : 'evaluateTrainee' }
+    
+tutor_password_route:
+    path:     /tuteur/mot_de_passe
+    defaults: { _controller : 'Tutor', _action : 'passwordDefinition' }
     

@@ -22,7 +22,7 @@
                name="{{!form_userPass!}}">
         </p>
         <p>
-            <a href="#"> Mot de passe oublié?</a>
+            <a href="{{! LOSTPASSWORD !}}"> Mot de passe oublié?</a>
         </p>
         <button class="btn btn-lg btn-success btn-block" type="submit"> <span class="glyphicon glyphicon-check"></span> Valider</button>
       </form>

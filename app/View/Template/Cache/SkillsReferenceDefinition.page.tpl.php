@@ -26,6 +26,46 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- css jQuery -->
+    <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
+    
+    <!--TINY MCE TESTS--> 
+    <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    
+    <script type="text/javascript">
+        
+//        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
+//        $(document).on('focusin', function(e) {
+//            if ($(event.target).closest(".mce-window").length) {
+//                        e.stopImmediatePropagation();
+//                }
+//        });
+        
+        tinymce.init({
+            selector: "#textarea1",
+            language : 'fr_FR',
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste "
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            setup: function(editor) {
+                editor.on('init',function(){
+                    this.setContent(getDoc());
+                });
+                editor.on('blur', function() {
+                    //console.log(this.getContent());
+                    highLightElement();
+                    //alert('Document modifié sans ');
+                });
+            }
+        });
+
+    </script>
+    
+    
   </head>
 
     <body>
@@ -43,6 +83,12 @@
                     </a>
                     <a class="navbar-brand" href="#">
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
+                    </a>
+                     <a class="navbar-brand" href="#">
+                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <img alt="2015" src="/app_img/logo_lppdg40.png">2015
                     </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
@@ -76,15 +122,23 @@
                                 <li><a href="/index.php/administrateur/competence"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Compétences</a></li>
                             </ul>
                         </li>
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/attitude_professionnelle"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/éditer les attitudes professionnelles </a></li>
+                    </ul>    
+                    <hr>
+                    </ul><ul class="nav nav-sidebar">
+                        <li><a href="/index.php/administrateur/document"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer/editer les documents références </a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/promotion"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Créer les promotions </a></li>
                         <li><a href="/index.php/administrateur/enseignant"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les enseignants</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/stagiaire"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Importer les stagiaires</a></li>
                         <li><a href="/index.php/administrateur/stage"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Créer/Modifier les périodes de stage</a></li>
                     </ul>
+                    <hr>
                     <ul class="nav nav-sidebar">
                         <li><a href="/index.php/administrateur/acces"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span>Modifier le mot de passe Administrateur</a></li>
                         <li><a href=""><span class="glyphicon glyphicon-save" aria-hidden="true"></span>Archiver la base de données</a></li>
@@ -104,7 +158,7 @@
     </div>
 
 <div class="container">
-    <form  method="post" action="<?php echo' /seseapp/index.php/administrateur/competence '; ?>" class="form-horizontal" >
+    <form  method="post" action="<?php echo' /index.php/administrateur/competence '; ?>" class="form-horizontal" >
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -127,8 +181,8 @@
                                         <td>
                                             <div class=\"input-group\">
                                               <input type=\"text\" class=\"form-control\"
-                                              id=\"skillReference#$idSkill\"
-                                              name=\"_skillsReferencesList#$idSkill\"
+                                              id=\"_skillsReferencesList#$idSkill\"
+                                              name=\"_skillsReferencesList##$idSkill\"
                                               placeholder=\"Entrez la référence de la compétence\"
                                               value=\"".$this->_arrayParamslist[0][$idSkill]."\"
                                               >
@@ -137,8 +191,8 @@
                                         <td>
                                             <div class=\"input-group\">
                                                 <input type=\"text\" class=\"form-control\"
-                                                id=\"skillDescription#$idSkill\"
-                                                name=\"_skillsDescriptionsList#$idSkill\"
+                                                id=\"_skillsDescriptionsList#$idSkill\"
+                                                name=\"_skillsDescriptionsList##$idSkill\"
                                                 placeholder=\"Entrez le descriptif de la compétence\"
                                                 value = \"$skill\"
                                                 >
@@ -174,17 +228,25 @@
                                                             </thead>
                                                             <tbody>
                                                             ";
-                                                                foreach ($this->_arrayParamslist[2][$idSkill] as $idActivity => $activityBinded) {
+                                                                foreach ($this->_arrayParamslist[2][$idSkill] as $activityId => $activityBinded ) { // for a given skill list all activities binded                                                                    
                                                                     echo"
                                                                     <tr>
                                                                         <td>
                                                                             <div class=\"input-group\">
-                                                                              <select class=\"form-control\" name=\"_bindedActivitiesLists#$idSkill#$idSkill#$idActivity\" id=\"activityChoosenForSkill#$idSkill#$idActivity\">
+                                                                              <select class=\"form-control\" name=\"_bindedActivitiesLists##$idSkill#$idSkill\" id=\"activityChoosenForSkill#$idSkill#$activityId\">
                                                                                 ";
-                                                                                foreach ($this->_arrayParamslist[1] as $activity) {
+                                                                                foreach ($this->_arrayParamslist[1] as $selectedActivityId => $activity) { //list all activities available
+                                                                                    if($selectedActivityId===$activityId){// find binded activity in list
+                                                                                        $selected= 'selected="selected"';
+                                                                                        $activityIdAlreadySelected = $activityId;
+                                                                                    }else{
+                                                                                        $selected='';
+                                                                                    }
+                                            
                                                                                     echo"
                                                                                     <option
-                                                                                        value=\"$activity\">$activity
+                                                                                        $selected
+                                                                                        value=\"$selectedActivityId\">$activity
                                                                                     </option>
                                                                                     ";
                                                                                 }
@@ -194,7 +256,7 @@
                                                                                 <button class=\"btn btn-sm btn-info\" name=\"ButtonSubmitBindActivity\" value=\"$idSkill\" id=\"addActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-paperclip\"></span>
                                                                                     Associer</button>
-                                                                                <button class=\"btn btn-sm btn-warning\" name=\"ButtonSubmitFreeActivity\" value=\"$idSkill#$activityBinded\" id=\"delActivity#$idSkill\" type=\"submit\">
+                                                                                <button class=\"btn btn-sm btn-warning\" name=\"ButtonSubmitFreeActivity\" value=\"$idSkill#$activityIdAlreadySelected\" id=\"delActivity#$idSkill\" type=\"submit\">
                                                                                     <span class=\"glyphicon glyphicon-resize-full\"></span>
                                                                                     Dissocier</button>
                                                                               </span>
@@ -203,6 +265,7 @@
 
                                                                     </tr>
                                                                     ";
+                                                                    
                                                                 }
                                                                 echo"
                                                                  </tbody>
@@ -263,7 +326,7 @@
   </footer>
 
 <!-- modals ===================================================== -->
- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true"> 
       <div class="modal-dialog"> 
         <div class="modal-content"> 
           <div class="modal-header"> 
@@ -298,23 +361,25 @@
         
  <!-- Script for text inputs changes -->   
     <script type="text/javascript">
-        $(':text').blur(function(){
-               console.log($(this).attr('id'));
+        $('[type="text"]').blur(function(){
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'blur',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/competence',
+                   data:{       
+                           AJAX_UPDATE:'texte_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
@@ -322,32 +387,79 @@
     <!-- Script for select input(s) changes -->
     <script type="text/javascript">
         $("select").change(function(){
-               console.log($(this).attr('id'));
                id=$(this).attr('id');
                val=$(this).val();
-
-               $.post(
-                   '/index.php/administrateur',
-                    {       AJAX_UPDATE:'change',
-                            AJAX_ID:id,
-                            AJAX_VAL:val
-                    },
-                    function(data){
-                        alert('from server : '+' id : '+data.id+' '+'val : '+data.value);
-//                        console.log(data.value);
-                    },
-                    'json'
-               );
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/competence',
+                   data:{       
+                           AJAX_UPDATE:'document_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                       var ed = tinyMCE.activeEditor;
+                       ed.setContent(json.doc);
+                       setTitle(json.title);
+                   }
+               });
+       });       
+       
+              
+    </script>
+    
+    <!-- Script for date inputs changes -->   
+    <script type="text/javascript">
+        $('[type="date"]').change(function(){
+               id=$(this).attr('id');
+               val=$(this).val();
+               console.log(id);
+               console.log(val);
+               $.ajax({
+                   url:'/index.php/administrateur/competence',
+                   data:{       
+                           AJAX_UPDATE:'date_change',
+                           AJAX_ID:id,
+                           AJAX_VAL:val
+                   },
+                   type:"POST",
+                   dataType : "json",
+                   async:"false", //synchrone
+                   success: function(json){
+                       console.log('recu du serveur : '+json.doc);
+                   }
+               });
        });       
               
     </script>
     
-<!--    <script type="text/javascript">
-        $(document).ready(function(){
-            alert('Page chargée');
-        });
-       
-   </script>-->
+    <!-- script qui renvoie une doc a TINYMCE : l'élément DOC est substitué dans le modelView (modelView['footer']['DOC']) par le generateur de template -->
+    <script type="text/javascript">
+        function getDoc(){
+            $("#nom_document_en_edition").text('TITLE');
+            return 'DOC';
+        };
+    </script>
+    
+    <!-- m a j titre doc en edition -->
+    <script type="text/javascript">
+        function setTitle(title){
+            $("#nom_document_en_edition").text(title);
+        };
+    </script>
+    
+    <!-- agit sur bouton de validation de création/edition documents -->
+    <script type="text/javascript">
+        function highLightElement(){
+            $("#valide_document").css("background-color", "green");
+        };
+    </script>
+    
     
   </body>
 </html>
