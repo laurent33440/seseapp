@@ -29,10 +29,11 @@
     <!-- css jQuery -->
     <link href="http://code.jquery.com/ui/1.11.4/themes/redmond/jquery-ui.css" rel="stylesheet">
     
-    <!--TINY MCE TESTS--> 
+    <!--TINY MCE init --> 
     <script type="text/javascript" src="/app_js/tinymce/4.1.3/tinymce.min.js"></script>
+    <script type="text/javascript" src="/app_js/tinymce_init.js?params=INDEX"></script>
     
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
         
 //        // Prevent jQuery (thus Bootstrap) UI dialog (modal) from blocking focusin
 //        $(document).on('focusin', function(e) {
@@ -62,7 +63,7 @@
             }
         });
 
-    </script>
+    </script>-->
     
     
   </head>
@@ -86,7 +87,7 @@
                         <img alt="Lycee Philadelphe de Gerde" src="/app_img/logo_lppdg40.png">Lycee Philadelphe de Gerde
                         </a></li>
                         <li><a  href="" >
-                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        <img alt="Systèmes électroniques numériques 2016" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques 2016
                         </a></li>
                         <li><a  href="" >
                         <img alt="2015" src="/app_img/logo_lppdg40.png">2015
@@ -94,7 +95,7 @@
                     </ul>
 <!--                    <ul class="nav navbar-nav navbar-right">
                          <li><a  href="#">
-                        <img alt="Systèmes électroniques numériques" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques
+                        <img alt="Systèmes électroniques numériques 2016" src="/app_img/logo_lppdg40.png">Systèmes électroniques numériques 2016
                         </a></li>
                         <li><a  href="#">
                         <img alt="2015" src="/app_img/logo_lppdg40.png">2015
@@ -110,7 +111,7 @@
   <div class="container">
     <h2 class="text-center">Suivi et évaluation des stagiaires en entreprise (SESE)</h2>
     <p class="text-center">Bienvenue sur l'application SESE.</p> <p class="text-center"> Vous devez vous identifiez pour accéder à votre espace personnel</p>
-    <p class="text-center"><a class="btn btn-info "role="button" href="<?php echo' /index.php/apropos '; ?>"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>
+    <p class="text-center"><a class="btn btn-info "role="button" href="<?php echo' /apropos '; ?>"> <span class="glyphicon glyphicon-search"></span> En savoir plus &raquo;</a></p>
   </div>
 </div>
 
@@ -126,7 +127,7 @@
                name="<?php echo'_userPass'; ?>">
         </p>
         <p>
-            <a href="<?php echo' /index.php/identification '; ?>"> Mot de passe oublié?</a>
+            <a href="<?php echo' /identification '; ?>"> Mot de passe oublié?</a>
         </p>
         <button class="btn btn-lg btn-success btn-block" type="submit"> <span class="glyphicon glyphicon-check"></span> Valider</button>
       </form>
@@ -163,10 +164,10 @@
         <div class="modal-content"> 
           <div class="modal-header"> 
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
-            <h4 class="modal-title" id="myModalLabel">MODAL_TITLE</h4> 
+            <h4 class="modal-title" id="myModalLabel">Erreur d'authentification</h4> 
           </div> 
           <div class="modal-body"> 
-            <h3>MODAL_MESSAGE</h3> 
+            <h3>Vérifiez votre identifiant et/ou votre mot de passe </h3> 
           </div> 
           <div class="modal-footer"> 
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button> 
@@ -189,7 +190,7 @@
     <script src="<?php echo'/bootstrap-3.2.0-dist/js/bootstrap.min.js'; ?>"></script>
     
      <!-- trigg modal -->
-        <?php if ( false ) echo'
+        <?php if ( true ) echo'
             <script> $(\'#basicModal\').modal({\'show\' : true, \'backdrop\' : false}); </script>
         '; ?>
         
@@ -201,7 +202,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/',
                     {       AJAX_UPDATE:'blur',
                             AJAX_ID:id,
                             AJAX_VAL:val
@@ -224,7 +225,7 @@
                val=$(this).val();
 
                $.post(
-                   '/index.php/',
+                   '/',
                     {       AJAX_UPDATE:'change',
                             AJAX_ID:id,
                             AJAX_VAL:val
